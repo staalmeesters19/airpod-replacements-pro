@@ -168,8 +168,11 @@ const ProductDetail = () => {
 
                   <Card className="p-6">
                     <h3 className="font-semibold mb-3">Staat</h3>
-                    <p className="text-sm text-muted-foreground capitalize">
-                      {product.condition === 'new' ? 'Nieuw – in originele Apple verpakking' : 'Refurbished – getest en gecertificeerd'}
+                    <p className="text-sm text-muted-foreground">
+                      {product.condition === 'brand-new' && 'Gloednieuw – in originele Apple verpakking'}
+                      {product.condition === 'like-new' && 'Zo goed als nieuw – getest en gecertificeerd'}
+                      {product.condition === 'used' && 'Gebruikt – getest en schoongemaakt'}
+                      {product.condition === 'heavily-used' && 'Erg gebruikt – volledig werkend maar met gebruikssporen'}
                     </p>
                   </Card>
                 </div>

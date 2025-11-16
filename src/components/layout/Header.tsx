@@ -24,7 +24,7 @@ const Header = () => {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <span className="text-xl font-semibold text-foreground">NIEUWE MERKNAAM</span>
+            <span className="text-xl font-semibold text-foreground">PairPods</span>
           </Link>
 
           {/* Desktop Navigation */}

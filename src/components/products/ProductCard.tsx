@@ -39,8 +39,11 @@ const ProductCard = ({ product }: ProductCardProps) => {
               <h3 className="font-semibold text-base mb-1 line-clamp-2">
                 {product.name}
               </h3>
-              <p className="text-sm text-muted-foreground capitalize">
-                {product.condition === 'new' ? 'Nieuw' : 'Refurbished'}
+              <p className="text-sm text-muted-foreground">
+                {product.condition === 'brand-new' && 'Gloednieuw'}
+                {product.condition === 'like-new' && 'Zo goed als nieuw'}
+                {product.condition === 'used' && 'Gebruikt'}
+                {product.condition === 'heavily-used' && 'Erg gebruikt'}
               </p>
             </div>
           </div>

@@ -16,7 +16,7 @@ const Index = () => {
   return (
     <>
       <Helmet>
-        <title>Losse AirPods en Oplaadcases Kopen | NIEUWE MERKNAAM</title>
+        <title>Losse AirPods en Oplaadcases Kopen | PairPods</title>
         <meta
           name="description"
           content="Vervang je verloren AirPod of oplaadcase zonder een hele nieuwe set te kopen. 100% originele Apple producten, morgen in huis. Voorheen Airpods-handel."

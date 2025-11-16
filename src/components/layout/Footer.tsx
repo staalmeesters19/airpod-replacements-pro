@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">NIEUWE MERKNAAM</h3>
+            <h3 className="text-lg font-semibold mb-4">PairPods</h3>
             <p className="text-sm text-muted-foreground mb-2">voorheen Airpods-handel</p>
             <p className="text-sm text-muted-foreground">
               Bekend van onze winkel in Amsterdam
@@ -87,7 +87,7 @@ const Footer = () => {
         <div className="mt-12 pt-8 border-t border-border">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-sm text-muted-foreground">
-              © 2025 NIEUWE MERKNAAM. Alle rechten voorbehouden.
+              © 2025 PairPods. Alle rechten voorbehouden.
             </p>
             <div className="flex space-x-6 text-sm">
               <Link to="/privacybeleid" className="text-muted-foreground hover:text-foreground transition-colors">

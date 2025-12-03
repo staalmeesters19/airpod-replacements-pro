@@ -106,9 +106,6 @@ const ProductDetail = () => {
                 <p className="text-lg text-muted-foreground">{product.description}</p>
               </div>
 
-              {/* Model Number Check Warning */}
-              <ModelNumberCheck product={product} />
-
               {/* Condition Selector */}
               <div>
                 <h3 className="font-semibold mb-3">Kies je conditie:</h3>
@@ -165,6 +162,9 @@ const ProductDetail = () => {
                   </Button>
                 </div>
               )}
+
+              {/* Model Number Check Warning */}
+              <ModelNumberCheck product={product} />
 
               {/* Features */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-6">

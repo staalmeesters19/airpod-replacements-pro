@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import ProductCard from '@/components/products/ProductCard';
+import CaseCardWithVariants from '@/components/products/CaseCardWithVariants';
 import { Button } from '@/components/ui/button';
 import {
   Breadcrumb,
@@ -224,9 +225,13 @@ const ModelPage = () => {
                 {leftEarbuds.map((product) => (
                   <ProductCard key={product.id} product={product} />
                 ))}
-                {cases.map((product) => (
-                  <ProductCard key={product.id} product={product} />
-                ))}
+                {cases.length > 1 ? (
+                  <CaseCardWithVariants cases={cases} />
+                ) : (
+                  cases.map((product) => (
+                    <ProductCard key={product.id} product={product} />
+                  ))
+                )}
                 {rightEarbuds.map((product) => (
                   <ProductCard key={product.id} product={product} />
                 ))}

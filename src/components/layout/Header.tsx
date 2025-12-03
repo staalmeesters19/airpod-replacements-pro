@@ -21,7 +21,8 @@ const categoryDropdowns = [
       { label: '3e generatie', url: '/product/airpods-3e-generatie-links' },
       { label: '4e generatie', url: '/product/airpods-4e-generatie-links' },
       { label: 'Pro 1', url: '/product/airpods-pro-1e-generatie-links' },
-      { label: 'Pro 2', url: '/product/airpods-pro-2e-generatie-links' },
+      { label: 'Pro 2', url: '/product/airpods-pro-2e-generatie-lightning-links' },
+      { label: 'Pro 3', url: '/product/airpods-pro-3e-generatie-links' },
     ],
   },
   {
@@ -33,7 +34,8 @@ const categoryDropdowns = [
       { label: '3e generatie', url: '/product/airpods-3e-generatie-rechts' },
       { label: '4e generatie', url: '/product/airpods-4e-generatie-rechts' },
       { label: 'Pro 1', url: '/product/airpods-pro-1e-generatie-rechts' },
-      { label: 'Pro 2', url: '/product/airpods-pro-2e-generatie-rechts' },
+      { label: 'Pro 2', url: '/product/airpods-pro-2e-generatie-lightning-rechts' },
+      { label: 'Pro 3', url: '/product/airpods-pro-3e-generatie-rechts' },
     ],
   },
   {
@@ -42,11 +44,12 @@ const categoryDropdowns = [
     allUrl: '/losse-oplaadcases',
     items: [
       { label: '2e generatie', url: '/product/airpods-2e-generatie-oplaadcase' },
-      { label: '3e generatie', url: '/product/airpods-3e-generatie-oplaadcase' },
+      { label: '3e generatie', url: '/product/airpods-3e-generatie-oplaadcase-magsafe' },
       { label: '4e generatie', url: '/product/airpods-4e-generatie-oplaadcase' },
-      { label: 'Pro 1', url: '/product/airpods-pro-1e-generatie-oplaadcase' },
+      { label: 'Pro 1', url: '/product/airpods-pro-1e-generatie-oplaadcase-magsafe' },
       { label: 'Pro 2 (Lightning)', url: '/product/airpods-pro-2e-generatie-oplaadcase-lightning' },
       { label: 'Pro 2 (USB-C)', url: '/product/airpods-pro-2e-generatie-oplaadcase-usbc' },
+      { label: 'Pro 3', url: '/product/airpods-pro-3e-generatie-oplaadcase' },
     ],
   },
 ];

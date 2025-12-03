@@ -15,6 +15,8 @@ import BlogWelkeAirpods from "./pages/BlogWelkeAirpods";
 import BlogLosseAirpodKwijt from "./pages/BlogLosseAirpodKwijt";
 import BlogAirpodsCombineren from "./pages/BlogAirpodsCombineren";
 import BlogAirpodsOpnieuwPairen from "./pages/BlogAirpodsOpnieuwPairen";
+import FAQ from "./pages/FAQ";
+import Hulp from "./pages/Hulp";
 import NotFound from "./pages/NotFound";
 import WhatsAppWidget from "./components/layout/WhatsAppWidget";
 const queryClient = new QueryClient();
@@ -38,6 +40,8 @@ const App = () => (
           <Route path="/blog/losse-airpod-kwijt-vervangen" element={<BlogLosseAirpodKwijt />} />
           <Route path="/blog/airpods-combineren-per-generatie" element={<BlogAirpodsCombineren />} />
           <Route path="/blog/airpods-opnieuw-pairen" element={<BlogAirpodsOpnieuwPairen />} />
+          <Route path="/faq" element={<FAQ />} />
+          <Route path="/hulp" element={<Hulp />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

@@ -93,6 +93,9 @@ const ModelNumberCheck = ({ product, pro2Variant, gen4Variant }: ModelNumberChec
     return null;
   }
 
+  // Special layout for AirPods Pro 2 with comparison table
+  const isPro2 = product.model === 'airpods-pro-2';
+
   return (
     <Card className="p-5 border-amber-200 bg-amber-50/50 dark:bg-amber-950/20 dark:border-amber-800">
       <div className="flex items-start gap-3 mb-4">
@@ -100,31 +103,71 @@ const ModelNumberCheck = ({ product, pro2Variant, gen4Variant }: ModelNumberChec
         <h3 className="font-semibold text-foreground">Controleer je modelnummer</h3>
       </div>
       
-      <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
-        Het komt regelmatig voor dat klanten per ongeluk de verkeerde generatie bestellen. 
-        Check daarom eerst je modelnummer: ga naar <strong>Instellingen → Bluetooth</strong> op je iPhone, 
-        tik op het <strong>"i"-icoontje</strong> naast je AirPods en scroll naar <strong>Modelnummer</strong> (begint met "A"). 
-        Bestel alleen als jouw modelnummer hieronder staat. Weet je niet welke AirPods je hebt? 
-        Bekijk onze <Link to="/welke-airpods-heb-ik" className="text-primary hover:underline font-medium">hulppagina</Link>.
-      </p>
+      {isPro2 ? (
+        <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
+          <strong>Let op:</strong> de AirPods Pro 2 Lightning en USB-C versies werken <strong>niet</strong> onderling samen. 
+          Je kunt dus geen Lightning-oortje combineren met een USB-C-set (en andersom). 
+          Check je modelnummer via <strong>Instellingen → Bluetooth</strong> op je iPhone, 
+          tik op het <strong>"i"-icoontje</strong> naast je AirPods en scroll naar <strong>Modelnummer</strong> (begint met "A"). 
+          Controleer of jouw modelnummer overeenkomt met de juiste kolom hieronder. 
+          Weet je niet zeker welke AirPods je hebt? Bekijk onze <Link to="/welke-airpods-heb-ik" className="text-primary hover:underline font-medium">hulppagina</Link>.
+        </p>
+      ) : (
+        <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
+          Het komt regelmatig voor dat klanten per ongeluk de verkeerde generatie bestellen. 
+          Check daarom eerst je modelnummer: ga naar <strong>Instellingen → Bluetooth</strong> op je iPhone, 
+          tik op het <strong>"i"-icoontje</strong> naast je AirPods en scroll naar <strong>Modelnummer</strong> (begint met "A"). 
+          Bestel alleen als jouw modelnummer hieronder staat. Weet je niet welke AirPods je hebt? 
+          Bekijk onze <Link to="/welke-airpods-heb-ik" className="text-primary hover:underline font-medium">hulppagina</Link>.
+        </p>
+      )}
 
-      <div className="rounded-lg border border-border bg-background overflow-hidden">
-        <table className="w-full text-sm">
-          <tbody>
-            <tr className="border-b border-border">
-              <td className="py-2.5 px-3 text-muted-foreground">Linker AirPod</td>
-              <td className="py-2.5 px-3 font-mono font-medium text-foreground">{modelNumbers.left}</td>
-            </tr>
-            <tr className="border-b border-border">
-              <td className="py-2.5 px-3 text-muted-foreground">Rechter AirPod</td>
-              <td className="py-2.5 px-3 font-mono font-medium text-foreground">{modelNumbers.right}</td>
-            </tr>
-            <tr>
-              <td className="py-2.5 px-3 text-muted-foreground">Oplaadcase</td>
-              <td className="py-2.5 px-3 font-mono font-medium text-foreground">{modelNumbers.case}</td>
-            </tr>
-          </tbody>
-        </table>
+      <div className="rounded-lg border border-border bg-background overflow-x-auto">
+        {isPro2 ? (
+          <table className="w-full text-sm min-w-[300px]">
+            <thead>
+              <tr className="border-b border-border bg-muted/30">
+                <th className="py-2.5 px-3 text-left text-muted-foreground font-medium">Onderdeel</th>
+                <th className="py-2.5 px-3 text-left text-muted-foreground font-medium">Pro 2 Lightning</th>
+                <th className="py-2.5 px-3 text-left text-muted-foreground font-medium">Pro 2 USB-C</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b border-border">
+                <td className="py-2.5 px-3 text-muted-foreground">Linker AirPod</td>
+                <td className="py-2.5 px-3 font-mono font-medium text-foreground">A2699</td>
+                <td className="py-2.5 px-3 font-mono font-medium text-foreground">A3048</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2.5 px-3 text-muted-foreground">Rechter AirPod</td>
+                <td className="py-2.5 px-3 font-mono font-medium text-foreground">A2698</td>
+                <td className="py-2.5 px-3 font-mono font-medium text-foreground">A3047</td>
+              </tr>
+              <tr>
+                <td className="py-2.5 px-3 text-muted-foreground">Versie / aansluiting</td>
+                <td className="py-2.5 px-3 font-medium text-foreground">Lightning</td>
+                <td className="py-2.5 px-3 font-medium text-foreground">USB-C</td>
+              </tr>
+            </tbody>
+          </table>
+        ) : (
+          <table className="w-full text-sm">
+            <tbody>
+              <tr className="border-b border-border">
+                <td className="py-2.5 px-3 text-muted-foreground">Linker AirPod</td>
+                <td className="py-2.5 px-3 font-mono font-medium text-foreground">{modelNumbers.left}</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2.5 px-3 text-muted-foreground">Rechter AirPod</td>
+                <td className="py-2.5 px-3 font-mono font-medium text-foreground">{modelNumbers.right}</td>
+              </tr>
+              <tr>
+                <td className="py-2.5 px-3 text-muted-foreground">Oplaadcase</td>
+                <td className="py-2.5 px-3 font-mono font-medium text-foreground">{modelNumbers.case}</td>
+              </tr>
+            </tbody>
+          </table>
+        )}
       </div>
 
       <p className="text-xs text-muted-foreground mt-3">

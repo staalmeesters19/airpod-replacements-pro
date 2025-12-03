@@ -127,7 +127,7 @@ const ProductDetail = () => {
                       }`}
                     >
                       <span className="font-medium">Lightning</span>
-                      <p className="text-xs text-muted-foreground mt-1">Oudere versie</p>
+                      <p className="text-xs text-muted-foreground mt-1">Modelnummers: A2699 (links) / A2698 (rechts)</p>
                     </button>
                     <button
                       onClick={() => setPro2Variant('usb-c')}
@@ -138,7 +138,7 @@ const ProductDetail = () => {
                       }`}
                     >
                       <span className="font-medium">USB-C</span>
-                      <p className="text-xs text-muted-foreground mt-1">Nieuwere versie</p>
+                      <p className="text-xs text-muted-foreground mt-1">Modelnummers: A3048 (links) / A3047 (rechts)</p>
                     </button>
                   </div>
                 </div>

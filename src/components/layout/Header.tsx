@@ -1,23 +1,31 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Search, ShoppingCart, Menu, X } from 'lucide-react';
+import { Search, ShoppingCart, Menu, X, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
 import USPStrip from './USPStrip';
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
 
+  const airpodsSubmenu = [
+    { label: 'Alle losse AirPods', href: '/losse-airpods' },
+    { label: 'Linker AirPods', href: '/losse-airpods?kant=links' },
+    { label: 'Rechter AirPods', href: '/losse-airpods?kant=rechts' },
+  ];
+
   const navLinks = [
-    { label: 'Losse AirPods', href: '/losse-airpods' },
     { label: 'Losse oplaadcases', href: '/losse-oplaadcases' },
-    { label: 'Accessoires', href: '/accessoires' },
     { label: 'Welke AirPods heb ik?', href: '/welke-airpods' },
     { label: 'Blog', href: '/blog' },
     { label: 'Reviews', href: '/reviews' },
-    { label: 'Over ons', href: '/over-ons' },
-    { label: 'Klantenservice', href: '/klantenservice' },
   ];
 
   return (
@@ -35,6 +43,25 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-1">
+            {/* AirPods Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <button className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-secondary">
+                  Losse AirPods
+                  <ChevronDown className="h-4 w-4" />
+                </button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="start" className="w-48">
+                {airpodsSubmenu.map((item) => (
+                  <DropdownMenuItem key={item.href} asChild>
+                    <Link to={item.href} className="w-full cursor-pointer">
+                      {item.label}
+                    </Link>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -97,6 +124,23 @@ const Header = () => {
       {mobileMenuOpen && (
         <nav className="lg:hidden border-t border-border bg-background">
           <div className="container mx-auto px-4 py-4 space-y-1">
+            {/* AirPods section */}
+            <div className="px-3 py-2 text-xs font-semibold text-muted-foreground uppercase tracking-wider">
+              Losse AirPods
+            </div>
+            {airpodsSubmenu.map((item) => (
+              <Link
+                key={item.href}
+                to={item.href}
+                className="block px-3 py-2.5 text-base font-medium text-foreground hover:bg-secondary rounded-lg pl-6"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                {item.label}
+              </Link>
+            ))}
+            
+            <div className="border-t border-border my-2" />
+            
             {navLinks.map((link) => (
               <Link
                 key={link.href}

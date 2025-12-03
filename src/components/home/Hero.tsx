@@ -36,7 +36,7 @@ const Hero = () => {
             <Button asChild size="lg" className="text-base px-8 h-12 rounded-full bg-white text-foreground hover:bg-white/90">
               <Link to="/losse-airpods">Bekijk losse AirPods</Link>
             </Button>
-            <Button asChild variant="outline" size="lg" className="text-base px-8 h-12 rounded-full border-white/30 text-white hover:bg-white/10 hover:text-white">
+            <Button asChild variant="outline" size="lg" className="text-base px-8 h-12 rounded-full border-black/30 bg-black/80 text-white hover:bg-black/90 hover:text-white">
               <Link to="/welke-airpods">Welke AirPods heb ik?</Link>
             </Button>
           </div>

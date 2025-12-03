@@ -1,23 +1,40 @@
 import { useEffect, useRef } from "react";
 import { Star } from "lucide-react";
 
+// Declare Trustpilot on window for TypeScript
+declare global {
+  interface Window {
+    Trustpilot?: {
+      loadFromElement: (element: HTMLElement, useAsync?: boolean) => void;
+    };
+  }
+}
+
 const TrustpilotWidget = () => {
   const trustpilotRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Load Trustpilot widget script
-    const script = document.createElement("script");
-    script.src = "//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js";
-    script.async = true;
-    document.body.appendChild(script);
-
-    return () => {
-      // Cleanup script on unmount
-      const existingScript = document.querySelector('script[src*="trustpilot"]');
-      if (existingScript) {
-        existingScript.remove();
+    // Check if script already exists
+    const existingScript = document.querySelector('script[src*="trustpilot"]');
+    
+    if (!existingScript) {
+      // Load Trustpilot widget script
+      const script = document.createElement("script");
+      script.src = "//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js";
+      script.async = true;
+      script.onload = () => {
+        // Initialize Trustpilot widget after script loads
+        if (window.Trustpilot && trustpilotRef.current) {
+          window.Trustpilot.loadFromElement(trustpilotRef.current, true);
+        }
+      };
+      document.body.appendChild(script);
+    } else {
+      // Script already loaded, just initialize the widget
+      if (window.Trustpilot && trustpilotRef.current) {
+        window.Trustpilot.loadFromElement(trustpilotRef.current, true);
       }
-    };
+    }
   }, []);
 
   return (

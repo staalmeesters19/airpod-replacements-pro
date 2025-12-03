@@ -3,6 +3,7 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import Hero from '@/components/home/Hero';
 import USPStrip from '@/components/home/USPStrip';
+import PodFinder from '@/components/home/PodFinder';
 import ModelFinder from '@/components/home/ModelFinder';
 import ProductCard from '@/components/products/ProductCard';
 import ReviewsSection from '@/components/reviews/ReviewsSection';
@@ -29,6 +30,7 @@ const Index = () => {
         
         <main className="flex-1">
           <Hero />
+          <PodFinder />
           <USPStrip />
           <ModelFinder />
 

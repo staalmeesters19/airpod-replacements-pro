@@ -17,6 +17,7 @@ import {
 } from '@/components/ui/breadcrumb';
 import { mockProducts, conditionLabels, conditionDescriptions, Condition } from '@/data/mockProducts';
 import ProductCard from '@/components/products/ProductCard';
+import ModelNumberCheck from '@/components/products/ModelNumberCheck';
 
 const ProductDetail = () => {
   const { slug } = useParams();
@@ -104,6 +105,9 @@ const ProductDetail = () => {
                 <h1 className="text-3xl md:text-4xl font-bold mb-4">{product.name}</h1>
                 <p className="text-lg text-muted-foreground">{product.description}</p>
               </div>
+
+              {/* Model Number Check Warning */}
+              <ModelNumberCheck product={product} />
 
               {/* Condition Selector */}
               <div>

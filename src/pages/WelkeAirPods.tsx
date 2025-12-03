@@ -2,6 +2,7 @@ import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
+import PodFinder from '@/components/home/PodFinder';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { modelInfo } from '@/data/mockProducts';
@@ -59,6 +60,21 @@ const WelkeAirPods = () => {
               </p>
             </div>
           </div>
+
+          {/* PodFinder section */}
+          <section className="py-12 bg-secondary/10">
+            <div className="container mx-auto px-4 max-w-4xl">
+              <div className="text-center mb-8">
+                <h2 className="text-2xl font-bold mb-3">
+                  Vind direct jouw losse AirPod
+                </h2>
+                <p className="text-muted-foreground max-w-xl mx-auto">
+                  Selecteer hieronder je model en wat je mist. We brengen je direct naar de juiste AirPod of oplaadcase.
+                </p>
+              </div>
+              <PodFinder />
+            </div>
+          </section>
 
           {/* How to find model number */}
           <section className="py-16">

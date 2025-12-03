@@ -1,6 +1,13 @@
 import { Link } from 'react-router-dom';
 import { Card } from '@/components/ui/card';
 
+// Import product images for each generation
+import airpods2Left from '@/assets/products/airpods-2-left.png';
+import airpods3Left from '@/assets/products/airpods-3-left.png';
+import airpods4Left from '@/assets/products/airpods-4-left.png';
+import airpodsPro1Left from '@/assets/products/airpods-pro-1-left.png';
+import airpodsPro2Left from '@/assets/products/airpods-pro-2-left.png';
+
 const GenerationSelector = () => {
   const generations = [
     {
@@ -9,6 +16,7 @@ const GenerationSelector = () => {
       subtitle: '1e generatie',
       slug: 'airpods-1e-generatie',
       year: '2016',
+      image: airpods2Left, // Gen 1 looks same as Gen 2
     },
     {
       id: 'gen-2',
@@ -16,6 +24,7 @@ const GenerationSelector = () => {
       subtitle: '2e generatie',
       slug: 'airpods-2e-generatie',
       year: '2019',
+      image: airpods2Left,
     },
     {
       id: 'gen-3',
@@ -23,6 +32,7 @@ const GenerationSelector = () => {
       subtitle: '3e generatie',
       slug: 'airpods-3e-generatie',
       year: '2021',
+      image: airpods3Left,
     },
     {
       id: 'gen-4',
@@ -30,6 +40,7 @@ const GenerationSelector = () => {
       subtitle: '4e generatie',
       slug: 'airpods-4e-generatie',
       year: '2024',
+      image: airpods4Left,
     },
     {
       id: 'pro-1',
@@ -37,6 +48,7 @@ const GenerationSelector = () => {
       subtitle: '1e generatie',
       slug: 'airpods-pro-1e-generatie',
       year: '2019',
+      image: airpodsPro1Left,
     },
     {
       id: 'pro-2',
@@ -44,6 +56,7 @@ const GenerationSelector = () => {
       subtitle: '2e generatie',
       slug: 'airpods-pro-2e-generatie',
       year: '2022',
+      image: airpodsPro2Left,
     },
   ];
 
@@ -63,11 +76,13 @@ const GenerationSelector = () => {
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
           {generations.map((gen) => (
             <Link key={gen.id} to={`/model/${gen.slug}`} aria-label={`Bekijk losse ${gen.name} producten`}>
-              <Card className="group p-6 text-center hover:shadow-card hover:border-primary/30 transition-all duration-200 h-full">
-                <div className="w-16 h-16 mx-auto mb-4 bg-secondary rounded-full flex items-center justify-center">
-                  <span className="text-2xl font-semibold text-primary">
-                    {gen.name.includes('Pro') ? 'P' : gen.name.slice(-1)}
-                  </span>
+              <Card className="group p-4 text-center hover:shadow-card hover:border-primary/30 transition-all duration-200 h-full">
+                <div className="w-20 h-20 mx-auto mb-4 flex items-center justify-center">
+                  <img 
+                    src={gen.image} 
+                    alt={`${gen.name} ${gen.subtitle}`}
+                    className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-200"
+                  />
                 </div>
                 <h3 className="font-medium text-foreground mb-1 group-hover:text-primary transition-colors">
                   {gen.name}

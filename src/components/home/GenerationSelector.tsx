@@ -62,7 +62,7 @@ const GenerationSelector = () => {
 
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
           {generations.map((gen) => (
-            <Link key={gen.id} to={`/model/${gen.slug}`}>
+            <Link key={gen.id} to={`/model/${gen.slug}`} aria-label={`Bekijk losse ${gen.name} producten`}>
               <Card className="group p-6 text-center hover:shadow-card hover:border-primary/30 transition-all duration-200 h-full">
                 <div className="w-16 h-16 mx-auto mb-4 bg-secondary rounded-full flex items-center justify-center">
                   <span className="text-2xl font-semibold text-primary">

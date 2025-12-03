@@ -7,6 +7,9 @@ import Index from "./pages/Index";
 import ProductDetail from "./pages/ProductDetail";
 import Reviews from "./pages/Reviews";
 import WelkeAirPods from "./pages/WelkeAirPods";
+import LosseAirpods from "./pages/LosseAirpods";
+import LosseOplaadcases from "./pages/LosseOplaadcases";
+import ModelPage from "./pages/ModelPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -22,6 +25,9 @@ const App = () => (
           <Route path="/product/:slug" element={<ProductDetail />} />
           <Route path="/reviews" element={<Reviews />} />
           <Route path="/welke-airpods" element={<WelkeAirPods />} />
+          <Route path="/losse-airpods" element={<LosseAirpods />} />
+          <Route path="/losse-oplaadcases" element={<LosseOplaadcases />} />
+          <Route path="/model/:slug" element={<ModelPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

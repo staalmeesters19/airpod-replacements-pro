@@ -20,11 +20,13 @@ const Header = () => {
 
   return (
     <header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80 border-b border-border">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 md:px-6 lg:px-10">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <span className="text-xl font-semibold text-foreground">PairPods</span>
+          <Link to="/" className="flex items-center">
+            <span className="text-xl font-semibold text-foreground tracking-tight">
+              Re<span className="text-primary">Pair</span>Pods
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -33,7 +35,7 @@ const Header = () => {
               <Link
                 key={link.href}
                 to={link.href}
-                className="px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-accent"
+                className="px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-secondary"
               >
                 {link.label}
               </Link>
@@ -47,7 +49,7 @@ const Header = () => {
               <Input
                 type="search"
                 placeholder="Zoek model, kant of case..."
-                className="pl-10 w-64 bg-secondary/50 border-transparent focus:border-border"
+                className="pl-10 w-64 bg-secondary border-transparent focus:border-primary/30 focus:bg-background"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
               />
@@ -79,7 +81,7 @@ const Header = () => {
             <Input
               type="search"
               placeholder="Zoek model, kant of case..."
-              className="pl-10 bg-secondary/50 border-transparent focus:border-border"
+              className="pl-10 bg-secondary border-transparent focus:border-primary/30"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
             />
@@ -95,7 +97,7 @@ const Header = () => {
               <Link
                 key={link.href}
                 to={link.href}
-                className="block px-3 py-2 text-base font-medium text-foreground hover:bg-accent rounded-lg"
+                className="block px-3 py-2.5 text-base font-medium text-foreground hover:bg-secondary rounded-lg"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {link.label}

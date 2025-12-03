@@ -3,13 +3,15 @@ import { Instagram, MessageCircle } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer className="bg-secondary/30 border-t border-border mt-20">
-      <div className="container mx-auto px-4 py-12">
+    <footer className="bg-secondary/50 border-t border-border mt-20">
+      <div className="container mx-auto px-4 md:px-6 lg:px-10 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">PairPods</h3>
-            <p className="text-sm text-muted-foreground mb-2">voorheen Airpods-handel</p>
+            <h3 className="text-lg font-semibold mb-2">
+              Re<span className="text-primary">Pair</span>Pods
+            </h3>
+            <p className="text-sm text-muted-foreground mb-1">voorheen Airpods-handel</p>
             <p className="text-sm text-muted-foreground">
               Bekend van onze winkel in Amsterdam
             </p>
@@ -20,17 +22,17 @@ const Footer = () => {
             <h4 className="font-medium mb-4">Producten</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link to="/losse-airpods" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Link to="/losse-airpods" className="text-muted-foreground hover:text-primary transition-colors">
                   Losse AirPods
                 </Link>
               </li>
               <li>
-                <Link to="/losse-oplaadcases" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Link to="/losse-oplaadcases" className="text-muted-foreground hover:text-primary transition-colors">
                   Losse oplaadcases
                 </Link>
               </li>
               <li>
-                <Link to="/accessoires" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Link to="/accessoires" className="text-muted-foreground hover:text-primary transition-colors">
                   Accessoires
                 </Link>
               </li>
@@ -42,22 +44,22 @@ const Footer = () => {
             <h4 className="font-medium mb-4">Hulp</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link to="/welke-airpods" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Link to="/welke-airpods" className="text-muted-foreground hover:text-primary transition-colors">
                   Welke AirPods heb ik?
                 </Link>
               </li>
               <li>
-                <Link to="/reviews" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Link to="/reviews" className="text-muted-foreground hover:text-primary transition-colors">
                   Reviews
                 </Link>
               </li>
               <li>
-                <Link to="/over-ons" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Link to="/over-ons" className="text-muted-foreground hover:text-primary transition-colors">
                   Over ons
                 </Link>
               </li>
               <li>
-                <Link to="/klantenservice" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Link to="/klantenservice" className="text-muted-foreground hover:text-primary transition-colors">
                   Klantenservice
                 </Link>
               </li>
@@ -73,10 +75,10 @@ const Footer = () => {
               Zo: Gesloten
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
                 <Instagram className="h-5 w-5" />
               </a>
-              <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
                 <MessageCircle className="h-5 w-5" />
               </a>
             </div>
@@ -87,16 +89,16 @@ const Footer = () => {
         <div className="mt-12 pt-8 border-t border-border">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-sm text-muted-foreground">
-              © 2025 PairPods. Alle rechten voorbehouden.
+              © 2025 RePairPods. Alle rechten voorbehouden.
             </p>
             <div className="flex space-x-6 text-sm">
-              <Link to="/privacybeleid" className="text-muted-foreground hover:text-foreground transition-colors">
+              <Link to="/privacybeleid" className="text-muted-foreground hover:text-primary transition-colors">
                 Privacybeleid
               </Link>
-              <Link to="/algemene-voorwaarden" className="text-muted-foreground hover:text-foreground transition-colors">
+              <Link to="/algemene-voorwaarden" className="text-muted-foreground hover:text-primary transition-colors">
                 Algemene voorwaarden
               </Link>
-              <Link to="/cookiebeleid" className="text-muted-foreground hover:text-foreground transition-colors">
+              <Link to="/cookiebeleid" className="text-muted-foreground hover:text-primary transition-colors">
                 Cookiebeleid
               </Link>
             </div>

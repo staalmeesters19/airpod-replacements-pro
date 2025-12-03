@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
+import { RotateCcw } from 'lucide-react';
 import airpodLeft from '@/assets/airpod-left.png';
 import airpodRight from '@/assets/airpod-right.png';
 import airpodCase from '@/assets/airpod-case.png';
@@ -70,7 +71,6 @@ const airpodsData = {
   }
 };
 
-// Collect all unique model numbers
 const allIosModels = Array.from(new Set(
   Object.values(airpodsData.generations).flatMap(gen => gen.ios_models)
 )).sort();
@@ -126,9 +126,9 @@ const PodFinder = () => {
   const progressValue = (currentStep / 4) * 100;
 
   return (
-    <section className="py-12 md:py-16">
-      <div className="container mx-auto px-4">
-        <Card className="max-w-2xl mx-auto overflow-hidden border-border/50 shadow-lg">
+    <section className="py-12 md:py-16 bg-secondary/30">
+      <div className="container mx-auto px-4 md:px-6 lg:px-10">
+        <Card className="max-w-2xl mx-auto overflow-hidden border-border shadow-card bg-background">
           <Progress value={progressValue} className="h-1 rounded-none" />
           
           <div className="p-6 md:p-8">
@@ -146,23 +146,23 @@ const PodFinder = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                   <button
                     onClick={() => handlePartSelect('left')}
-                    className="flex flex-col items-center p-6 bg-background border-2 border-border rounded-xl hover:border-primary hover:bg-secondary/30 transition-all duration-300 group"
+                    className="flex flex-col items-center p-6 bg-background border border-border rounded-2xl hover:border-primary hover:bg-accent/30 transition-all duration-200 group"
                   >
-                    <img src={airpodLeft} alt="Linker AirPod" className="w-24 h-24 object-contain mb-4 group-hover:scale-110 transition-transform" />
+                    <img src={airpodLeft} alt="Linker AirPod" className="w-24 h-24 object-contain mb-4 group-hover:scale-105 transition-transform" />
                     <span className="font-medium text-foreground">Losse linker AirPod</span>
                   </button>
                   <button
                     onClick={() => handlePartSelect('right')}
-                    className="flex flex-col items-center p-6 bg-background border-2 border-border rounded-xl hover:border-primary hover:bg-secondary/30 transition-all duration-300 group"
+                    className="flex flex-col items-center p-6 bg-background border border-border rounded-2xl hover:border-primary hover:bg-accent/30 transition-all duration-200 group"
                   >
-                    <img src={airpodRight} alt="Rechter AirPod" className="w-24 h-24 object-contain mb-4 group-hover:scale-110 transition-transform" />
+                    <img src={airpodRight} alt="Rechter AirPod" className="w-24 h-24 object-contain mb-4 group-hover:scale-105 transition-transform" />
                     <span className="font-medium text-foreground">Losse rechter AirPod</span>
                   </button>
                   <button
                     onClick={() => handlePartSelect('case')}
-                    className="flex flex-col items-center p-6 bg-background border-2 border-border rounded-xl hover:border-primary hover:bg-secondary/30 transition-all duration-300 group"
+                    className="flex flex-col items-center p-6 bg-background border border-border rounded-2xl hover:border-primary hover:bg-accent/30 transition-all duration-200 group"
                   >
-                    <img src={airpodCase} alt="Oplaadcase" className="w-24 h-24 object-contain mb-4 group-hover:scale-110 transition-transform" />
+                    <img src={airpodCase} alt="Oplaadcase" className="w-24 h-24 object-contain mb-4 group-hover:scale-105 transition-transform" />
                     <span className="font-medium text-foreground">Losse oplaadcase</span>
                   </button>
                 </div>
@@ -181,7 +181,7 @@ const PodFinder = () => {
                 <img 
                   src={iphoneModelNumber} 
                   alt="Hoe je het modelnummer vindt in iPhone instellingen" 
-                  className="max-w-full h-auto max-h-64 mx-auto rounded-lg shadow-md mb-6 object-contain"
+                  className="max-w-full h-auto max-h-56 mx-auto rounded-xl shadow-soft mb-6 object-contain"
                 />
                 <div className="grid grid-cols-3 sm:grid-cols-4 gap-2">
                   {allIosModels.map(model => (
@@ -190,15 +190,20 @@ const PodFinder = () => {
                       variant="outline"
                       size="sm"
                       onClick={() => handleModelSelection(model, 'ios')}
-                      className="text-sm"
+                      className="text-sm rounded-lg hover:bg-accent hover:text-accent-foreground hover:border-primary"
                     >
                       {model}
                     </Button>
                   ))}
                 </div>
                 <div className="flex justify-center gap-4 mt-6">
-                  <Button variant="ghost" onClick={handleSkipStep}>Vraag overslaan</Button>
-                  <Button variant="ghost" onClick={handleReset}>Opnieuw beginnen</Button>
+                  <Button variant="ghost" onClick={handleSkipStep} className="text-muted-foreground">
+                    Vraag overslaan
+                  </Button>
+                  <Button variant="ghost" onClick={handleReset} className="text-muted-foreground">
+                    <RotateCcw className="w-4 h-4 mr-2" />
+                    Opnieuw
+                  </Button>
                 </div>
               </div>
             )}
@@ -219,15 +224,20 @@ const PodFinder = () => {
                       variant="outline"
                       size="sm"
                       onClick={() => handleModelSelection(model, 'case')}
-                      className="text-sm"
+                      className="text-sm rounded-lg hover:bg-accent hover:text-accent-foreground hover:border-primary"
                     >
                       {model}
                     </Button>
                   ))}
                 </div>
                 <div className="flex justify-center gap-4 mt-6">
-                  <Button variant="ghost" onClick={handleSkipStep}>Vraag overslaan</Button>
-                  <Button variant="ghost" onClick={handleReset}>Opnieuw beginnen</Button>
+                  <Button variant="ghost" onClick={handleSkipStep} className="text-muted-foreground">
+                    Vraag overslaan
+                  </Button>
+                  <Button variant="ghost" onClick={handleReset} className="text-muted-foreground">
+                    <RotateCcw className="w-4 h-4 mr-2" />
+                    Opnieuw
+                  </Button>
                 </div>
               </div>
             )}
@@ -248,14 +258,17 @@ const PodFinder = () => {
                       variant="outline"
                       size="sm"
                       onClick={() => handleModelSelection(model, 'bud', side)}
-                      className="text-sm"
+                      className="text-sm rounded-lg hover:bg-accent hover:text-accent-foreground hover:border-primary"
                     >
                       {model} ({side})
                     </Button>
                   ))}
                 </div>
                 <div className="flex justify-center mt-6">
-                  <Button variant="ghost" onClick={handleReset}>Opnieuw beginnen</Button>
+                  <Button variant="ghost" onClick={handleReset} className="text-muted-foreground">
+                    <RotateCcw className="w-4 h-4 mr-2" />
+                    Opnieuw beginnen
+                  </Button>
                 </div>
               </div>
             )}

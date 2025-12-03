@@ -49,18 +49,18 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
+                <Link to="/faq" className="text-muted-foreground hover:text-primary transition-colors">
+                  Veelgestelde vragen
+                </Link>
+              </li>
+              <li>
+                <Link to="/hulp" className="text-muted-foreground hover:text-primary transition-colors">
+                  Hulp & ondersteuning
+                </Link>
+              </li>
+              <li>
                 <Link to="/reviews" className="text-muted-foreground hover:text-primary transition-colors">
                   Reviews
-                </Link>
-              </li>
-              <li>
-                <Link to="/over-ons" className="text-muted-foreground hover:text-primary transition-colors">
-                  Over ons
-                </Link>
-              </li>
-              <li>
-                <Link to="/klantenservice" className="text-muted-foreground hover:text-primary transition-colors">
-                  Klantenservice
                 </Link>
               </li>
             </ul>

@@ -1,13 +1,13 @@
-import { useEffect, useRef } from 'react';
-import { Star } from 'lucide-react';
+import { useEffect, useRef } from "react";
+import { Star } from "lucide-react";
 
 const TrustpilotWidget = () => {
   const trustpilotRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     // Load Trustpilot widget script
-    const script = document.createElement('script');
-    script.src = '//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js';
+    const script = document.createElement("script");
+    script.src = "//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js";
     script.async = true;
     document.body.appendChild(script);
 
@@ -24,9 +24,7 @@ const TrustpilotWidget = () => {
     <section className="py-16 md:py-24 bg-secondary/20">
       <div className="container mx-auto px-4 md:px-6 lg:px-10">
         <div className="text-center mb-12">
-          <h2 className="text-2xl md:text-3xl font-semibold mb-4 text-foreground">
-            Wat klanten zeggen
-          </h2>
+          <h2 className="text-2xl md:text-3xl font-semibold mb-4 text-foreground">Wat klanten zeggen</h2>
           <p className="text-base text-muted-foreground max-w-2xl mx-auto">
             Meer dan 300 tevreden klanten gingen je voor. Lees hun ervaringen op Trustpilot.
           </p>
@@ -35,21 +33,21 @@ const TrustpilotWidget = () => {
         {/* Trustpilot Widget Container */}
         <div className="max-w-4xl mx-auto">
           {/* Trustpilot Carousel Widget */}
-          <div 
+          <div
             ref={trustpilotRef}
-            className="trustpilot-widget" 
-            data-locale="nl-NL" 
+            className="trustpilot-widget"
+            data-locale="nl-NL"
             data-template-id="54ad5defc6454f065c28af8b"
-            data-businessunit-id="YOUR_TRUSTPILOT_BUSINESS_ID"
-            data-style-height="240px" 
+            data-businessunit-id="643acb26841f1ac4a867f126"
+            data-style-height="240px"
             data-style-width="100%"
             data-theme="light"
             data-stars="4,5"
             data-review-languages="nl"
           >
-            <a 
-              href="https://nl.trustpilot.com/review/repairpods.nl" 
-              target="_blank" 
+            <a
+              href="https://nl.trustpilot.com/review/repairpods.nl"
+              target="_blank"
               rel="noopener noreferrer"
               className="block"
             >
@@ -67,8 +65,8 @@ const TrustpilotWidget = () => {
               </div>
               <p className="text-lg font-semibold text-foreground mb-2">Uitstekend beoordeeld</p>
               <p className="text-muted-foreground">
-                Bekijk onze reviews op{' '}
-                <a 
+                Bekijk onze reviews op{" "}
+                <a
                   href="https://nl.trustpilot.com/review/repairpods.nl"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -91,12 +89,8 @@ const TrustpilotWidget = () => {
             </div>
             <span>4.8/5 gemiddeld</span>
           </div>
-          <div className="text-sm text-muted-foreground">
-            300+ beoordelingen
-          </div>
-          <div className="text-sm text-muted-foreground">
-            98% aanraders
-          </div>
+          <div className="text-sm text-muted-foreground">300+ beoordelingen</div>
+          <div className="text-sm text-muted-foreground">98% aanraders</div>
         </div>
       </div>
     </section>

@@ -158,7 +158,7 @@ const ProductDetail = () => {
                       }`}
                     >
                       <span className="font-medium">Zonder ANC</span>
-                      <p className="text-xs text-muted-foreground mt-1">Standaard versie</p>
+                      <p className="text-xs text-muted-foreground mt-1">Modelnummers: A3053 (links) / A3050 (rechts)</p>
                     </button>
                     <button
                       onClick={() => setGen4Variant('met-anc')}
@@ -169,7 +169,7 @@ const ProductDetail = () => {
                       }`}
                     >
                       <span className="font-medium">Met ANC</span>
-                      <p className="text-xs text-muted-foreground mt-1">Active Noise Cancelling</p>
+                      <p className="text-xs text-muted-foreground mt-1">Modelnummers: A3056 (links) / A3055 (rechts)</p>
                     </button>
                   </div>
                 </div>

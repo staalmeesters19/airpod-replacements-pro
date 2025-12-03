@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useState, useMemo } from 'react';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import { ShoppingCart, Check, Package, Shield, TruckIcon } from 'lucide-react';
 import Header from '@/components/layout/Header';
@@ -21,7 +21,25 @@ import ModelNumberCheck, { Pro2Variant, Gen4Variant } from '@/components/product
 
 const ProductDetail = () => {
   const { slug } = useParams();
+  const navigate = useNavigate();
   const product = mockProducts.find((p) => p.slug === slug);
+  
+  // Find case variants (Lightning/MagSafe) for same model
+  const caseVariants = useMemo(() => {
+    if (!product || product.type !== 'case') return [];
+    return mockProducts.filter(
+      (p) => p.type === 'case' && p.model === product.model
+    );
+  }, [product]);
+  
+  const hasCaseVariants = caseVariants.length > 1;
+  
+  const getCaseVariantLabel = (slug: string) => {
+    if (slug.includes('magsafe')) return 'MagSafe';
+    if (slug.includes('lightning')) return 'Lightning';
+    if (slug.includes('usbc')) return 'USB-C';
+    return 'Standaard';
+  };
   const [selectedCondition, setSelectedCondition] = useState<Condition | null>(null);
   const [pro2Variant, setPro2Variant] = useState<Pro2Variant>('lightning');
   const [gen4Variant, setGen4Variant] = useState<Gen4Variant>('zonder-anc');
@@ -112,6 +130,28 @@ const ProductDetail = () => {
                 <h1 className="text-3xl md:text-4xl font-bold mb-4">{product.name}</h1>
                 <p className="text-lg text-muted-foreground">{product.description}</p>
               </div>
+
+              {/* Case Variant Selector (MagSafe/Lightning) */}
+              {hasCaseVariants && (
+                <div>
+                  <h3 className="font-semibold mb-3">Kies je variant:</h3>
+                  <div className="flex gap-3">
+                    {caseVariants.map((caseProduct) => (
+                      <button
+                        key={caseProduct.id}
+                        onClick={() => navigate(`/product/${caseProduct.slug}`)}
+                        className={`px-4 py-2 rounded-full border-2 text-sm font-medium transition-all ${
+                          caseProduct.slug === product.slug
+                            ? 'border-primary bg-primary text-primary-foreground'
+                            : 'border-border bg-secondary/50 text-muted-foreground hover:border-primary/50'
+                        }`}
+                      >
+                        {getCaseVariantLabel(caseProduct.slug)}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
 
               {/* Variant Selector for Pro 2 */}
               {isPro2 && (

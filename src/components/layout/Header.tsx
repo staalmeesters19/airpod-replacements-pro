@@ -11,34 +11,43 @@ import {
 } from '@/components/ui/dropdown-menu';
 import USPStrip from './USPStrip';
 
-const generations = [
-  { label: '1e generatie', slug: '1e-generatie' },
-  { label: '2e generatie', slug: '2e-generatie' },
-  { label: '3e generatie', slug: '3e-generatie' },
-  { label: '4e generatie', slug: '4e-generatie' },
-  { label: 'Pro 1', slug: 'pro-1' },
-  { label: 'Pro 2', slug: 'pro-2' },
-  { label: 'Pro 3', slug: 'pro-3' },
-];
-
 const categoryDropdowns = [
   {
     label: 'Linker AirPods',
-    baseUrl: '/collections/linker-airpods',
     allLabel: 'Alle linker AirPods',
-    allUrl: '/losse-airpods?side=left',
+    allUrl: '/losse-airpods?kant=links',
+    items: [
+      { label: '2e generatie', url: '/product/airpods-2e-generatie-links' },
+      { label: '3e generatie', url: '/product/airpods-3e-generatie-links' },
+      { label: '4e generatie', url: '/product/airpods-4e-generatie-links' },
+      { label: 'Pro 1', url: '/product/airpods-pro-1e-generatie-links' },
+      { label: 'Pro 2', url: '/product/airpods-pro-2e-generatie-links' },
+    ],
   },
   {
     label: 'Rechter AirPods',
-    baseUrl: '/collections/rechter-airpods',
     allLabel: 'Alle rechter AirPods',
-    allUrl: '/losse-airpods?side=right',
+    allUrl: '/losse-airpods?kant=rechts',
+    items: [
+      { label: '2e generatie', url: '/product/airpods-2e-generatie-rechts' },
+      { label: '3e generatie', url: '/product/airpods-3e-generatie-rechts' },
+      { label: '4e generatie', url: '/product/airpods-4e-generatie-rechts' },
+      { label: 'Pro 1', url: '/product/airpods-pro-1e-generatie-rechts' },
+      { label: 'Pro 2', url: '/product/airpods-pro-2e-generatie-rechts' },
+    ],
   },
   {
     label: 'Losse oplaadcases',
-    baseUrl: '/collections/oplaadcase-airpods',
     allLabel: 'Alle oplaadcases',
     allUrl: '/losse-oplaadcases',
+    items: [
+      { label: '2e generatie', url: '/product/airpods-2e-generatie-oplaadcase' },
+      { label: '3e generatie', url: '/product/airpods-3e-generatie-oplaadcase' },
+      { label: '4e generatie', url: '/product/airpods-4e-generatie-oplaadcase' },
+      { label: 'Pro 1', url: '/product/airpods-pro-1e-generatie-oplaadcase' },
+      { label: 'Pro 2 (Lightning)', url: '/product/airpods-pro-2e-generatie-oplaadcase-lightning' },
+      { label: 'Pro 2 (USB-C)', url: '/product/airpods-pro-2e-generatie-oplaadcase-usbc' },
+    ],
   },
 ];
 
@@ -91,13 +100,13 @@ const Header = () => {
                       </Link>
                     </DropdownMenuItem>
                     <div className="my-1 h-px bg-border" />
-                    {generations.map((gen) => (
-                      <DropdownMenuItem key={gen.slug} asChild>
+                    {category.items.map((item) => (
+                      <DropdownMenuItem key={item.url} asChild>
                         <Link 
-                          to={`${category.baseUrl}-${gen.slug}`} 
+                          to={item.url} 
                           className="w-full cursor-pointer"
                         >
-                          {gen.label}
+                          {item.label}
                         </Link>
                       </DropdownMenuItem>
                     ))}
@@ -192,14 +201,14 @@ const Header = () => {
                         {category.allLabel}
                       </Link>
                       <div className="my-1 mx-3 h-px bg-border" />
-                      {generations.map((gen) => (
+                      {category.items.map((item) => (
                         <Link
-                          key={gen.slug}
-                          to={`${category.baseUrl}-${gen.slug}`}
+                          key={item.url}
+                          to={item.url}
                           className="block px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-secondary/50 rounded-lg"
                           onClick={() => setMobileMenuOpen(false)}
                         >
-                          {gen.label}
+                          {item.label}
                         </Link>
                       ))}
                     </div>

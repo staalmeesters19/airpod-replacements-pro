@@ -1,6 +1,6 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import { Filter } from 'lucide-react';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
@@ -49,9 +49,23 @@ const faqItems = [
 ];
 
 const LosseAirpods = () => {
+  const [searchParams] = useSearchParams();
   const [selectedSide, setSelectedSide] = useState<string>('all');
   const [selectedModel, setSelectedModel] = useState<string>('all');
   const [sortBy, setSortBy] = useState<string>('price-asc');
+
+  // Read URL parameters on mount
+  useEffect(() => {
+    const kantParam = searchParams.get('kant');
+    const sideParam = searchParams.get('side');
+    
+    // Support both ?kant=links/rechts and ?side=left/right
+    if (kantParam === 'links' || sideParam === 'left') {
+      setSelectedSide('left');
+    } else if (kantParam === 'rechts' || sideParam === 'right') {
+      setSelectedSide('right');
+    }
+  }, [searchParams]);
 
   const earbuds = useMemo(() => {
     let filtered = mockProducts.filter((p) => p.type === 'earbud');
@@ -232,14 +246,14 @@ const LosseAirpods = () => {
 
           <section className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6">
             <Link 
-              to="/losse-airpods?side=left" 
+              to="/losse-airpods?kant=links" 
               className="p-6 bg-secondary/30 rounded-xl hover:bg-secondary/50 transition-colors"
             >
               <h3 className="font-semibold mb-2">Linker AirPod</h3>
               <p className="text-sm text-muted-foreground">Bekijk alle linker AirPods per generatie</p>
             </Link>
             <Link 
-              to="/losse-airpods?side=right" 
+              to="/losse-airpods?kant=rechts" 
               className="p-6 bg-secondary/30 rounded-xl hover:bg-secondary/50 transition-colors"
             >
               <h3 className="font-semibold mb-2">Rechter AirPod</h3>

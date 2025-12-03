@@ -213,7 +213,7 @@ export const mockProducts: Product[] = [
   {
     id: 'ap3-case-lightning',
     slug: 'airpods-3e-generatie-oplaadcase-lightning',
-    name: 'Losse oplaadcase – AirPods 3 (Lightning)',
+    name: 'Losse oplaadcase – AirPods 3e generatie',
     model: 'airpods-3',
     type: 'case',
     variants: [
@@ -231,7 +231,7 @@ export const mockProducts: Product[] = [
   {
     id: 'ap3-case-magsafe',
     slug: 'airpods-3e-generatie-oplaadcase-magsafe',
-    name: 'Losse oplaadcase – AirPods 3 (MagSafe)',
+    name: 'Losse oplaadcase – AirPods 3e generatie',
     model: 'airpods-3',
     type: 'case',
     variants: [
@@ -405,7 +405,7 @@ export const mockProducts: Product[] = [
   {
     id: 'app1-case-lightning',
     slug: 'airpods-pro-1e-generatie-oplaadcase-lightning',
-    name: 'Losse oplaadcase – AirPods Pro 1 (Lightning)',
+    name: 'Losse oplaadcase – AirPods Pro 1e generatie',
     model: 'airpods-pro-1',
     type: 'case',
     variants: [
@@ -423,7 +423,7 @@ export const mockProducts: Product[] = [
   {
     id: 'app1-case-magsafe',
     slug: 'airpods-pro-1e-generatie-oplaadcase-magsafe',
-    name: 'Losse oplaadcase – AirPods Pro 1 (MagSafe)',
+    name: 'Losse oplaadcase – AirPods Pro 1e generatie',
     model: 'airpods-pro-1',
     type: 'case',
     variants: [
@@ -481,7 +481,7 @@ export const mockProducts: Product[] = [
   {
     id: 'app2-case-lightning',
     slug: 'airpods-pro-2e-generatie-oplaadcase-lightning',
-    name: 'Losse oplaadcase – AirPods Pro 2 (Lightning)',
+    name: 'Losse oplaadcase – AirPods Pro 2e generatie',
     model: 'airpods-pro-2',
     type: 'case',
     variants: [
@@ -539,7 +539,7 @@ export const mockProducts: Product[] = [
   {
     id: 'app2-case-usbc',
     slug: 'airpods-pro-2e-generatie-oplaadcase-usbc',
-    name: 'Losse oplaadcase – AirPods Pro 2 (USB-C)',
+    name: 'Losse oplaadcase – AirPods Pro 2e generatie',
     model: 'airpods-pro-2-usbc',
     type: 'case',
     variants: [

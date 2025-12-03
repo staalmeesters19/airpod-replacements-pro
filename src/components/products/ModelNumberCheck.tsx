@@ -1,4 +1,5 @@
 import { AlertTriangle } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { Card } from '@/components/ui/card';
 import { Product } from '@/data/mockProducts';
 
@@ -85,17 +86,12 @@ const ModelNumberCheck = ({ product }: ModelNumberCheckProps) => {
         Het komt regelmatig voor dat klanten per ongeluk de verkeerde generatie bestellen. 
         Check daarom eerst je modelnummer: ga naar <strong>Instellingen → Bluetooth</strong> op je iPhone, 
         tik op het <strong>"i"-icoontje</strong> naast je AirPods en scroll naar <strong>Modelnummer</strong> (begint met "A"). 
-        Bestel alleen als jouw modelnummer hieronder staat.
+        Bestel alleen als jouw modelnummer hieronder staat. Weet je niet welke AirPods je hebt? 
+        Bekijk onze <Link to="/welke-airpods-heb-ik" className="text-primary hover:underline font-medium">hulppagina</Link>.
       </p>
 
       <div className="rounded-lg border border-border bg-background overflow-hidden">
         <table className="w-full text-sm">
-          <thead>
-            <tr className="border-b border-border bg-muted/50">
-              <th className="text-left py-2.5 px-3 font-medium text-foreground">Onderdeel</th>
-              <th className="text-left py-2.5 px-3 font-medium text-foreground">Modelnummer</th>
-            </tr>
-          </thead>
           <tbody>
             <tr className="border-b border-border">
               <td className="py-2.5 px-3 text-muted-foreground">Linker AirPod</td>

@@ -63,6 +63,7 @@ const Header = () => {
     { label: 'Welke AirPods heb ik?', href: '/welke-airpods' },
     { label: 'Blog', href: '/blog' },
     { label: 'Reviews', href: '/reviews' },
+    { label: 'Over ons', href: '/over-ons' },
   ];
 
   const toggleMobileSubmenu = (label: string) => {

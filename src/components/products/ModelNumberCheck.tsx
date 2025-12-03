@@ -93,8 +93,10 @@ const ModelNumberCheck = ({ product, pro2Variant, gen4Variant }: ModelNumberChec
     return null;
   }
 
-  // Special layout for AirPods Pro 2 with comparison table
+  // Special layout for AirPods Pro 2 and AirPods 4 with comparison tables
   const isPro2 = product.model === 'airpods-pro-2';
+  const isGen4 = product.model === 'airpods-4';
+  const hasComparisonTable = isPro2 || isGen4;
 
   return (
     <Card className="p-5 border-amber-200 bg-amber-50/50 dark:bg-amber-950/20 dark:border-amber-800">
@@ -107,6 +109,14 @@ const ModelNumberCheck = ({ product, pro2Variant, gen4Variant }: ModelNumberChec
         <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
           <strong>Let op:</strong> de AirPods Pro 2 Lightning en USB-C versies werken <strong>niet</strong> onderling samen. 
           Je kunt dus geen Lightning-oortje combineren met een USB-C-set (en andersom). 
+          Check je modelnummer via <strong>Instellingen → Bluetooth</strong> op je iPhone, 
+          tik op het <strong>"i"-icoontje</strong> naast je AirPods en scroll naar <strong>Modelnummer</strong> (begint met "A"). 
+          Controleer of jouw modelnummer overeenkomt met de juiste kolom hieronder. 
+          Weet je niet zeker welke AirPods je hebt? Bekijk onze pagina <Link to="/welke-airpods-heb-ik" className="text-primary hover:underline font-medium">Welke AirPods heb ik?</Link>
+        </p>
+      ) : isGen4 ? (
+        <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
+          <strong>Let op:</strong> de AirPods 4 zonder ANC en met ANC zijn <strong>niet</strong> onderling uitwisselbaar. 
           Check je modelnummer via <strong>Instellingen → Bluetooth</strong> op je iPhone, 
           tik op het <strong>"i"-icoontje</strong> naast je AirPods en scroll naar <strong>Modelnummer</strong> (begint met "A"). 
           Controleer of jouw modelnummer overeenkomt met de juiste kolom hieronder. 
@@ -147,6 +157,33 @@ const ModelNumberCheck = ({ product, pro2Variant, gen4Variant }: ModelNumberChec
                 <td className="py-2.5 px-3 text-muted-foreground">Versie / aansluiting</td>
                 <td className="py-2.5 px-3 font-medium text-foreground">Lightning</td>
                 <td className="py-2.5 px-3 font-medium text-foreground">USB-C</td>
+              </tr>
+            </tbody>
+          </table>
+        ) : isGen4 ? (
+          <table className="w-full text-sm min-w-[300px]">
+            <thead>
+              <tr className="border-b border-border bg-muted/30">
+                <th className="py-2.5 px-3 text-left text-muted-foreground font-medium">Onderdeel</th>
+                <th className="py-2.5 px-3 text-left text-muted-foreground font-medium">Zonder ANC</th>
+                <th className="py-2.5 px-3 text-left text-muted-foreground font-medium">Met ANC</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b border-border">
+                <td className="py-2.5 px-3 text-muted-foreground">Linker AirPod</td>
+                <td className="py-2.5 px-3 font-mono font-medium text-foreground">A3053</td>
+                <td className="py-2.5 px-3 font-mono font-medium text-foreground">A3056</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="py-2.5 px-3 text-muted-foreground">Rechter AirPod</td>
+                <td className="py-2.5 px-3 font-mono font-medium text-foreground">A3050</td>
+                <td className="py-2.5 px-3 font-mono font-medium text-foreground">A3055</td>
+              </tr>
+              <tr>
+                <td className="py-2.5 px-3 text-muted-foreground">Variant</td>
+                <td className="py-2.5 px-3 font-medium text-foreground">Zonder ANC</td>
+                <td className="py-2.5 px-3 font-medium text-foreground">Met ANC</td>
               </tr>
             </tbody>
           </table>

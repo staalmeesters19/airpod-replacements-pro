@@ -17,12 +17,12 @@ const Index = () => {
   return (
     <>
       <Helmet>
-        <title>Losse AirPods en Oplaadcases Kopen | PairPods</title>
+        <title>Losse AirPods en Oplaadcases Kopen | RePairPods</title>
         <meta
           name="description"
-          content="Vervang je verloren AirPod of oplaadcase zonder een hele nieuwe set te kopen. 100% originele Apple producten, morgen in huis. Voorheen Airpods-handel."
+          content="Vervang je verloren AirPod of oplaadcase zonder een hele nieuwe set te kopen. 100% originele Apple onderdelen, morgen in huis. Voorheen Airpods-handel."
         />
-        <meta name="keywords" content="losse airpods, airpod links, airpod rechts, oplaadcase, airpods vervangen" />
+        <meta name="keywords" content="losse airpods, airpod links, airpod rechts, oplaadcase, airpods vervangen, repairpods" />
       </Helmet>
 
       <div className="min-h-screen flex flex-col">

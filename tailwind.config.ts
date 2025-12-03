@@ -14,13 +14,14 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+        sans: ['Inter', '-apple-system', 'system-ui', 'BlinkMacSystemFont', 'SF Pro Text', 'sans-serif'],
       },
       boxShadow: {
-        'sm': 'var(--shadow-sm)',
-        'md': 'var(--shadow-md)',
-        'lg': 'var(--shadow-lg)',
-        'xl': 'var(--shadow-xl)',
+        'soft': '0 2px 8px rgba(0, 0, 0, 0.04)',
+        'card': '0 4px 12px rgba(0, 0, 0, 0.05)',
+      },
+      maxWidth: {
+        'content': '1200px',
       },
       colors: {
         border: "hsl(var(--border))",

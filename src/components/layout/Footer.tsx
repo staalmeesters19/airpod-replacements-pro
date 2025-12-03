@@ -85,8 +85,19 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Legal */}
+        {/* Trust info */}
         <div className="mt-12 pt-8 border-t border-border">
+          <div className="flex flex-wrap justify-center gap-6 mb-6 text-sm text-muted-foreground">
+            <span>🇳🇱 Nederlands bedrijf</span>
+            <span>📍 Amsterdam</span>
+            <span>KvK: 94891494</span>
+            <span>⭐ 4.9/5 Trustpilot</span>
+            <span>🏆 #1 Electronicazaak NL</span>
+          </div>
+        </div>
+
+        {/* Legal */}
+        <div className="pt-6 border-t border-border">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-sm text-muted-foreground">
               © 2025 RePairPods. Alle rechten voorbehouden.

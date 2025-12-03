@@ -1,22 +1,26 @@
-import { Shield, Truck, Star, MapPin } from 'lucide-react';
+import { Shield, Truck, Star, MapPin, Award } from 'lucide-react';
 
 const USPStrip = () => {
   const usps = [
     {
-      icon: Shield,
-      text: '100% originele Apple-onderdelen',
-    },
-    {
-      icon: Truck,
-      text: 'Vandaag besteld, morgen in huis',
+      icon: Award,
+      text: '#1 Electronicazaak van NL op Trustpilot',
     },
     {
       icon: Star,
-      text: '300+ 5-sterren reviews',
+      text: '4.9/5 sterren • 1000+ tevreden klanten',
+    },
+    {
+      icon: Shield,
+      text: '100% originele Apple • Tot 12 mnd garantie',
+    },
+    {
+      icon: Truck,
+      text: 'Binnen 24 uur verzonden • €4,95',
     },
     {
       icon: MapPin,
-      text: 'Afhalen en testen mogelijk in Amsterdam',
+      text: 'Afhalen mogelijk in Amsterdam',
     },
   ];
 

@@ -8,6 +8,7 @@ import MissingSide from '@/components/home/MissingSide';
 import GenerationSelector from '@/components/home/GenerationSelector';
 import CaseSelector from '@/components/home/CaseSelector';
 import TrustpilotWidget from '@/components/home/TrustpilotWidget';
+import TrustBadges from '@/components/home/TrustBadges';
 
 const Index = () => {
   return (
@@ -38,8 +39,8 @@ const Index = () => {
             },
             "aggregateRating": {
               "@type": "AggregateRating",
-              "ratingValue": "4.8",
-              "reviewCount": "300"
+              "ratingValue": "4.9",
+              "reviewCount": "1000"
             },
             "sameAs": [
               "https://nl.trustpilot.com/review/repairpods.nl"
@@ -72,6 +73,9 @@ const Index = () => {
           
           {/* Trustpilot Reviews */}
           <TrustpilotWidget />
+          
+          {/* Trust Badges & Payment Methods */}
+          <TrustBadges />
         </main>
 
         <Footer />

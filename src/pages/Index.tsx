@@ -30,8 +30,8 @@ const Index = () => {
         
         <main className="flex-1">
           <Hero />
-          <PodFinder />
           <USPStrip />
+          <PodFinder />
           <ModelFinder />
 
           {/* Losse AirPods Section */}

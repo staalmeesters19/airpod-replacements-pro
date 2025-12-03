@@ -17,12 +17,14 @@ import {
 } from '@/components/ui/breadcrumb';
 import { mockProducts, conditionLabels, conditionDescriptions, Condition } from '@/data/mockProducts';
 import ProductCard from '@/components/products/ProductCard';
-import ModelNumberCheck from '@/components/products/ModelNumberCheck';
+import ModelNumberCheck, { Pro2Variant, Gen4Variant } from '@/components/products/ModelNumberCheck';
 
 const ProductDetail = () => {
   const { slug } = useParams();
   const product = mockProducts.find((p) => p.slug === slug);
   const [selectedCondition, setSelectedCondition] = useState<Condition | null>(null);
+  const [pro2Variant, setPro2Variant] = useState<Pro2Variant>('lightning');
+  const [gen4Variant, setGen4Variant] = useState<Gen4Variant>('zonder-anc');
 
   if (!product) {
     return (
@@ -49,6 +51,11 @@ const ProductDetail = () => {
   const relatedProducts = mockProducts
     .filter((p) => p.model === product.model && p.id !== product.id)
     .slice(0, 3);
+
+  // Check if product needs variant selector
+  const isPro2 = product.model === 'airpods-pro-2';
+  const isGen4 = product.model === 'airpods-4';
+  const needsVariantSelector = isPro2 || isGen4;
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -105,6 +112,77 @@ const ProductDetail = () => {
                 <h1 className="text-3xl md:text-4xl font-bold mb-4">{product.name}</h1>
                 <p className="text-lg text-muted-foreground">{product.description}</p>
               </div>
+
+              {/* Variant Selector for Pro 2 */}
+              {isPro2 && (
+                <div>
+                  <h3 className="font-semibold mb-3">Welke variant heb je?</h3>
+                  <div className="grid grid-cols-2 gap-3">
+                    <button
+                      onClick={() => setPro2Variant('lightning')}
+                      className={`p-4 rounded-xl border-2 text-left transition-all ${
+                        pro2Variant === 'lightning'
+                          ? 'border-primary bg-primary/5'
+                          : 'border-border hover:border-primary/50'
+                      }`}
+                    >
+                      <span className="font-medium">Lightning</span>
+                      <p className="text-xs text-muted-foreground mt-1">Oudere versie</p>
+                    </button>
+                    <button
+                      onClick={() => setPro2Variant('usb-c')}
+                      className={`p-4 rounded-xl border-2 text-left transition-all ${
+                        pro2Variant === 'usb-c'
+                          ? 'border-primary bg-primary/5'
+                          : 'border-border hover:border-primary/50'
+                      }`}
+                    >
+                      <span className="font-medium">USB-C</span>
+                      <p className="text-xs text-muted-foreground mt-1">Nieuwere versie</p>
+                    </button>
+                  </div>
+                </div>
+              )}
+
+              {/* Variant Selector for Gen 4 */}
+              {isGen4 && (
+                <div>
+                  <h3 className="font-semibold mb-3">Welke variant heb je?</h3>
+                  <div className="grid grid-cols-2 gap-3">
+                    <button
+                      onClick={() => setGen4Variant('zonder-anc')}
+                      className={`p-4 rounded-xl border-2 text-left transition-all ${
+                        gen4Variant === 'zonder-anc'
+                          ? 'border-primary bg-primary/5'
+                          : 'border-border hover:border-primary/50'
+                      }`}
+                    >
+                      <span className="font-medium">Zonder ANC</span>
+                      <p className="text-xs text-muted-foreground mt-1">Standaard versie</p>
+                    </button>
+                    <button
+                      onClick={() => setGen4Variant('met-anc')}
+                      className={`p-4 rounded-xl border-2 text-left transition-all ${
+                        gen4Variant === 'met-anc'
+                          ? 'border-primary bg-primary/5'
+                          : 'border-border hover:border-primary/50'
+                      }`}
+                    >
+                      <span className="font-medium">Met ANC</span>
+                      <p className="text-xs text-muted-foreground mt-1">Active Noise Cancelling</p>
+                    </button>
+                  </div>
+                </div>
+              )}
+
+              {/* Model Number Check Warning - ABOVE price for Pro 2 and Gen 4 */}
+              {needsVariantSelector && (
+                <ModelNumberCheck 
+                  product={product} 
+                  pro2Variant={pro2Variant} 
+                  gen4Variant={gen4Variant} 
+                />
+              )}
 
               {/* Condition Selector */}
               <div>
@@ -163,8 +241,10 @@ const ProductDetail = () => {
                 </div>
               )}
 
-              {/* Model Number Check Warning */}
-              <ModelNumberCheck product={product} />
+              {/* Model Number Check Warning - BELOW price for other products */}
+              {!needsVariantSelector && (
+                <ModelNumberCheck product={product} />
+              )}
 
               {/* Features */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-6">
@@ -178,7 +258,7 @@ const ProductDetail = () => {
                 </div>
                 <div className="flex items-center space-x-3">
                   <Shield className="h-5 w-5 text-muted-foreground" />
-                  <span className="text-sm">2 jaar garantie</span>
+                  <span className="text-sm">Tot 1 jaar garantie</span>
                 </div>
               </div>
 

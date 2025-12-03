@@ -26,13 +26,6 @@ const modelNumberMapping: Record<string, ModelNumbers> = {
     case: 'A2566',
     label: 'AirPods 3e generatie',
   },
-  // AirPods 4e generatie (standaard, zonder ANC)
-  'airpods-4': {
-    left: 'A3053',
-    right: 'A3050',
-    case: 'A3058',
-    label: 'AirPods 4e generatie',
-  },
   // AirPods Pro 1e generatie
   'airpods-pro-1': {
     left: 'A2084',
@@ -40,34 +33,59 @@ const modelNumberMapping: Record<string, ModelNumbers> = {
     case: 'A2190',
     label: 'AirPods Pro 1e generatie',
   },
-  // AirPods Pro 2e generatie (Lightning versie als standaard)
-  'airpods-pro-2': {
-    left: 'A2699',
-    right: 'A2698',
-    case: 'A2700',
-    label: 'AirPods Pro 2e generatie',
+};
+
+// AirPods 4e generatie varianten
+const airpods4Variants: Record<string, ModelNumbers> = {
+  'zonder-anc': {
+    left: 'A3053',
+    right: 'A3050',
+    case: 'A3058',
+    label: 'AirPods 4 (zonder ANC)',
+  },
+  'met-anc': {
+    left: 'A3056',
+    right: 'A3055',
+    case: 'A3059',
+    label: 'AirPods 4 (met ANC)',
   },
 };
 
-// Specifieke mapping voor USB-C varianten
-const usbcModelNumbers: ModelNumbers = {
-  left: 'A3048',
-  right: 'A3047',
-  case: 'A2968',
-  label: 'AirPods Pro 2e generatie (USB-C)',
+// AirPods Pro 2e generatie varianten
+const airpodsPro2Variants: Record<string, ModelNumbers> = {
+  'lightning': {
+    left: 'A2699',
+    right: 'A2698',
+    case: 'A2700',
+    label: 'AirPods Pro 2 (Lightning)',
+  },
+  'usb-c': {
+    left: 'A3048',
+    right: 'A3047',
+    case: 'A2968',
+    label: 'AirPods Pro 2 (USB-C)',
+  },
 };
+
+export type Pro2Variant = 'lightning' | 'usb-c';
+export type Gen4Variant = 'zonder-anc' | 'met-anc';
 
 interface ModelNumberCheckProps {
   product: Product;
+  pro2Variant?: Pro2Variant;
+  gen4Variant?: Gen4Variant;
 }
 
-const ModelNumberCheck = ({ product }: ModelNumberCheckProps) => {
-  // Bepaal de juiste modelnummers op basis van product
-  let modelNumbers = modelNumberMapping[product.model];
-  
-  // Check voor USB-C variant in de productnaam of slug
-  if (product.slug.includes('usbc') || product.name.toLowerCase().includes('usb-c')) {
-    modelNumbers = usbcModelNumbers;
+const ModelNumberCheck = ({ product, pro2Variant, gen4Variant }: ModelNumberCheckProps) => {
+  let modelNumbers: ModelNumbers | undefined;
+
+  // Bepaal de juiste modelnummers op basis van product en variant
+  if (product.model === 'airpods-pro-2') {
+    modelNumbers = airpodsPro2Variants[pro2Variant || 'lightning'];
+  } else if (product.model === 'airpods-4') {
+    modelNumbers = airpods4Variants[gen4Variant || 'zonder-anc'];
+  } else {
+    modelNumbers = modelNumberMapping[product.model];
   }
 
   // Skip voor accessoires

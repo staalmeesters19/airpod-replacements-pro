@@ -110,7 +110,7 @@ const ModelNumberCheck = ({ product, pro2Variant, gen4Variant }: ModelNumberChec
           Check je modelnummer via <strong>Instellingen → Bluetooth</strong> op je iPhone, 
           tik op het <strong>"i"-icoontje</strong> naast je AirPods en scroll naar <strong>Modelnummer</strong> (begint met "A"). 
           Controleer of jouw modelnummer overeenkomt met de juiste kolom hieronder. 
-          Weet je niet zeker welke AirPods je hebt? Bekijk onze <Link to="/welke-airpods-heb-ik" className="text-primary hover:underline font-medium">hulppagina</Link>.
+          Weet je niet zeker welke AirPods je hebt? Bekijk onze pagina <Link to="/welke-airpods-heb-ik" className="text-primary hover:underline font-medium">Welke AirPods heb ik?</Link>
         </p>
       ) : (
         <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
@@ -118,7 +118,7 @@ const ModelNumberCheck = ({ product, pro2Variant, gen4Variant }: ModelNumberChec
           Check daarom eerst je modelnummer: ga naar <strong>Instellingen → Bluetooth</strong> op je iPhone, 
           tik op het <strong>"i"-icoontje</strong> naast je AirPods en scroll naar <strong>Modelnummer</strong> (begint met "A"). 
           Bestel alleen als jouw modelnummer hieronder staat. Weet je niet welke AirPods je hebt? 
-          Bekijk onze <Link to="/welke-airpods-heb-ik" className="text-primary hover:underline font-medium">hulppagina</Link>.
+          Bekijk onze pagina <Link to="/welke-airpods-heb-ik" className="text-primary hover:underline font-medium">Welke AirPods heb ik?</Link>
         </p>
       )}
 

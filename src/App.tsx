@@ -16,6 +16,7 @@ import BlogLosseAirpodKwijt from "./pages/BlogLosseAirpodKwijt";
 import BlogAirpodsCombineren from "./pages/BlogAirpodsCombineren";
 import BlogAirpodsOpnieuwPairen from "./pages/BlogAirpodsOpnieuwPairen";
 import NotFound from "./pages/NotFound";
+import WhatsAppWidget from "./components/layout/WhatsAppWidget";
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -40,6 +41,7 @@ const App = () => (
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <WhatsAppWidget />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

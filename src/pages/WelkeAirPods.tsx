@@ -156,8 +156,119 @@ const WelkeAirPods = () => {
             </div>
           </section>
 
-          {/* Help section */}
+          {/* Complete model numbers table */}
           <section className="py-16">
+            <div className="container mx-auto px-4">
+              <div className="max-w-5xl mx-auto">
+                <h2 className="text-3xl font-bold text-center mb-4">
+                  Alle AirPods modelnummers
+                </h2>
+                <p className="text-center text-muted-foreground mb-8 max-w-2xl mx-auto">
+                  Hier vind je gedetailleerde informatie over alle AirPods die Apple tot nu toe heeft geproduceerd.
+                </p>
+                
+                <div className="overflow-x-auto rounded-xl border border-border">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-secondary/50">
+                        <th className="px-4 py-3 text-left font-semibold">Generatie</th>
+                        <th className="px-4 py-3 text-center font-semibold">Linker AirPod</th>
+                        <th className="px-4 py-3 text-center font-semibold">Rechter AirPod</th>
+                        <th className="px-4 py-3 text-center font-semibold">Oplaadcase</th>
+                        <th className="px-4 py-3 text-center font-semibold">Modelnummer</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-border">
+                      <tr className="hover:bg-secondary/20 transition-colors">
+                        <td className="px-4 py-3 font-medium">1e generatie</td>
+                        <td className="px-4 py-3 text-center text-muted-foreground">A1702</td>
+                        <td className="px-4 py-3 text-center text-muted-foreground">A1523</td>
+                        <td className="px-4 py-3 text-center text-muted-foreground">A1602</td>
+                        <td className="px-4 py-3 text-center text-primary font-mono text-xs">MMEF2ZM/A</td>
+                      </tr>
+                      <tr className="hover:bg-secondary/20 transition-colors">
+                        <td className="px-4 py-3 font-medium">2e generatie</td>
+                        <td className="px-4 py-3 text-center text-muted-foreground">A2031</td>
+                        <td className="px-4 py-3 text-center text-muted-foreground">A2032</td>
+                        <td className="px-4 py-3 text-center text-muted-foreground">A1602</td>
+                        <td className="px-4 py-3 text-center text-primary font-mono text-xs">MV7N2ZM/A</td>
+                      </tr>
+                      <tr className="hover:bg-secondary/20 transition-colors">
+                        <td className="px-4 py-3 font-medium">2e generatie draadloos</td>
+                        <td className="px-4 py-3 text-center text-muted-foreground">A2031</td>
+                        <td className="px-4 py-3 text-center text-muted-foreground">A2032</td>
+                        <td className="px-4 py-3 text-center text-muted-foreground">A1938</td>
+                        <td className="px-4 py-3 text-center text-primary font-mono text-xs">MRXJ2ZM/A</td>
+                      </tr>
+                      <tr className="hover:bg-secondary/20 transition-colors">
+                        <td className="px-4 py-3 font-medium">3e generatie MagSafe</td>
+                        <td className="px-4 py-3 text-center text-muted-foreground">A2564</td>
+                        <td className="px-4 py-3 text-center text-muted-foreground">A2565</td>
+                        <td className="px-4 py-3 text-center text-muted-foreground">A2566</td>
+                        <td className="px-4 py-3 text-center text-primary font-mono text-xs">MME73ZM/A</td>
+                      </tr>
+                      <tr className="hover:bg-secondary/20 transition-colors">
+                        <td className="px-4 py-3 font-medium">3e generatie Lightning</td>
+                        <td className="px-4 py-3 text-center text-muted-foreground">A2564</td>
+                        <td className="px-4 py-3 text-center text-muted-foreground">A2565</td>
+                        <td className="px-4 py-3 text-center text-muted-foreground">A2897</td>
+                        <td className="px-4 py-3 text-center text-primary font-mono text-xs">MPNY3ZM/A</td>
+                      </tr>
+                      <tr className="hover:bg-secondary/20 transition-colors">
+                        <td className="px-4 py-3 font-medium">4e generatie (zonder ANC)</td>
+                        <td className="px-4 py-3 text-center text-muted-foreground">A3053</td>
+                        <td className="px-4 py-3 text-center text-muted-foreground">A3050</td>
+                        <td className="px-4 py-3 text-center text-muted-foreground">A3058</td>
+                        <td className="px-4 py-3 text-center text-primary font-mono text-xs">MXP63ZM/A</td>
+                      </tr>
+                      <tr className="hover:bg-secondary/20 transition-colors">
+                        <td className="px-4 py-3 font-medium">4e generatie (met ANC)</td>
+                        <td className="px-4 py-3 text-center text-muted-foreground">A3056</td>
+                        <td className="px-4 py-3 text-center text-muted-foreground">A3055</td>
+                        <td className="px-4 py-3 text-center text-muted-foreground">A3059</td>
+                        <td className="px-4 py-3 text-center text-primary font-mono text-xs">MXP93ZM/A</td>
+                      </tr>
+                      <tr className="hover:bg-secondary/20 transition-colors bg-primary/5">
+                        <td className="px-4 py-3 font-medium">Pro 1e generatie</td>
+                        <td className="px-4 py-3 text-center text-muted-foreground">A2084</td>
+                        <td className="px-4 py-3 text-center text-muted-foreground">A2083</td>
+                        <td className="px-4 py-3 text-center text-muted-foreground">A2190</td>
+                        <td className="px-4 py-3 text-center text-primary font-mono text-xs">MWP22ZM/A</td>
+                      </tr>
+                      <tr className="hover:bg-secondary/20 transition-colors bg-primary/5">
+                        <td className="px-4 py-3 font-medium">Pro 1e generatie MagSafe</td>
+                        <td className="px-4 py-3 text-center text-muted-foreground">A2084</td>
+                        <td className="px-4 py-3 text-center text-muted-foreground">A2083</td>
+                        <td className="px-4 py-3 text-center text-muted-foreground">A2190</td>
+                        <td className="px-4 py-3 text-center text-primary font-mono text-xs">MLWK3ZM/A</td>
+                      </tr>
+                      <tr className="hover:bg-secondary/20 transition-colors bg-primary/5">
+                        <td className="px-4 py-3 font-medium">Pro 2e generatie Lightning</td>
+                        <td className="px-4 py-3 text-center text-muted-foreground">A2699</td>
+                        <td className="px-4 py-3 text-center text-muted-foreground">A2698</td>
+                        <td className="px-4 py-3 text-center text-muted-foreground">A2700</td>
+                        <td className="px-4 py-3 text-center text-primary font-mono text-xs">MQD83ZM/A</td>
+                      </tr>
+                      <tr className="hover:bg-secondary/20 transition-colors bg-primary/5">
+                        <td className="px-4 py-3 font-medium">Pro 2e generatie USB-C</td>
+                        <td className="px-4 py-3 text-center text-muted-foreground">A3048</td>
+                        <td className="px-4 py-3 text-center text-muted-foreground">A3047</td>
+                        <td className="px-4 py-3 text-center text-muted-foreground">A2968</td>
+                        <td className="px-4 py-3 text-center text-primary font-mono text-xs">MTJV3ZM/A</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                
+                <p className="text-center text-sm text-muted-foreground mt-4">
+                  💡 Tip: Het modelnummer vind je op de binnenkant van je oplaadcase of via Instellingen → Bluetooth op je iPhone.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          {/* Help section */}
+          <section className="py-16 bg-secondary/20">
             <div className="container mx-auto px-4 text-center">
               <h2 className="text-2xl font-bold mb-4">
                 Kom je er niet uit?

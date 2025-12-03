@@ -1,6 +1,12 @@
 import { Link } from 'react-router-dom';
 import { Card } from '@/components/ui/card';
-import { Battery, Zap, Usb } from 'lucide-react';
+
+// Import case images
+import airpods2Case from '@/assets/products/airpods-2-case.png';
+import airpods3Case from '@/assets/products/airpods-3-case.png';
+import airpods4Case from '@/assets/products/airpods-4-case.png';
+import airpodsPro1Case from '@/assets/products/airpods-pro-1-case.png';
+import airpodsPro2Case from '@/assets/products/airpods-pro-2-case.png';
 
 const CaseSelector = () => {
   const cases = [
@@ -8,49 +14,49 @@ const CaseSelector = () => {
       id: 'case-1-2',
       name: 'Case Gen 1/2',
       description: 'Voor AirPods 1e & 2e generatie',
-      slug: 'oplaadcase-gen-1-2',
+      slug: 'airpods-2e-generatie-oplaadcase',
       features: ['Lightning'],
-      icon: Battery,
+      image: airpods2Case,
     },
     {
       id: 'case-3',
       name: 'Case Gen 3',
       description: 'Voor AirPods 3e generatie',
-      slug: 'oplaadcase-gen-3',
+      slug: 'airpods-3e-generatie-oplaadcase',
       features: ['MagSafe', 'Lightning'],
-      icon: Zap,
+      image: airpods3Case,
     },
     {
       id: 'case-4',
       name: 'Case Gen 4',
       description: 'Voor AirPods 4e generatie',
-      slug: 'oplaadcase-gen-4',
+      slug: 'airpods-4e-generatie-oplaadcase',
       features: ['USB-C', 'MagSafe'],
-      icon: Usb,
+      image: airpods4Case,
     },
     {
       id: 'case-pro-1',
       name: 'Case Pro 1',
       description: 'Voor AirPods Pro 1e generatie',
-      slug: 'oplaadcase-pro-1',
+      slug: 'airpods-pro-1e-generatie-oplaadcase',
       features: ['MagSafe', 'Lightning'],
-      icon: Zap,
+      image: airpodsPro1Case,
     },
     {
       id: 'case-pro-2-lightning',
       name: 'Case Pro 2 Lightning',
       description: 'Voor AirPods Pro 2 (Lightning)',
-      slug: 'oplaadcase-pro-2-lightning',
+      slug: 'airpods-pro-2e-generatie-oplaadcase-lightning',
       features: ['MagSafe', 'Lightning'],
-      icon: Zap,
+      image: airpodsPro2Case,
     },
     {
       id: 'case-pro-2-usbc',
       name: 'Case Pro 2 USB-C',
       description: 'Voor AirPods Pro 2 (USB-C)',
-      slug: 'oplaadcase-pro-2-usbc',
+      slug: 'airpods-pro-2e-generatie-oplaadcase-usbc',
       features: ['USB-C', 'MagSafe'],
-      icon: Usb,
+      image: airpodsPro2Case,
     },
   ];
 
@@ -70,10 +76,14 @@ const CaseSelector = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
           {cases.map((caseItem) => (
             <Link key={caseItem.id} to={`/product/${caseItem.slug}`}>
-              <Card className="group p-6 hover:shadow-card hover:border-primary/30 transition-all duration-200 h-full">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-accent rounded-xl flex items-center justify-center flex-shrink-0">
-                    <caseItem.icon className="w-6 h-6 text-primary" />
+              <Card className="group p-5 hover:shadow-card hover:border-primary/30 transition-all duration-200 h-full">
+                <div className="flex items-center gap-4">
+                  <div className="w-20 h-20 flex-shrink-0 flex items-center justify-center">
+                    <img 
+                      src={caseItem.image} 
+                      alt={caseItem.name}
+                      className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-200"
+                    />
                   </div>
                   <div className="flex-1">
                     <h3 className="font-medium text-foreground mb-1 group-hover:text-primary transition-colors">

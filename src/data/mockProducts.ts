@@ -1,3 +1,21 @@
+// Product images imports
+import airpods2Left from '@/assets/products/airpods-2-left.png';
+import airpods2Right from '@/assets/products/airpods-2-right.png';
+import airpods2Case from '@/assets/products/airpods-2-case.png';
+import airpods3Left from '@/assets/products/airpods-3-left.png';
+import airpods3Right from '@/assets/products/airpods-3-right.png';
+import airpods3Case from '@/assets/products/airpods-3-case.png';
+import airpods4Left from '@/assets/products/airpods-4-left.png';
+import airpods4Right from '@/assets/products/airpods-4-right.png';
+import airpods4Case from '@/assets/products/airpods-4-case.png';
+import airpodsPro1Left from '@/assets/products/airpods-pro-1-left.png';
+import airpodsPro1Right from '@/assets/products/airpods-pro-1-right.png';
+import airpodsPro1Case from '@/assets/products/airpods-pro-1-case.png';
+import airpodsPro2Left from '@/assets/products/airpods-pro-2-left.png';
+import airpodsPro2Right from '@/assets/products/airpods-pro-2-right.png';
+import airpodsPro2Case from '@/assets/products/airpods-pro-2-case.png';
+import siliconeTips from '@/assets/products/silicone-tips.png';
+
 export type Condition = 'nieuw' | 'uitstekend' | 'goed' | 'gebruikt' | 'beperkt';
 
 export interface ConditionVariant {
@@ -52,7 +70,7 @@ export const mockProducts: Product[] = [
       { condition: 'gebruikt', price: 39.95, stock: 10 },
       { condition: 'beperkt', price: 29.95, stock: 6 },
     ],
-    images: ['/placeholder.svg'],
+    images: [airpods2Left],
     description: 'Vervang je verloren linker AirPod met dit originele Apple onderdeel. Past perfect bij je bestaande 2e generatie set.',
     compatibility: ['AirPods 2e generatie (model A2032/A2031)', 'Oplaadcase 2e generatie'],
     whatsIncluded: '1x linker AirPod (2e generatie), geen oplaadcase inbegrepen.',
@@ -71,7 +89,7 @@ export const mockProducts: Product[] = [
       { condition: 'gebruikt', price: 39.95, stock: 9 },
       { condition: 'beperkt', price: 29.95, stock: 5 },
     ],
-    images: ['/placeholder.svg'],
+    images: [airpods2Right],
     description: 'Vervang je verloren rechter AirPod met dit originele Apple onderdeel. Past perfect bij je bestaande 2e generatie set.',
     compatibility: ['AirPods 2e generatie (model A2032/A2031)', 'Oplaadcase 2e generatie'],
     whatsIncluded: '1x rechter AirPod (2e generatie), geen oplaadcase inbegrepen.',
@@ -89,7 +107,7 @@ export const mockProducts: Product[] = [
       { condition: 'gebruikt', price: 29.95, stock: 8 },
       { condition: 'beperkt', price: 19.95, stock: 4 },
     ],
-    images: ['/placeholder.svg'],
+    images: [airpods2Case],
     description: 'Originele Apple oplaadcase voor AirPods 2e generatie. Met Lightning aansluiting.',
     compatibility: ['AirPods 2e generatie (model A2032/A2031)', 'AirPods 1e generatie'],
     whatsIncluded: '1x oplaadcase, geen AirPods inbegrepen.',
@@ -110,7 +128,7 @@ export const mockProducts: Product[] = [
       { condition: 'gebruikt', price: 54.95, stock: 5 },
       { condition: 'beperkt', price: 44.95, stock: 3 },
     ],
-    images: ['/placeholder.svg'],
+    images: [airpods3Left],
     description: 'Vervang je verloren linker AirPod met dit originele Apple onderdeel. Nieuw design met Spatial Audio.',
     compatibility: ['AirPods 3e generatie (model A2565/A2564)', 'MagSafe oplaadcase 3e generatie'],
     whatsIncluded: '1x linker AirPod (3e generatie), geen oplaadcase inbegrepen.',
@@ -129,7 +147,7 @@ export const mockProducts: Product[] = [
       { condition: 'gebruikt', price: 54.95, stock: 6 },
       { condition: 'beperkt', price: 44.95, stock: 4 },
     ],
-    images: ['/placeholder.svg'],
+    images: [airpods3Right],
     description: 'Vervang je verloren rechter AirPod met dit originele Apple onderdeel. Nieuw design met Spatial Audio.',
     compatibility: ['AirPods 3e generatie (model A2565/A2564)', 'MagSafe oplaadcase 3e generatie'],
     whatsIncluded: '1x rechter AirPod (3e generatie), geen oplaadcase inbegrepen.',
@@ -147,7 +165,7 @@ export const mockProducts: Product[] = [
       { condition: 'gebruikt', price: 39.95, stock: 7 },
       { condition: 'beperkt', price: 29.95, stock: 3 },
     ],
-    images: ['/placeholder.svg'],
+    images: [airpods3Case],
     description: 'Originele Apple MagSafe oplaadcase voor AirPods 3e generatie. Ondersteunt draadloos laden.',
     compatibility: ['AirPods 3e generatie (model A2565/A2564)'],
     whatsIncluded: '1x MagSafe oplaadcase, geen AirPods inbegrepen.',
@@ -168,7 +186,7 @@ export const mockProducts: Product[] = [
       { condition: 'gebruikt', price: 59.95, stock: 3 },
       { condition: 'beperkt', price: 49.95, stock: 2 },
     ],
-    images: ['/placeholder.svg'],
+    images: [airpods4Left],
     description: 'De nieuwste linker AirPod 4e generatie met H2 chip en verbeterde geluidskwaliteit.',
     compatibility: ['AirPods 4e generatie (model A3048/A3047)', 'USB-C oplaadcase 4e generatie'],
     whatsIncluded: '1x linker AirPod (4e generatie), geen oplaadcase inbegrepen.',
@@ -187,7 +205,7 @@ export const mockProducts: Product[] = [
       { condition: 'gebruikt', price: 59.95, stock: 3 },
       { condition: 'beperkt', price: 49.95, stock: 2 },
     ],
-    images: ['/placeholder.svg'],
+    images: [airpods4Right],
     description: 'De nieuwste rechter AirPod 4e generatie met H2 chip en verbeterde geluidskwaliteit.',
     compatibility: ['AirPods 4e generatie (model A3048/A3047)', 'USB-C oplaadcase 4e generatie'],
     whatsIncluded: '1x rechter AirPod (4e generatie), geen oplaadcase inbegrepen.',
@@ -205,7 +223,7 @@ export const mockProducts: Product[] = [
       { condition: 'gebruikt', price: 49.95, stock: 4 },
       { condition: 'beperkt', price: 39.95, stock: 2 },
     ],
-    images: ['/placeholder.svg'],
+    images: [airpods4Case],
     description: 'Originele Apple USB-C oplaadcase voor AirPods 4e generatie. Met MagSafe ondersteuning.',
     compatibility: ['AirPods 4e generatie (model A3048/A3047)'],
     whatsIncluded: '1x USB-C oplaadcase met MagSafe, geen AirPods inbegrepen.',
@@ -226,7 +244,7 @@ export const mockProducts: Product[] = [
       { condition: 'gebruikt', price: 49.95, stock: 6 },
       { condition: 'beperkt', price: 39.95, stock: 4 },
     ],
-    images: ['/placeholder.svg'],
+    images: [airpodsPro1Left],
     description: 'Linker AirPod Pro 1e generatie met Active Noise Cancelling en silicone tips.',
     compatibility: ['AirPods Pro 1e generatie (model A2084/A2083)', 'MagSafe oplaadcase Pro 1'],
     whatsIncluded: '1x linker AirPod Pro (1e generatie), geen oplaadcase of tips inbegrepen.',
@@ -245,7 +263,7 @@ export const mockProducts: Product[] = [
       { condition: 'gebruikt', price: 49.95, stock: 5 },
       { condition: 'beperkt', price: 39.95, stock: 3 },
     ],
-    images: ['/placeholder.svg'],
+    images: [airpodsPro1Right],
     description: 'Rechter AirPod Pro 1e generatie met Active Noise Cancelling en silicone tips.',
     compatibility: ['AirPods Pro 1e generatie (model A2084/A2083)', 'MagSafe oplaadcase Pro 1'],
     whatsIncluded: '1x rechter AirPod Pro (1e generatie), geen oplaadcase of tips inbegrepen.',
@@ -263,7 +281,7 @@ export const mockProducts: Product[] = [
       { condition: 'gebruikt', price: 44.95, stock: 5 },
       { condition: 'beperkt', price: 34.95, stock: 3 },
     ],
-    images: ['/placeholder.svg'],
+    images: [airpodsPro1Case],
     description: 'Originele Apple MagSafe oplaadcase voor AirPods Pro 1e generatie. Lightning aansluiting.',
     compatibility: ['AirPods Pro 1e generatie (model A2084/A2083)'],
     whatsIncluded: '1x MagSafe oplaadcase met Lightning, geen AirPods inbegrepen.',
@@ -284,7 +302,7 @@ export const mockProducts: Product[] = [
       { condition: 'gebruikt', price: 69.95, stock: 5 },
       { condition: 'beperkt', price: 59.95, stock: 3 },
     ],
-    images: ['/placeholder.svg'],
+    images: [airpodsPro2Left],
     description: 'Linker AirPod Pro 2e generatie met H2 chip, verbeterde ANC en Adaptive Audio.',
     compatibility: ['AirPods Pro 2e generatie (model A2931/A2698)', 'MagSafe oplaadcase Pro 2'],
     whatsIncluded: '1x linker AirPod Pro (2e generatie), geen oplaadcase of tips inbegrepen.',
@@ -303,7 +321,7 @@ export const mockProducts: Product[] = [
       { condition: 'gebruikt', price: 69.95, stock: 4 },
       { condition: 'beperkt', price: 59.95, stock: 2 },
     ],
-    images: ['/placeholder.svg'],
+    images: [airpodsPro2Right],
     description: 'Rechter AirPod Pro 2e generatie met H2 chip, verbeterde ANC en Adaptive Audio.',
     compatibility: ['AirPods Pro 2e generatie (model A2931/A2698)', 'MagSafe oplaadcase Pro 2'],
     whatsIncluded: '1x rechter AirPod Pro (2e generatie), geen oplaadcase of tips inbegrepen.',
@@ -321,7 +339,7 @@ export const mockProducts: Product[] = [
       { condition: 'gebruikt', price: 59.95, stock: 4 },
       { condition: 'beperkt', price: 49.95, stock: 2 },
     ],
-    images: ['/placeholder.svg'],
+    images: [airpodsPro2Case],
     description: 'Originele Apple MagSafe oplaadcase voor AirPods Pro 2e generatie met Lightning aansluiting.',
     compatibility: ['AirPods Pro 2e generatie (Lightning versie)'],
     whatsIncluded: '1x MagSafe oplaadcase met Lightning, geen AirPods inbegrepen.',
@@ -339,7 +357,7 @@ export const mockProducts: Product[] = [
       { condition: 'gebruikt', price: 69.95, stock: 3 },
       { condition: 'beperkt', price: 59.95, stock: 2 },
     ],
-    images: ['/placeholder.svg'],
+    images: [airpodsPro2Case],
     description: 'Originele Apple MagSafe oplaadcase voor AirPods Pro 2e generatie met USB-C aansluiting.',
     compatibility: ['AirPods Pro 2e generatie (USB-C versie)'],
     whatsIncluded: '1x MagSafe oplaadcase met USB-C, geen AirPods inbegrepen.',
@@ -355,7 +373,7 @@ export const mockProducts: Product[] = [
     variants: [
       { condition: 'nieuw', price: 12.95, stock: 30 },
     ],
-    images: ['/placeholder.svg'],
+    images: [siliconeTips],
     description: 'Originele Apple silicone tips set voor AirPods Pro. Bevat alle 3 maten.',
     compatibility: ['AirPods Pro 1e generatie', 'AirPods Pro 2e generatie'],
     whatsIncluded: '3 paar silicone tips (klein, medium, groot).',

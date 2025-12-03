@@ -27,7 +27,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
-import { mockProducts } from '@/data/mockProducts';
+import { mockProducts, getLowestPrice } from '@/data/mockProducts';
 
 const faqItems = [
   {
@@ -51,7 +51,6 @@ const faqItems = [
 const LosseAirpods = () => {
   const [selectedSide, setSelectedSide] = useState<string>('all');
   const [selectedModel, setSelectedModel] = useState<string>('all');
-  const [selectedCondition, setSelectedCondition] = useState<string>('all');
   const [sortBy, setSortBy] = useState<string>('price-asc');
 
   const earbuds = useMemo(() => {
@@ -63,16 +62,13 @@ const LosseAirpods = () => {
     if (selectedModel !== 'all') {
       filtered = filtered.filter((p) => p.model === selectedModel);
     }
-    if (selectedCondition !== 'all') {
-      filtered = filtered.filter((p) => p.condition === selectedCondition);
-    }
 
     switch (sortBy) {
       case 'price-asc':
-        filtered.sort((a, b) => a.price - b.price);
+        filtered.sort((a, b) => getLowestPrice(a) - getLowestPrice(b));
         break;
       case 'price-desc':
-        filtered.sort((a, b) => b.price - a.price);
+        filtered.sort((a, b) => getLowestPrice(b) - getLowestPrice(a));
         break;
       case 'name-asc':
         filtered.sort((a, b) => a.name.localeCompare(b.name));
@@ -80,12 +76,11 @@ const LosseAirpods = () => {
     }
 
     return filtered;
-  }, [selectedSide, selectedModel, selectedCondition, sortBy]);
+  }, [selectedSide, selectedModel, sortBy]);
 
   const clearFilters = () => {
     setSelectedSide('all');
     setSelectedModel('all');
-    setSelectedCondition('all');
   };
 
   return (
@@ -125,7 +120,7 @@ const LosseAirpods = () => {
             <p className="text-lg text-muted-foreground max-w-3xl">
               Eén AirPod kwijt of kapot? Koop een losse linker of rechter AirPod als vervanging. 
               Al onze AirPods zijn 100% origineel Apple en worden de volgende dag geleverd. 
-              Bespaar geld door alleen te vervangen wat je écht nodig hebt.
+              Kies uit 5 verschillende condities en bespaar tot 70%.
             </p>
           </header>
 
@@ -157,19 +152,6 @@ const LosseAirpods = () => {
                 <SelectItem value="airpods-4">AirPods 4e generatie</SelectItem>
                 <SelectItem value="airpods-pro-1">AirPods Pro 1</SelectItem>
                 <SelectItem value="airpods-pro-2">AirPods Pro 2</SelectItem>
-              </SelectContent>
-            </Select>
-
-            <Select value={selectedCondition} onValueChange={setSelectedCondition}>
-              <SelectTrigger className="w-full md:w-44">
-                <SelectValue placeholder="Staat" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="all">Alle staten</SelectItem>
-                <SelectItem value="brand-new">Gloednieuw</SelectItem>
-                <SelectItem value="like-new">Zo goed als nieuw</SelectItem>
-                <SelectItem value="used">Gebruikt</SelectItem>
-                <SelectItem value="heavily-used">Erg gebruikt</SelectItem>
               </SelectContent>
             </Select>
 
@@ -215,13 +197,13 @@ const LosseAirpods = () => {
               70% van de kosten van een nieuwe set!
             </p>
             
-            <h3 className="text-xl font-medium mb-3">Waarom een losse AirPod bij RePairPods?</h3>
+            <h3 className="text-xl font-medium mb-3">5 condities om uit te kiezen</h3>
             <ul className="list-disc list-inside text-muted-foreground space-y-2 mb-6">
-              <li><strong>100% origineel Apple</strong> – Geen namaak, gegarandeerd authentiek</li>
-              <li><strong>Alle generaties</strong> – Van AirPods 2 tot AirPods Pro 2</li>
-              <li><strong>Links én rechts</strong> – Kies precies de kant die je nodig hebt</li>
-              <li><strong>Morgen in huis</strong> – Bestel voor 16:00, volgende dag geleverd</li>
-              <li><strong>2 jaar garantie</strong> – Voor extra zekerheid</li>
+              <li><strong>Nieuw</strong> – Gloednieuw en ongebruikt, in originele Apple staat</li>
+              <li><strong>Uitstekend</strong> – Zo goed als nieuw, geen zichtbare gebruikssporen</li>
+              <li><strong>Goed</strong> – Lichte gebruikssporen, werkt perfect</li>
+              <li><strong>Gebruikt</strong> – Duidelijke gebruikssporen, volledig functioneel</li>
+              <li><strong>Beperkt</strong> – Zichtbare slijtage, werkt naar behoren</li>
             </ul>
 
             <h3 className="text-xl font-medium mb-3">Hoe koppel je een losse AirPod?</h3>

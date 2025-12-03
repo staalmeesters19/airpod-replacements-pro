@@ -12,6 +12,9 @@ import LosseOplaadcases from "./pages/LosseOplaadcases";
 import ModelPage from "./pages/ModelPage";
 import BlogIndex from "./pages/BlogIndex";
 import BlogWelkeAirpods from "./pages/BlogWelkeAirpods";
+import BlogLosseAirpodKwijt from "./pages/BlogLosseAirpodKwijt";
+import BlogAirpodsCombineren from "./pages/BlogAirpodsCombineren";
+import BlogAirpodsOpnieuwPairen from "./pages/BlogAirpodsOpnieuwPairen";
 import NotFound from "./pages/NotFound";
 const queryClient = new QueryClient();
 
@@ -31,6 +34,9 @@ const App = () => (
           <Route path="/model/:slug" element={<ModelPage />} />
           <Route path="/blog" element={<BlogIndex />} />
           <Route path="/blog/welke-airpods-heb-ik" element={<BlogWelkeAirpods />} />
+          <Route path="/blog/losse-airpod-kwijt-vervangen" element={<BlogLosseAirpodKwijt />} />
+          <Route path="/blog/airpods-combineren-per-generatie" element={<BlogAirpodsCombineren />} />
+          <Route path="/blog/airpods-opnieuw-pairen" element={<BlogAirpodsOpnieuwPairen />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

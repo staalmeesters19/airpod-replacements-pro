@@ -6,10 +6,34 @@ import { Calendar, Clock, ArrowRight } from 'lucide-react';
 
 const blogs = [
   {
+    slug: 'airpods-opnieuw-pairen',
+    title: 'AirPods opnieuw pairen: zo koppel je een vervangend oortje of oplaadcase',
+    excerpt: 'Leer hoe je AirPods opnieuw koppelt na het vervangen van een oortje of case. Stap-voor-stap uitleg voor resetten en pairen van alle AirPods generaties.',
+    date: '2025-01-25',
+    readTime: '10 min',
+    image: '/placeholder.svg'
+  },
+  {
+    slug: 'airpods-combineren-per-generatie',
+    title: 'Werkt een nieuwe losse AirPod met mijn oude oortje? Zo werkt combineren per generatie',
+    excerpt: 'Ontdek of een nieuwe losse AirPod werkt met je oude oortje. Alles over AirPods combineren per generatie, compatibiliteit en het koppelen van vervangende AirPods.',
+    date: '2025-01-22',
+    readTime: '9 min',
+    image: '/placeholder.svg'
+  },
+  {
+    slug: 'losse-airpod-kwijt-vervangen',
+    title: 'Losse AirPod kwijt? Dit is de goedkoopste manier om hem te vervangen (Apple vs. RePairPods)',
+    excerpt: 'Eén AirPod kwijt? Ontdek alle opties om je losse AirPod te vervangen: van een nieuwe set tot een originele losse AirPod. We vergelijken prijzen en kwaliteit.',
+    date: '2025-01-20',
+    readTime: '10 min',
+    image: '/placeholder.svg'
+  },
+  {
     slug: 'welke-airpods-heb-ik',
     title: 'Welke AirPods heb ik? De complete gids voor modelnummers en generaties',
     excerpt: 'Ontdek precies welk AirPods-model je hebt aan de hand van modelnummers. Handig als je een losse AirPod of oplaadcase wilt vervangen.',
-    date: '2024-01-15',
+    date: '2025-01-15',
     readTime: '8 min',
     image: '/placeholder.svg'
   }

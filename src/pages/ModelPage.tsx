@@ -214,46 +214,25 @@ const ModelPage = () => {
             </div>
           </header>
 
-          {leftEarbuds.length > 0 && (
+          {products.length > 0 ? (
             <section className="mb-16">
               <h2 className="text-2xl font-semibold mb-6">
-                Linker {modelData.shortName}
+                Beschikbare producten
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {/* Order: Links, Case(s), Rechts */}
                 {leftEarbuds.map((product) => (
                   <ProductCard key={product.id} product={product} />
                 ))}
-              </div>
-            </section>
-          )}
-
-          {rightEarbuds.length > 0 && (
-            <section className="mb-16">
-              <h2 className="text-2xl font-semibold mb-6">
-                Rechter {modelData.shortName}
-              </h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {cases.map((product) => (
+                  <ProductCard key={product.id} product={product} />
+                ))}
                 {rightEarbuds.map((product) => (
                   <ProductCard key={product.id} product={product} />
                 ))}
               </div>
             </section>
-          )}
-
-          {cases.length > 0 && (
-            <section className="mb-16">
-              <h2 className="text-2xl font-semibold mb-6">
-                Oplaadcase {modelData.shortName}
-              </h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                {cases.map((product) => (
-                  <ProductCard key={product.id} product={product} />
-                ))}
-              </div>
-            </section>
-          )}
-
-          {products.length === 0 && (
+          ) : (
             <div className="text-center py-12 bg-secondary/30 rounded-xl">
               <p className="text-muted-foreground mb-4">
                 Er zijn momenteel geen producten beschikbaar voor {modelData.name}.

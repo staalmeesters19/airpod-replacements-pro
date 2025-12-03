@@ -25,14 +25,20 @@ const categoryDropdowns = [
   {
     label: 'Linker AirPods',
     baseUrl: '/collections/linker-airpods',
+    allLabel: 'Alle linker AirPods',
+    allUrl: '/losse-airpods?side=left',
   },
   {
     label: 'Rechter AirPods',
     baseUrl: '/collections/rechter-airpods',
+    allLabel: 'Alle rechter AirPods',
+    allUrl: '/losse-airpods?side=right',
   },
   {
     label: 'Losse oplaadcases',
     baseUrl: '/collections/oplaadcase-airpods',
+    allLabel: 'Alle oplaadcases',
+    allUrl: '/losse-oplaadcases',
   },
 ];
 
@@ -76,6 +82,15 @@ const Header = () => {
                     </button>
                   </DropdownMenuTrigger>
                   <DropdownMenuContent align="start" className="w-48 bg-background border border-border shadow-lg z-50">
+                    <DropdownMenuItem asChild>
+                      <Link 
+                        to={category.allUrl} 
+                        className="w-full cursor-pointer font-medium"
+                      >
+                        {category.allLabel}
+                      </Link>
+                    </DropdownMenuItem>
+                    <div className="my-1 h-px bg-border" />
                     {generations.map((gen) => (
                       <DropdownMenuItem key={gen.slug} asChild>
                         <Link 
@@ -169,6 +184,14 @@ const Header = () => {
                   
                   {expandedMobileMenu === category.label && (
                     <div className="pl-4 space-y-1 mt-1 mb-2">
+                      <Link
+                        to={category.allUrl}
+                        className="block px-3 py-2 text-sm font-medium text-foreground hover:bg-secondary/50 rounded-lg"
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        {category.allLabel}
+                      </Link>
+                      <div className="my-1 mx-3 h-px bg-border" />
                       {generations.map((gen) => (
                         <Link
                           key={gen.slug}

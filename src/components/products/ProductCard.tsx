@@ -1,16 +1,17 @@
 import { Link } from 'react-router-dom';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Product } from '@/data/mockProducts';
+import { Product, getLowestPrice, getHighestPrice, getTotalStock } from '@/data/mockProducts';
 
 interface ProductCardProps {
   product: Product;
 }
 
 const ProductCard = ({ product }: ProductCardProps) => {
-  const discount = product.oldPrice
-    ? Math.round(((product.oldPrice - product.price) / product.oldPrice) * 100)
-    : 0;
+  const lowestPrice = getLowestPrice(product);
+  const highestPrice = getHighestPrice(product);
+  const totalStock = getTotalStock(product);
+  const hasDiscount = lowestPrice < highestPrice;
 
   return (
     <Link to={`/product/${product.slug}`}>
@@ -21,43 +22,38 @@ const ProductCard = ({ product }: ProductCardProps) => {
             alt={product.name}
             className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300"
           />
-          {discount > 0 && (
-            <Badge className="absolute top-3 right-3 bg-destructive text-destructive-foreground">
-              -{discount}%
+          {hasDiscount && (
+            <Badge className="absolute top-3 right-3 bg-primary text-primary-foreground">
+              Vanaf €{lowestPrice.toFixed(2)}
             </Badge>
           )}
-          {product.stock < 5 && product.stock > 0 && (
+          {totalStock < 10 && totalStock > 0 && (
             <Badge variant="secondary" className="absolute top-3 left-3">
-              Nog {product.stock} op voorraad
+              Beperkte voorraad
             </Badge>
           )}
         </div>
 
         <div className="p-4">
-          <div className="flex items-start justify-between mb-2">
-            <div className="flex-1">
-              <h3 className="font-semibold text-base mb-1 line-clamp-2">
-                {product.name}
-              </h3>
-              <p className="text-sm text-muted-foreground">
-                {product.condition === 'brand-new' && 'Gloednieuw'}
-                {product.condition === 'like-new' && 'Zo goed als nieuw'}
-                {product.condition === 'used' && 'Gebruikt'}
-                {product.condition === 'heavily-used' && 'Erg gebruikt'}
-              </p>
-            </div>
+          <div className="flex-1 mb-2">
+            <h3 className="font-semibold text-base mb-1 line-clamp-2">
+              {product.name}
+            </h3>
+            <p className="text-sm text-muted-foreground">
+              {product.variants.length} condities beschikbaar
+            </p>
           </div>
 
           <div className="flex items-center space-x-2">
-            <span className="text-lg font-bold">€{product.price.toFixed(2)}</span>
-            {product.oldPrice && (
-              <span className="text-sm text-muted-foreground line-through">
-                €{product.oldPrice.toFixed(2)}
+            <span className="text-lg font-bold">€{lowestPrice.toFixed(2)}</span>
+            {hasDiscount && (
+              <span className="text-sm text-muted-foreground">
+                – €{highestPrice.toFixed(2)}
               </span>
             )}
           </div>
 
-          {product.stock > 0 ? (
+          {totalStock > 0 ? (
             <p className="text-xs text-muted-foreground mt-2">
               Op voorraad – morgen in huis
             </p>

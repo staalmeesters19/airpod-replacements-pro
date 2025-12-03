@@ -27,7 +27,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
-import { mockProducts } from '@/data/mockProducts';
+import { mockProducts, getLowestPrice } from '@/data/mockProducts';
 
 const faqItems = [
   {
@@ -50,7 +50,6 @@ const faqItems = [
 
 const LosseOplaadcases = () => {
   const [selectedModel, setSelectedModel] = useState<string>('all');
-  const [selectedCondition, setSelectedCondition] = useState<string>('all');
   const [sortBy, setSortBy] = useState<string>('price-asc');
 
   const cases = useMemo(() => {
@@ -59,16 +58,13 @@ const LosseOplaadcases = () => {
     if (selectedModel !== 'all') {
       filtered = filtered.filter((p) => p.model === selectedModel);
     }
-    if (selectedCondition !== 'all') {
-      filtered = filtered.filter((p) => p.condition === selectedCondition);
-    }
 
     switch (sortBy) {
       case 'price-asc':
-        filtered.sort((a, b) => a.price - b.price);
+        filtered.sort((a, b) => getLowestPrice(a) - getLowestPrice(b));
         break;
       case 'price-desc':
-        filtered.sort((a, b) => b.price - a.price);
+        filtered.sort((a, b) => getLowestPrice(b) - getLowestPrice(a));
         break;
       case 'name-asc':
         filtered.sort((a, b) => a.name.localeCompare(b.name));
@@ -76,11 +72,10 @@ const LosseOplaadcases = () => {
     }
 
     return filtered;
-  }, [selectedModel, selectedCondition, sortBy]);
+  }, [selectedModel, sortBy]);
 
   const clearFilters = () => {
     setSelectedModel('all');
-    setSelectedCondition('all');
   };
 
   return (
@@ -119,8 +114,7 @@ const LosseOplaadcases = () => {
             </h1>
             <p className="text-lg text-muted-foreground max-w-3xl">
               Oplaadcase kwijt of kapot? Koop een losse originele Apple oplaadcase voor je AirPods. 
-              Wij hebben alle generaties op voorraad, van AirPods 2 tot AirPods Pro 2. 
-              Met of zonder MagSafe, Lightning of USB-C.
+              Wij hebben alle generaties op voorraad. Kies uit 5 verschillende condities en bespaar tot 60%.
             </p>
           </header>
 
@@ -141,19 +135,6 @@ const LosseOplaadcases = () => {
                 <SelectItem value="airpods-4">AirPods 4e generatie</SelectItem>
                 <SelectItem value="airpods-pro-1">AirPods Pro 1</SelectItem>
                 <SelectItem value="airpods-pro-2">AirPods Pro 2</SelectItem>
-              </SelectContent>
-            </Select>
-
-            <Select value={selectedCondition} onValueChange={setSelectedCondition}>
-              <SelectTrigger className="w-full md:w-44">
-                <SelectValue placeholder="Staat" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="all">Alle staten</SelectItem>
-                <SelectItem value="brand-new">Gloednieuw</SelectItem>
-                <SelectItem value="like-new">Zo goed als nieuw</SelectItem>
-                <SelectItem value="used">Gebruikt</SelectItem>
-                <SelectItem value="heavily-used">Erg gebruikt</SelectItem>
               </SelectContent>
             </Select>
 
@@ -198,17 +179,13 @@ const LosseOplaadcases = () => {
               oplaadcase voor een fractie van de prijs. Bespaar tot 60% ten opzichte van een nieuwe set!
             </p>
             
-            <h3 className="text-xl font-medium mb-3">Welke oplaadcase heb ik nodig?</h3>
-            <p className="text-muted-foreground mb-4">
-              Elke AirPods generatie heeft een specifieke oplaadcase. Het is belangrijk dat je 
-              de juiste case kiest:
-            </p>
+            <h3 className="text-xl font-medium mb-3">5 condities om uit te kiezen</h3>
             <ul className="list-disc list-inside text-muted-foreground space-y-2 mb-6">
-              <li><strong>AirPods 2e generatie</strong> – Lightning case, optioneel draadloos laden</li>
-              <li><strong>AirPods 3e generatie</strong> – MagSafe of Lightning case</li>
-              <li><strong>AirPods 4e generatie</strong> – USB-C case met MagSafe</li>
-              <li><strong>AirPods Pro 1</strong> – Lightning case met MagSafe</li>
-              <li><strong>AirPods Pro 2</strong> – Lightning of USB-C case met MagSafe</li>
+              <li><strong>Nieuw</strong> – Gloednieuw en ongebruikt, in originele Apple staat</li>
+              <li><strong>Uitstekend</strong> – Zo goed als nieuw, geen zichtbare gebruikssporen</li>
+              <li><strong>Goed</strong> – Lichte gebruikssporen, werkt perfect</li>
+              <li><strong>Gebruikt</strong> – Duidelijke gebruikssporen, volledig functioneel</li>
+              <li><strong>Beperkt</strong> – Zichtbare slijtage, werkt naar behoren</li>
             </ul>
 
             <h3 className="text-xl font-medium mb-3">Alle cases zijn 100% origineel Apple</h3>

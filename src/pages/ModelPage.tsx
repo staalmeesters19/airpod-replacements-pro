@@ -19,7 +19,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
-import { mockProducts, modelInfo } from '@/data/mockProducts';
+import { mockProducts } from '@/data/mockProducts';
 
 interface ModelData {
   slug: string;
@@ -115,19 +115,7 @@ const ModelPage = () => {
 
   const products = useMemo(() => {
     if (!modelData) return [];
-    
-    // Map modelKey to mockProducts model values
-    const modelKeyMap: Record<string, string> = {
-      'airpods-1': 'airpods-2', // Gen 1 uses same products as Gen 2 for demo
-      'airpods-2': 'airpods-2',
-      'airpods-3': 'airpods-3',
-      'airpods-4': 'airpods-4',
-      'airpods-pro-1': 'airpods-pro-1',
-      'airpods-pro-2': 'airpods-pro-2',
-    };
-    
-    const productModel = modelKeyMap[modelData.modelKey];
-    return mockProducts.filter((p) => p.model === productModel && (p.type === 'earbud' || p.type === 'case'));
+    return mockProducts.filter((p) => p.model === modelData.modelKey && (p.type === 'earbud' || p.type === 'case'));
   }, [modelData]);
 
   const leftEarbuds = products.filter((p) => p.type === 'earbud' && p.side === 'left');
@@ -167,230 +155,169 @@ const ModelPage = () => {
   ];
 
   return (
-    <>
+    <div className="min-h-screen flex flex-col">
       <Helmet>
         <title>{modelData.seoTitle}</title>
         <meta name="description" content={modelData.seoDescription} />
-        <meta name="keywords" content={`${modelData.shortName.toLowerCase()}, losse ${modelData.shortName.toLowerCase()}, ${modelData.shortName.toLowerCase()} links, ${modelData.shortName.toLowerCase()} rechts, ${modelData.shortName.toLowerCase()} case`} />
         <link rel="canonical" href={`https://repairpods.nl/model/${modelData.slug}`} />
-        
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "CollectionPage",
-            "name": modelData.name,
-            "description": modelData.seoDescription,
-            "url": `https://repairpods.nl/model/${modelData.slug}`,
-            "mainEntity": {
-              "@type": "ItemList",
-              "numberOfItems": products.length,
-              "itemListElement": products.slice(0, 10).map((product, index) => ({
-                "@type": "ListItem",
-                "position": index + 1,
-                "item": {
-                  "@type": "Product",
-                  "name": product.name,
-                  "url": `https://repairpods.nl/product/${product.slug}`,
-                  "offers": {
-                    "@type": "Offer",
-                    "price": product.price,
-                    "priceCurrency": "EUR"
-                  }
-                }
-              }))
-            }
-          })}
-        </script>
-
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "mainEntity": faqItems.map((item) => ({
-              "@type": "Question",
-              "name": item.question,
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": item.answer
-              }
-            }))
-          })}
-        </script>
       </Helmet>
 
-      <div className="min-h-screen flex flex-col">
-        <Header />
+      <Header />
 
-        <main className="flex-1">
-          <div className="container mx-auto px-4 md:px-6 lg:px-10 py-8">
-            {/* Breadcrumbs */}
-            <Breadcrumb className="mb-6">
-              <BreadcrumbList>
-                <BreadcrumbItem>
-                  <BreadcrumbLink asChild>
-                    <Link to="/">Home</Link>
-                  </BreadcrumbLink>
-                </BreadcrumbItem>
-                <BreadcrumbSeparator />
-                <BreadcrumbItem>
-                  <BreadcrumbLink asChild>
-                    <Link to="/losse-airpods">Losse AirPods</Link>
-                  </BreadcrumbLink>
-                </BreadcrumbItem>
-                <BreadcrumbSeparator />
-                <BreadcrumbItem>
-                  <BreadcrumbPage>{modelData.name}</BreadcrumbPage>
-                </BreadcrumbItem>
-              </BreadcrumbList>
-            </Breadcrumb>
+      <main className="flex-1">
+        <div className="container mx-auto px-4 md:px-6 lg:px-10 py-8">
+          <Breadcrumb className="mb-6">
+            <BreadcrumbList>
+              <BreadcrumbItem>
+                <BreadcrumbLink asChild>
+                  <Link to="/">Home</Link>
+                </BreadcrumbLink>
+              </BreadcrumbItem>
+              <BreadcrumbSeparator />
+              <BreadcrumbItem>
+                <BreadcrumbLink asChild>
+                  <Link to="/losse-airpods">Losse AirPods</Link>
+                </BreadcrumbLink>
+              </BreadcrumbItem>
+              <BreadcrumbSeparator />
+              <BreadcrumbItem>
+                <BreadcrumbPage>{modelData.name}</BreadcrumbPage>
+              </BreadcrumbItem>
+            </BreadcrumbList>
+          </Breadcrumb>
 
-            {/* Page Header */}
-            <header className="mb-12">
-              <div className="flex items-center gap-3 mb-4">
-                <span className="text-sm text-muted-foreground bg-secondary px-3 py-1 rounded-full">
-                  {modelData.year}
+          <header className="mb-12">
+            <div className="flex items-center gap-3 mb-4">
+              <span className="text-sm text-muted-foreground bg-secondary px-3 py-1 rounded-full">
+                {modelData.year}
+              </span>
+              <span className="text-sm text-muted-foreground">
+                Model: {modelData.modelNumbers.join(' / ')}
+              </span>
+            </div>
+            <h1 className="text-3xl md:text-4xl font-bold mb-4">
+              Losse {modelData.name} Kopen
+            </h1>
+            <p className="text-lg text-muted-foreground max-w-3xl mb-6">
+              {modelData.description} Kies uit 5 verschillende condities.
+            </p>
+            
+            <div className="flex flex-wrap gap-2">
+              {modelData.features.map((feature) => (
+                <span 
+                  key={feature}
+                  className="text-sm px-3 py-1.5 bg-primary/10 text-primary rounded-full"
+                >
+                  {feature}
                 </span>
-                <span className="text-sm text-muted-foreground">
-                  Model: {modelData.modelNumbers.join(' / ')}
-                </span>
-              </div>
-              <h1 className="text-3xl md:text-4xl font-bold mb-4">
-                Losse {modelData.name} Kopen
-              </h1>
-              <p className="text-lg text-muted-foreground max-w-3xl mb-6">
-                {modelData.description}
-              </p>
-              
-              {/* Features */}
-              <div className="flex flex-wrap gap-2">
-                {modelData.features.map((feature) => (
-                  <span 
-                    key={feature}
-                    className="text-sm px-3 py-1.5 bg-primary/10 text-primary rounded-full"
-                  >
-                    {feature}
-                  </span>
-                ))}
-              </div>
-            </header>
+              ))}
+            </div>
+          </header>
 
-            {/* Left AirPods Section */}
-            {leftEarbuds.length > 0 && (
-              <section className="mb-16">
-                <h2 className="text-2xl font-semibold mb-6">
-                  Linker {modelData.shortName}
-                </h2>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                  {leftEarbuds.map((product) => (
-                    <ProductCard key={product.id} product={product} />
-                  ))}
-                </div>
-              </section>
-            )}
-
-            {/* Right AirPods Section */}
-            {rightEarbuds.length > 0 && (
-              <section className="mb-16">
-                <h2 className="text-2xl font-semibold mb-6">
-                  Rechter {modelData.shortName}
-                </h2>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                  {rightEarbuds.map((product) => (
-                    <ProductCard key={product.id} product={product} />
-                  ))}
-                </div>
-              </section>
-            )}
-
-            {/* Cases Section */}
-            {cases.length > 0 && (
-              <section className="mb-16">
-                <h2 className="text-2xl font-semibold mb-6">
-                  Oplaadcase {modelData.shortName}
-                </h2>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                  {cases.map((product) => (
-                    <ProductCard key={product.id} product={product} />
-                  ))}
-                </div>
-              </section>
-            )}
-
-            {products.length === 0 && (
-              <div className="text-center py-12 bg-secondary/30 rounded-xl">
-                <p className="text-muted-foreground mb-4">
-                  Er zijn momenteel geen producten beschikbaar voor {modelData.name}.
-                </p>
-                <Button asChild>
-                  <Link to="/losse-airpods">Bekijk alle losse AirPods</Link>
-                </Button>
-              </div>
-            )}
-
-            {/* SEO Content */}
-            <section className="mt-16 prose prose-neutral dark:prose-invert max-w-none">
-              <h2 className="text-2xl font-semibold mb-4">
-                Alles over {modelData.name}
+          {leftEarbuds.length > 0 && (
+            <section className="mb-16">
+              <h2 className="text-2xl font-semibold mb-6">
+                Linker {modelData.shortName}
               </h2>
-              <p className="text-muted-foreground mb-6">
-                De {modelData.name}, uitgebracht in {modelData.year}, {modelData.description.toLowerCase()}
-                Bij RePairPods kun je losse {modelData.shortName} oortjes en oplaadcases kopen als 
-                vervanging. Alle producten zijn 100% origineel Apple en worden de volgende dag geleverd.
-              </p>
-
-              <h3 className="text-xl font-medium mb-3">Kenmerken {modelData.shortName}</h3>
-              <ul className="list-disc list-inside text-muted-foreground space-y-2 mb-6">
-                {modelData.features.map((feature) => (
-                  <li key={feature}>{feature}</li>
-                ))}
-              </ul>
-
-              <h3 className="text-xl font-medium mb-3">Modelnummers</h3>
-              <p className="text-muted-foreground mb-6">
-                De {modelData.name} heeft de volgende modelnummers: <strong>{modelData.modelNumbers.join(', ')}</strong>. 
-                Je vindt dit nummer op de binnenkant van het deksel van je oplaadcase.
-              </p>
-            </section>
-
-            {/* FAQ Section */}
-            <section className="mt-16">
-              <h2 className="text-2xl font-semibold mb-6">Veelgestelde vragen over {modelData.shortName}</h2>
-              <Accordion type="single" collapsible className="w-full">
-                {faqItems.map((item, index) => (
-                  <AccordionItem key={index} value={`item-${index}`}>
-                    <AccordionTrigger className="text-left">
-                      {item.question}
-                    </AccordionTrigger>
-                    <AccordionContent className="text-muted-foreground">
-                      {item.answer}
-                    </AccordionContent>
-                  </AccordionItem>
-                ))}
-              </Accordion>
-            </section>
-
-            {/* Other Generations */}
-            <section className="mt-16">
-              <h2 className="text-2xl font-semibold mb-6">Andere generaties</h2>
-              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
-                {modelPages.filter((m) => m.slug !== slug).map((model) => (
-                  <Link 
-                    key={model.slug} 
-                    to={`/model/${model.slug}`}
-                    className="p-4 bg-secondary/30 rounded-xl hover:bg-secondary/50 transition-colors text-center"
-                  >
-                    <h3 className="font-medium text-sm">{model.shortName}</h3>
-                    <p className="text-xs text-muted-foreground">{model.year}</p>
-                  </Link>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {leftEarbuds.map((product) => (
+                  <ProductCard key={product.id} product={product} />
                 ))}
               </div>
             </section>
-          </div>
-        </main>
+          )}
 
-        <Footer />
-      </div>
-    </>
+          {rightEarbuds.length > 0 && (
+            <section className="mb-16">
+              <h2 className="text-2xl font-semibold mb-6">
+                Rechter {modelData.shortName}
+              </h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {rightEarbuds.map((product) => (
+                  <ProductCard key={product.id} product={product} />
+                ))}
+              </div>
+            </section>
+          )}
+
+          {cases.length > 0 && (
+            <section className="mb-16">
+              <h2 className="text-2xl font-semibold mb-6">
+                Oplaadcase {modelData.shortName}
+              </h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {cases.map((product) => (
+                  <ProductCard key={product.id} product={product} />
+                ))}
+              </div>
+            </section>
+          )}
+
+          {products.length === 0 && (
+            <div className="text-center py-12 bg-secondary/30 rounded-xl">
+              <p className="text-muted-foreground mb-4">
+                Er zijn momenteel geen producten beschikbaar voor {modelData.name}.
+              </p>
+              <Button asChild>
+                <Link to="/losse-airpods">Bekijk alle losse AirPods</Link>
+              </Button>
+            </div>
+          )}
+
+          <section className="mt-16 prose prose-neutral dark:prose-invert max-w-none">
+            <h2 className="text-2xl font-semibold mb-4">
+              Alles over {modelData.name}
+            </h2>
+            <p className="text-muted-foreground mb-6">
+              {modelData.description} Bij RePairPods kun je losse {modelData.shortName} oortjes en 
+              oplaadcases kopen als vervanging. Alle producten zijn 100% origineel Apple en worden 
+              de volgende dag geleverd.
+            </p>
+
+            <h3 className="text-xl font-medium mb-3">Kenmerken</h3>
+            <ul className="list-disc list-inside text-muted-foreground space-y-2 mb-6">
+              {modelData.features.map((feature) => (
+                <li key={feature}>{feature}</li>
+              ))}
+            </ul>
+          </section>
+
+          <section className="mt-16">
+            <h2 className="text-2xl font-semibold mb-6">Veelgestelde vragen</h2>
+            <Accordion type="single" collapsible className="w-full">
+              {faqItems.map((item, index) => (
+                <AccordionItem key={index} value={`item-${index}`}>
+                  <AccordionTrigger className="text-left">
+                    {item.question}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground">
+                    {item.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </section>
+
+          <section className="mt-16">
+            <h2 className="text-2xl font-semibold mb-6">Andere generaties</h2>
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+              {modelPages.filter((m) => m.slug !== slug).map((model) => (
+                <Link 
+                  key={model.slug} 
+                  to={`/model/${model.slug}`}
+                  className="p-4 bg-secondary/30 rounded-xl hover:bg-secondary/50 transition-colors text-center"
+                >
+                  <h3 className="font-medium text-sm">{model.shortName}</h3>
+                  <p className="text-xs text-muted-foreground">{model.year}</p>
+                </Link>
+              ))}
+            </div>
+          </section>
+        </div>
+      </main>
+
+      <Footer />
+    </div>
   );
 };
 

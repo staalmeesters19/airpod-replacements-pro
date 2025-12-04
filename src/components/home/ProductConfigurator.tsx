@@ -217,7 +217,7 @@ const ProductConfigurator = () => {
                           Welke versie heb je?
                         </p>
                         <p className="text-xs text-amber-700 dark:text-amber-300">
-                          AirPods 4 bestaat in 2 versies. Check je modelnummer via Instellingen → Bluetooth → (i)
+                          AirPods 4 bestaat in 2 versies. Ga naar Instellingen → Bluetooth → klik op de (i) naast je AirPods en scroll naar beneden. Modelnummer begint met A.
                         </p>
                       </div>
                     </div>
@@ -254,7 +254,7 @@ const ProductConfigurator = () => {
                           Welke aansluiting heeft jouw case?
                         </p>
                         <p className="text-xs text-amber-700 dark:text-amber-300">
-                          AirPods Pro 2 bestaat met Lightning of USB-C. Check de onderkant van je case.
+                          AirPods Pro 2 bestaat met Lightning of USB-C. Check de onderkant van je case, of ga naar Instellingen → Bluetooth → klik op de (i) naast je AirPods en scroll naar beneden. Modelnummer begint met A.
                         </p>
                       </div>
                     </div>

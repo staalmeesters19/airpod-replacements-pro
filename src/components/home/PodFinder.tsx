@@ -88,10 +88,32 @@ const allBudModels = Object.values(airpodsData.generations).flatMap(gen => [
 const PodFinder = () => {
   const location = useLocation();
   const isEnglish = location.pathname.startsWith('/en');
-  const prefix = isEnglish ? '/en' : '';
   
   const [currentStep, setCurrentStep] = useState(1);
   const [selectedPart, setSelectedPart] = useState<PartType>(null);
+
+  const t = {
+    title: 'AirPodFinder',
+    step: isEnglish ? 'Step' : 'Stap',
+    of: isEnglish ? 'of' : 'van',
+    step1Question: isEnglish ? 'Which replacement part do you need?' : 'Welk vervangend apparaat heb je nodig?',
+    leftAirPod: isEnglish ? 'Single left AirPod' : 'Losse linker AirPod',
+    rightAirPod: isEnglish ? 'Single right AirPod' : 'Losse rechter AirPod',
+    chargingCase: isEnglish ? 'Single charging case' : 'Losse oplaadcase',
+    step2Question: isEnglish ? 'Do you have an iPhone and are you connected to your AirPods via Bluetooth?' : 'Heb je een iPhone en ben je via Bluetooth verbonden met je AirPods?',
+    step2Instructions: isEnglish ? 'Go to Settings → Bluetooth → tap the (i) icon next to your AirPods' : 'Ga naar Instellingen → Bluetooth → tik op het (i)-icoon bij je AirPods',
+    step2ImageAlt: isEnglish ? 'How to find the model number in iPhone settings' : 'Hoe je het modelnummer vindt in iPhone instellingen',
+    step3Question: isEnglish ? 'Do you have your charging case at hand?' : 'Heb je je oplaadcase bij de hand?',
+    step3Instructions: isEnglish ? 'Look at the engraving on the inside of the lid' : 'Kijk naar de gravure aan de binnenkant van het deksel',
+    step4Question: isEnglish ? 'Do you have one of your AirPods at hand?' : 'Heb je een van je AirPods bij de hand?',
+    step4Instructions: isEnglish ? 'Look at the number under the "head" of the AirPod' : 'Kijk naar het nummer onder de "kop" van de AirPod',
+    skipQuestion: isEnglish ? 'Skip question' : 'Vraag overslaan',
+    reset: isEnglish ? 'Reset' : 'Opnieuw',
+    startOver: isEnglish ? 'Start over' : 'Opnieuw beginnen',
+    leftAlt: isEnglish ? 'Left AirPod' : 'Linker AirPod',
+    rightAlt: isEnglish ? 'Right AirPod' : 'Rechter AirPod',
+    caseAlt: isEnglish ? 'Charging case' : 'Oplaadcase',
+  };
 
   const handlePartSelect = (part: PartType) => {
     setSelectedPart(part);
@@ -122,7 +144,12 @@ const PodFinder = () => {
         else if (selectedPart === 'left') url = genData.urls.left;
         else if (selectedPart === 'right') url = genData.urls.right;
         
-        window.location.href = prefix + url;
+        // Add /en prefix for English pages
+        if (isEnglish) {
+          url = '/en' + url;
+        }
+        
+        window.location.href = url;
         return;
       }
     }
@@ -138,37 +165,37 @@ const PodFinder = () => {
           
           <div className="p-6 md:p-8">
             <div className="text-center mb-8">
-              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-2">AirPodFinder</h2>
-              <p className="text-sm text-muted-foreground">{isEnglish ? `Step ${currentStep} of 4` : `Stap ${currentStep} van 4`}</p>
+              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-2">{t.title}</h2>
+              <p className="text-sm text-muted-foreground">{t.step} {currentStep} {t.of} 4</p>
             </div>
 
             {/* Step 1: Part Selection */}
             {currentStep === 1 && (
               <div>
                 <h3 className="text-lg md:text-xl font-medium text-center text-foreground mb-8">
-                  {isEnglish ? 'Which replacement part do you need?' : 'Welk vervangend apparaat heb je nodig?'}
+                  {t.step1Question}
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                   <button
                     onClick={() => handlePartSelect('left')}
                     className="flex flex-col items-center p-6 bg-background border border-border rounded-2xl hover:border-primary hover:bg-accent/30 transition-all duration-200 group"
                   >
-                    <img src={airpodLeft} alt={isEnglish ? "Left AirPod" : "Linker AirPod"} className="w-24 h-24 object-contain mb-4 group-hover:scale-105 transition-transform" />
-                    <span className="font-medium text-foreground">{isEnglish ? 'Single left AirPod' : 'Losse linker AirPod'}</span>
+                    <img src={airpodLeft} alt={t.leftAlt} className="w-24 h-24 object-contain mb-4 group-hover:scale-105 transition-transform" />
+                    <span className="font-medium text-foreground">{t.leftAirPod}</span>
                   </button>
                   <button
                     onClick={() => handlePartSelect('right')}
                     className="flex flex-col items-center p-6 bg-background border border-border rounded-2xl hover:border-primary hover:bg-accent/30 transition-all duration-200 group"
                   >
-                    <img src={airpodRight} alt={isEnglish ? "Right AirPod" : "Rechter AirPod"} className="w-24 h-24 object-contain mb-4 group-hover:scale-105 transition-transform" />
-                    <span className="font-medium text-foreground">{isEnglish ? 'Single right AirPod' : 'Losse rechter AirPod'}</span>
+                    <img src={airpodRight} alt={t.rightAlt} className="w-24 h-24 object-contain mb-4 group-hover:scale-105 transition-transform" />
+                    <span className="font-medium text-foreground">{t.rightAirPod}</span>
                   </button>
                   <button
                     onClick={() => handlePartSelect('case')}
                     className="flex flex-col items-center p-6 bg-background border border-border rounded-2xl hover:border-primary hover:bg-accent/30 transition-all duration-200 group"
                   >
-                    <img src={airpodCase} alt={isEnglish ? "Charging Case" : "Oplaadcase"} className="w-24 h-24 object-contain mb-4 group-hover:scale-105 transition-transform" />
-                    <span className="font-medium text-foreground">{isEnglish ? 'Single charging case' : 'Losse oplaadcase'}</span>
+                    <img src={airpodCase} alt={t.caseAlt} className="w-24 h-24 object-contain mb-4 group-hover:scale-105 transition-transform" />
+                    <span className="font-medium text-foreground">{t.chargingCase}</span>
                   </button>
                 </div>
               </div>
@@ -178,14 +205,14 @@ const PodFinder = () => {
             {currentStep === 2 && (
               <div>
                 <h3 className="text-lg md:text-xl font-medium text-center text-foreground mb-2">
-                  {isEnglish ? 'Do you have an iPhone and are you connected to your AirPods via Bluetooth?' : 'Heb je een iPhone en ben je via Bluetooth verbonden met je AirPods?'}
+                  {t.step2Question}
                 </h3>
                 <p className="text-sm text-muted-foreground text-center mb-6">
-                  {isEnglish ? 'Go to Settings → Bluetooth → tap the (i) icon next to your AirPods' : 'Ga naar Instellingen → Bluetooth → tik op het (i)-icoon bij je AirPods'}
+                  {t.step2Instructions}
                 </p>
                 <img 
                   src={iphoneModelNumber} 
-                  alt={isEnglish ? "How to find the model number in iPhone settings" : "Hoe je het modelnummer vindt in iPhone instellingen"}
+                  alt={t.step2ImageAlt}
                   className="max-w-full h-auto max-h-56 mx-auto rounded-xl shadow-soft mb-6 object-contain"
                 />
                 <div className="grid grid-cols-3 sm:grid-cols-4 gap-2">
@@ -203,11 +230,11 @@ const PodFinder = () => {
                 </div>
                 <div className="flex justify-center gap-4 mt-6">
                   <Button variant="ghost" onClick={handleSkipStep} className="text-muted-foreground">
-                    {isEnglish ? 'Skip question' : 'Vraag overslaan'}
+                    {t.skipQuestion}
                   </Button>
                   <Button variant="ghost" onClick={handleReset} className="text-muted-foreground">
                     <RotateCcw className="w-4 h-4 mr-2" />
-                    {isEnglish ? 'Restart' : 'Opnieuw'}
+                    {t.reset}
                   </Button>
                 </div>
               </div>
@@ -217,10 +244,10 @@ const PodFinder = () => {
             {currentStep === 3 && (
               <div>
                 <h3 className="text-lg md:text-xl font-medium text-center text-foreground mb-2">
-                  {isEnglish ? 'Do you have your charging case at hand?' : 'Heb je je oplaadcase bij de hand?'}
+                  {t.step3Question}
                 </h3>
                 <p className="text-sm text-muted-foreground text-center mb-6">
-                  {isEnglish ? 'Look at the engraving on the inside of the lid' : 'Kijk naar de gravure aan de binnenkant van het deksel'}
+                  {t.step3Instructions}
                 </p>
                 <div className="grid grid-cols-3 sm:grid-cols-4 gap-2">
                   {allCaseModels.map(model => (
@@ -237,11 +264,11 @@ const PodFinder = () => {
                 </div>
                 <div className="flex justify-center gap-4 mt-6">
                   <Button variant="ghost" onClick={handleSkipStep} className="text-muted-foreground">
-                    {isEnglish ? 'Skip question' : 'Vraag overslaan'}
+                    {t.skipQuestion}
                   </Button>
                   <Button variant="ghost" onClick={handleReset} className="text-muted-foreground">
                     <RotateCcw className="w-4 h-4 mr-2" />
-                    {isEnglish ? 'Restart' : 'Opnieuw'}
+                    {t.reset}
                   </Button>
                 </div>
               </div>
@@ -251,10 +278,10 @@ const PodFinder = () => {
             {currentStep === 4 && (
               <div>
                 <h3 className="text-lg md:text-xl font-medium text-center text-foreground mb-2">
-                  {isEnglish ? 'Do you have one of your AirPods at hand?' : 'Heb je een van je AirPods bij de hand?'}
+                  {t.step4Question}
                 </h3>
                 <p className="text-sm text-muted-foreground text-center mb-6">
-                  {isEnglish ? 'Look at the number under the "head" of the AirPod' : 'Kijk naar het nummer onder de "kop" van de AirPod'}
+                  {t.step4Instructions}
                 </p>
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
                   {allBudModels.map(({ model, side }) => (
@@ -272,7 +299,7 @@ const PodFinder = () => {
                 <div className="flex justify-center mt-6">
                   <Button variant="ghost" onClick={handleReset} className="text-muted-foreground">
                     <RotateCcw className="w-4 h-4 mr-2" />
-                    {isEnglish ? 'Start over' : 'Opnieuw beginnen'}
+                    {t.startOver}
                   </Button>
                 </div>
               </div>

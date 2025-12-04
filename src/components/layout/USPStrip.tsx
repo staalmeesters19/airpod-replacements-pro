@@ -24,7 +24,7 @@ const USPStrip = () => {
     },
     {
       icon: RotateCcw,
-      text: '14 dagen retourrecht',
+      text: '14 dagen bedenktijd',
       subtext: 'Niet goed, geld terug',
     },
   ];

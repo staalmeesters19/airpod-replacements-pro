@@ -19,7 +19,7 @@ const TrustBadges = () => {
     },
     {
       icon: RotateCcw,
-      title: '14 dagen retourrecht',
+      title: '14 dagen bedenktijd',
       description: 'Niet tevreden? Geld terug!',
     },
   ];

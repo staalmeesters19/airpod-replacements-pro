@@ -1,0 +1,53 @@
+{
+  "singleAirpods": {
+    "title": "Losse AirPods",
+    "metaTitle": "Losse AirPods kopen | Linker of rechter AirPod | RePairPods",
+    "metaDescription": "Koop losse AirPods voor alle generaties. Linker of rechter AirPod kwijt? 100% origineel Apple, tot 1 jaar garantie.",
+    "description": "Eén AirPod kwijt of kapot? Bestel alleen wat je nodig hebt. Alle generaties beschikbaar."
+  },
+  "chargingCases": {
+    "title": "Losse Oplaadcases",
+    "metaTitle": "Losse AirPods Oplaadcase kopen | Alle generaties | RePairPods",
+    "metaDescription": "Koop een losse AirPods oplaadcase. MagSafe, Lightning of USB-C. 100% origineel Apple.",
+    "description": "Oplaadcase kwijt of kapot? Bestel een losse case voor je AirPods."
+  },
+  "filters": {
+    "side": "Kant",
+    "model": "Model",
+    "sortBy": "Sorteer op",
+    "allSides": "Alle kanten",
+    "allModels": "Alle modellen",
+    "priceAsc": "Prijs laag-hoog",
+    "priceDesc": "Prijs hoog-laag",
+    "nameAsc": "Naam A-Z"
+  },
+  "noResults": {
+    "title": "Geen producten gevonden",
+    "description": "Probeer andere filters of bekijk al onze producten."
+  },
+  "detail": {
+    "condition": "Conditie",
+    "selectCondition": "Kies conditie",
+    "variant": "Variant",
+    "selectVariant": "Kies variant",
+    "modelNumbers": "Modelnummers",
+    "checkModel": "Controleer je modelnummer",
+    "modelCheckDescription": "Zorg dat je het juiste model bestelt. Controleer je modelnummer via iPhone Instellingen > Bluetooth > (i) bij je AirPods.",
+    "compatibility": "Compatibiliteit",
+    "whatsIncluded": "Wat krijg je",
+    "features": "Kenmerken",
+    "pairingInstructions": "Zo koppel je",
+    "relatedProducts": "Gerelateerde producten",
+    "lightning": "Lightning",
+    "usbC": "USB-C",
+    "anc": "Met ANC",
+    "noAnc": "Zonder ANC"
+  },
+  "conditions": {
+    "newDesc": "Nieuw in geopende verpakking, ongebruikt",
+    "excellentDesc": "Zo goed als nieuw, minimale gebruikssporen",
+    "goodDesc": "Lichte gebruikssporen, werkt perfect",
+    "usedDesc": "Zichtbare gebruikssporen, volledig functioneel",
+    "limitedDesc": "Meer gebruikssporen, budget-optie"
+  }
+}

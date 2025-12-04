@@ -1,31 +1,35 @@
 import { Truck, Shield, RotateCcw, Star, Award } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const USPStrip = () => {
+  const { t, i18n } = useTranslation('home');
+  const isEnglish = i18n.language === 'en';
+
   const usps = [
     {
       icon: Award,
-      text: '#1 Electronicazaak NL',
-      subtext: 'op Trustpilot',
+      text: isEnglish ? '#1 Electronics store NL' : '#1 Electronicazaak NL',
+      subtext: isEnglish ? 'on Trustpilot' : 'op Trustpilot',
     },
     {
       icon: Star,
-      text: '4.9/5 sterren',
-      subtext: '1000+ klanten',
+      text: t('usp.rating'),
+      subtext: isEnglish ? '1000+ customers' : '1000+ klanten',
     },
     {
       icon: Truck,
-      text: 'Binnen 24 uur verzonden',
-      subtext: '€4,95 verzendkosten',
+      text: t('usp.shipping24h'),
+      subtext: isEnglish ? '€4.95 shipping' : '€4,95 verzendkosten',
     },
     {
       icon: Shield,
-      text: 'Tot 12 maanden garantie',
-      subtext: '100% origineel Apple',
+      text: t('usp.warranty'),
+      subtext: isEnglish ? '100% original Apple' : '100% origineel Apple',
     },
     {
       icon: RotateCcw,
-      text: '14 dagen bedenktijd',
-      subtext: 'Niet goed, geld terug',
+      text: t('usp.return'),
+      subtext: t('usp.returnSubtext'),
     },
   ];
 
@@ -61,6 +65,3 @@ const USPStrip = () => {
 };
 
 export default USPStrip;
-
-
-

@@ -1,0 +1,84 @@
+{
+  "brand": {
+    "name": "RePairPods",
+    "tagline": "formerly Airpods-handel",
+    "location": "Known from our store in Amsterdam"
+  },
+  "cta": {
+    "addToCart": "Add to cart",
+    "viewProducts": "View products",
+    "viewAll": "View all",
+    "learnMore": "Learn more",
+    "contact": "Contact us",
+    "whatsapp": "WhatsApp us",
+    "orderNow": "Order now",
+    "findYourModel": "Find your model",
+    "clearFilters": "Clear filters"
+  },
+  "conditions": {
+    "new": "New",
+    "excellent": "Excellent",
+    "good": "Good",
+    "used": "Used",
+    "limited": "Limited"
+  },
+  "sides": {
+    "left": "Left",
+    "right": "Right",
+    "case": "Charging case",
+    "leftEarbud": "Left AirPod",
+    "rightEarbud": "Right AirPod"
+  },
+  "status": {
+    "inStock": "In stock",
+    "outOfStock": "Out of stock",
+    "limitedStock": "Limited stock",
+    "shipsWithin24h": "Ships within 24 hours"
+  },
+  "trust": {
+    "originalApple": "100% original Apple",
+    "warranty": "Up to 1 year warranty",
+    "return": "14-day return policy",
+    "shipping": "Free shipping",
+    "batteryMin": "Min. 80% battery",
+    "tested": "Professionally tested"
+  },
+  "currency": {
+    "from": "From",
+    "price": "€{{amount}}"
+  },
+  "cart": {
+    "empty": "Your cart is empty",
+    "total": "Total",
+    "checkout": "Checkout",
+    "continueShopping": "Continue shopping",
+    "items": "{{count}} item",
+    "items_plural": "{{count}} items"
+  },
+  "search": {
+    "placeholder": "Search model, side or case...",
+    "noResults": "No results found"
+  },
+  "footer": {
+    "products": "Products",
+    "help": "Help",
+    "visitStore": "Visit our store",
+    "openingHours": "Mon-Sat: 10:00 - 18:00",
+    "sundayClosed": "Sun: Closed",
+    "rights": "All rights reserved",
+    "privacy": "Privacy policy",
+    "terms": "Terms & conditions",
+    "cookies": "Cookie policy",
+    "netherlands": "Dutch company",
+    "trustpilot": "4.9/5 Trustpilot",
+    "topStore": "#1 Electronics store NL"
+  },
+  "languages": {
+    "nl": "Nederlands",
+    "en": "English"
+  },
+  "errors": {
+    "notFound": "Page not found",
+    "generic": "Something went wrong"
+  }
+}

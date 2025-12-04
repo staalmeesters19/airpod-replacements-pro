@@ -1,0 +1,50 @@
+{
+  "whichAirpods": {
+    "title": "Welke AirPods heb ik?",
+    "metaTitle": "Welke AirPods heb ik? | Modelnummer checker | RePairPods",
+    "metaDescription": "Ontdek welke AirPods generatie je hebt. Check je modelnummer en vind de juiste vervanging.",
+    "subtitle": "Vind je modelnummer en generatie",
+    "howToFind": "Zo vind je je modelnummer",
+    "viaiPhone": "Via je iPhone/iPad",
+    "viaCase": "Op de oplaadcase",
+    "needHelp": "Hulp nodig?",
+    "chatWithUs": "Chat met ons via WhatsApp"
+  },
+  "reviews": {
+    "title": "Reviews",
+    "metaTitle": "Klantreviews | RePairPods",
+    "metaDescription": "Lees wat onze klanten zeggen over RePairPods. Meer dan 360 vijfsterren reviews.",
+    "subtitle": "Wat onze klanten zeggen",
+    "count": "Meer dan 360 tevreden klanten gingen je voor"
+  },
+  "faq": {
+    "title": "Veelgestelde vragen",
+    "metaTitle": "Veelgestelde vragen | RePairPods",
+    "metaDescription": "Antwoorden op veelgestelde vragen over losse AirPods, garantie, verzending en retourneren.",
+    "subtitle": "Antwoorden op je vragen"
+  },
+  "help": {
+    "title": "Hulp & ondersteuning",
+    "metaTitle": "Hulp & ondersteuning | RePairPods",
+    "metaDescription": "Hulp nodig met je AirPods? Vind handleidingen voor pairen, problemen oplossen en meer.",
+    "subtitle": "We helpen je graag"
+  },
+  "aboutUs": {
+    "title": "Over ons",
+    "metaTitle": "Over ons | RePairPods",
+    "metaDescription": "Leer meer over RePairPods. Opgericht door twee broers met een passie voor duurzaamheid.",
+    "subtitle": "Ons verhaal"
+  },
+  "blog": {
+    "title": "Blog",
+    "metaTitle": "Blog | Tips & handleidingen | RePairPods",
+    "metaDescription": "Tips, handleidingen en nieuws over AirPods. Leer hoe je je AirPods onderhoudt en problemen oplost.",
+    "readMore": "Lees meer",
+    "backToBlog": "Terug naar blog"
+  },
+  "notFound": {
+    "title": "Pagina niet gevonden",
+    "description": "De pagina die je zoekt bestaat niet of is verplaatst.",
+    "backHome": "Terug naar home"
+  }
+}

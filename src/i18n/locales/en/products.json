@@ -1,0 +1,53 @@
+{
+  "singleAirpods": {
+    "title": "Single AirPods",
+    "metaTitle": "Buy Single AirPods | Left or Right AirPod | RePairPods",
+    "metaDescription": "Buy single AirPods for all generations. Lost your left or right AirPod? 100% original Apple, up to 1 year warranty.",
+    "description": "Lost or broken AirPod? Order only what you need. All generations available."
+  },
+  "chargingCases": {
+    "title": "Charging Cases",
+    "metaTitle": "Buy AirPods Charging Case | All Generations | RePairPods",
+    "metaDescription": "Buy a replacement AirPods charging case. MagSafe, Lightning or USB-C. 100% original Apple.",
+    "description": "Lost or broken charging case? Order a replacement case for your AirPods."
+  },
+  "filters": {
+    "side": "Side",
+    "model": "Model",
+    "sortBy": "Sort by",
+    "allSides": "All sides",
+    "allModels": "All models",
+    "priceAsc": "Price low-high",
+    "priceDesc": "Price high-low",
+    "nameAsc": "Name A-Z"
+  },
+  "noResults": {
+    "title": "No products found",
+    "description": "Try different filters or view all our products."
+  },
+  "detail": {
+    "condition": "Condition",
+    "selectCondition": "Select condition",
+    "variant": "Variant",
+    "selectVariant": "Select variant",
+    "modelNumbers": "Model numbers",
+    "checkModel": "Check your model number",
+    "modelCheckDescription": "Make sure you order the right model. Check your model number via iPhone Settings > Bluetooth > (i) next to your AirPods.",
+    "compatibility": "Compatibility",
+    "whatsIncluded": "What's included",
+    "features": "Features",
+    "pairingInstructions": "How to pair",
+    "relatedProducts": "Related products",
+    "lightning": "Lightning",
+    "usbC": "USB-C",
+    "anc": "With ANC",
+    "noAnc": "Without ANC"
+  },
+  "conditions": {
+    "newDesc": "New in opened packaging, unused",
+    "excellentDesc": "Like new, minimal signs of use",
+    "goodDesc": "Light signs of use, works perfectly",
+    "usedDesc": "Visible signs of use, fully functional",
+    "limitedDesc": "More signs of use, budget option"
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "brand": {
+    "name": "RePairPods",
+    "tagline": "voorheen Airpods-handel",
+    "location": "Bekend van onze winkel in Amsterdam"
+  },
+  "cta": {
+    "addToCart": "In winkelmand",
+    "viewProducts": "Bekijk producten",
+    "viewAll": "Bekijk alles",
+    "learnMore": "Meer info",
+    "contact": "Neem contact op",
+    "whatsapp": "WhatsApp ons",
+    "orderNow": "Bestel nu",
+    "findYourModel": "Vind jouw model",
+    "clearFilters": "Filters wissen"
+  },
+  "conditions": {
+    "new": "Nieuw",
+    "excellent": "Uitstekend",
+    "good": "Goed",
+    "used": "Gebruikt",
+    "limited": "Beperkt"
+  },
+  "sides": {
+    "left": "Links",
+    "right": "Rechts",
+    "case": "Oplaadcase",
+    "leftEarbud": "Linker AirPod",
+    "rightEarbud": "Rechter AirPod"
+  },
+  "status": {
+    "inStock": "Op voorraad",
+    "outOfStock": "Niet op voorraad",
+    "limitedStock": "Beperkte voorraad",
+    "shipsWithin24h": "Binnen 24 uur verzonden"
+  },
+  "trust": {
+    "originalApple": "100% origineel Apple",
+    "warranty": "Tot 1 jaar garantie",
+    "return": "14 dagen bedenktijd",
+    "shipping": "Gratis verzending",
+    "batteryMin": "Min. 80% batterij",
+    "tested": "Professioneel getest"
+  },
+  "currency": {
+    "from": "Vanaf",
+    "price": "€{{amount}}"
+  },
+  "cart": {
+    "empty": "Je winkelmand is leeg",
+    "total": "Totaal",
+    "checkout": "Afrekenen",
+    "continueShopping": "Verder winkelen",
+    "items": "{{count}} item",
+    "items_plural": "{{count}} items"
+  },
+  "search": {
+    "placeholder": "Zoek model, kant of case...",
+    "noResults": "Geen resultaten gevonden"
+  },
+  "footer": {
+    "products": "Producten",
+    "help": "Hulp",
+    "visitStore": "Bezoek onze winkel",
+    "openingHours": "Ma-Za: 10:00 - 18:00",
+    "sundayClosed": "Zo: Gesloten",
+    "rights": "Alle rechten voorbehouden",
+    "privacy": "Privacybeleid",
+    "terms": "Algemene voorwaarden",
+    "cookies": "Cookiebeleid",
+    "netherlands": "Nederlands bedrijf",
+    "trustpilot": "4.9/5 Trustpilot",
+    "topStore": "#1 Electronicazaak NL"
+  },
+  "languages": {
+    "nl": "Nederlands",
+    "en": "English"
+  },
+  "errors": {
+    "notFound": "Pagina niet gevonden",
+    "generic": "Er is iets misgegaan"
+  }
+}

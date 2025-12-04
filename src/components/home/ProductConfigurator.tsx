@@ -22,7 +22,7 @@ import airpodsPro2Left from '@/assets/products/airpods-pro-2-left.png';
 import airpodsPro2Right from '@/assets/products/airpods-pro-2-right.png';
 import airpodsPro2Case from '@/assets/products/airpods-pro-2-case.png';
 
-type Generation = 'airpods-1' | 'airpods-2' | 'airpods-3' | 'airpods-4' | 'airpods-pro-1' | 'airpods-pro-2';
+type Generation = 'airpods-1' | 'airpods-2' | 'airpods-3' | 'airpods-4' | 'airpods-pro-1' | 'airpods-pro-2' | 'airpods-pro-3';
 type Side = 'left' | 'right' | 'case';
 
 const generations: { value: Generation; label: string }[] = [
@@ -32,6 +32,7 @@ const generations: { value: Generation; label: string }[] = [
   { value: 'airpods-4', label: 'AirPods 4' },
   { value: 'airpods-pro-1', label: 'AirPods Pro 1' },
   { value: 'airpods-pro-2', label: 'AirPods Pro 2' },
+  { value: 'airpods-pro-3', label: 'AirPods Pro 3' },
 ];
 
 const sides: { value: Side; label: string }[] = [
@@ -51,6 +52,7 @@ const getProductImage = (generation: Generation, side: Side): string => {
     'airpods-4': { left: airpods4Left, right: airpods4Right, case: airpods4Case },
     'airpods-pro-1': { left: airpodsPro1Left, right: airpodsPro1Right, case: airpodsPro1Case },
     'airpods-pro-2': { left: airpodsPro2Left, right: airpodsPro2Right, case: airpodsPro2Case },
+    'airpods-pro-3': { left: airpodsPro2Left, right: airpodsPro2Right, case: airpodsPro2Case }, // Using Pro 2 images
   };
   return imageMap[generation][side];
 };

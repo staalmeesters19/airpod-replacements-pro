@@ -64,14 +64,18 @@
     "viewAll": "View all reviews"
   },
   "usp": {
+    "topStore": "#1 Electronics store NL",
+    "topStoreSubtext": "on Trustpilot",
+    "rating": "4.9/5 stars",
+    "ratingSubtext": "1000+ customers",
+    "shipping24h": "Ships within 24 hours",
+    "shippingCost": "€4.95 shipping",
+    "warranty": "Up to 12 months warranty",
+    "originalApple": "100% original Apple",
+    "return": "14-day reflection",
+    "returnSubtext": "Not satisfied? Money back",
     "freeShipping": "Free shipping",
     "shippingSubtext": "To all of Netherlands",
-    "warranty": "Up to 1 year warranty",
-    "warrantySubtext": "On all products",
-    "return": "14-day returns",
-    "returnSubtext": "Not satisfied? Money back",
-    "rating": "4.9/5 stars",
-    "ratingSubtext": "300+ happy customers",
-    "shipping24h": "Ships within 24 hours"
+    "warrantySubtext": "On all products"
   }
 }

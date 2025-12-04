@@ -2,29 +2,28 @@ import { Truck, Shield, RotateCcw, Star, Award } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 const USPStrip = () => {
-  const { t, i18n } = useTranslation('home');
-  const isEnglish = i18n.language === 'en';
+  const { t } = useTranslation('home');
 
   const usps = [
     {
       icon: Award,
-      text: isEnglish ? '#1 Electronics store NL' : '#1 Electronicazaak NL',
-      subtext: isEnglish ? 'on Trustpilot' : 'op Trustpilot',
+      text: t('usp.topStore'),
+      subtext: t('usp.topStoreSubtext'),
     },
     {
       icon: Star,
       text: t('usp.rating'),
-      subtext: isEnglish ? '1000+ customers' : '1000+ klanten',
+      subtext: t('usp.ratingSubtext'),
     },
     {
       icon: Truck,
       text: t('usp.shipping24h'),
-      subtext: isEnglish ? '€4.95 shipping' : '€4,95 verzendkosten',
+      subtext: t('usp.shippingCost'),
     },
     {
       icon: Shield,
       text: t('usp.warranty'),
-      subtext: isEnglish ? '100% original Apple' : '100% origineel Apple',
+      subtext: t('usp.originalApple'),
     },
     {
       icon: RotateCcw,

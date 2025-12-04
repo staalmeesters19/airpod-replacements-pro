@@ -1,6 +1,6 @@
 import { useState, useMemo } from 'react';
 import { Helmet } from 'react-helmet';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Filter } from 'lucide-react';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
@@ -28,8 +28,9 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion';
 import { mockProducts, getLowestPrice } from '@/data/mockProducts';
+import { useTranslation } from 'react-i18next';
 
-const faqItems = [
+const faqItemsNL = [
   {
     question: 'Kan ik een losse oplaadcase kopen zonder AirPods?',
     answer: 'Ja, bij RePairPods verkopen we losse oplaadcases zonder AirPods. Perfect als je case kwijt of kapot is, maar je AirPods nog prima werken.',
@@ -48,7 +49,32 @@ const faqItems = [
   },
 ];
 
+const faqItemsEN = [
+  {
+    question: 'Can I buy a charging case without AirPods?',
+    answer: 'Yes, at RePairPods we sell charging cases without AirPods. Perfect if your case is lost or broken, but your AirPods still work fine.',
+  },
+  {
+    question: 'Does every charging case fit every AirPods generation?',
+    answer: 'No, each generation of AirPods has a specific charging case. AirPods 2 do not fit in an AirPods 3 case and vice versa. Always check which generation you have.',
+  },
+  {
+    question: 'What is the difference between Lightning and USB-C cases?',
+    answer: 'Older generations (AirPods 2, 3, Pro 1) have Lightning connection. Newer models (AirPods 4, Pro 2 USB-C) have USB-C. Some cases also support wireless charging via MagSafe.',
+  },
+  {
+    question: 'Can I pair my AirPods with a new case?',
+    answer: 'Yes, you can easily pair your AirPods with a new charging case. Place your AirPods in the new case, press the button on the back, and re-pair via your iPhone.',
+  },
+];
+
 const LosseOplaadcases = () => {
+  const location = useLocation();
+  const isEnglish = location.pathname.startsWith('/en');
+  const { t } = useTranslation(['products', 'common', 'nav']);
+  const prefix = isEnglish ? '/en' : '';
+  const faqItems = isEnglish ? faqItemsEN : faqItemsNL;
+  
   const [selectedModel, setSelectedModel] = useState<string>('all');
   const [sortBy, setSortBy] = useState<string>('price-asc');
 
@@ -81,13 +107,16 @@ const LosseOplaadcases = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Helmet>
-        <title>Losse Oplaadcase Kopen | AirPods Cases per Generatie | RePairPods</title>
+        <title>{isEnglish ? 'Buy AirPods Charging Case | All Generations | RePairPods' : 'Losse Oplaadcase Kopen | AirPods Cases per Generatie | RePairPods'}</title>
         <meta
           name="description"
-          content="Koop een losse AirPods oplaadcase. Case kwijt of kapot? Alle generaties op voorraad: AirPods 2, 3, 4, Pro 1 en Pro 2. 100% origineel Apple, morgen in huis."
+          content={isEnglish 
+            ? 'Buy a replacement AirPods charging case. Case lost or broken? All generations in stock: AirPods 2, 3, 4, Pro 1 and Pro 2. 100% original Apple, delivered tomorrow.'
+            : 'Koop een losse AirPods oplaadcase. Case kwijt of kapot? Alle generaties op voorraad: AirPods 2, 3, 4, Pro 1 en Pro 2. 100% origineel Apple, morgen in huis.'
+          }
         />
-        <meta name="keywords" content="losse oplaadcase, airpods case kopen, oplaadcase airpods, airpods case los, airpods hoesje kopen" />
-        <link rel="canonical" href="https://repairpods.nl/losse-oplaadcases" />
+        <meta name="keywords" content={isEnglish ? 'airpods charging case, buy airpods case, replacement case airpods, airpods case only' : 'losse oplaadcase, airpods case kopen, oplaadcase airpods, airpods case los, airpods hoesje kopen'} />
+        <link rel="canonical" href={isEnglish ? 'https://repairpods.nl/en/charging-cases' : 'https://repairpods.nl/losse-oplaadcases'} />
       </Helmet>
 
       <Header />
@@ -98,41 +127,43 @@ const LosseOplaadcases = () => {
             <BreadcrumbList>
               <BreadcrumbItem>
                 <BreadcrumbLink asChild>
-                  <Link to="/">Home</Link>
+                  <Link to={prefix || '/'}>{t('nav:breadcrumbs.home')}</Link>
                 </BreadcrumbLink>
               </BreadcrumbItem>
               <BreadcrumbSeparator />
               <BreadcrumbItem>
-                <BreadcrumbPage>Losse Oplaadcases</BreadcrumbPage>
+                <BreadcrumbPage>{isEnglish ? 'Charging Cases' : 'Losse Oplaadcases'}</BreadcrumbPage>
               </BreadcrumbItem>
             </BreadcrumbList>
           </Breadcrumb>
 
           <header className="mb-8">
             <h1 className="text-3xl md:text-4xl font-bold mb-4">
-              Losse AirPods Oplaadcase Kopen
+              {isEnglish ? 'Buy AirPods Charging Cases' : 'Losse AirPods Oplaadcase Kopen'}
             </h1>
             <p className="text-lg text-muted-foreground max-w-3xl">
-              Oplaadcase kwijt of kapot? Koop een losse originele Apple oplaadcase voor je AirPods. 
-              Wij hebben alle generaties op voorraad. Kies uit 5 verschillende condities en bespaar tot 60%.
+              {isEnglish 
+                ? 'Charging case lost or broken? Buy a replacement original Apple charging case for your AirPods. We have all generations in stock. Choose from 5 different conditions and save up to 60%.'
+                : 'Oplaadcase kwijt of kapot? Koop een losse originele Apple oplaadcase voor je AirPods. Wij hebben alle generaties op voorraad. Kies uit 5 verschillende condities en bespaar tot 60%.'
+              }
             </p>
           </header>
 
           <div className="flex flex-col md:flex-row gap-4 mb-8 p-4 bg-secondary/30 rounded-xl">
             <div className="flex items-center gap-2 text-sm font-medium">
               <Filter className="h-4 w-4" />
-              Filters:
+              {isEnglish ? 'Filters:' : 'Filters:'}
             </div>
 
             <Select value={selectedModel} onValueChange={setSelectedModel}>
               <SelectTrigger className="w-full md:w-48">
-                <SelectValue placeholder="Generatie" />
+                <SelectValue placeholder={t('products:filters.model')} />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="all">Alle generaties</SelectItem>
-                <SelectItem value="airpods-2">AirPods 2e generatie</SelectItem>
-                <SelectItem value="airpods-3">AirPods 3e generatie</SelectItem>
-                <SelectItem value="airpods-4">AirPods 4e generatie</SelectItem>
+                <SelectItem value="all">{t('products:filters.allModels')}</SelectItem>
+                <SelectItem value="airpods-2">{isEnglish ? 'AirPods 2nd generation' : 'AirPods 2e generatie'}</SelectItem>
+                <SelectItem value="airpods-3">{isEnglish ? 'AirPods 3rd generation' : 'AirPods 3e generatie'}</SelectItem>
+                <SelectItem value="airpods-4">{isEnglish ? 'AirPods 4th generation' : 'AirPods 4e generatie'}</SelectItem>
                 <SelectItem value="airpods-pro-1">AirPods Pro 1</SelectItem>
                 <SelectItem value="airpods-pro-2">AirPods Pro 2</SelectItem>
               </SelectContent>
@@ -140,64 +171,66 @@ const LosseOplaadcases = () => {
 
             <Select value={sortBy} onValueChange={setSortBy}>
               <SelectTrigger className="w-full md:w-44">
-                <SelectValue placeholder="Sorteren" />
+                <SelectValue placeholder={t('products:filters.sortBy')} />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="price-asc">Prijs laag-hoog</SelectItem>
-                <SelectItem value="price-desc">Prijs hoog-laag</SelectItem>
-                <SelectItem value="name-asc">Naam A-Z</SelectItem>
+                <SelectItem value="price-asc">{t('products:filters.priceAsc')}</SelectItem>
+                <SelectItem value="price-desc">{t('products:filters.priceDesc')}</SelectItem>
+                <SelectItem value="name-asc">{t('products:filters.nameAsc')}</SelectItem>
               </SelectContent>
             </Select>
           </div>
 
           <p className="text-sm text-muted-foreground mb-6">
-            {cases.length} oplaadcase{cases.length !== 1 ? 's' : ''} gevonden
+            {cases.length} {isEnglish ? (cases.length !== 1 ? 'charging cases' : 'charging case') : (cases.length !== 1 ? 'oplaadcases' : 'oplaadcase')} {isEnglish ? 'found' : 'gevonden'}
           </p>
 
           {cases.length > 0 ? (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-16">
               {cases.map((product) => (
-                <ProductCard key={product.id} product={product} />
+                <ProductCard key={product.id} product={product} isEnglish={isEnglish} />
               ))}
             </div>
           ) : (
             <div className="text-center py-12">
-              <p className="text-muted-foreground mb-4">Geen oplaadcases gevonden met deze filters.</p>
+              <p className="text-muted-foreground mb-4">{isEnglish ? 'No charging cases found with these filters.' : 'Geen oplaadcases gevonden met deze filters.'}</p>
               <Button variant="outline" onClick={clearFilters}>
-                Filters wissen
+                {t('common:cta.clearFilters')}
               </Button>
             </div>
           )}
 
           <section className="mt-16 prose prose-neutral dark:prose-invert max-w-none">
             <h2 className="text-2xl font-semibold mb-4">
-              Losse oplaadcase kopen: de voordeligste oplossing
+              {isEnglish ? 'Buy a charging case: the most affordable solution' : 'Losse oplaadcase kopen: de voordeligste oplossing'}
             </h2>
             <p className="text-muted-foreground mb-6">
-              Je oplaadcase is kwijt of kapot, maar je AirPods werken nog prima. Waarom zou je dan 
-              een compleet nieuwe set kopen? Bij RePairPods bestel je een losse originele Apple 
-              oplaadcase voor een fractie van de prijs. Bespaar tot 60% ten opzichte van een nieuwe set!
+              {isEnglish 
+                ? "Your charging case is lost or broken, but your AirPods still work fine. Why would you buy a completely new set? At RePairPods you can order a replacement original Apple charging case for a fraction of the price. Save up to 60% compared to a new set!"
+                : "Je oplaadcase is kwijt of kapot, maar je AirPods werken nog prima. Waarom zou je dan een compleet nieuwe set kopen? Bij RePairPods bestel je een losse originele Apple oplaadcase voor een fractie van de prijs. Bespaar tot 60% ten opzichte van een nieuwe set!"
+              }
             </p>
             
-            <h3 className="text-xl font-medium mb-3">5 condities om uit te kiezen</h3>
+            <h3 className="text-xl font-medium mb-3">{isEnglish ? '5 conditions to choose from' : '5 condities om uit te kiezen'}</h3>
             <ul className="list-disc list-inside text-muted-foreground space-y-2 mb-6">
-              <li><strong>Nieuw</strong> – Gloednieuw en ongebruikt, in originele Apple staat</li>
-              <li><strong>Uitstekend</strong> – Zo goed als nieuw, geen zichtbare gebruikssporen</li>
-              <li><strong>Goed</strong> – Lichte gebruikssporen, werkt perfect</li>
-              <li><strong>Gebruikt</strong> – Duidelijke gebruikssporen, volledig functioneel</li>
-              <li><strong>Beperkt</strong> – Zichtbare slijtage, werkt naar behoren</li>
+              <li><strong>{t('common:conditions.new')}</strong> – {isEnglish ? 'Brand new and unused, in original Apple condition' : 'Gloednieuw en ongebruikt, in originele Apple staat'}</li>
+              <li><strong>{t('common:conditions.excellent')}</strong> – {isEnglish ? 'Like new, no visible signs of use' : 'Zo goed als nieuw, geen zichtbare gebruikssporen'}</li>
+              <li><strong>{t('common:conditions.good')}</strong> – {isEnglish ? 'Light signs of use, works perfectly' : 'Lichte gebruikssporen, werkt perfect'}</li>
+              <li><strong>{t('common:conditions.used')}</strong> – {isEnglish ? 'Visible signs of use, fully functional' : 'Duidelijke gebruikssporen, volledig functioneel'}</li>
+              <li><strong>{t('common:conditions.limited')}</strong> – {isEnglish ? 'Visible wear, works properly' : 'Zichtbare slijtage, werkt naar behoren'}</li>
             </ul>
 
-            <h3 className="text-xl font-medium mb-3">Alle cases zijn 100% origineel Apple</h3>
+            <h3 className="text-xl font-medium mb-3">{isEnglish ? 'All cases are 100% original Apple' : 'Alle cases zijn 100% origineel Apple'}</h3>
             <p className="text-muted-foreground mb-6">
-              Bij RePairPods verkopen we uitsluitend originele Apple oplaadcases. Geen namaak, 
-              geen replicas. Elke case wordt zorgvuldig getest op batterijcapaciteit en 
-              oplaadfunctionaliteit voordat deze wordt verzonden.
+              {isEnglish 
+                ? "At RePairPods we only sell original Apple charging cases. No fakes, no replicas. Every case is carefully tested for battery capacity and charging functionality before shipping."
+                : "Bij RePairPods verkopen we uitsluitend originele Apple oplaadcases. Geen namaak, geen replicas. Elke case wordt zorgvuldig getest op batterijcapaciteit en oplaadfunctionaliteit voordat deze wordt verzonden."
+              }
             </p>
           </section>
 
           <section className="mt-16">
-            <h2 className="text-2xl font-semibold mb-6">Veelgestelde vragen over oplaadcases</h2>
+            <h2 className="text-2xl font-semibold mb-6">{isEnglish ? 'Frequently asked questions about charging cases' : 'Veelgestelde vragen over oplaadcases'}</h2>
             <Accordion type="single" collapsible className="w-full">
               {faqItems.map((item, index) => (
                 <AccordionItem key={index} value={`item-${index}`}>
@@ -214,25 +247,25 @@ const LosseOplaadcases = () => {
 
           <section className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6">
             <Link 
-              to="/losse-airpods" 
+              to={`${prefix}${isEnglish ? '/single-airpods' : '/losse-airpods'}`} 
               className="p-6 bg-secondary/30 rounded-xl hover:bg-secondary/50 transition-colors"
             >
-              <h3 className="font-semibold mb-2">Losse AirPods</h3>
-              <p className="text-sm text-muted-foreground">AirPod kwijt? Bekijk losse oortjes</p>
+              <h3 className="font-semibold mb-2">{isEnglish ? 'Single AirPods' : 'Losse AirPods'}</h3>
+              <p className="text-sm text-muted-foreground">{isEnglish ? 'Lost an AirPod? View single earbuds' : 'AirPod kwijt? Bekijk losse oortjes'}</p>
             </Link>
             <Link 
-              to="/welke-airpods" 
+              to={`${prefix}${isEnglish ? '/which-airpods' : '/welke-airpods'}`} 
               className="p-6 bg-secondary/30 rounded-xl hover:bg-secondary/50 transition-colors"
             >
-              <h3 className="font-semibold mb-2">Welke AirPods heb ik?</h3>
-              <p className="text-sm text-muted-foreground">Ontdek je AirPods generatie</p>
+              <h3 className="font-semibold mb-2">{isEnglish ? 'Which AirPods do I have?' : 'Welke AirPods heb ik?'}</h3>
+              <p className="text-sm text-muted-foreground">{isEnglish ? 'Find out your AirPods generation' : 'Ontdek je AirPods generatie'}</p>
             </Link>
             <Link 
-              to="/" 
+              to={prefix || '/'} 
               className="p-6 bg-secondary/30 rounded-xl hover:bg-secondary/50 transition-colors"
             >
-              <h3 className="font-semibold mb-2">Alle producten</h3>
-              <p className="text-sm text-muted-foreground">Bekijk ons complete assortiment</p>
+              <h3 className="font-semibold mb-2">{isEnglish ? 'All products' : 'Alle producten'}</h3>
+              <p className="text-sm text-muted-foreground">{isEnglish ? 'View our complete range' : 'Bekijk ons complete assortiment'}</p>
             </Link>
           </section>
         </div>

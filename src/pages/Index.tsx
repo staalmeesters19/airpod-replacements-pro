@@ -10,6 +10,9 @@ import GenerationSelector from '@/components/home/GenerationSelector';
 import CaseSelector from '@/components/home/CaseSelector';
 import TrustpilotWidget from '@/components/home/TrustpilotWidget';
 import TrustBadges from '@/components/home/TrustBadges';
+import SocialProofBadge from '@/components/home/SocialProofBadge';
+import CustomerQuoteHighlight from '@/components/home/CustomerQuoteHighlight';
+import GuaranteesSection from '@/components/home/GuaranteesSection';
 
 const Index = () => {
   return (
@@ -57,6 +60,9 @@ const Index = () => {
           {/* Hero met achtergrondafbeelding */}
           <Hero />
           
+          {/* Social Proof Badge - Bekend van */}
+          <SocialProofBadge />
+          
           {/* USP Strip */}
           <USPStrip />
           
@@ -74,6 +80,12 @@ const Index = () => {
           
           {/* Losse oplaadcases */}
           <CaseSelector />
+          
+          {/* Onze beloftes / Garanties */}
+          <GuaranteesSection />
+          
+          {/* Klant Quote Highlight */}
+          <CustomerQuoteHighlight />
           
           {/* Trustpilot Reviews */}
           <TrustpilotWidget />

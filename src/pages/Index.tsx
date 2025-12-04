@@ -3,6 +3,7 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import Hero from '@/components/home/Hero';
 import USPStrip from '@/components/home/USPStrip';
+import ProductConfigurator from '@/components/home/ProductConfigurator';
 import PodFinder from '@/components/home/PodFinder';
 import MissingSide from '@/components/home/MissingSide';
 import GenerationSelector from '@/components/home/GenerationSelector';
@@ -58,6 +59,9 @@ const Index = () => {
           
           {/* USP Strip */}
           <USPStrip />
+          
+          {/* Product Configurator - Stel je AirPod samen */}
+          <ProductConfigurator />
           
           {/* Welke kant mis jij? */}
           <MissingSide />

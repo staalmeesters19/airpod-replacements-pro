@@ -20,7 +20,9 @@ import BlogLosseAirpodKwijt from "./pages/BlogLosseAirpodKwijt";
 import BlogAirpodsCombineren from "./pages/BlogAirpodsCombineren";
 import BlogAirpodsOpnieuwPairen from "./pages/BlogAirpodsOpnieuwPairen";
 import FAQ from "./pages/FAQ";
+import FAQEN from "./pages/FAQEN";
 import Hulp from "./pages/Hulp";
+import HelpEN from "./pages/HelpEN";
 import OverOns from "./pages/OverOns";
 import AboutUs from "./pages/AboutUs";
 import NotFound from "./pages/NotFound";
@@ -84,8 +86,8 @@ const App = () => (
               <Route path="/en/blog/single-airpod-lost-replacement" element={<BlogLosseAirpodKwijt />} />
               <Route path="/en/blog/airpods-mixing-generations" element={<BlogAirpodsCombineren />} />
               <Route path="/en/blog/airpods-re-pairing" element={<BlogAirpodsOpnieuwPairen />} />
-              <Route path="/en/faq" element={<FAQ />} />
-              <Route path="/en/help" element={<Hulp />} />
+              <Route path="/en/faq" element={<FAQEN />} />
+              <Route path="/en/help" element={<HelpEN />} />
               <Route path="/en/about-us" element={<AboutUs />} />
               <Route path="/en/which-airpods-do-i-have" element={<WelkeAirPods />} />
               

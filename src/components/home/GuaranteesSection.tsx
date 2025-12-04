@@ -1,8 +1,43 @@
 import { Shield, Truck, RotateCcw, CheckCircle, Battery, Headphones } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const GuaranteesSection = () => {
-  const guarantees = [
+  const location = useLocation();
+  const isEnglish = location.pathname.startsWith('/en');
+  const prefix = isEnglish ? '/en' : '';
+
+  const guarantees = isEnglish ? [
+    {
+      icon: Shield,
+      title: 'Up to 12 months warranty',
+      description: '6 months on refurbished, 12 months on new products',
+    },
+    {
+      icon: CheckCircle,
+      title: '100% Original Apple',
+      description: 'Only genuine Apple parts, no fakes',
+    },
+    {
+      icon: Battery,
+      title: 'Min. 80% battery',
+      description: 'Tested and guaranteed on every product',
+    },
+    {
+      icon: Truck,
+      title: 'Ships within 24 hours',
+      description: 'Order today, delivered tomorrow',
+    },
+    {
+      icon: RotateCcw,
+      title: '14-day return policy',
+      description: 'Not satisfied? Returns always possible',
+    },
+    {
+      icon: Headphones,
+      title: 'Personal support',
+      description: 'Available via WhatsApp and email',
+    },
+  ] : [
     {
       icon: Shield,
       title: 'Tot 12 maanden garantie',
@@ -41,10 +76,13 @@ const GuaranteesSection = () => {
         {/* Header */}
         <div className="text-center mb-10">
           <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-3">
-            Onze beloftes aan jou
+            {isEnglish ? 'Our promises to you' : 'Onze beloftes aan jou'}
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto">
-            Bij RepairPods koop je met vertrouwen. Elke AirPod wordt getest, gereinigd en verzonden met garantie.
+            {isEnglish 
+              ? 'At RepairPods you buy with confidence. Every AirPod is tested, cleaned and shipped with warranty.'
+              : 'Bij RepairPods koop je met vertrouwen. Elke AirPod wordt getest, gereinigd en verzonden met garantie.'
+            }
           </p>
         </div>
 
@@ -67,17 +105,17 @@ const GuaranteesSection = () => {
         {/* CTA links */}
         <div className="flex flex-wrap justify-center gap-4 text-sm">
           <Link 
-            to="/faq" 
+            to={`${prefix}/faq`} 
             className="text-primary hover:underline"
           >
-            Veelgestelde vragen →
+            {isEnglish ? 'Frequently asked questions →' : 'Veelgestelde vragen →'}
           </Link>
           <span className="text-border">|</span>
           <Link 
-            to="/over-ons" 
+            to={`${prefix}${isEnglish ? '/about-us' : '/over-ons'}`} 
             className="text-primary hover:underline"
           >
-            Meer over ons →
+            {isEnglish ? 'More about us →' : 'Meer over ons →'}
           </Link>
         </div>
       </div>

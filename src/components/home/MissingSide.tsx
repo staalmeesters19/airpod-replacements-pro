@@ -1,10 +1,39 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import airpodLeft from '@/assets/airpod-left.png';
 import airpodRight from '@/assets/airpod-right.png';
 import airpodCase from '@/assets/airpod-case.png';
 
 const MissingSide = () => {
-  const options = [
+  const location = useLocation();
+  const isEnglish = location.pathname.startsWith('/en');
+  const prefix = isEnglish ? '/en' : '';
+
+  const options = isEnglish ? [
+    {
+      id: 'links',
+      title: 'Left AirPod',
+      description: 'Only lost your left earbud? Order a single left AirPod.',
+      image: airpodLeft,
+      href: `${prefix}/single-airpods?kant=links`,
+      alt: 'Buy single left AirPod - RePairPods',
+    },
+    {
+      id: 'case',
+      title: 'Charging Case',
+      description: 'Case broken or lost? Find a replacement original charging case.',
+      image: airpodCase,
+      href: `${prefix}/charging-cases`,
+      alt: 'Buy AirPods charging case - RePairPods',
+    },
+    {
+      id: 'rechts',
+      title: 'Right AirPod',
+      description: 'Only lost your right earbud? Order a single right AirPod.',
+      image: airpodRight,
+      href: `${prefix}/single-airpods?kant=rechts`,
+      alt: 'Buy single right AirPod - RePairPods',
+    },
+  ] : [
     {
       id: 'links',
       title: 'Linker AirPod',
@@ -36,11 +65,13 @@ const MissingSide = () => {
       <div className="container mx-auto px-4 md:px-6 lg:px-10">
         <div className="text-center mb-12">
           <h2 className="text-2xl md:text-3xl font-semibold mb-4 text-foreground">
-            Welke kant mis jij?
+            {isEnglish ? 'Which side are you missing?' : 'Welke kant mis jij?'}
           </h2>
           <p className="text-base text-muted-foreground max-w-2xl mx-auto">
-            Eén AirPod kwijt of een kapotte oplaadcase? Je hoeft geen hele set te kopen. 
-            Kies hieronder wat je nodig hebt.
+            {isEnglish 
+              ? "Lost an AirPod or have a broken charging case? You don't need to buy a whole set. Choose what you need below."
+              : 'Eén AirPod kwijt of een kapotte oplaadcase? Je hoeft geen hele set te kopen. Kies hieronder wat je nodig hebt.'
+            }
           </p>
         </div>
 

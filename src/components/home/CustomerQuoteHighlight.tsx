@@ -1,7 +1,11 @@
 import { Star, Quote } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const CustomerQuoteHighlight = () => {
+  const location = useLocation();
+  const isEnglish = location.pathname.startsWith('/en');
+  const prefix = isEnglish ? '/en' : '';
+
   return (
     <section className="py-12 md:py-16 bg-background">
       <div className="container mx-auto px-4 md:px-6 lg:px-10">
@@ -22,14 +26,17 @@ const CustomerQuoteHighlight = () => {
 
             {/* Quote text */}
             <blockquote className="text-lg md:text-xl text-foreground leading-relaxed mb-6">
-              "Mijn linker AirPod was kwijt en ik dacht dat ik een heel nieuw setje moest kopen. Via RepairPods had ik binnen 2 dagen een vervangende AirPod voor een fractie van de prijs. Top service en kwaliteit!"
+              {isEnglish 
+                ? '"I lost my left AirPod and thought I had to buy a whole new set. Through RepairPods I had a replacement AirPod within 2 days for a fraction of the price. Great service and quality!"'
+                : '"Mijn linker AirPod was kwijt en ik dacht dat ik een heel nieuw setje moest kopen. Via RepairPods had ik binnen 2 dagen een vervangende AirPod voor een fractie van de prijs. Top service en kwaliteit!"'
+              }
             </blockquote>
 
             {/* Author */}
             <div className="flex items-center justify-between">
               <div>
                 <p className="font-semibold text-foreground">Mark V.</p>
-                <p className="text-sm text-muted-foreground">AirPods Pro 2 • Geverifieerde aankoop</p>
+                <p className="text-sm text-muted-foreground">AirPods Pro 2 • {isEnglish ? 'Verified purchase' : 'Geverifieerde aankoop'}</p>
               </div>
               <div className="flex items-center gap-2">
                 <img 
@@ -47,13 +54,16 @@ const CustomerQuoteHighlight = () => {
           {/* CTA */}
           <div className="text-center mt-8">
             <p className="text-muted-foreground mb-3">
-              Meer dan <span className="font-semibold text-foreground">300+</span> tevreden klanten gingen je voor
+              {isEnglish 
+                ? <>More than <span className="font-semibold text-foreground">300+</span> satisfied customers before you</>
+                : <>Meer dan <span className="font-semibold text-foreground">300+</span> tevreden klanten gingen je voor</>
+              }
             </p>
             <Link 
-              to="/reviews" 
+              to={`${prefix}/reviews`} 
               className="text-primary hover:underline font-medium"
             >
-              Bekijk alle reviews →
+              {isEnglish ? 'View all reviews →' : 'Bekijk alle reviews →'}
             </Link>
           </div>
         </div>

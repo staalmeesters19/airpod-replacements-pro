@@ -1,7 +1,32 @@
 import { Shield, Truck, RotateCcw, Award, CheckCircle } from 'lucide-react';
+import { useLocation } from 'react-router-dom';
 
 const TrustBadges = () => {
-  const guarantees = [
+  const location = useLocation();
+  const isEnglish = location.pathname.startsWith('/en');
+
+  const guarantees = isEnglish ? [
+    {
+      icon: Shield,
+      title: 'Up to 12 months warranty',
+      description: '6 months on refurbished, 12 months on new',
+    },
+    {
+      icon: CheckCircle,
+      title: '100% Original Apple',
+      description: 'Only genuine Apple parts',
+    },
+    {
+      icon: Truck,
+      title: 'Ships within 24 hours',
+      description: 'Order today, delivered tomorrow',
+    },
+    {
+      icon: RotateCcw,
+      title: '14-day return policy',
+      description: 'Not satisfied? Money back!',
+    },
+  ] : [
     {
       icon: Shield,
       title: 'Tot 12 maanden garantie',
@@ -58,8 +83,8 @@ const TrustBadges = () => {
                 ))}
               </div>
               <div>
-                <p className="font-semibold text-foreground">4.9/5 op Trustpilot</p>
-                <p className="text-xs text-muted-foreground">#1 Electronicazaak van NL</p>
+                <p className="font-semibold text-foreground">{isEnglish ? '4.9/5 on Trustpilot' : '4.9/5 op Trustpilot'}</p>
+                <p className="text-xs text-muted-foreground">{isEnglish ? '#1 Electronics store NL' : '#1 Electronicazaak van NL'}</p>
               </div>
             </a>
             
@@ -73,7 +98,7 @@ const TrustBadges = () => {
                 ))}
               </div>
               <div>
-                <p className="font-semibold text-foreground">4.9/5 op Google</p>
+                <p className="font-semibold text-foreground">{isEnglish ? '4.9/5 on Google' : '4.9/5 op Google'}</p>
                 <p className="text-xs text-muted-foreground">290+ reviews</p>
               </div>
             </div>
@@ -84,8 +109,8 @@ const TrustBadges = () => {
                 <Award className="w-5 h-5 text-primary" />
               </div>
               <div>
-                <p className="font-semibold text-foreground">1000+ klanten</p>
-                <p className="text-xs text-muted-foreground">Tevreden geholpen</p>
+                <p className="font-semibold text-foreground">{isEnglish ? '1000+ customers' : '1000+ klanten'}</p>
+                <p className="text-xs text-muted-foreground">{isEnglish ? 'Satisfied customers' : 'Tevreden geholpen'}</p>
               </div>
             </div>
           </div>

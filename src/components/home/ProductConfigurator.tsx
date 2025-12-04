@@ -1,9 +1,9 @@
 import { useState, useMemo } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { ShoppingCart, Check, AlertCircle, CheckCircle2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
-import { mockProducts, conditionLabels, conditionDescriptions, type Condition } from '@/data/mockProducts';
+import { mockProducts, conditionLabels, conditionLabelsEN, conditionDescriptions, conditionDescriptionsEN, type Condition } from '@/data/mockProducts';
 import { useCart } from '@/context/CartContext';
 import { toast } from 'sonner';
 
@@ -44,9 +44,14 @@ const generations: { value: BaseGeneration; label: string; hasVariants: boolean 
   { value: 'airpods-pro-3', label: 'AirPods Pro 3', hasVariants: false },
 ];
 
-const airpods4Variants: { value: Airpods4Variant; label: string; modelNumbers: string }[] = [
+const airpods4VariantsNL: { value: Airpods4Variant; label: string; modelNumbers: string }[] = [
   { value: 'regular', label: 'Zonder ANC', modelNumbers: 'A3053 / A3050 / A3058' },
   { value: 'anc', label: 'Met ANC', modelNumbers: 'A3056 / A3055 / A3059' },
+];
+
+const airpods4VariantsEN: { value: Airpods4Variant; label: string; modelNumbers: string }[] = [
+  { value: 'regular', label: 'Without ANC', modelNumbers: 'A3053 / A3050 / A3058' },
+  { value: 'anc', label: 'With ANC', modelNumbers: 'A3056 / A3055 / A3059' },
 ];
 
 const pro2Variants: { value: Pro2Variant; label: string; modelNumbers: string }[] = [
@@ -54,10 +59,16 @@ const pro2Variants: { value: Pro2Variant; label: string; modelNumbers: string }[
   { value: 'usbc', label: 'USB-C', modelNumbers: 'A3048 / A3047 / A2968' },
 ];
 
-const sides: { value: Side; label: string }[] = [
+const sidesNL: { value: Side; label: string }[] = [
   { value: 'left', label: 'Links' },
   { value: 'right', label: 'Rechts' },
   { value: 'case', label: 'Oplaadcase' },
+];
+
+const sidesEN: { value: Side; label: string }[] = [
+  { value: 'left', label: 'Left' },
+  { value: 'right', label: 'Right' },
+  { value: 'case', label: 'Charging case' },
 ];
 
 const conditions: Condition[] = ['nieuw', 'uitstekend', 'goed', 'gebruikt', 'beperkt'];
@@ -77,6 +88,15 @@ const getProductImage = (generation: BaseGeneration, side: Side): string => {
 };
 
 const ProductConfigurator = () => {
+  const location = useLocation();
+  const isEnglish = location.pathname.startsWith('/en');
+  const prefix = isEnglish ? '/en' : '';
+  
+  const sides = isEnglish ? sidesEN : sidesNL;
+  const airpods4Variants = isEnglish ? airpods4VariantsEN : airpods4VariantsNL;
+  const condLabels = isEnglish ? conditionLabelsEN : conditionLabels;
+  const condDescriptions = isEnglish ? conditionDescriptionsEN : conditionDescriptions;
+  
   const [selectedGeneration, setSelectedGeneration] = useState<BaseGeneration>('airpods-1');
   const [selectedAirpods4Variant, setSelectedAirpods4Variant] = useState<Airpods4Variant | null>(null);
   const [selectedPro2Variant, setSelectedPro2Variant] = useState<Pro2Variant | null>(null);
@@ -148,17 +168,19 @@ const ProductConfigurator = () => {
     
     let variantLabel = '';
     if (selectedGeneration === 'airpods-4' && selectedAirpods4Variant) {
-      variantLabel = selectedAirpods4Variant === 'anc' ? ' (ANC)' : ' (zonder ANC)';
+      variantLabel = selectedAirpods4Variant === 'anc' ? ' (ANC)' : (isEnglish ? ' (without ANC)' : ' (zonder ANC)');
     }
     if (selectedGeneration === 'airpods-pro-2' && selectedPro2Variant) {
       variantLabel = selectedPro2Variant === 'usbc' ? ' (USB-C)' : ' (Lightning)';
     }
     
     if (selectedSide === 'case') {
-      return `Oplaadcase ${genLabel}${variantLabel}`;
+      return isEnglish ? `Charging case ${genLabel}${variantLabel}` : `Oplaadcase ${genLabel}${variantLabel}`;
     }
-    return `${sideLabel}er AirPod ${genLabel}${variantLabel}`;
-  }, [selectedGeneration, selectedSide, selectedAirpods4Variant, selectedPro2Variant]);
+    return isEnglish 
+      ? `${sideLabel} AirPod ${genLabel}${variantLabel}`
+      : `${sideLabel}er AirPod ${genLabel}${variantLabel}`;
+  }, [selectedGeneration, selectedSide, selectedAirpods4Variant, selectedPro2Variant, isEnglish, sides]);
 
   // Handle add to cart
   const handleAddToCart = () => {
@@ -177,11 +199,11 @@ const ProductConfigurator = () => {
     });
 
     // Show success toast
-    toast.success('Toegevoegd aan winkelmandje!', {
-      description: `${productName} (${conditionLabels[selectedCondition]}) - €${variant.price.toFixed(2).replace('.', ',')}`,
+    toast.success(isEnglish ? 'Added to cart!' : 'Toegevoegd aan winkelmandje!', {
+      description: `${productName} (${condLabels[selectedCondition]}) - €${variant.price.toFixed(2).replace('.', ',')}`,
       duration: 3000,
       action: {
-        label: 'Bekijk',
+        label: isEnglish ? 'View' : 'Bekijk',
         onClick: () => {
           // Could navigate to cart page here
         },
@@ -199,13 +221,19 @@ const ProductConfigurator = () => {
       <div className="container mx-auto px-4 md:px-6 lg:px-10">
         <div className="text-center mb-12">
           <h2 className="text-2xl md:text-3xl font-semibold mb-4 text-foreground">
-            Vind direct jouw losse AirPod
+            {isEnglish ? 'Find your single AirPod instantly' : 'Vind direct jouw losse AirPod'}
           </h2>
           <p className="text-base text-muted-foreground max-w-2xl mx-auto">
-            Weet je welke AirPods je hebt? Selecteer hieronder en zie direct de prijs.
+            {isEnglish 
+              ? 'Know which AirPods you have? Select below and see the price immediately.'
+              : 'Weet je welke AirPods je hebt? Selecteer hieronder en zie direct de prijs.'
+            }
             <br />
             <a href="#podfinder" className="text-primary hover:underline">
-              Weet je niet welk model je hebt? Gebruik de PodFinder →
+              {isEnglish 
+                ? "Don't know which model you have? Use the PodFinder →"
+                : 'Weet je niet welk model je hebt? Gebruik de PodFinder →'
+              }
             </a>
           </p>
         </div>
@@ -227,7 +255,7 @@ const ProductConfigurator = () => {
                 {/* Step 1: Generation */}
                 <div>
                   <label className="block text-sm font-semibold text-foreground mb-3">
-                    1. Kies je generatie
+                    1. {isEnglish ? 'Choose your generation' : 'Kies je generatie'}
                   </label>
                   <div className="flex flex-wrap gap-2">
                     {generations.map((gen) => (
@@ -253,10 +281,13 @@ const ProductConfigurator = () => {
                       <AlertCircle className="w-5 h-5 text-amber-600 dark:text-amber-400 flex-shrink-0 mt-0.5" />
                       <div>
                         <p className="text-sm font-semibold text-amber-800 dark:text-amber-200">
-                          Welke versie heb je?
+                          {isEnglish ? 'Which version do you have?' : 'Welke versie heb je?'}
                         </p>
                         <p className="text-xs text-amber-700 dark:text-amber-300">
-                          AirPods 4 bestaat in 2 versies. Ga naar Instellingen → Bluetooth → klik op de (i) naast je AirPods en scroll naar beneden. Modelnummer begint met A.
+                          {isEnglish 
+                            ? 'AirPods 4 comes in 2 versions. Go to Settings → Bluetooth → tap the (i) next to your AirPods and scroll down. Model number starts with A.'
+                            : 'AirPods 4 bestaat in 2 versies. Ga naar Instellingen → Bluetooth → klik op de (i) naast je AirPods en scroll naar beneden. Modelnummer begint met A.'
+                          }
                         </p>
                       </div>
                     </div>
@@ -290,10 +321,13 @@ const ProductConfigurator = () => {
                       <AlertCircle className="w-5 h-5 text-amber-600 dark:text-amber-400 flex-shrink-0 mt-0.5" />
                       <div>
                         <p className="text-sm font-semibold text-amber-800 dark:text-amber-200">
-                          Welke aansluiting heeft jouw case?
+                          {isEnglish ? 'Which connection does your case have?' : 'Welke aansluiting heeft jouw case?'}
                         </p>
                         <p className="text-xs text-amber-700 dark:text-amber-300">
-                          AirPods Pro 2 bestaat met Lightning of USB-C. Check de onderkant van je case, of ga naar Instellingen → Bluetooth → klik op de (i) naast je AirPods en scroll naar beneden. Modelnummer begint met A.
+                          {isEnglish 
+                            ? 'AirPods Pro 2 comes with Lightning or USB-C. Check the bottom of your case, or go to Settings → Bluetooth → tap the (i) next to your AirPods and scroll down. Model number starts with A.'
+                            : 'AirPods Pro 2 bestaat met Lightning of USB-C. Check de onderkant van je case, of ga naar Instellingen → Bluetooth → klik op de (i) naast je AirPods en scroll naar beneden. Modelnummer begint met A.'
+                          }
                         </p>
                       </div>
                     </div>
@@ -324,7 +358,7 @@ const ProductConfigurator = () => {
                 {/* Step 2: Side */}
                 <div className={!variantSelected && needsVariantSelection ? 'opacity-50 pointer-events-none' : ''}>
                   <label className="block text-sm font-semibold text-foreground mb-3">
-                    {needsVariantSelection ? '3' : '2'}. Wat mis je?
+                    {needsVariantSelection ? '3' : '2'}. {isEnglish ? 'What are you missing?' : 'Wat mis je?'}
                   </label>
                   <div className="flex flex-wrap gap-2">
                     {sides.map((side) => (
@@ -347,7 +381,7 @@ const ProductConfigurator = () => {
                 {/* Step 3: Condition */}
                 <div className={!variantSelected && needsVariantSelection ? 'opacity-50 pointer-events-none' : ''}>
                   <label className="block text-sm font-semibold text-foreground mb-3">
-                    {needsVariantSelection ? '4' : '3'}. Kies de staat
+                    {needsVariantSelection ? '4' : '3'}. {isEnglish ? 'Choose condition' : 'Kies de staat'}
                   </label>
                   <div className="space-y-2">
                     {conditions.map((condition) => {
@@ -372,9 +406,9 @@ const ProductConfigurator = () => {
                               <Check className="w-4 h-4" />
                             )}
                             <div className="text-left">
-                              <span className="font-medium">{conditionLabels[condition]}</span>
+                              <span className="font-medium">{condLabels[condition]}</span>
                               <p className={`text-xs ${selectedCondition === condition ? 'text-primary-foreground/80' : 'text-muted-foreground'}`}>
-                                {conditionDescriptions[condition]}
+                                {condDescriptions[condition]}
                               </p>
                             </div>
                           </div>
@@ -391,14 +425,14 @@ const ProductConfigurator = () => {
                 <div className="pt-4 border-t border-border">
                   <div className="flex items-center justify-between mb-4">
                     <div>
-                      <p className="text-sm text-muted-foreground">Jouw selectie:</p>
+                      <p className="text-sm text-muted-foreground">{isEnglish ? 'Your selection:' : 'Jouw selectie:'}</p>
                       <p className="font-semibold text-foreground">{productName}</p>
                       <p className="text-xs text-muted-foreground">
-                        Staat: {conditionLabels[selectedCondition]}
+                        {isEnglish ? 'Condition:' : 'Staat:'} {condLabels[selectedCondition]}
                       </p>
                     </div>
                     <div className="text-right">
-                      <p className="text-sm text-muted-foreground">Prijs</p>
+                      <p className="text-sm text-muted-foreground">{isEnglish ? 'Price' : 'Prijs'}</p>
                       <p className="text-2xl font-bold text-primary">
                         {variant ? `€${variant.price.toFixed(2).replace('.', ',')}` : '-'}
                       </p>
@@ -407,7 +441,7 @@ const ProductConfigurator = () => {
 
                   {!variantSelected && needsVariantSelection ? (
                     <Button disabled className="w-full" size="lg">
-                      Selecteer eerst je versie hierboven
+                      {isEnglish ? 'Select your version above first' : 'Selecteer eerst je versie hierboven'}
                     </Button>
                   ) : product && variant ? (
                     <div className="space-y-2">
@@ -420,25 +454,25 @@ const ProductConfigurator = () => {
                         {isAdding ? (
                           <>
                             <CheckCircle2 className="w-5 h-5 mr-2 animate-in zoom-in duration-200" />
-                            Toegevoegd!
+                            {isEnglish ? 'Added!' : 'Toegevoegd!'}
                           </>
                         ) : (
                           <>
                             <ShoppingCart className="w-5 h-5 mr-2" />
-                            In winkelmandje
+                            {isEnglish ? 'Add to cart' : 'In winkelmandje'}
                           </>
                         )}
                       </Button>
                       <Link 
-                        to={`/product/${product.slug}`}
+                        to={`${prefix}/product/${product.slug}`}
                         className="block text-center text-sm text-muted-foreground hover:text-primary transition-colors"
                       >
-                        Of bekijk productdetails →
+                        {isEnglish ? 'Or view product details →' : 'Of bekijk productdetails →'}
                       </Link>
                     </div>
                   ) : (
                     <Button disabled className="w-full" size="lg">
-                      Product niet gevonden
+                      {isEnglish ? 'Product not found' : 'Product niet gevonden'}
                     </Button>
                   )}
                 </div>

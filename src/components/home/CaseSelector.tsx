@@ -43,11 +43,11 @@ const CaseSelector = () => {
       image: airpodsPro1Case,
     },
     {
-      id: 'case-pro-2-lightning',
-      name: 'Case Pro 2 Lightning',
-      description: 'Voor AirPods Pro 2 (Lightning)',
+      id: 'case-pro-2',
+      name: 'Case Pro 2',
+      description: 'Voor AirPods Pro 2',
       slug: 'airpods-pro-2e-generatie-oplaadcase-lightning',
-      features: ['MagSafe', 'Lightning'],
+      features: ['Lightning', 'USB-C'],
       image: airpodsPro2Case,
     },
     {

@@ -22,10 +22,11 @@ import airpodsPro2Left from '@/assets/products/airpods-pro-2-left.png';
 import airpodsPro2Right from '@/assets/products/airpods-pro-2-right.png';
 import airpodsPro2Case from '@/assets/products/airpods-pro-2-case.png';
 
-type Generation = 'airpods-2' | 'airpods-3' | 'airpods-4' | 'airpods-pro-1' | 'airpods-pro-2';
+type Generation = 'airpods-1' | 'airpods-2' | 'airpods-3' | 'airpods-4' | 'airpods-pro-1' | 'airpods-pro-2';
 type Side = 'left' | 'right' | 'case';
 
 const generations: { value: Generation; label: string }[] = [
+  { value: 'airpods-1', label: 'AirPods 1' },
   { value: 'airpods-2', label: 'AirPods 2' },
   { value: 'airpods-3', label: 'AirPods 3' },
   { value: 'airpods-4', label: 'AirPods 4' },
@@ -44,6 +45,7 @@ const conditions: Condition[] = ['nieuw', 'uitstekend', 'goed', 'gebruikt', 'bep
 // Image mapping
 const getProductImage = (generation: Generation, side: Side): string => {
   const imageMap: Record<Generation, Record<Side, string>> = {
+    'airpods-1': { left: airpods2Left, right: airpods2Right, case: airpods2Case }, // Using Gen 2 images (identical look)
     'airpods-2': { left: airpods2Left, right: airpods2Right, case: airpods2Case },
     'airpods-3': { left: airpods3Left, right: airpods3Right, case: airpods3Case },
     'airpods-4': { left: airpods4Left, right: airpods4Right, case: airpods4Case },
@@ -54,7 +56,7 @@ const getProductImage = (generation: Generation, side: Side): string => {
 };
 
 const ProductConfigurator = () => {
-  const [selectedGeneration, setSelectedGeneration] = useState<Generation>('airpods-2');
+  const [selectedGeneration, setSelectedGeneration] = useState<Generation>('airpods-1');
   const [selectedSide, setSelectedSide] = useState<Side>('left');
   const [selectedCondition, setSelectedCondition] = useState<Condition>('goed');
 

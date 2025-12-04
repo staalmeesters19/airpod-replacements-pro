@@ -51,14 +51,6 @@ const CaseSelector = () => {
       image: airpodsPro2Case,
     },
     {
-      id: 'case-pro-2-usbc',
-      name: 'Case Pro 2 USB-C',
-      description: 'Voor AirPods Pro 2 (USB-C)',
-      slug: 'airpods-pro-2e-generatie-oplaadcase-usbc',
-      features: ['USB-C', 'MagSafe'],
-      image: airpodsPro2Case,
-    },
-    {
       id: 'case-pro-3',
       name: 'Case Pro 3',
       description: 'Voor AirPods Pro 3',

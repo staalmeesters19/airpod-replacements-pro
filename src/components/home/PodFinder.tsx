@@ -126,7 +126,7 @@ const PodFinder = () => {
   const progressValue = (currentStep / 4) * 100;
 
   return (
-    <section className="py-12 md:py-16 bg-secondary/30">
+    <section id="podfinder" className="py-12 md:py-16 bg-secondary/30 scroll-mt-20">
       <div className="container mx-auto px-4 md:px-6 lg:px-10">
         <Card className="max-w-2xl mx-auto overflow-hidden border-border shadow-card bg-background">
           <Progress value={progressValue} className="h-1 rounded-none" />

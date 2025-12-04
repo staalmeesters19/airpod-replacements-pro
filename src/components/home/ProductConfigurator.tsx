@@ -94,10 +94,14 @@ const ProductConfigurator = () => {
       <div className="container mx-auto px-4 md:px-6 lg:px-10">
         <div className="text-center mb-12">
           <h2 className="text-2xl md:text-3xl font-semibold mb-4 text-foreground">
-            Stel jouw AirPod samen
+            Vind direct jouw losse AirPod
           </h2>
           <p className="text-base text-muted-foreground max-w-2xl mx-auto">
-            Kies je generatie, kant en staat. We tonen direct de prijs.
+            Weet je welke AirPods je hebt? Selecteer hieronder en zie direct de prijs.
+            <br />
+            <a href="#podfinder" className="text-primary hover:underline">
+              Weet je niet welk model je hebt? Gebruik de PodFinder →
+            </a>
           </p>
         </div>
 

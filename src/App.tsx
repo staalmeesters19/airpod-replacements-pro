@@ -14,6 +14,7 @@ import LosseAirpods from "./pages/LosseAirpods";
 import LosseOplaadcases from "./pages/LosseOplaadcases";
 import ModelPage from "./pages/ModelPage";
 import BlogIndex from "./pages/BlogIndex";
+import BlogIndexEN from "./pages/BlogIndexEN";
 import BlogWelkeAirpods from "./pages/BlogWelkeAirpods";
 import BlogLosseAirpodKwijt from "./pages/BlogLosseAirpodKwijt";
 import BlogAirpodsCombineren from "./pages/BlogAirpodsCombineren";
@@ -21,6 +22,7 @@ import BlogAirpodsOpnieuwPairen from "./pages/BlogAirpodsOpnieuwPairen";
 import FAQ from "./pages/FAQ";
 import Hulp from "./pages/Hulp";
 import OverOns from "./pages/OverOns";
+import AboutUs from "./pages/AboutUs";
 import NotFound from "./pages/NotFound";
 import WhatsAppWidget from "./components/layout/WhatsAppWidget";
 
@@ -77,14 +79,15 @@ const App = () => (
               <Route path="/en/single-airpods" element={<LosseAirpods />} />
               <Route path="/en/charging-cases" element={<LosseOplaadcases />} />
               <Route path="/en/model/:slug" element={<ModelPage />} />
-              <Route path="/en/blog" element={<BlogIndex />} />
+              <Route path="/en/blog" element={<BlogIndexEN />} />
               <Route path="/en/blog/which-airpods-do-i-have" element={<BlogWelkeAirpods />} />
               <Route path="/en/blog/single-airpod-lost-replacement" element={<BlogLosseAirpodKwijt />} />
               <Route path="/en/blog/airpods-mixing-generations" element={<BlogAirpodsCombineren />} />
               <Route path="/en/blog/airpods-re-pairing" element={<BlogAirpodsOpnieuwPairen />} />
               <Route path="/en/faq" element={<FAQ />} />
               <Route path="/en/help" element={<Hulp />} />
-              <Route path="/en/about-us" element={<OverOns />} />
+              <Route path="/en/about-us" element={<AboutUs />} />
+              <Route path="/en/which-airpods-do-i-have" element={<WelkeAirPods />} />
               
               {/* Catch-all */}
               <Route path="*" element={<NotFound />} />

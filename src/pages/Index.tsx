@@ -66,14 +66,14 @@ const Index = () => {
           {/* Product Configurator - Stel je AirPod samen */}
           <ProductConfigurator />
           
-          {/* Welke kant mis jij? */}
-          <MissingSide />
-          
           {/* AirPodFinder Widget */}
           <PodFinder />
           
           {/* Onze beloftes / Garanties */}
           <GuaranteesSection />
+          
+          {/* Welke kant mis jij? */}
+          <MissingSide />
           
           {/* Losse AirPods per generatie */}
           <GenerationSelector />

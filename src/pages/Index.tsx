@@ -59,11 +59,11 @@ const Index = () => {
           {/* USP Strip */}
           <USPStrip />
           
-          {/* AirPodFinder Widget */}
-          <PodFinder />
-          
           {/* Welke kant mis jij? */}
           <MissingSide />
+          
+          {/* AirPodFinder Widget */}
+          <PodFinder />
           
           {/* Losse AirPods per generatie */}
           <GenerationSelector />

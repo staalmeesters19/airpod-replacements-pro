@@ -72,14 +72,14 @@ const Index = () => {
           {/* AirPodFinder Widget */}
           <PodFinder />
           
+          {/* Onze beloftes / Garanties */}
+          <GuaranteesSection />
+          
           {/* Losse AirPods per generatie */}
           <GenerationSelector />
           
           {/* Losse oplaadcases */}
           <CaseSelector />
-          
-          {/* Onze beloftes / Garanties */}
-          <GuaranteesSection />
           
           {/* Klant Quote Highlight */}
           <CustomerQuoteHighlight />

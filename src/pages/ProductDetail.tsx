@@ -1,7 +1,8 @@
 import { useState, useMemo } from 'react';
-import { useParams, Link, useNavigate } from 'react-router-dom';
+import { useParams, Link, useNavigate, useLocation } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import { ShoppingCart, Check, Package, Shield, TruckIcon } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { Button } from '@/components/ui/button';
@@ -22,6 +23,9 @@ import ModelNumberCheck, { Pro2Variant, Gen4Variant } from '@/components/product
 const ProductDetail = () => {
   const { slug } = useParams();
   const navigate = useNavigate();
+  const location = useLocation();
+  const { t } = useTranslation(['products', 'common']);
+  const isEnglish = location.pathname.startsWith('/en');
   const product = mockProducts.find((p) => p.slug === slug);
   
   // Find case variants (Lightning/MagSafe) for same model
@@ -44,15 +48,46 @@ const ProductDetail = () => {
   const [pro2Variant, setPro2Variant] = useState<Pro2Variant>('lightning');
   const [gen4Variant, setGen4Variant] = useState<Gen4Variant>('zonder-anc');
 
+  // Translation helpers for conditions
+  const getConditionLabel = (condition: Condition) => {
+    const labels: Record<Condition, string> = isEnglish 
+      ? { nieuw: 'New', uitstekend: 'Excellent', goed: 'Good', gebruikt: 'Used', beperkt: 'Limited' }
+      : { nieuw: 'Nieuw', uitstekend: 'Uitstekend', goed: 'Goed', gebruikt: 'Gebruikt', beperkt: 'Beperkt' };
+    return labels[condition];
+  };
+
+  const getConditionDescription = (condition: Condition) => {
+    const descriptions: Record<Condition, string> = isEnglish 
+      ? {
+          nieuw: 'Brand new and unused, in original Apple condition',
+          uitstekend: 'As good as new, no visible signs of use',
+          goed: 'Light signs of use, works perfectly',
+          gebruikt: 'Visible signs of use, fully functional',
+          beperkt: 'Visible wear, works as expected'
+        }
+      : {
+          nieuw: 'Gloednieuw en ongebruikt, in originele Apple staat',
+          uitstekend: 'Zo goed als nieuw, geen zichtbare gebruikssporen',
+          goed: 'Lichte gebruikssporen, werkt perfect',
+          gebruikt: 'Duidelijke gebruikssporen, volledig functioneel',
+          beperkt: 'Zichtbare slijtage, werkt naar behoren'
+        };
+    return descriptions[condition];
+  };
+
   if (!product) {
     return (
       <div className="min-h-screen flex flex-col">
         <Header />
         <main className="flex-1 flex items-center justify-center">
           <div className="text-center">
-            <h1 className="text-2xl font-bold mb-4">Product niet gevonden</h1>
+            <h1 className="text-2xl font-bold mb-4">
+              {isEnglish ? 'Product not found' : 'Product niet gevonden'}
+            </h1>
             <Button asChild>
-              <Link to="/">Terug naar home</Link>
+              <Link to={isEnglish ? '/en' : '/'}>
+                {isEnglish ? 'Back to home' : 'Terug naar home'}
+              </Link>
             </Button>
           </div>
         </main>
@@ -93,14 +128,20 @@ const ProductDetail = () => {
             <BreadcrumbList>
               <BreadcrumbItem>
                 <BreadcrumbLink asChild>
-                  <Link to="/">Home</Link>
+                  <Link to={isEnglish ? '/en' : '/'}>Home</Link>
                 </BreadcrumbLink>
               </BreadcrumbItem>
               <BreadcrumbSeparator />
               <BreadcrumbItem>
                 <BreadcrumbLink asChild>
-                  <Link to={product.type === 'case' ? '/losse-oplaadcases' : '/losse-airpods'}>
-                    {product.type === 'earbud' ? 'Losse AirPods' : product.type === 'case' ? 'Losse oplaadcases' : 'Accessoires'}
+                  <Link to={product.type === 'case' 
+                    ? (isEnglish ? '/en/charging-cases' : '/losse-oplaadcases') 
+                    : (isEnglish ? '/en/single-airpods' : '/losse-airpods')}>
+                    {product.type === 'earbud' 
+                      ? (isEnglish ? 'Single AirPods' : 'Losse AirPods') 
+                      : product.type === 'case' 
+                        ? (isEnglish ? 'Charging Cases' : 'Losse oplaadcases') 
+                        : (isEnglish ? 'Accessories' : 'Accessoires')}
                   </Link>
                 </BreadcrumbLink>
               </BreadcrumbItem>
@@ -134,7 +175,9 @@ const ProductDetail = () => {
               {/* Case Variant Selector (MagSafe/Lightning) */}
               {hasCaseVariants && (
                 <div>
-                  <h3 className="font-semibold mb-3">Kies je variant:</h3>
+                  <h3 className="font-semibold mb-3">
+                    {isEnglish ? 'Choose your variant:' : 'Kies je variant:'}
+                  </h3>
                   <div className="flex gap-3">
                     {caseVariants.map((caseProduct) => (
                       <button
@@ -156,7 +199,9 @@ const ProductDetail = () => {
               {/* Variant Selector for Pro 2 */}
               {isPro2 && (
                 <div>
-                  <h3 className="font-semibold mb-3">Welke variant heb je?</h3>
+                  <h3 className="font-semibold mb-3">
+                    {isEnglish ? 'Which variant do you have?' : 'Welke variant heb je?'}
+                  </h3>
                   <div className="grid grid-cols-2 gap-3">
                     <button
                       onClick={() => setPro2Variant('lightning')}
@@ -187,7 +232,9 @@ const ProductDetail = () => {
               {/* Variant Selector for Gen 4 */}
               {isGen4 && (
                 <div>
-                  <h3 className="font-semibold mb-3">Welke variant heb je?</h3>
+                  <h3 className="font-semibold mb-3">
+                    {isEnglish ? 'Which variant do you have?' : 'Welke variant heb je?'}
+                  </h3>
                   <div className="grid grid-cols-2 gap-3">
                     <button
                       onClick={() => setGen4Variant('zonder-anc')}
@@ -197,8 +244,10 @@ const ProductDetail = () => {
                           : 'border-border hover:border-primary/50'
                       }`}
                     >
-                      <span className="font-medium">Zonder ANC</span>
-                      <p className="text-xs text-muted-foreground mt-1">Modelnummers: A3053 (links) / A3050 (rechts)</p>
+                      <span className="font-medium">{isEnglish ? 'Without ANC' : 'Zonder ANC'}</span>
+                      <p className="text-xs text-muted-foreground mt-1">
+                        {isEnglish ? 'Model numbers: A3053 (left) / A3050 (right)' : 'Modelnummers: A3053 (links) / A3050 (rechts)'}
+                      </p>
                     </button>
                     <button
                       onClick={() => setGen4Variant('met-anc')}
@@ -208,8 +257,10 @@ const ProductDetail = () => {
                           : 'border-border hover:border-primary/50'
                       }`}
                     >
-                      <span className="font-medium">Met ANC</span>
-                      <p className="text-xs text-muted-foreground mt-1">Modelnummers: A3056 (links) / A3055 (rechts)</p>
+                      <span className="font-medium">{isEnglish ? 'With ANC' : 'Met ANC'}</span>
+                      <p className="text-xs text-muted-foreground mt-1">
+                        {isEnglish ? 'Model numbers: A3056 (left) / A3055 (right)' : 'Modelnummers: A3056 (links) / A3055 (rechts)'}
+                      </p>
                     </button>
                   </div>
                 </div>
@@ -226,7 +277,9 @@ const ProductDetail = () => {
 
               {/* Condition Selector */}
               <div>
-                <h3 className="font-semibold mb-3">Kies je conditie:</h3>
+                <h3 className="font-semibold mb-3">
+                  {isEnglish ? 'Choose your condition:' : 'Kies je conditie:'}
+                </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {product.variants.map((variant) => (
                     <button
@@ -240,17 +293,21 @@ const ProductDetail = () => {
                       disabled={variant.stock === 0}
                     >
                       <div className="flex justify-between items-start mb-1">
-                        <span className="font-medium">{conditionLabels[variant.condition]}</span>
+                        <span className="font-medium">{getConditionLabel(variant.condition)}</span>
                         <span className="font-bold">€{variant.price.toFixed(2)}</span>
                       </div>
                       <p className="text-xs text-muted-foreground">
-                        {conditionDescriptions[variant.condition]}
+                        {getConditionDescription(variant.condition)}
                       </p>
                       {variant.stock > 0 && variant.stock < 5 && (
-                        <p className="text-xs text-primary mt-1">Nog {variant.stock} op voorraad</p>
+                        <p className="text-xs text-primary mt-1">
+                          {isEnglish ? `Only ${variant.stock} left in stock` : `Nog ${variant.stock} op voorraad`}
+                        </p>
                       )}
                       {variant.stock === 0 && (
-                        <p className="text-xs text-destructive mt-1">Uitverkocht</p>
+                        <p className="text-xs text-destructive mt-1">
+                          {isEnglish ? 'Sold out' : 'Uitverkocht'}
+                        </p>
                       )}
                     </button>
                   ))}
@@ -262,21 +319,25 @@ const ProductDetail = () => {
                 <div className="space-y-4">
                   <div className="flex items-center space-x-4">
                     <span className="text-4xl font-bold">€{activeVariant.price.toFixed(2)}</span>
-                    <Badge variant="secondary">{conditionLabels[activeVariant.condition]}</Badge>
+                    <Badge variant="secondary">{getConditionLabel(activeVariant.condition)}</Badge>
                   </div>
 
                   {activeVariant.stock > 0 ? (
                     <div className="flex items-center space-x-2 text-sm">
                       <Check className="h-5 w-5 text-primary" />
-                      <span className="font-medium">Op voorraad – morgen in huis</span>
+                      <span className="font-medium">
+                        {isEnglish ? 'In stock – delivered tomorrow' : 'Op voorraad – morgen in huis'}
+                      </span>
                     </div>
                   ) : (
-                    <Badge variant="destructive">Tijdelijk uitverkocht</Badge>
+                    <Badge variant="destructive">
+                      {isEnglish ? 'Temporarily sold out' : 'Tijdelijk uitverkocht'}
+                    </Badge>
                   )}
 
                   <Button size="lg" className="w-full md:w-auto px-12" disabled={activeVariant.stock === 0}>
                     <ShoppingCart className="mr-2 h-5 w-5" />
-                    In winkelwagen
+                    {isEnglish ? 'Add to cart' : 'In winkelwagen'}
                   </Button>
                 </div>
               )}
@@ -290,22 +351,24 @@ const ProductDetail = () => {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-6">
                 <div className="flex items-center space-x-3">
                   <Package className="h-5 w-5 text-muted-foreground" />
-                  <span className="text-sm">100% origineel</span>
+                  <span className="text-sm">{isEnglish ? '100% original' : '100% origineel'}</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <TruckIcon className="h-5 w-5 text-muted-foreground" />
-                  <span className="text-sm">Gratis verzending</span>
+                  <span className="text-sm">{isEnglish ? 'Free shipping' : 'Gratis verzending'}</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Shield className="h-5 w-5 text-muted-foreground" />
-                  <span className="text-sm">Tot 1 jaar garantie</span>
+                  <span className="text-sm">{isEnglish ? 'Up to 1 year warranty' : 'Tot 1 jaar garantie'}</span>
                 </div>
               </div>
 
               {/* Product Info Cards */}
               <div className="space-y-4 pt-6">
                 <Card className="p-6">
-                  <h3 className="font-semibold mb-3">Compatibiliteit</h3>
+                  <h3 className="font-semibold mb-3">
+                    {isEnglish ? 'Compatibility' : 'Compatibiliteit'}
+                  </h3>
                   <ul className="space-y-2">
                     {product.compatibility.map((item, index) => (
                       <li key={index} className="flex items-start space-x-2">
@@ -317,7 +380,9 @@ const ProductDetail = () => {
                 </Card>
 
                 <Card className="p-6">
-                  <h3 className="font-semibold mb-3">Wat je krijgt</h3>
+                  <h3 className="font-semibold mb-3">
+                    {isEnglish ? "What's included" : 'Wat je krijgt'}
+                  </h3>
                   <p className="text-sm text-muted-foreground">{product.whatsIncluded}</p>
                 </Card>
               </div>
@@ -327,7 +392,9 @@ const ProductDetail = () => {
           {/* Pairing Instructions */}
           <Card className="p-8 mb-16">
             <h2 className="text-2xl font-bold mb-6">
-              Hoe koppel je deze {product.type === 'case' ? 'oplaadcase' : 'AirPod'}?
+              {isEnglish 
+                ? `How to pair this ${product.type === 'case' ? 'charging case' : 'AirPod'}?`
+                : `Hoe koppel je deze ${product.type === 'case' ? 'oplaadcase' : 'AirPod'}?`}
             </h2>
             <ol className="space-y-4">
               <li className="flex items-start space-x-4">
@@ -335,9 +402,13 @@ const ProductDetail = () => {
                   1
                 </span>
                 <div>
-                  <h3 className="font-semibold mb-1">Plaats beide AirPods in de case</h3>
+                  <h3 className="font-semibold mb-1">
+                    {isEnglish ? 'Place both AirPods in the case' : 'Plaats beide AirPods in de case'}
+                  </h3>
                   <p className="text-sm text-muted-foreground">
-                    Zet je bestaande AirPod en de nieuwe AirPod samen in de oplaadcase.
+                    {isEnglish 
+                      ? 'Put your existing AirPod and the new AirPod together in the charging case.'
+                      : 'Zet je bestaande AirPod en de nieuwe AirPod samen in de oplaadcase.'}
                   </p>
                 </div>
               </li>
@@ -346,9 +417,13 @@ const ProductDetail = () => {
                   2
                 </span>
                 <div>
-                  <h3 className="font-semibold mb-1">Open de case bij je iPhone</h3>
+                  <h3 className="font-semibold mb-1">
+                    {isEnglish ? 'Open the case near your iPhone' : 'Open de case bij je iPhone'}
+                  </h3>
                   <p className="text-sm text-muted-foreground">
-                    Houd de case open naast je gekoppelde iPhone of iPad.
+                    {isEnglish 
+                      ? 'Hold the case open next to your paired iPhone or iPad.'
+                      : 'Houd de case open naast je gekoppelde iPhone of iPad.'}
                   </p>
                 </div>
               </li>
@@ -357,9 +432,13 @@ const ProductDetail = () => {
                   3
                 </span>
                 <div>
-                  <h3 className="font-semibold mb-1">Druk op de knop achterop</h3>
+                  <h3 className="font-semibold mb-1">
+                    {isEnglish ? 'Press the button on the back' : 'Druk op de knop achterop'}
+                  </h3>
                   <p className="text-sm text-muted-foreground">
-                    Houd de setup-knop achterop de case ingedrukt tot het lampje wit knippert.
+                    {isEnglish 
+                      ? 'Hold the setup button on the back of the case until the light flashes white.'
+                      : 'Houd de setup-knop achterop de case ingedrukt tot het lampje wit knippert.'}
                   </p>
                 </div>
               </li>
@@ -368,9 +447,13 @@ const ProductDetail = () => {
                   4
                 </span>
                 <div>
-                  <h3 className="font-semibold mb-1">Volg de instructies op het scherm</h3>
+                  <h3 className="font-semibold mb-1">
+                    {isEnglish ? 'Follow the on-screen instructions' : 'Volg de instructies op het scherm'}
+                  </h3>
                   <p className="text-sm text-muted-foreground">
-                    Je iPhone herkent automatisch de nieuwe AirPod en voltooit de koppeling.
+                    {isEnglish 
+                      ? 'Your iPhone will automatically recognize the new AirPod and complete the pairing.'
+                      : 'Je iPhone herkent automatisch de nieuwe AirPod en voltooit de koppeling.'}
                   </p>
                 </div>
               </li>
@@ -380,7 +463,9 @@ const ProductDetail = () => {
           {/* Related Products */}
           {relatedProducts.length > 0 && (
             <div>
-              <h2 className="text-2xl font-bold mb-6">Gerelateerde producten</h2>
+              <h2 className="text-2xl font-bold mb-6">
+                {isEnglish ? 'Related products' : 'Gerelateerde producten'}
+              </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {relatedProducts.map((relatedProduct) => (
                   <ProductCard key={relatedProduct.id} product={relatedProduct} />

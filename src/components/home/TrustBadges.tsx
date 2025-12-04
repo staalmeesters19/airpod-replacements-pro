@@ -40,48 +40,8 @@ const TrustBadges = () => {
           ))}
         </div>
 
-        {/* Payment methods */}
-        <div className="border-t border-border pt-8">
-          <p className="text-center text-sm text-muted-foreground mb-4">Veilig betalen met</p>
-          <div className="flex flex-wrap justify-center items-center gap-4 md:gap-6">
-            {/* iDEAL */}
-            <div className="bg-white rounded-lg px-4 py-2 shadow-sm border border-border">
-              <svg viewBox="0 0 40 24" className="h-8 w-auto">
-                <rect fill="#CC0066" width="40" height="24" rx="4"/>
-                <text x="20" y="16" textAnchor="middle" fill="white" fontSize="10" fontWeight="bold">iDEAL</text>
-              </svg>
-            </div>
-            
-            {/* Klarna */}
-            <div className="bg-[#FFB3C7] rounded-lg px-4 py-2 shadow-sm border border-border">
-              <span className="text-[#0A0B09] font-bold text-sm">Klarna.</span>
-            </div>
-            
-            {/* PayPal */}
-            <div className="bg-white rounded-lg px-4 py-2 shadow-sm border border-border">
-              <span className="text-[#003087] font-bold text-sm">Pay<span className="text-[#009cde]">Pal</span></span>
-            </div>
-            
-            {/* Mastercard */}
-            <div className="bg-white rounded-lg px-4 py-2 shadow-sm border border-border flex items-center gap-1">
-              <div className="w-4 h-4 rounded-full bg-[#EB001B]"></div>
-              <div className="w-4 h-4 rounded-full bg-[#F79E1B] -ml-2"></div>
-            </div>
-            
-            {/* Visa */}
-            <div className="bg-white rounded-lg px-4 py-2 shadow-sm border border-border">
-              <span className="text-[#1A1F71] font-bold text-sm italic">VISA</span>
-            </div>
-            
-            {/* Bancontact */}
-            <div className="bg-white rounded-lg px-4 py-2 shadow-sm border border-border">
-              <span className="text-[#005498] font-bold text-xs">Bancontact</span>
-            </div>
-          </div>
-        </div>
-
         {/* Reviews summary */}
-        <div className="border-t border-border pt-8 mt-8">
+        <div className="border-t border-border pt-8">
           <div className="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-12">
             {/* Trustpilot */}
             <a 

@@ -10,7 +10,7 @@ import GenerationSelector from '@/components/home/GenerationSelector';
 import CaseSelector from '@/components/home/CaseSelector';
 import TrustpilotWidget from '@/components/home/TrustpilotWidget';
 import TrustBadges from '@/components/home/TrustBadges';
-import SocialProofBadge from '@/components/home/SocialProofBadge';
+
 import CustomerQuoteHighlight from '@/components/home/CustomerQuoteHighlight';
 import GuaranteesSection from '@/components/home/GuaranteesSection';
 
@@ -59,9 +59,6 @@ const Index = () => {
         <main className="flex-1">
           {/* Hero met achtergrondafbeelding */}
           <Hero />
-          
-          {/* Social Proof Badge - Bekend van */}
-          <SocialProofBadge />
           
           {/* USP Strip */}
           <USPStrip />

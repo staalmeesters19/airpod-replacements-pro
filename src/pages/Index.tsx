@@ -1,4 +1,6 @@
 import { Helmet } from 'react-helmet';
+import { useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import Hero from '@/components/home/Hero';
@@ -10,21 +12,46 @@ import GenerationSelector from '@/components/home/GenerationSelector';
 import CaseSelector from '@/components/home/CaseSelector';
 import TrustpilotWidget from '@/components/home/TrustpilotWidget';
 import TrustBadges from '@/components/home/TrustBadges';
-
 import CustomerQuoteHighlight from '@/components/home/CustomerQuoteHighlight';
 import GuaranteesSection from '@/components/home/GuaranteesSection';
 
 const Index = () => {
+  const { i18n } = useTranslation();
+  const location = useLocation();
+  const isEnglish = location.pathname.startsWith('/en');
+
+  const seoData = {
+    nl: {
+      title: 'Losse AirPods en Oplaadcases Kopen | RePairPods',
+      description: 'Koop losse AirPods links of rechts, en originele oplaadcases. Eén AirPod kwijt? Vervang alleen wat je mist. 100% originele Apple onderdelen, morgen in huis. Voorheen Airpods-handel.',
+      keywords: 'losse airpods, airpod links, airpod rechts, oplaadcase, airpods vervangen, losse airpod kopen, airpods case los, repairpods',
+      canonical: 'https://repairpods.nl',
+      storeDescription: 'Specialist in losse AirPods en oplaadcases. Vervang alleen wat je kwijt bent.',
+    },
+    en: {
+      title: 'Buy Single AirPods & Charging Cases | RePairPods',
+      description: 'Buy single AirPods left or right, and original charging cases. Lost an AirPod? Replace only what you need. 100% original Apple parts, fast delivery to Europe.',
+      keywords: 'single airpods, airpod left, airpod right, charging case, airpods replacement, buy single airpod, airpods case only, repairpods',
+      canonical: 'https://repairpods.nl/en',
+      storeDescription: 'Specialist in single AirPods and charging cases. Replace only what you lost.',
+    },
+  };
+
+  const seo = isEnglish ? seoData.en : seoData.nl;
+
   return (
     <>
       <Helmet>
-        <title>Losse AirPods en Oplaadcases Kopen | RePairPods</title>
-        <meta
-          name="description"
-          content="Koop losse AirPods links of rechts, en originele oplaadcases. Eén AirPod kwijt? Vervang alleen wat je mist. 100% originele Apple onderdelen, morgen in huis. Voorheen Airpods-handel."
-        />
-        <meta name="keywords" content="losse airpods, airpod links, airpod rechts, oplaadcase, airpods vervangen, losse airpod kopen, airpods case los, repairpods" />
-        <link rel="canonical" href="https://repairpods.nl" />
+        <html lang={isEnglish ? 'en' : 'nl'} />
+        <title>{seo.title}</title>
+        <meta name="description" content={seo.description} />
+        <meta name="keywords" content={seo.keywords} />
+        <link rel="canonical" href={seo.canonical} />
+        
+        {/* Hreflang tags for multilingual SEO */}
+        <link rel="alternate" hrefLang="nl" href="https://repairpods.nl" />
+        <link rel="alternate" hrefLang="en" href="https://repairpods.nl/en" />
+        <link rel="alternate" hrefLang="x-default" href="https://repairpods.nl" />
         
         {/* Structured Data for SEO */}
         <script type="application/ld+json">
@@ -33,8 +60,8 @@ const Index = () => {
             "@type": "Store",
             "name": "RePairPods",
             "alternateName": "Airpods-handel",
-            "description": "Specialist in losse AirPods en oplaadcases. Vervang alleen wat je kwijt bent.",
-            "url": "https://repairpods.nl",
+            "description": seo.storeDescription,
+            "url": seo.canonical,
             "image": "https://repairpods.nl/og-image.jpg",
             "address": {
               "@type": "PostalAddress",

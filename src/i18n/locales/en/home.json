@@ -1,0 +1,77 @@
+{
+  "hero": {
+    "title": "Lost a single AirPod?",
+    "subtitle": "Buy only what you need",
+    "description": "100% original Apple AirPods & charging cases. Professionally tested, fast delivery."
+  },
+  "podFinder": {
+    "title": "Find your AirPod",
+    "subtitle": "Select your generation and side",
+    "selectGeneration": "Choose your generation",
+    "selectSide": "Choose side"
+  },
+  "missingSide": {
+    "title": "Which side are you missing?",
+    "subtitle": "Select what you need",
+    "leftTitle": "Left AirPod",
+    "leftDesc": "Just the left earbud",
+    "rightTitle": "Right AirPod",
+    "rightDesc": "Just the right earbud",
+    "caseTitle": "Charging Case",
+    "caseDesc": "Just the charging case"
+  },
+  "generations": {
+    "title": "Single AirPods by generation",
+    "subtitle": "Select your AirPods model",
+    "viewProducts": "View {{generation}}"
+  },
+  "cases": {
+    "title": "Replacement charging cases",
+    "subtitle": "Replace just your case",
+    "viewAll": "View all charging cases"
+  },
+  "guarantees": {
+    "title": "Our promises",
+    "subtitle": "What you can count on",
+    "original": {
+      "title": "100% original Apple",
+      "description": "Guaranteed genuine Apple parts"
+    },
+    "warranty": {
+      "title": "Up to 1 year warranty",
+      "description": "On all products"
+    },
+    "battery": {
+      "title": "Min. 80% battery",
+      "description": "Tested before shipping"
+    },
+    "shipping": {
+      "title": "Ships within 24h",
+      "description": "Fast letterbox delivery"
+    },
+    "return": {
+      "title": "14-day returns",
+      "description": "Not satisfied? Money back"
+    },
+    "support": {
+      "title": "Personal support",
+      "description": "Via WhatsApp or email"
+    }
+  },
+  "reviews": {
+    "title": "What customers say",
+    "subtitle": "Over 360 happy customers",
+    "viewAll": "View all reviews"
+  },
+  "usp": {
+    "freeShipping": "Free shipping",
+    "shippingSubtext": "To all of Netherlands",
+    "warranty": "Up to 1 year warranty",
+    "warrantySubtext": "On all products",
+    "return": "14-day returns",
+    "returnSubtext": "Not satisfied? Money back",
+    "rating": "4.9/5 stars",
+    "ratingSubtext": "300+ happy customers",
+    "shipping24h": "Ships within 24 hours"
+  }
+}

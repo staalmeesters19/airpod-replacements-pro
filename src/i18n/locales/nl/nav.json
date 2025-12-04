@@ -1,0 +1,35 @@
+{
+  "menu": {
+    "leftAirpods": "Linker AirPods",
+    "rightAirpods": "Rechter AirPods",
+    "chargingCases": "Losse oplaadcases",
+    "allLeftAirpods": "Alle linker AirPods",
+    "allRightAirpods": "Alle rechter AirPods",
+    "allCases": "Alle oplaadcases",
+    "whichAirpods": "Welke AirPods heb ik?",
+    "blog": "Blog",
+    "reviews": "Reviews",
+    "aboutUs": "Over ons",
+    "faq": "Veelgestelde vragen",
+    "help": "Hulp & ondersteuning",
+    "accessories": "Accessoires"
+  },
+  "generations": {
+    "gen2": "2e generatie",
+    "gen3": "3e generatie",
+    "gen4": "4e generatie",
+    "pro1": "Pro 1",
+    "pro2": "Pro 2",
+    "pro3": "Pro 3",
+    "pro2Lightning": "Pro 2 (Lightning)",
+    "pro2USBC": "Pro 2 (USB-C)"
+  },
+  "breadcrumbs": {
+    "home": "Home",
+    "products": "Producten",
+    "singleAirpods": "Losse AirPods",
+    "chargingCases": "Oplaadcases",
+    "blog": "Blog",
+    "help": "Hulp"
+  }
+}

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Search, ShoppingCart, Menu, X, ChevronDown, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -10,62 +10,68 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import USPStrip from './USPStrip';
+import LanguageSwitcher from './LanguageSwitcher';
 import { useCart } from '@/context/CartContext';
-
-const categoryDropdowns = [
-  {
-    label: 'Linker AirPods',
-    allLabel: 'Alle linker AirPods',
-    allUrl: '/losse-airpods?kant=links',
-    items: [
-      { label: '2e generatie', url: '/product/airpods-2e-generatie-links' },
-      { label: '3e generatie', url: '/product/airpods-3e-generatie-links' },
-      { label: '4e generatie', url: '/product/airpods-4e-generatie-links' },
-      { label: 'Pro 1', url: '/product/airpods-pro-1e-generatie-links' },
-      { label: 'Pro 2', url: '/product/airpods-pro-2e-generatie-lightning-links' },
-      { label: 'Pro 3', url: '/product/airpods-pro-3e-generatie-links' },
-    ],
-  },
-  {
-    label: 'Rechter AirPods',
-    allLabel: 'Alle rechter AirPods',
-    allUrl: '/losse-airpods?kant=rechts',
-    items: [
-      { label: '2e generatie', url: '/product/airpods-2e-generatie-rechts' },
-      { label: '3e generatie', url: '/product/airpods-3e-generatie-rechts' },
-      { label: '4e generatie', url: '/product/airpods-4e-generatie-rechts' },
-      { label: 'Pro 1', url: '/product/airpods-pro-1e-generatie-rechts' },
-      { label: 'Pro 2', url: '/product/airpods-pro-2e-generatie-lightning-rechts' },
-      { label: 'Pro 3', url: '/product/airpods-pro-3e-generatie-rechts' },
-    ],
-  },
-  {
-    label: 'Losse oplaadcases',
-    allLabel: 'Alle oplaadcases',
-    allUrl: '/losse-oplaadcases',
-    items: [
-      { label: '2e generatie', url: '/product/airpods-2e-generatie-oplaadcase' },
-      { label: '3e generatie', url: '/product/airpods-3e-generatie-oplaadcase-magsafe' },
-      { label: '4e generatie', url: '/product/airpods-4e-generatie-oplaadcase' },
-      { label: 'Pro 1', url: '/product/airpods-pro-1e-generatie-oplaadcase-magsafe' },
-      { label: 'Pro 2 (Lightning)', url: '/product/airpods-pro-2e-generatie-oplaadcase-lightning' },
-      { label: 'Pro 2 (USB-C)', url: '/product/airpods-pro-2e-generatie-oplaadcase-usbc' },
-      { label: 'Pro 3', url: '/product/airpods-pro-3e-generatie-oplaadcase' },
-    ],
-  },
-];
+import { useTranslation } from 'react-i18next';
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [expandedMobileMenu, setExpandedMobileMenu] = useState<string | null>(null);
   const { totalItems } = useCart();
+  const { t } = useTranslation(['nav', 'common']);
+  const location = useLocation();
+  const isEnglish = location.pathname.startsWith('/en');
+  const prefix = isEnglish ? '/en' : '';
+
+  const categoryDropdowns = [
+    {
+      label: t('nav:menu.leftAirpods'),
+      allLabel: t('nav:menu.allLeftAirpods'),
+      allUrl: `${prefix}${isEnglish ? '/single-airpods' : '/losse-airpods'}?kant=links`,
+      items: [
+        { label: t('nav:generations.gen2'), url: `${prefix}/product/airpods-2e-generatie-links` },
+        { label: t('nav:generations.gen3'), url: `${prefix}/product/airpods-3e-generatie-links` },
+        { label: t('nav:generations.gen4'), url: `${prefix}/product/airpods-4e-generatie-links` },
+        { label: t('nav:generations.pro1'), url: `${prefix}/product/airpods-pro-1e-generatie-links` },
+        { label: t('nav:generations.pro2'), url: `${prefix}/product/airpods-pro-2e-generatie-lightning-links` },
+        { label: t('nav:generations.pro3'), url: `${prefix}/product/airpods-pro-3e-generatie-links` },
+      ],
+    },
+    {
+      label: t('nav:menu.rightAirpods'),
+      allLabel: t('nav:menu.allRightAirpods'),
+      allUrl: `${prefix}${isEnglish ? '/single-airpods' : '/losse-airpods'}?kant=rechts`,
+      items: [
+        { label: t('nav:generations.gen2'), url: `${prefix}/product/airpods-2e-generatie-rechts` },
+        { label: t('nav:generations.gen3'), url: `${prefix}/product/airpods-3e-generatie-rechts` },
+        { label: t('nav:generations.gen4'), url: `${prefix}/product/airpods-4e-generatie-rechts` },
+        { label: t('nav:generations.pro1'), url: `${prefix}/product/airpods-pro-1e-generatie-rechts` },
+        { label: t('nav:generations.pro2'), url: `${prefix}/product/airpods-pro-2e-generatie-lightning-rechts` },
+        { label: t('nav:generations.pro3'), url: `${prefix}/product/airpods-pro-3e-generatie-rechts` },
+      ],
+    },
+    {
+      label: t('nav:menu.chargingCases'),
+      allLabel: t('nav:menu.allCases'),
+      allUrl: `${prefix}${isEnglish ? '/charging-cases' : '/losse-oplaadcases'}`,
+      items: [
+        { label: t('nav:generations.gen2'), url: `${prefix}/product/airpods-2e-generatie-oplaadcase` },
+        { label: t('nav:generations.gen3'), url: `${prefix}/product/airpods-3e-generatie-oplaadcase-magsafe` },
+        { label: t('nav:generations.gen4'), url: `${prefix}/product/airpods-4e-generatie-oplaadcase` },
+        { label: t('nav:generations.pro1'), url: `${prefix}/product/airpods-pro-1e-generatie-oplaadcase-magsafe` },
+        { label: t('nav:generations.pro2Lightning'), url: `${prefix}/product/airpods-pro-2e-generatie-oplaadcase-lightning` },
+        { label: t('nav:generations.pro2USBC'), url: `${prefix}/product/airpods-pro-2e-generatie-oplaadcase-usbc` },
+        { label: t('nav:generations.pro3'), url: `${prefix}/product/airpods-pro-3e-generatie-oplaadcase` },
+      ],
+    },
+  ];
 
   const navLinks = [
-    { label: 'Welke AirPods heb ik?', href: '/welke-airpods' },
-    { label: 'Blog', href: '/blog' },
-    { label: 'Reviews', href: '/reviews' },
-    { label: 'Over ons', href: '/over-ons' },
+    { label: t('nav:menu.whichAirpods'), href: isEnglish ? '/en/which-airpods' : '/welke-airpods' },
+    { label: t('nav:menu.blog'), href: `${prefix}/blog` },
+    { label: t('nav:menu.reviews'), href: `${prefix}/reviews` },
+    { label: t('nav:menu.aboutUs'), href: isEnglish ? '/en/about-us' : '/over-ons' },
   ];
 
   const toggleMobileSubmenu = (label: string) => {
@@ -79,7 +85,7 @@ const Header = () => {
         <div className="container mx-auto px-4 md:px-6 lg:px-10">
           <div className="flex h-16 items-center justify-between">
             {/* Logo */}
-            <Link to="/" className="flex items-center">
+            <Link to={prefix || '/'} className="flex items-center">
               <span className="text-xl font-semibold text-foreground tracking-tight">
                 Re<span className="text-primary">Pair</span>Pods
               </span>
@@ -131,18 +137,20 @@ const Header = () => {
               ))}
             </nav>
 
-            {/* Search & Cart */}
-            <div className="flex items-center space-x-4">
+            {/* Search, Language & Cart */}
+            <div className="flex items-center space-x-2">
               <div className="hidden md:flex items-center relative">
                 <Search className="absolute left-3 h-4 w-4 text-muted-foreground" />
                 <Input
                   type="search"
-                  placeholder="Zoek model, kant of case..."
+                  placeholder={t('common:search.placeholder')}
                   className="pl-10 w-64 bg-secondary border-transparent focus:border-primary/30 focus:bg-background"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                 />
               </div>
+              
+              <LanguageSwitcher />
               
               <Button variant="ghost" size="icon" className="relative">
                 <ShoppingCart className="h-5 w-5" />
@@ -171,7 +179,7 @@ const Header = () => {
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
               <Input
                 type="search"
-                placeholder="Zoek model, kant of case..."
+                placeholder={t('common:search.placeholder')}
                 className="pl-10 bg-secondary border-transparent focus:border-primary/30"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}

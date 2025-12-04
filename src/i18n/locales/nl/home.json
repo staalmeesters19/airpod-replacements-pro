@@ -1,0 +1,77 @@
+{
+  "hero": {
+    "title": "Losse AirPod kwijt?",
+    "subtitle": "Koop alleen wat je nodig hebt",
+    "description": "100% originele Apple AirPods & oplaadcases. Professioneel getest, snel geleverd."
+  },
+  "podFinder": {
+    "title": "Vind jouw AirPod",
+    "subtitle": "Selecteer je generatie en kant",
+    "selectGeneration": "Kies je generatie",
+    "selectSide": "Kies kant"
+  },
+  "missingSide": {
+    "title": "Welke kant mis jij?",
+    "subtitle": "Selecteer wat je nodig hebt",
+    "leftTitle": "Linker AirPod",
+    "leftDesc": "Alleen de linker oordop",
+    "rightTitle": "Rechter AirPod",
+    "rightDesc": "Alleen de rechter oordop",
+    "caseTitle": "Oplaadcase",
+    "caseDesc": "Alleen de oplaadcase"
+  },
+  "generations": {
+    "title": "Losse AirPods per generatie",
+    "subtitle": "Selecteer je AirPods model",
+    "viewProducts": "Bekijk {{generation}}"
+  },
+  "cases": {
+    "title": "Losse oplaadcases",
+    "subtitle": "Vervang alleen je case",
+    "viewAll": "Bekijk alle oplaadcases"
+  },
+  "guarantees": {
+    "title": "Onze beloftes",
+    "subtitle": "Waar je op kunt rekenen",
+    "original": {
+      "title": "100% origineel Apple",
+      "description": "Gegarandeerd echte Apple onderdelen"
+    },
+    "warranty": {
+      "title": "Tot 1 jaar garantie",
+      "description": "Op alle producten"
+    },
+    "battery": {
+      "title": "Min. 80% batterij",
+      "description": "Getest voor verzending"
+    },
+    "shipping": {
+      "title": "Binnen 24u verzonden",
+      "description": "Snel in je brievenbus"
+    },
+    "return": {
+      "title": "14 dagen bedenktijd",
+      "description": "Niet goed, geld terug"
+    },
+    "support": {
+      "title": "Persoonlijke hulp",
+      "description": "Via WhatsApp of e-mail"
+    }
+  },
+  "reviews": {
+    "title": "Wat klanten zeggen",
+    "subtitle": "Meer dan 360 tevreden klanten",
+    "viewAll": "Bekijk alle reviews"
+  },
+  "usp": {
+    "freeShipping": "Gratis verzending",
+    "shippingSubtext": "Naar heel Nederland",
+    "warranty": "Tot 1 jaar garantie",
+    "warrantySubtext": "Op alle producten",
+    "return": "14 dagen bedenktijd",
+    "returnSubtext": "Niet goed, geld terug",
+    "rating": "4.9/5 sterren",
+    "ratingSubtext": "300+ tevreden klanten",
+    "shipping24h": "Binnen 24 uur verzonden"
+  }
+}

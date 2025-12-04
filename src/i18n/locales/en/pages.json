@@ -1,0 +1,50 @@
+{
+  "whichAirpods": {
+    "title": "Which AirPods do I have?",
+    "metaTitle": "Which AirPods do I have? | Model Number Checker | RePairPods",
+    "metaDescription": "Find out which AirPods generation you have. Check your model number and find the right replacement.",
+    "subtitle": "Find your model number and generation",
+    "howToFind": "How to find your model number",
+    "viaiPhone": "Via your iPhone/iPad",
+    "viaCase": "On the charging case",
+    "needHelp": "Need help?",
+    "chatWithUs": "Chat with us via WhatsApp"
+  },
+  "reviews": {
+    "title": "Reviews",
+    "metaTitle": "Customer Reviews | RePairPods",
+    "metaDescription": "Read what our customers say about RePairPods. Over 360 five-star reviews.",
+    "subtitle": "What our customers say",
+    "count": "Over 360 happy customers before you"
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "metaTitle": "FAQ | RePairPods",
+    "metaDescription": "Answers to frequently asked questions about single AirPods, warranty, shipping and returns.",
+    "subtitle": "Answers to your questions"
+  },
+  "help": {
+    "title": "Help & Support",
+    "metaTitle": "Help & Support | RePairPods",
+    "metaDescription": "Need help with your AirPods? Find guides for pairing, troubleshooting and more.",
+    "subtitle": "We're here to help"
+  },
+  "aboutUs": {
+    "title": "About Us",
+    "metaTitle": "About Us | RePairPods",
+    "metaDescription": "Learn more about RePairPods. Founded by two brothers with a passion for sustainability.",
+    "subtitle": "Our story"
+  },
+  "blog": {
+    "title": "Blog",
+    "metaTitle": "Blog | Tips & Guides | RePairPods",
+    "metaDescription": "Tips, guides and news about AirPods. Learn how to maintain your AirPods and solve problems.",
+    "readMore": "Read more",
+    "backToBlog": "Back to blog"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "description": "The page you're looking for doesn't exist or has been moved.",
+    "backHome": "Back to home"
+  }
+}

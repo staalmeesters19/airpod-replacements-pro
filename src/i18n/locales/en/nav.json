@@ -1,0 +1,35 @@
+{
+  "menu": {
+    "leftAirpods": "Left AirPods",
+    "rightAirpods": "Right AirPods",
+    "chargingCases": "Charging Cases",
+    "allLeftAirpods": "All left AirPods",
+    "allRightAirpods": "All right AirPods",
+    "allCases": "All charging cases",
+    "whichAirpods": "Which AirPods do I have?",
+    "blog": "Blog",
+    "reviews": "Reviews",
+    "aboutUs": "About us",
+    "faq": "FAQ",
+    "help": "Help & support",
+    "accessories": "Accessories"
+  },
+  "generations": {
+    "gen2": "2nd generation",
+    "gen3": "3rd generation",
+    "gen4": "4th generation",
+    "pro1": "Pro 1",
+    "pro2": "Pro 2",
+    "pro3": "Pro 3",
+    "pro2Lightning": "Pro 2 (Lightning)",
+    "pro2USBC": "Pro 2 (USB-C)"
+  },
+  "breadcrumbs": {
+    "home": "Home",
+    "products": "Products",
+    "singleAirpods": "Single AirPods",
+    "chargingCases": "Charging Cases",
+    "blog": "Blog",
+    "help": "Help"
+  }
+}

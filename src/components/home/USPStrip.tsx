@@ -7,8 +7,9 @@ const USPStrip = () => {
       text: '#1 Electronicazaak van NL op Trustpilot',
     },
     {
-      icon: Star,
-      text: '4.9/5 sterren • 1000+ tevreden klanten',
+      icon: null, // Custom star rating
+      text: '4.9/5 sterren • 300+ tevreden klanten',
+      isRating: true,
     },
     {
       icon: Shield,
@@ -25,16 +26,34 @@ const USPStrip = () => {
   ];
 
   return (
-    <section className="py-6 border-y border-border bg-secondary/30">
+    <section className="py-4 border-y border-border bg-secondary/30">
       <div className="container mx-auto px-4 md:px-6 lg:px-10">
-        <div className="flex flex-wrap justify-center md:justify-between items-center gap-6 md:gap-4">
+        <div className="flex flex-wrap justify-center md:justify-between items-center gap-4 md:gap-3">
           {usps.map((usp, index) => (
             <div
               key={index}
-              className="flex items-center gap-3 text-sm text-muted-foreground"
+              className="flex items-center gap-2 text-sm text-muted-foreground"
             >
-              <usp.icon className="h-5 w-5 flex-shrink-0" strokeWidth={1.5} />
-              <span>{usp.text}</span>
+              {usp.isRating ? (
+                <div className="flex items-center gap-1.5">
+                  <div className="flex gap-0.5">
+                    {[...Array(5)].map((_, i) => (
+                      <Star 
+                        key={i} 
+                        className="h-3.5 w-3.5 fill-[#00b67a] text-[#00b67a]" 
+                        strokeWidth={0}
+                      />
+                    ))}
+                  </div>
+                  <span className="font-medium text-foreground">4.9</span>
+                  <span className="text-muted-foreground">• 300+ klanten</span>
+                </div>
+              ) : (
+                <>
+                  {usp.icon && <usp.icon className="h-4 w-4 flex-shrink-0" strokeWidth={1.5} />}
+                  <span>{usp.text}</span>
+                </>
+              )}
             </div>
           ))}
         </div>

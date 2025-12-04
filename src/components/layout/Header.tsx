@@ -10,6 +10,7 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import USPStrip from './USPStrip';
+import { useCart } from '@/context/CartContext';
 
 const categoryDropdowns = [
   {
@@ -58,6 +59,7 @@ const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [expandedMobileMenu, setExpandedMobileMenu] = useState<string | null>(null);
+  const { totalItems } = useCart();
 
   const navLinks = [
     { label: 'Welke AirPods heb ik?', href: '/welke-airpods' },
@@ -144,9 +146,11 @@ const Header = () => {
               
               <Button variant="ghost" size="icon" className="relative">
                 <ShoppingCart className="h-5 w-5" />
-                <span className="absolute -top-1 -right-1 h-5 w-5 rounded-full bg-primary text-primary-foreground text-xs flex items-center justify-center">
-                  0
-                </span>
+                {totalItems > 0 && (
+                  <span className="absolute -top-1 -right-1 h-5 w-5 rounded-full bg-primary text-primary-foreground text-xs flex items-center justify-center animate-in zoom-in duration-200">
+                    {totalItems > 99 ? '99+' : totalItems}
+                  </span>
+                )}
               </Button>
 
               {/* Mobile menu button */}

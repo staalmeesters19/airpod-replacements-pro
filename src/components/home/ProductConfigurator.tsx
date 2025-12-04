@@ -1,9 +1,11 @@
 import { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
-import { ShoppingCart, Check, AlertCircle } from 'lucide-react';
+import { ShoppingCart, Check, AlertCircle, CheckCircle2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { mockProducts, conditionLabels, conditionDescriptions, type Condition } from '@/data/mockProducts';
+import { useCart } from '@/context/CartContext';
+import { toast } from 'sonner';
 
 // Import product images
 import airpods2Left from '@/assets/products/airpods-2-left.png';
@@ -80,6 +82,9 @@ const ProductConfigurator = () => {
   const [selectedPro2Variant, setSelectedPro2Variant] = useState<Pro2Variant | null>(null);
   const [selectedSide, setSelectedSide] = useState<Side>('left');
   const [selectedCondition, setSelectedCondition] = useState<Condition>('goed');
+  const [isAdding, setIsAdding] = useState(false);
+
+  const { addItem } = useCart();
 
   // Check if current generation needs variant selection
   const needsVariantSelection = selectedGeneration === 'airpods-4' || selectedGeneration === 'airpods-pro-2';
@@ -154,6 +159,40 @@ const ProductConfigurator = () => {
     }
     return `${sideLabel}er AirPod ${genLabel}${variantLabel}`;
   }, [selectedGeneration, selectedSide, selectedAirpods4Variant, selectedPro2Variant]);
+
+  // Handle add to cart
+  const handleAddToCart = () => {
+    if (!product || !variant) return;
+    
+    setIsAdding(true);
+    
+    // Add item to cart
+    addItem({
+      productId: product.id,
+      productSlug: product.slug,
+      productName: productName,
+      condition: selectedCondition,
+      price: variant.price,
+      image: productImage,
+    });
+
+    // Show success toast
+    toast.success('Toegevoegd aan winkelmandje!', {
+      description: `${productName} (${conditionLabels[selectedCondition]}) - €${variant.price.toFixed(2).replace('.', ',')}`,
+      duration: 3000,
+      action: {
+        label: 'Bekijk',
+        onClick: () => {
+          // Could navigate to cart page here
+        },
+      },
+    });
+
+    // Reset adding state after animation
+    setTimeout(() => {
+      setIsAdding(false);
+    }, 600);
+  };
 
   return (
     <section className="py-16 md:py-24 bg-secondary/20">
@@ -370,13 +409,33 @@ const ProductConfigurator = () => {
                     <Button disabled className="w-full" size="lg">
                       Selecteer eerst je versie hierboven
                     </Button>
-                  ) : product ? (
-                    <Button asChild className="w-full" size="lg">
-                      <Link to={`/product/${product.slug}`}>
-                        <ShoppingCart className="w-5 h-5 mr-2" />
-                        Bekijk product
+                  ) : product && variant ? (
+                    <div className="space-y-2">
+                      <Button 
+                        onClick={handleAddToCart}
+                        disabled={isAdding || variant.stock === 0}
+                        className="w-full transition-all" 
+                        size="lg"
+                      >
+                        {isAdding ? (
+                          <>
+                            <CheckCircle2 className="w-5 h-5 mr-2 animate-in zoom-in duration-200" />
+                            Toegevoegd!
+                          </>
+                        ) : (
+                          <>
+                            <ShoppingCart className="w-5 h-5 mr-2" />
+                            In winkelmandje
+                          </>
+                        )}
+                      </Button>
+                      <Link 
+                        to={`/product/${product.slug}`}
+                        className="block text-center text-sm text-muted-foreground hover:text-primary transition-colors"
+                      >
+                        Of bekijk productdetails →
                       </Link>
-                    </Button>
+                    </div>
                   ) : (
                     <Button disabled className="w-full" size="lg">
                       Product niet gevonden

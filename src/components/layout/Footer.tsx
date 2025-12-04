@@ -88,11 +88,11 @@ const Footer = () => {
         {/* Trust info */}
         <div className="mt-12 pt-8 border-t border-border">
           <div className="flex flex-wrap justify-center gap-6 mb-6 text-sm text-muted-foreground">
-            <span>🇳🇱 Nederlands bedrijf</span>
-            <span>📍 Amsterdam</span>
+            <span>NL Nederlands bedrijf</span>
+            <span>Amsterdam</span>
             <span>KvK: 94891494</span>
-            <span>⭐ 4.9/5 Trustpilot</span>
-            <span>🏆 #1 Electronicazaak NL</span>
+            <span>4.9/5 Trustpilot</span>
+            <span>#1 Electronicazaak NL</span>
           </div>
         </div>
 

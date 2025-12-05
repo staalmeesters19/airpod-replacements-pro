@@ -96,11 +96,11 @@ const Footer = () => {
         {/* Trust info */}
         <div className="mt-12 pt-8 border-t border-border">
           <div className="flex flex-wrap justify-center gap-6 mb-6 text-sm text-muted-foreground">
-            <span>🇳🇱 {t('common:footer.netherlands')}</span>
-            <span>📍 Amsterdam</span>
+            <span>{t('common:footer.netherlands')}</span>
+            <span>Amsterdam</span>
             <span>KvK: 94891494</span>
-            <span>⭐ {t('common:footer.trustpilot')}</span>
-            <span>🏆 {t('common:footer.topStore')}</span>
+            <span>{t('common:footer.trustpilot')}</span>
+            <span>{t('common:footer.topStore')}</span>
           </div>
         </div>
 

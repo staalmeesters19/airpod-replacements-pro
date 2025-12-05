@@ -27,6 +27,7 @@ import OverOns from "./pages/OverOns";
 import AboutUs from "./pages/AboutUs";
 import NotFound from "./pages/NotFound";
 import WhatsAppWidget from "./components/layout/WhatsAppWidget";
+import ScrollToTop from "./components/layout/ScrollToTop";
 
 const queryClient = new QueryClient();
 
@@ -54,6 +55,7 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
+          <ScrollToTop />
           <LanguageHandler>
             <Routes>
               {/* Dutch routes (default) */}

@@ -1,5 +1,11 @@
 import { Link, useLocation } from 'react-router-dom';
 import { Card } from '@/components/ui/card';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from '@/components/ui/carousel';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 // Import case images
 import airpods2Case from '@/assets/products/airpods-2-case.png';
@@ -12,6 +18,7 @@ const CaseSelector = () => {
   const location = useLocation();
   const isEnglish = location.pathname.startsWith('/en');
   const prefix = isEnglish ? '/en' : '';
+  const isMobile = useIsMobile();
 
   const cases = [
     {
@@ -64,11 +71,43 @@ const CaseSelector = () => {
     },
   ];
 
+  const CaseCard = ({ caseItem }: { caseItem: typeof cases[0] }) => (
+    <Link to={`${prefix}/product/${caseItem.slug}`}>
+      <Card className="group p-2 md:p-5 hover:shadow-card hover:border-primary/30 transition-all duration-200 h-full">
+        <div className="flex flex-col md:flex-row items-center md:gap-4">
+          <div className="w-12 h-12 md:w-20 md:h-20 flex-shrink-0 flex items-center justify-center mb-1.5 md:mb-0">
+            <img 
+              src={caseItem.image} 
+              alt={caseItem.name}
+              className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-200"
+            />
+          </div>
+          <div className="flex-1 text-center md:text-left">
+            <h3 className="font-medium text-foreground text-[10px] md:text-base leading-tight group-hover:text-primary transition-colors">
+              {caseItem.name}
+            </h3>
+            <p className="text-sm text-muted-foreground mb-3 hidden md:block">{caseItem.description}</p>
+            <div className="flex-wrap gap-2 hidden md:flex">
+              {caseItem.features.map((feature) => (
+                <span 
+                  key={feature}
+                  className="text-xs px-2 py-1 bg-secondary rounded-full text-muted-foreground"
+                >
+                  {feature}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </Card>
+    </Link>
+  );
+
   return (
-    <section className="py-8 md:py-24">
+    <section className="py-6 md:py-24">
       <div className="container mx-auto px-3 md:px-6 lg:px-10">
-        <div className="text-center mb-4 md:mb-12">
-          <h2 className="text-lg md:text-3xl font-semibold mb-2 md:mb-4 text-foreground">
+        <div className="text-center mb-3 md:mb-12">
+          <h2 className="text-base md:text-3xl font-semibold mb-1 md:mb-4 text-foreground">
             {isEnglish ? 'Replacement charging cases' : 'Losse oplaadcases'}
           </h2>
           <p className="text-xs md:text-base text-muted-foreground max-w-2xl mx-auto hidden md:block">
@@ -79,43 +118,31 @@ const CaseSelector = () => {
           </p>
         </div>
 
-        {/* Mobile: 3 column grid, Desktop: 3 column */}
-        <div className="grid grid-cols-3 lg:grid-cols-3 gap-2 md:gap-6 max-w-5xl mx-auto">
-          {cases.map((caseItem) => (
-            <Link key={caseItem.id} to={`${prefix}/product/${caseItem.slug}`}>
-              <Card className="group p-2 md:p-5 hover:shadow-card hover:border-primary/30 transition-all duration-200 h-full">
-                {/* Mobile: vertical layout */}
-                <div className="flex flex-col md:flex-row items-center md:gap-4">
-                  <div className="w-12 h-12 md:w-20 md:h-20 flex-shrink-0 flex items-center justify-center mb-1.5 md:mb-0">
-                    <img 
-                      src={caseItem.image} 
-                      alt={caseItem.name}
-                      className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-200"
-                    />
-                  </div>
-                  <div className="flex-1 text-center md:text-left">
-                    <h3 className="font-medium text-foreground text-[10px] md:text-base leading-tight group-hover:text-primary transition-colors">
-                      {caseItem.name}
-                    </h3>
-                    <p className="text-sm text-muted-foreground mb-3 hidden md:block">{caseItem.description}</p>
-                    <div className="flex-wrap gap-2 hidden md:flex">
-                      {caseItem.features.map((feature) => (
-                        <span 
-                          key={feature}
-                          className="text-xs px-2 py-1 bg-secondary rounded-full text-muted-foreground"
-                        >
-                          {feature}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </Card>
-            </Link>
-          ))}
-        </div>
+        {isMobile ? (
+          <Carousel
+            opts={{
+              align: 'start',
+              loop: false,
+            }}
+            className="w-full"
+          >
+            <CarouselContent className="-ml-2">
+              {cases.map((caseItem) => (
+                <CarouselItem key={caseItem.id} className="pl-2 basis-[40%]">
+                  <CaseCard caseItem={caseItem} />
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+          </Carousel>
+        ) : (
+          <div className="grid grid-cols-3 gap-6 max-w-5xl mx-auto">
+            {cases.map((caseItem) => (
+              <CaseCard key={caseItem.id} caseItem={caseItem} />
+            ))}
+          </div>
+        )}
 
-        <div className="text-center mt-4 md:mt-8">
+        <div className="text-center mt-3 md:mt-8">
           <Link 
             to={`${prefix}${isEnglish ? '/charging-cases' : '/losse-oplaadcases'}`} 
             className="inline-flex items-center justify-center px-4 py-2 md:px-6 md:py-3 text-xs md:text-sm font-medium text-primary border border-primary/30 rounded-full hover:bg-accent transition-colors"

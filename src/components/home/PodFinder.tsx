@@ -158,44 +158,44 @@ const PodFinder = () => {
   const progressValue = (currentStep / 4) * 100;
 
   return (
-    <section id="podfinder" className="py-12 md:py-16 bg-secondary/30 scroll-mt-20">
-      <div className="container mx-auto px-4 md:px-6 lg:px-10">
+    <section id="podfinder" className="py-8 md:py-16 bg-secondary/30 scroll-mt-20">
+      <div className="container mx-auto px-3 md:px-6 lg:px-10">
         <Card className="max-w-2xl mx-auto overflow-hidden border-border shadow-card bg-background">
           <Progress value={progressValue} className="h-1 rounded-none" />
           
-          <div className="p-6 md:p-8">
-            <div className="text-center mb-8">
-              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-2">{t.title}</h2>
-              <p className="text-sm text-muted-foreground">{t.step} {currentStep} {t.of} 4</p>
+          <div className="p-4 md:p-8">
+            <div className="text-center mb-4 md:mb-8">
+              <h2 className="text-xl md:text-3xl font-semibold text-foreground mb-1 md:mb-2">{t.title}</h2>
+              <p className="text-xs md:text-sm text-muted-foreground">{t.step} {currentStep} {t.of} 4</p>
             </div>
 
             {/* Step 1: Part Selection */}
             {currentStep === 1 && (
               <div>
-                <h3 className="text-lg md:text-xl font-medium text-center text-foreground mb-8">
+                <h3 className="text-sm md:text-xl font-medium text-center text-foreground mb-4 md:mb-8">
                   {t.step1Question}
                 </h3>
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <div className="grid grid-cols-3 gap-2 md:gap-4">
                   <button
                     onClick={() => handlePartSelect('left')}
-                    className="flex flex-col items-center p-6 bg-background border border-border rounded-2xl hover:border-primary hover:bg-accent/30 transition-all duration-200 group"
+                    className="flex flex-col items-center p-3 md:p-6 bg-background border border-border rounded-xl md:rounded-2xl hover:border-primary hover:bg-accent/30 transition-all duration-200 group"
                   >
-                    <img src={airpodLeft} alt={t.leftAlt} className="w-24 h-24 object-contain mb-4 group-hover:scale-105 transition-transform" />
-                    <span className="font-medium text-foreground">{t.leftAirPod}</span>
+                    <img src={airpodLeft} alt={t.leftAlt} className="w-14 h-14 md:w-24 md:h-24 object-contain mb-2 md:mb-4 group-hover:scale-105 transition-transform" />
+                    <span className="font-medium text-foreground text-[10px] md:text-base text-center leading-tight">{t.leftAirPod}</span>
                   </button>
                   <button
                     onClick={() => handlePartSelect('right')}
-                    className="flex flex-col items-center p-6 bg-background border border-border rounded-2xl hover:border-primary hover:bg-accent/30 transition-all duration-200 group"
+                    className="flex flex-col items-center p-3 md:p-6 bg-background border border-border rounded-xl md:rounded-2xl hover:border-primary hover:bg-accent/30 transition-all duration-200 group"
                   >
-                    <img src={airpodRight} alt={t.rightAlt} className="w-24 h-24 object-contain mb-4 group-hover:scale-105 transition-transform" />
-                    <span className="font-medium text-foreground">{t.rightAirPod}</span>
+                    <img src={airpodRight} alt={t.rightAlt} className="w-14 h-14 md:w-24 md:h-24 object-contain mb-2 md:mb-4 group-hover:scale-105 transition-transform" />
+                    <span className="font-medium text-foreground text-[10px] md:text-base text-center leading-tight">{t.rightAirPod}</span>
                   </button>
                   <button
                     onClick={() => handlePartSelect('case')}
-                    className="flex flex-col items-center p-6 bg-background border border-border rounded-2xl hover:border-primary hover:bg-accent/30 transition-all duration-200 group"
+                    className="flex flex-col items-center p-3 md:p-6 bg-background border border-border rounded-xl md:rounded-2xl hover:border-primary hover:bg-accent/30 transition-all duration-200 group"
                   >
-                    <img src={airpodCase} alt={t.caseAlt} className="w-24 h-24 object-contain mb-4 group-hover:scale-105 transition-transform" />
-                    <span className="font-medium text-foreground">{t.chargingCase}</span>
+                    <img src={airpodCase} alt={t.caseAlt} className="w-14 h-14 md:w-24 md:h-24 object-contain mb-2 md:mb-4 group-hover:scale-105 transition-transform" />
+                    <span className="font-medium text-foreground text-[10px] md:text-base text-center leading-tight">{t.chargingCase}</span>
                   </button>
                 </div>
               </div>
@@ -204,36 +204,36 @@ const PodFinder = () => {
             {/* Step 2: iOS Model */}
             {currentStep === 2 && (
               <div>
-                <h3 className="text-lg md:text-xl font-medium text-center text-foreground mb-2">
+                <h3 className="text-sm md:text-xl font-medium text-center text-foreground mb-1 md:mb-2">
                   {t.step2Question}
                 </h3>
-                <p className="text-sm text-muted-foreground text-center mb-6">
+                <p className="text-xs md:text-sm text-muted-foreground text-center mb-3 md:mb-6">
                   {t.step2Instructions}
                 </p>
                 <img 
                   src={iphoneModelNumber} 
                   alt={t.step2ImageAlt}
-                  className="max-w-full h-auto max-h-56 mx-auto rounded-xl shadow-soft mb-6 object-contain"
+                  className="max-w-full h-auto max-h-40 md:max-h-56 mx-auto rounded-xl shadow-soft mb-4 md:mb-6 object-contain"
                 />
-                <div className="grid grid-cols-3 sm:grid-cols-4 gap-2">
+                <div className="grid grid-cols-4 gap-1.5 md:gap-2">
                   {allIosModels.map(model => (
                     <Button
                       key={model}
                       variant="outline"
                       size="sm"
                       onClick={() => handleModelSelection(model, 'ios')}
-                      className="text-sm rounded-lg hover:bg-accent hover:text-accent-foreground hover:border-primary"
+                      className="text-xs md:text-sm rounded-lg hover:bg-accent hover:text-accent-foreground hover:border-primary px-2 py-1.5 md:px-3 md:py-2"
                     >
                       {model}
                     </Button>
                   ))}
                 </div>
-                <div className="flex justify-center gap-4 mt-6">
-                  <Button variant="ghost" onClick={handleSkipStep} className="text-muted-foreground">
+                <div className="flex justify-center gap-2 md:gap-4 mt-4 md:mt-6">
+                  <Button variant="ghost" size="sm" onClick={handleSkipStep} className="text-muted-foreground text-xs md:text-sm">
                     {t.skipQuestion}
                   </Button>
-                  <Button variant="ghost" onClick={handleReset} className="text-muted-foreground">
-                    <RotateCcw className="w-4 h-4 mr-2" />
+                  <Button variant="ghost" size="sm" onClick={handleReset} className="text-muted-foreground text-xs md:text-sm">
+                    <RotateCcw className="w-3 h-3 md:w-4 md:h-4 mr-1 md:mr-2" />
                     {t.reset}
                   </Button>
                 </div>
@@ -243,31 +243,31 @@ const PodFinder = () => {
             {/* Step 3: Case Model */}
             {currentStep === 3 && (
               <div>
-                <h3 className="text-lg md:text-xl font-medium text-center text-foreground mb-2">
+                <h3 className="text-sm md:text-xl font-medium text-center text-foreground mb-1 md:mb-2">
                   {t.step3Question}
                 </h3>
-                <p className="text-sm text-muted-foreground text-center mb-6">
+                <p className="text-xs md:text-sm text-muted-foreground text-center mb-3 md:mb-6">
                   {t.step3Instructions}
                 </p>
-                <div className="grid grid-cols-3 sm:grid-cols-4 gap-2">
+                <div className="grid grid-cols-4 gap-1.5 md:gap-2">
                   {allCaseModels.map(model => (
                     <Button
                       key={model}
                       variant="outline"
                       size="sm"
                       onClick={() => handleModelSelection(model, 'case')}
-                      className="text-sm rounded-lg hover:bg-accent hover:text-accent-foreground hover:border-primary"
+                      className="text-xs md:text-sm rounded-lg hover:bg-accent hover:text-accent-foreground hover:border-primary px-2 py-1.5 md:px-3 md:py-2"
                     >
                       {model}
                     </Button>
                   ))}
                 </div>
-                <div className="flex justify-center gap-4 mt-6">
-                  <Button variant="ghost" onClick={handleSkipStep} className="text-muted-foreground">
+                <div className="flex justify-center gap-2 md:gap-4 mt-4 md:mt-6">
+                  <Button variant="ghost" size="sm" onClick={handleSkipStep} className="text-muted-foreground text-xs md:text-sm">
                     {t.skipQuestion}
                   </Button>
-                  <Button variant="ghost" onClick={handleReset} className="text-muted-foreground">
-                    <RotateCcw className="w-4 h-4 mr-2" />
+                  <Button variant="ghost" size="sm" onClick={handleReset} className="text-muted-foreground text-xs md:text-sm">
+                    <RotateCcw className="w-3 h-3 md:w-4 md:h-4 mr-1 md:mr-2" />
                     {t.reset}
                   </Button>
                 </div>
@@ -277,28 +277,28 @@ const PodFinder = () => {
             {/* Step 4: Earbud Model */}
             {currentStep === 4 && (
               <div>
-                <h3 className="text-lg md:text-xl font-medium text-center text-foreground mb-2">
+                <h3 className="text-sm md:text-xl font-medium text-center text-foreground mb-1 md:mb-2">
                   {t.step4Question}
                 </h3>
-                <p className="text-sm text-muted-foreground text-center mb-6">
+                <p className="text-xs md:text-sm text-muted-foreground text-center mb-3 md:mb-6">
                   {t.step4Instructions}
                 </p>
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                <div className="grid grid-cols-3 gap-1.5 md:gap-2">
                   {allBudModels.map(({ model, side }) => (
                     <Button
                       key={`${model}-${side}`}
                       variant="outline"
                       size="sm"
                       onClick={() => handleModelSelection(model, 'bud', side)}
-                      className="text-sm rounded-lg hover:bg-accent hover:text-accent-foreground hover:border-primary"
+                      className="text-xs md:text-sm rounded-lg hover:bg-accent hover:text-accent-foreground hover:border-primary px-2 py-1.5 md:px-3 md:py-2"
                     >
                       {model} ({side})
                     </Button>
                   ))}
                 </div>
-                <div className="flex justify-center mt-6">
-                  <Button variant="ghost" onClick={handleReset} className="text-muted-foreground">
-                    <RotateCcw className="w-4 h-4 mr-2" />
+                <div className="flex justify-center mt-4 md:mt-6">
+                  <Button variant="ghost" size="sm" onClick={handleReset} className="text-muted-foreground text-xs md:text-sm">
+                    <RotateCcw className="w-3 h-3 md:w-4 md:h-4 mr-1 md:mr-2" />
                     {t.startOver}
                   </Button>
                 </div>

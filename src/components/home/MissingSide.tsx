@@ -75,22 +75,22 @@ const MissingSide = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+        <div className="grid grid-cols-3 gap-2 md:gap-6 max-w-4xl mx-auto">
           {options.map((option) => (
             <Link
               key={option.id}
               to={option.href}
-              className="group flex flex-col items-center p-8 bg-secondary/30 rounded-2xl border border-border hover:border-primary/30 hover:bg-secondary/50 transition-all duration-200"
+              className="group flex flex-col items-center p-3 md:p-8 bg-secondary/30 rounded-xl md:rounded-2xl border border-border hover:border-primary/30 hover:bg-secondary/50 transition-all duration-200"
             >
-              <div className="w-32 h-32 mb-6 flex items-center justify-center">
+              <div className="w-16 h-16 md:w-32 md:h-32 mb-2 md:mb-6 flex items-center justify-center">
                 <img
                   src={option.image}
                   alt={option.alt}
                   className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-200"
                 />
               </div>
-              <h3 className="text-lg font-semibold text-foreground mb-2">{option.title}</h3>
-              <p className="text-sm text-muted-foreground text-center">{option.description}</p>
+              <h3 className="text-xs md:text-lg font-semibold text-foreground mb-1 md:mb-2 text-center leading-tight">{option.title}</h3>
+              <p className="text-[10px] md:text-sm text-muted-foreground text-center hidden md:block">{option.description}</p>
             </Link>
           ))}
         </div>

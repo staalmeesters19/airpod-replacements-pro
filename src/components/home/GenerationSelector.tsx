@@ -65,13 +65,13 @@ const GenerationSelector = () => {
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-secondary/20">
-      <div className="container mx-auto px-4 md:px-6 lg:px-10">
-        <div className="text-center mb-12">
-          <h2 className="text-2xl md:text-3xl font-semibold mb-4 text-foreground">
-            {isEnglish ? 'Single AirPods by generation' : 'Losse AirPods per generatie'}
+    <section className="py-8 md:py-24 bg-secondary/20">
+      <div className="container mx-auto px-3 md:px-6 lg:px-10">
+        <div className="text-center mb-4 md:mb-12">
+          <h2 className="text-lg md:text-3xl font-semibold mb-2 md:mb-4 text-foreground">
+            {isEnglish ? 'Find your single AirPod' : 'Vind direct jouw losse AirPod'}
           </h2>
-          <p className="text-base text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-xs md:text-base text-muted-foreground max-w-2xl mx-auto hidden md:block">
             {isEnglish 
               ? 'Replace your left or right AirPod individually. Choose your generation below to find the right single AirPod.'
               : 'Vervang je linker of rechter AirPod per stuk. Kies hieronder jouw generatie om de juiste losse AirPod te vinden.'
@@ -79,7 +79,33 @@ const GenerationSelector = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+        {/* Mobile: horizontal scroll, Desktop: grid */}
+        <div className="flex md:hidden overflow-x-auto gap-2 pb-2 -mx-1 px-1 scrollbar-hide">
+          {generations.map((gen) => (
+            <Link 
+              key={gen.id} 
+              to={`${prefix}/model/${gen.slug}`} 
+              aria-label={isEnglish ? `View single ${gen.name} products` : `Bekijk losse ${gen.name} producten`}
+              className="flex-shrink-0 w-[28%]"
+            >
+              <Card className="group p-2 text-center hover:shadow-card hover:border-primary/30 transition-all duration-200 h-full">
+                <div className="w-12 h-12 mx-auto mb-1.5 flex items-center justify-center">
+                  <img 
+                    src={gen.image} 
+                    alt={`${gen.name} ${gen.subtitle}`}
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+                <h3 className="font-medium text-foreground text-[10px] leading-tight">
+                  {gen.name}
+                </h3>
+              </Card>
+            </Link>
+          ))}
+        </div>
+
+        {/* Desktop grid */}
+        <div className="hidden md:grid grid-cols-3 lg:grid-cols-6 gap-4">
           {generations.map((gen) => (
             <Link 
               key={gen.id} 
@@ -103,14 +129,14 @@ const GenerationSelector = () => {
           ))}
         </div>
 
-        <div className="text-center mt-8">
+        <div className="text-center mt-4 md:mt-8">
           <Link 
             to={`${prefix}${isEnglish ? '/which-airpods' : '/welke-airpods'}`} 
-            className="text-sm text-primary hover:underline"
+            className="text-xs md:text-sm text-primary hover:underline"
           >
             {isEnglish 
-              ? "Don't know which generation you have? Find out here →"
-              : 'Weet je niet welke generatie je hebt? Ontdek het hier →'
+              ? "Don't know which generation? →"
+              : 'Welke generatie heb ik? →'
             }
           </Link>
         </div>

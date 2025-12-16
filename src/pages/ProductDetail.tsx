@@ -122,9 +122,9 @@ const ProductDetail = () => {
       <Header />
 
       <main className="flex-1">
-        <div className="container mx-auto px-4 py-8">
+        <div className="container mx-auto px-3 sm:px-4 py-4 sm:py-8">
           {/* Breadcrumbs */}
-          <Breadcrumb className="mb-8">
+          <Breadcrumb className="mb-4 sm:mb-8 text-xs sm:text-sm">
             <BreadcrumbList>
               <BreadcrumbItem>
                 <BreadcrumbLink asChild>
@@ -153,10 +153,10 @@ const ProductDetail = () => {
           </Breadcrumb>
 
           {/* Product Info */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-12 mb-8 sm:mb-16">
             {/* Images */}
             <div className="space-y-4">
-              <div className="aspect-square bg-secondary/50 rounded-2xl flex items-center justify-center p-12 relative">
+              <div className="aspect-square bg-secondary/50 rounded-xl sm:rounded-2xl flex items-center justify-center p-6 sm:p-12 relative">
                 <img
                   src={product.images[0]}
                   alt={product.name}
@@ -166,10 +166,10 @@ const ProductDetail = () => {
             </div>
 
             {/* Product Details */}
-            <div className="space-y-6">
+            <div className="space-y-4 sm:space-y-6">
               <div>
-                <h1 className="text-3xl md:text-4xl font-bold mb-4">{product.name}</h1>
-                <p className="text-lg text-muted-foreground">{product.description}</p>
+                <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 sm:mb-4">{product.name}</h1>
+                <p className="text-sm sm:text-lg text-muted-foreground">{product.description}</p>
               </div>
 
               {/* Case Variant Selector (MagSafe/Lightning) */}
@@ -277,35 +277,35 @@ const ProductDetail = () => {
 
               {/* Condition Selector */}
               <div>
-                <h3 className="font-semibold mb-3">
+                <h3 className="font-semibold mb-2 sm:mb-3 text-sm sm:text-base">
                   {isEnglish ? 'Choose your condition:' : 'Kies je conditie:'}
                 </h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-3">
                   {product.variants.map((variant) => (
                     <button
                       key={variant.condition}
                       onClick={() => setSelectedCondition(variant.condition)}
-                      className={`p-4 rounded-xl border-2 text-left transition-all ${
+                      className={`p-2 sm:p-3 rounded-lg sm:rounded-xl border-2 text-left transition-all ${
                         activeCondition === variant.condition
                           ? 'border-primary bg-primary/5'
                           : 'border-border hover:border-primary/50'
                       } ${variant.stock === 0 ? 'opacity-50' : ''}`}
                       disabled={variant.stock === 0}
                     >
-                      <div className="flex justify-between items-start mb-1">
-                        <span className="font-medium">{getConditionLabel(variant.condition)}</span>
-                        <span className="font-bold">€{variant.price.toFixed(2)}</span>
+                      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-0.5 sm:mb-1">
+                        <span className="font-medium text-xs sm:text-sm">{getConditionLabel(variant.condition)}</span>
+                        <span className="font-bold text-xs sm:text-sm">€{variant.price.toFixed(2)}</span>
                       </div>
-                      <p className="text-xs text-muted-foreground">
+                      <p className="text-[10px] sm:text-xs text-muted-foreground hidden sm:block">
                         {getConditionDescription(variant.condition)}
                       </p>
                       {variant.stock > 0 && variant.stock < 5 && (
-                        <p className="text-xs text-primary mt-1">
-                          {isEnglish ? `Only ${variant.stock} left in stock` : `Nog ${variant.stock} op voorraad`}
+                        <p className="text-[10px] sm:text-xs text-primary mt-0.5 sm:mt-1">
+                          {isEnglish ? `${variant.stock} left` : `Nog ${variant.stock}`}
                         </p>
                       )}
                       {variant.stock === 0 && (
-                        <p className="text-xs text-destructive mt-1">
+                        <p className="text-[10px] sm:text-xs text-destructive mt-0.5 sm:mt-1">
                           {isEnglish ? 'Sold out' : 'Uitverkocht'}
                         </p>
                       )}
@@ -316,27 +316,27 @@ const ProductDetail = () => {
 
               {/* Price & Add to Cart */}
               {activeVariant && (
-                <div className="space-y-4">
-                  <div className="flex items-center space-x-4">
-                    <span className="text-4xl font-bold">€{activeVariant.price.toFixed(2)}</span>
-                    <Badge variant="secondary">{getConditionLabel(activeVariant.condition)}</Badge>
+                <div className="space-y-3 sm:space-y-4">
+                  <div className="flex items-center space-x-3 sm:space-x-4">
+                    <span className="text-2xl sm:text-4xl font-bold">€{activeVariant.price.toFixed(2)}</span>
+                    <Badge variant="secondary" className="text-xs">{getConditionLabel(activeVariant.condition)}</Badge>
                   </div>
 
                   {activeVariant.stock > 0 ? (
-                    <div className="flex items-center space-x-2 text-sm">
-                      <Check className="h-5 w-5 text-primary" />
+                    <div className="flex items-center space-x-2 text-xs sm:text-sm">
+                      <Check className="h-4 w-4 sm:h-5 sm:w-5 text-primary" />
                       <span className="font-medium">
                         {isEnglish ? 'In stock – delivered tomorrow' : 'Op voorraad – morgen in huis'}
                       </span>
                     </div>
                   ) : (
-                    <Badge variant="destructive">
+                    <Badge variant="destructive" className="text-xs">
                       {isEnglish ? 'Temporarily sold out' : 'Tijdelijk uitverkocht'}
                     </Badge>
                   )}
 
-                  <Button size="lg" className="w-full md:w-auto px-12" disabled={activeVariant.stock === 0}>
-                    <ShoppingCart className="mr-2 h-5 w-5" />
+                  <Button size="default" className="w-full sm:w-auto sm:px-12 h-10 sm:h-11" disabled={activeVariant.stock === 0}>
+                    <ShoppingCart className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
                     {isEnglish ? 'Add to cart' : 'In winkelwagen'}
                   </Button>
                 </div>
@@ -348,109 +348,109 @@ const ProductDetail = () => {
               )}
 
               {/* Features */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-6">
-                <div className="flex items-center space-x-3">
-                  <Package className="h-5 w-5 text-muted-foreground" />
-                  <span className="text-sm">{isEnglish ? '100% original' : '100% origineel'}</span>
+              <div className="grid grid-cols-3 gap-2 sm:gap-4 pt-4 sm:pt-6">
+                <div className="flex flex-col sm:flex-row items-center sm:space-x-3 text-center sm:text-left">
+                  <Package className="h-4 w-4 sm:h-5 sm:w-5 text-muted-foreground mb-1 sm:mb-0" />
+                  <span className="text-[10px] sm:text-sm">{isEnglish ? '100% original' : '100% origineel'}</span>
                 </div>
-                <div className="flex items-center space-x-3">
-                  <TruckIcon className="h-5 w-5 text-muted-foreground" />
-                  <span className="text-sm">{isEnglish ? 'Free shipping' : 'Gratis verzending'}</span>
+                <div className="flex flex-col sm:flex-row items-center sm:space-x-3 text-center sm:text-left">
+                  <TruckIcon className="h-4 w-4 sm:h-5 sm:w-5 text-muted-foreground mb-1 sm:mb-0" />
+                  <span className="text-[10px] sm:text-sm">{isEnglish ? 'Free shipping' : 'Gratis verzending'}</span>
                 </div>
-                <div className="flex items-center space-x-3">
-                  <Shield className="h-5 w-5 text-muted-foreground" />
-                  <span className="text-sm">{isEnglish ? 'Up to 1 year warranty' : 'Tot 1 jaar garantie'}</span>
+                <div className="flex flex-col sm:flex-row items-center sm:space-x-3 text-center sm:text-left">
+                  <Shield className="h-4 w-4 sm:h-5 sm:w-5 text-muted-foreground mb-1 sm:mb-0" />
+                  <span className="text-[10px] sm:text-sm">{isEnglish ? '1 year warranty' : '1 jaar garantie'}</span>
                 </div>
               </div>
 
               {/* Product Info Cards */}
-              <div className="space-y-4 pt-6">
-                <Card className="p-6">
-                  <h3 className="font-semibold mb-3">
+              <div className="space-y-3 sm:space-y-4 pt-4 sm:pt-6">
+                <Card className="p-3 sm:p-6">
+                  <h3 className="font-semibold mb-2 sm:mb-3 text-sm sm:text-base">
                     {isEnglish ? 'Compatibility' : 'Compatibiliteit'}
                   </h3>
-                  <ul className="space-y-2">
+                  <ul className="space-y-1 sm:space-y-2">
                     {product.compatibility.map((item, index) => (
                       <li key={index} className="flex items-start space-x-2">
-                        <Check className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                        <span className="text-sm text-muted-foreground">{item}</span>
+                        <Check className="h-4 w-4 sm:h-5 sm:w-5 text-primary flex-shrink-0 mt-0.5" />
+                        <span className="text-xs sm:text-sm text-muted-foreground">{item}</span>
                       </li>
                     ))}
                   </ul>
                 </Card>
 
-                <Card className="p-6">
-                  <h3 className="font-semibold mb-3">
+                <Card className="p-3 sm:p-6">
+                  <h3 className="font-semibold mb-2 sm:mb-3 text-sm sm:text-base">
                     {isEnglish ? "What's included" : 'Wat je krijgt'}
                   </h3>
-                  <p className="text-sm text-muted-foreground">{product.whatsIncluded}</p>
+                  <p className="text-xs sm:text-sm text-muted-foreground">{product.whatsIncluded}</p>
                 </Card>
               </div>
             </div>
           </div>
 
           {/* Pairing Instructions */}
-          <Card className="p-8 mb-16">
-            <h2 className="text-2xl font-bold mb-6">
+          <Card className="p-4 sm:p-8 mb-8 sm:mb-16">
+            <h2 className="text-lg sm:text-2xl font-bold mb-4 sm:mb-6">
               {isEnglish 
                 ? `How to pair this ${product.type === 'case' ? 'charging case' : 'AirPod'}?`
                 : `Hoe koppel je deze ${product.type === 'case' ? 'oplaadcase' : 'AirPod'}?`}
             </h2>
-            <ol className="space-y-4">
-              <li className="flex items-start space-x-4">
-                <span className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-semibold">
+            <ol className="space-y-3 sm:space-y-4">
+              <li className="flex items-start space-x-3 sm:space-x-4">
+                <span className="flex-shrink-0 w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-semibold text-xs sm:text-base">
                   1
                 </span>
                 <div>
-                  <h3 className="font-semibold mb-1">
+                  <h3 className="font-semibold mb-0.5 sm:mb-1 text-sm sm:text-base">
                     {isEnglish ? 'Place both AirPods in the case' : 'Plaats beide AirPods in de case'}
                   </h3>
-                  <p className="text-sm text-muted-foreground">
+                  <p className="text-xs sm:text-sm text-muted-foreground">
                     {isEnglish 
                       ? 'Put your existing AirPod and the new AirPod together in the charging case.'
                       : 'Zet je bestaande AirPod en de nieuwe AirPod samen in de oplaadcase.'}
                   </p>
                 </div>
               </li>
-              <li className="flex items-start space-x-4">
-                <span className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-semibold">
+              <li className="flex items-start space-x-3 sm:space-x-4">
+                <span className="flex-shrink-0 w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-semibold text-xs sm:text-base">
                   2
                 </span>
                 <div>
-                  <h3 className="font-semibold mb-1">
+                  <h3 className="font-semibold mb-0.5 sm:mb-1 text-sm sm:text-base">
                     {isEnglish ? 'Open the case near your iPhone' : 'Open de case bij je iPhone'}
                   </h3>
-                  <p className="text-sm text-muted-foreground">
+                  <p className="text-xs sm:text-sm text-muted-foreground">
                     {isEnglish 
                       ? 'Hold the case open next to your paired iPhone or iPad.'
                       : 'Houd de case open naast je gekoppelde iPhone of iPad.'}
                   </p>
                 </div>
               </li>
-              <li className="flex items-start space-x-4">
-                <span className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-semibold">
+              <li className="flex items-start space-x-3 sm:space-x-4">
+                <span className="flex-shrink-0 w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-semibold text-xs sm:text-base">
                   3
                 </span>
                 <div>
-                  <h3 className="font-semibold mb-1">
+                  <h3 className="font-semibold mb-0.5 sm:mb-1 text-sm sm:text-base">
                     {isEnglish ? 'Press the button on the back' : 'Druk op de knop achterop'}
                   </h3>
-                  <p className="text-sm text-muted-foreground">
+                  <p className="text-xs sm:text-sm text-muted-foreground">
                     {isEnglish 
                       ? 'Hold the setup button on the back of the case until the light flashes white.'
                       : 'Houd de setup-knop achterop de case ingedrukt tot het lampje wit knippert.'}
                   </p>
                 </div>
               </li>
-              <li className="flex items-start space-x-4">
-                <span className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-semibold">
+              <li className="flex items-start space-x-3 sm:space-x-4">
+                <span className="flex-shrink-0 w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-semibold text-xs sm:text-base">
                   4
                 </span>
                 <div>
-                  <h3 className="font-semibold mb-1">
+                  <h3 className="font-semibold mb-0.5 sm:mb-1 text-sm sm:text-base">
                     {isEnglish ? 'Follow the on-screen instructions' : 'Volg de instructies op het scherm'}
                   </h3>
-                  <p className="text-sm text-muted-foreground">
+                  <p className="text-xs sm:text-sm text-muted-foreground">
                     {isEnglish 
                       ? 'Your iPhone will automatically recognize the new AirPod and complete the pairing.'
                       : 'Je iPhone herkent automatisch de nieuwe AirPod en voltooit de koppeling.'}
@@ -463,10 +463,10 @@ const ProductDetail = () => {
           {/* Related Products */}
           {relatedProducts.length > 0 && (
             <div>
-              <h2 className="text-2xl font-bold mb-6">
+              <h2 className="text-lg sm:text-2xl font-bold mb-4 sm:mb-6">
                 {isEnglish ? 'Related products' : 'Gerelateerde producten'}
               </h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="grid grid-cols-3 gap-2 sm:gap-6">
                 {relatedProducts.map((relatedProduct) => (
                   <ProductCard key={relatedProduct.id} product={relatedProduct} />
                 ))}

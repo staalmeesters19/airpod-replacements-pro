@@ -79,51 +79,26 @@ const GenerationSelector = () => {
           </p>
         </div>
 
-        {/* Mobile: horizontal scroll, Desktop: grid */}
-        <div className="flex md:hidden overflow-x-auto gap-2 pb-2 -mx-1 px-1 scrollbar-hide">
-          {generations.map((gen) => (
-            <Link 
-              key={gen.id} 
-              to={`${prefix}/model/${gen.slug}`} 
-              aria-label={isEnglish ? `View single ${gen.name} products` : `Bekijk losse ${gen.name} producten`}
-              className="flex-shrink-0 w-[28%]"
-            >
-              <Card className="group p-2 text-center hover:shadow-card hover:border-primary/30 transition-all duration-200 h-full">
-                <div className="w-12 h-12 mx-auto mb-1.5 flex items-center justify-center">
-                  <img 
-                    src={gen.image} 
-                    alt={`${gen.name} ${gen.subtitle}`}
-                    className="w-full h-full object-contain"
-                  />
-                </div>
-                <h3 className="font-medium text-foreground text-[10px] leading-tight">
-                  {gen.name}
-                </h3>
-              </Card>
-            </Link>
-          ))}
-        </div>
-
-        {/* Desktop grid */}
-        <div className="hidden md:grid grid-cols-3 lg:grid-cols-6 gap-4">
+        {/* Mobile: 3 columns grid, Desktop: 6 columns */}
+        <div className="grid grid-cols-3 lg:grid-cols-6 gap-2 md:gap-4">
           {generations.map((gen) => (
             <Link 
               key={gen.id} 
               to={`${prefix}/model/${gen.slug}`} 
               aria-label={isEnglish ? `View single ${gen.name} products` : `Bekijk losse ${gen.name} producten`}
             >
-              <Card className="group p-4 text-center hover:shadow-card hover:border-primary/30 transition-all duration-200 h-full">
-                <div className="w-20 h-20 mx-auto mb-4 flex items-center justify-center">
+              <Card className="group p-2 md:p-4 text-center hover:shadow-card hover:border-primary/30 transition-all duration-200 h-full">
+                <div className="w-12 h-12 md:w-20 md:h-20 mx-auto mb-1.5 md:mb-4 flex items-center justify-center">
                   <img 
                     src={gen.image} 
                     alt={`${gen.name} ${gen.subtitle}`}
                     className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-200"
                   />
                 </div>
-                <h3 className="font-medium text-foreground mb-1 group-hover:text-primary transition-colors">
+                <h3 className="font-medium text-foreground text-[10px] md:text-base leading-tight group-hover:text-primary transition-colors">
                   {gen.name}
                 </h3>
-                <p className="text-xs text-muted-foreground">{gen.subtitle}</p>
+                <p className="text-[9px] md:text-xs text-muted-foreground hidden md:block">{gen.subtitle}</p>
               </Card>
             </Link>
           ))}

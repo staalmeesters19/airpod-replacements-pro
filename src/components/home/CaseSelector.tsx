@@ -4,8 +4,10 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
+  type CarouselApi,
 } from '@/components/ui/carousel';
 import { useIsMobile } from '@/hooks/use-mobile';
+import { useState, useEffect } from 'react';
 
 // Import case images
 import airpods2Case from '@/assets/products/airpods-2-case.png';
@@ -19,6 +21,16 @@ const CaseSelector = () => {
   const isEnglish = location.pathname.startsWith('/en');
   const prefix = isEnglish ? '/en' : '';
   const isMobile = useIsMobile();
+  const [api, setApi] = useState<CarouselApi>();
+  const [current, setCurrent] = useState(0);
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    if (!api) return;
+    setCount(api.scrollSnapList().length);
+    setCurrent(api.selectedScrollSnap());
+    api.on('select', () => setCurrent(api.selectedScrollSnap()));
+  }, [api]);
 
   const cases = [
     {
@@ -73,9 +85,9 @@ const CaseSelector = () => {
 
   const CaseCard = ({ caseItem }: { caseItem: typeof cases[0] }) => (
     <Link to={`${prefix}/product/${caseItem.slug}`}>
-      <Card className="group p-2 md:p-5 hover:shadow-card hover:border-primary/30 transition-all duration-200 h-full">
+      <Card className="group p-3 md:p-5 hover:shadow-card hover:border-primary/30 transition-all duration-200 h-full">
         <div className="flex flex-col md:flex-row items-center md:gap-4">
-          <div className="w-12 h-12 md:w-20 md:h-20 flex-shrink-0 flex items-center justify-center mb-1.5 md:mb-0">
+          <div className="w-14 h-14 md:w-20 md:h-20 flex-shrink-0 flex items-center justify-center mb-2 md:mb-0">
             <img 
               src={caseItem.image} 
               alt={caseItem.name}
@@ -83,7 +95,7 @@ const CaseSelector = () => {
             />
           </div>
           <div className="flex-1 text-center md:text-left">
-            <h3 className="font-medium text-foreground text-[10px] md:text-base leading-tight group-hover:text-primary transition-colors">
+            <h3 className="font-medium text-foreground text-xs md:text-base leading-tight group-hover:text-primary transition-colors">
               {caseItem.name}
             </h3>
             <p className="text-sm text-muted-foreground mb-3 hidden md:block">{caseItem.description}</p>
@@ -119,21 +131,35 @@ const CaseSelector = () => {
         </div>
 
         {isMobile ? (
-          <Carousel
-            opts={{
-              align: 'start',
-              loop: false,
-            }}
-            className="w-full"
-          >
-            <CarouselContent className="-ml-2">
-              {cases.map((caseItem) => (
-                <CarouselItem key={caseItem.id} className="pl-2 basis-[40%]">
-                  <CaseCard caseItem={caseItem} />
-                </CarouselItem>
+          <div className="space-y-3">
+            <Carousel
+              setApi={setApi}
+              opts={{
+                align: 'start',
+                loop: false,
+              }}
+              className="w-full"
+            >
+              <CarouselContent className="-ml-2">
+                {cases.map((caseItem) => (
+                  <CarouselItem key={caseItem.id} className="pl-2 basis-[32%]">
+                    <CaseCard caseItem={caseItem} />
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+            </Carousel>
+            <div className="flex justify-center gap-1.5">
+              {Array.from({ length: count }).map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => api?.scrollTo(i)}
+                  className={`w-1.5 h-1.5 rounded-full transition-colors ${
+                    i === current ? 'bg-primary' : 'bg-muted-foreground/30'
+                  }`}
+                />
               ))}
-            </CarouselContent>
-          </Carousel>
+            </div>
+          </div>
         ) : (
           <div className="grid grid-cols-3 gap-6 max-w-5xl mx-auto">
             {cases.map((caseItem) => (

@@ -4,8 +4,10 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
+  type CarouselApi,
 } from '@/components/ui/carousel';
 import { useIsMobile } from '@/hooks/use-mobile';
+import { useState, useEffect } from 'react';
 
 // Import product images for each generation
 import airpods2Left from '@/assets/products/airpods-2-left.png';
@@ -19,6 +21,16 @@ const GenerationSelector = () => {
   const isEnglish = location.pathname.startsWith('/en');
   const prefix = isEnglish ? '/en' : '';
   const isMobile = useIsMobile();
+  const [api, setApi] = useState<CarouselApi>();
+  const [current, setCurrent] = useState(0);
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    if (!api) return;
+    setCount(api.scrollSnapList().length);
+    setCurrent(api.selectedScrollSnap());
+    api.on('select', () => setCurrent(api.selectedScrollSnap()));
+  }, [api]);
 
   const generations = [
     {
@@ -76,15 +88,15 @@ const GenerationSelector = () => {
       to={`${prefix}/model/${gen.slug}`} 
       aria-label={isEnglish ? `View single ${gen.name} products` : `Bekijk losse ${gen.name} producten`}
     >
-      <Card className="group p-2 md:p-4 text-center hover:shadow-card hover:border-primary/30 transition-all duration-200 h-full">
-        <div className="w-12 h-12 md:w-20 md:h-20 mx-auto mb-1.5 md:mb-4 flex items-center justify-center">
+      <Card className="group p-3 md:p-4 text-center hover:shadow-card hover:border-primary/30 transition-all duration-200 h-full">
+        <div className="w-14 h-14 md:w-20 md:h-20 mx-auto mb-2 md:mb-4 flex items-center justify-center">
           <img 
             src={gen.image} 
             alt={`${gen.name} ${gen.subtitle}`}
             className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-200"
           />
         </div>
-        <h3 className="font-medium text-foreground text-[10px] md:text-base leading-tight group-hover:text-primary transition-colors">
+        <h3 className="font-medium text-foreground text-xs md:text-base leading-tight group-hover:text-primary transition-colors">
           {gen.name}
         </h3>
         <p className="text-[9px] md:text-xs text-muted-foreground hidden md:block">{gen.subtitle}</p>
@@ -108,21 +120,35 @@ const GenerationSelector = () => {
         </div>
 
         {isMobile ? (
-          <Carousel
-            opts={{
-              align: 'start',
-              loop: false,
-            }}
-            className="w-full"
-          >
-            <CarouselContent className="-ml-2">
-              {generations.map((gen) => (
-                <CarouselItem key={gen.id} className="pl-2 basis-[40%]">
-                  <GenerationCard gen={gen} />
-                </CarouselItem>
+          <div className="space-y-3">
+            <Carousel
+              setApi={setApi}
+              opts={{
+                align: 'start',
+                loop: false,
+              }}
+              className="w-full"
+            >
+              <CarouselContent className="-ml-2">
+                {generations.map((gen) => (
+                  <CarouselItem key={gen.id} className="pl-2 basis-[32%]">
+                    <GenerationCard gen={gen} />
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+            </Carousel>
+            <div className="flex justify-center gap-1.5">
+              {Array.from({ length: count }).map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => api?.scrollTo(i)}
+                  className={`w-1.5 h-1.5 rounded-full transition-colors ${
+                    i === current ? 'bg-primary' : 'bg-muted-foreground/30'
+                  }`}
+                />
               ))}
-            </CarouselContent>
-          </Carousel>
+            </div>
+          </div>
         ) : (
           <div className="grid grid-cols-6 gap-4">
             {generations.map((gen) => (

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 40" width="200" height="40">
+  <style>
+    .logo-text { font-family: Inter, -apple-system, system-ui, BlinkMacSystemFont, 'SF Pro Text', sans-serif; font-size: 24px; font-weight: 600; }
+    .logo-primary { fill: #111111; }
+    .logo-accent { fill: #0A887A; }
+  </style>
+  <text x="0" y="28" class="logo-text">
+    <tspan class="logo-primary">Re</tspan><tspan class="logo-accent">Pair</tspan><tspan class="logo-primary">Pods</tspan>
+  </text>
+</svg>

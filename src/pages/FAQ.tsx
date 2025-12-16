@@ -85,33 +85,32 @@ const FAQ = () => {
         
         <main className="flex-1">
           {/* Hero */}
-          <div className="bg-gradient-to-b from-secondary/30 to-background py-16">
-            <div className="container mx-auto px-4 max-w-3xl">
-              <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center">
+          <div className="bg-gradient-to-b from-secondary/30 to-background py-8 md:py-16">
+            <div className="container mx-auto px-3 md:px-4 max-w-3xl">
+              <h1 className="text-2xl md:text-5xl font-bold mb-3 md:mb-6 text-center">
                 Veelgestelde vragen
               </h1>
-              <p className="text-lg text-muted-foreground text-center max-w-2xl mx-auto mb-8">
-                Alles wat je wilt weten over bestellen, verzending, garantie en onze producten. 
-                Staat je vraag er niet bij? Stuur ons gerust een berichtje via WhatsApp.
+              <p className="text-sm md:text-lg text-muted-foreground text-center max-w-2xl mx-auto mb-4 md:mb-8">
+                Alles over bestellen, verzending en garantie.
               </p>
               
-              {/* Quick nav */}
-              <div className="bg-background rounded-2xl border border-border p-6">
+              {/* Quick nav - hidden on mobile */}
+              <div className="bg-background rounded-2xl border border-border p-4 md:p-6 hidden md:block">
                 <p className="font-medium mb-3">In deze FAQ vind je:</p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li><a href="#bestellen" className="hover:text-primary transition-colors">→ Bestellen & betalen</a></li>
                   <li><a href="#verzending" className="hover:text-primary transition-colors">→ Verzending & levering</a></li>
                   <li><a href="#retourneren" className="hover:text-primary transition-colors">→ Retourneren & omruilen</a></li>
                   <li><a href="#garantie" className="hover:text-primary transition-colors">→ Garantie & zekerheid</a></li>
-                  <li><a href="#product" className="hover:text-primary transition-colors">→ Product, kwaliteit & condities</a></li>
-                  <li><a href="#contact" className="hover:text-primary transition-colors">→ Over RePairPods & contact</a></li>
+                  <li><a href="#product" className="hover:text-primary transition-colors">→ Product & condities</a></li>
+                  <li><a href="#contact" className="hover:text-primary transition-colors">→ Over RePairPods</a></li>
                 </ul>
               </div>
             </div>
           </div>
 
           {/* FAQ Content */}
-          <div className="container mx-auto px-4 max-w-3xl py-12">
+          <div className="container mx-auto px-3 md:px-4 max-w-3xl py-6 md:py-12">
             
             {/* Bestellen & betalen */}
             <section id="bestellen" className="mb-16 scroll-mt-24">

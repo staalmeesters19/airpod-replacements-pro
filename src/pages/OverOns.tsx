@@ -38,8 +38,8 @@ const OverOns = () => {
       <Header />
 
       <main className="flex-1">
-        <div className="container mx-auto px-4 md:px-6 lg:px-10 py-8">
-          <Breadcrumb className="mb-6">
+        <div className="container mx-auto px-3 md:px-6 lg:px-10 py-4 md:py-8">
+          <Breadcrumb className="mb-4 md:mb-6 text-xs md:text-sm">
             <BreadcrumbList>
               <BreadcrumbItem>
                 <BreadcrumbLink asChild>
@@ -54,15 +54,15 @@ const OverOns = () => {
           </Breadcrumb>
 
           {/* Hero Section */}
-          <header className="mb-16">
-            <span className="text-sm text-primary bg-primary/10 px-3 py-1 rounded-full mb-4 inline-block">
+          <header className="mb-8 md:mb-16">
+            <span className="text-xs md:text-sm text-primary bg-primary/10 px-2 py-0.5 md:px-3 md:py-1 rounded-full mb-3 md:mb-4 inline-block">
               Voorheen Airpods-handel
             </span>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
+            <h1 className="text-xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-6">
               Over RepairPods
             </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl">
-              Dé specialist in losse AirPods en oplaadcases. Wij helpen je AirPods-set weer compleet te maken – zonder dat je een hele nieuwe set hoeft te kopen.
+            <p className="text-sm md:text-xl text-muted-foreground max-w-3xl">
+              Dé specialist in losse AirPods en oplaadcases.
             </p>
           </header>
 

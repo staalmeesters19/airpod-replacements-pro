@@ -122,8 +122,8 @@ const LosseOplaadcases = () => {
       <Header />
 
       <main className="flex-1">
-        <div className="container mx-auto px-4 md:px-6 lg:px-10 py-8">
-          <Breadcrumb className="mb-6">
+        <div className="container mx-auto px-3 md:px-6 lg:px-10 py-4 md:py-8">
+          <Breadcrumb className="mb-4 md:mb-6 text-xs md:text-sm">
             <BreadcrumbList>
               <BreadcrumbItem>
                 <BreadcrumbLink asChild>
@@ -132,45 +132,45 @@ const LosseOplaadcases = () => {
               </BreadcrumbItem>
               <BreadcrumbSeparator />
               <BreadcrumbItem>
-                <BreadcrumbPage>{isEnglish ? 'Charging Cases' : 'Losse Oplaadcases'}</BreadcrumbPage>
+                <BreadcrumbPage>{isEnglish ? 'Cases' : 'Oplaadcases'}</BreadcrumbPage>
               </BreadcrumbItem>
             </BreadcrumbList>
           </Breadcrumb>
 
-          <header className="mb-8">
-            <h1 className="text-3xl md:text-4xl font-bold mb-4">
-              {isEnglish ? 'Buy AirPods Charging Cases' : 'Losse AirPods Oplaadcase Kopen'}
+          <header className="mb-4 md:mb-8">
+            <h1 className="text-xl md:text-4xl font-bold mb-2 md:mb-4">
+              {isEnglish ? 'Charging Cases' : 'Losse Oplaadcases'}
             </h1>
-            <p className="text-lg text-muted-foreground max-w-3xl">
+            <p className="text-sm md:text-lg text-muted-foreground max-w-3xl hidden md:block">
               {isEnglish 
-                ? 'Charging case lost or broken? Buy a replacement original Apple charging case for your AirPods. We have all generations in stock. Choose from 5 different conditions and save up to 60%.'
-                : 'Oplaadcase kwijt of kapot? Koop een losse originele Apple oplaadcase voor je AirPods. Wij hebben alle generaties op voorraad. Kies uit 5 verschillende condities en bespaar tot 60%.'
+                ? 'Charging case lost or broken? Buy a replacement original Apple charging case.'
+                : 'Oplaadcase kwijt of kapot? Koop een losse originele Apple oplaadcase.'
               }
             </p>
           </header>
 
-          <div className="flex flex-col md:flex-row gap-4 mb-8 p-4 bg-secondary/30 rounded-xl">
-            <div className="flex items-center gap-2 text-sm font-medium">
-              <Filter className="h-4 w-4" />
+          <div className="flex flex-wrap gap-2 md:gap-4 mb-4 md:mb-8 p-3 md:p-4 bg-secondary/30 rounded-xl">
+            <div className="flex items-center gap-1 md:gap-2 text-xs md:text-sm font-medium w-full md:w-auto">
+              <Filter className="h-3 w-3 md:h-4 md:w-4" />
               {isEnglish ? 'Filters:' : 'Filters:'}
             </div>
 
             <Select value={selectedModel} onValueChange={setSelectedModel}>
-              <SelectTrigger className="w-full md:w-48">
+              <SelectTrigger className="w-[calc(50%-4px)] md:w-48 h-8 md:h-10 text-xs md:text-sm">
                 <SelectValue placeholder={t('products:filters.model')} />
               </SelectTrigger>
               <SelectContent>
                 <SelectItem value="all">{t('products:filters.allModels')}</SelectItem>
-                <SelectItem value="airpods-2">{isEnglish ? 'AirPods 2nd generation' : 'AirPods 2e generatie'}</SelectItem>
-                <SelectItem value="airpods-3">{isEnglish ? 'AirPods 3rd generation' : 'AirPods 3e generatie'}</SelectItem>
-                <SelectItem value="airpods-4">{isEnglish ? 'AirPods 4th generation' : 'AirPods 4e generatie'}</SelectItem>
-                <SelectItem value="airpods-pro-1">AirPods Pro 1</SelectItem>
-                <SelectItem value="airpods-pro-2">AirPods Pro 2</SelectItem>
+                <SelectItem value="airpods-2">AirPods 2</SelectItem>
+                <SelectItem value="airpods-3">AirPods 3</SelectItem>
+                <SelectItem value="airpods-4">AirPods 4</SelectItem>
+                <SelectItem value="airpods-pro-1">Pro 1</SelectItem>
+                <SelectItem value="airpods-pro-2">Pro 2</SelectItem>
               </SelectContent>
             </Select>
 
             <Select value={sortBy} onValueChange={setSortBy}>
-              <SelectTrigger className="w-full md:w-44">
+              <SelectTrigger className="w-[calc(50%-4px)] md:w-44 h-8 md:h-10 text-xs md:text-sm">
                 <SelectValue placeholder={t('products:filters.sortBy')} />
               </SelectTrigger>
               <SelectContent>
@@ -181,20 +181,20 @@ const LosseOplaadcases = () => {
             </Select>
           </div>
 
-          <p className="text-sm text-muted-foreground mb-6">
-            {cases.length} {isEnglish ? (cases.length !== 1 ? 'charging cases' : 'charging case') : (cases.length !== 1 ? 'oplaadcases' : 'oplaadcase')} {isEnglish ? 'found' : 'gevonden'}
+          <p className="text-xs md:text-sm text-muted-foreground mb-4 md:mb-6">
+            {cases.length} {isEnglish ? 'cases' : 'oplaadcases'}
           </p>
 
           {cases.length > 0 ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-16">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-6 mb-8 md:mb-16">
               {cases.map((product) => (
                 <ProductCard key={product.id} product={product} isEnglish={isEnglish} />
               ))}
             </div>
           ) : (
-            <div className="text-center py-12">
-              <p className="text-muted-foreground mb-4">{isEnglish ? 'No charging cases found with these filters.' : 'Geen oplaadcases gevonden met deze filters.'}</p>
-              <Button variant="outline" onClick={clearFilters}>
+            <div className="text-center py-8 md:py-12">
+              <p className="text-muted-foreground mb-4 text-sm">{isEnglish ? 'No cases found.' : 'Geen cases gevonden.'}</p>
+              <Button variant="outline" size="sm" onClick={clearFilters}>
                 {t('common:cta.clearFilters')}
               </Button>
             </div>

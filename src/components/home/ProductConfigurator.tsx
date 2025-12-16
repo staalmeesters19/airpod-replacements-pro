@@ -217,52 +217,45 @@ const ProductConfigurator = () => {
   };
 
   return (
-    <section className="py-16 md:py-24 bg-secondary/20">
-      <div className="container mx-auto px-4 md:px-6 lg:px-10">
-        <div className="text-center mb-12">
-          <h2 className="text-2xl md:text-3xl font-semibold mb-4 text-foreground">
-            {isEnglish ? 'Find your single AirPod instantly' : 'Vind direct jouw losse AirPod'}
+    <section className="py-8 md:py-24 bg-secondary/20">
+      <div className="container mx-auto px-3 md:px-6 lg:px-10">
+        <div className="text-center mb-4 md:mb-12">
+          <h2 className="text-lg md:text-3xl font-semibold mb-2 md:mb-4 text-foreground">
+            {isEnglish ? 'Order your single AirPod' : 'Bestel jouw losse AirPod'}
           </h2>
-          <p className="text-base text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-xs md:text-base text-muted-foreground max-w-2xl mx-auto hidden md:block">
             {isEnglish 
               ? 'Know which AirPods you have? Select below and see the price immediately.'
               : 'Weet je welke AirPods je hebt? Selecteer hieronder en zie direct de prijs.'
             }
-            <br />
-            <a href="#podfinder" className="text-primary hover:underline">
-              {isEnglish 
-                ? "Don't know which model you have? Use the PodFinder →"
-                : 'Weet je niet welk model je hebt? Gebruik de PodFinder →'
-              }
-            </a>
           </p>
         </div>
 
         <div className="max-w-4xl mx-auto">
-          <Card className="p-6 md:p-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <Card className="p-4 md:p-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8">
               {/* Left: Product Image */}
-              <div className="flex items-center justify-center bg-secondary/30 rounded-xl p-8">
+              <div className="flex items-center justify-center bg-secondary/30 rounded-xl p-4 md:p-8">
                 <img
                   src={productImage}
                   alt={productName}
-                  className="w-48 h-48 md:w-64 md:h-64 object-contain"
+                  className="w-28 h-28 md:w-64 md:h-64 object-contain"
                 />
               </div>
 
               {/* Right: Configuration Options */}
-              <div className="space-y-6">
+              <div className="space-y-4 md:space-y-6">
                 {/* Step 1: Generation */}
                 <div>
-                  <label className="block text-sm font-semibold text-foreground mb-3">
+                  <label className="block text-xs md:text-sm font-semibold text-foreground mb-2 md:mb-3">
                     1. {isEnglish ? 'Choose your generation' : 'Kies je generatie'}
                   </label>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-1.5 md:gap-2">
                     {generations.map((gen) => (
                       <button
                         key={gen.value}
                         onClick={() => handleGenerationChange(gen.value)}
-                        className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
+                        className={`px-2.5 py-1.5 md:px-4 md:py-2 rounded-lg text-xs md:text-sm font-medium transition-all ${
                           selectedGeneration === gen.value
                             ? 'bg-primary text-primary-foreground'
                             : 'bg-secondary text-muted-foreground hover:bg-secondary/80'
@@ -276,37 +269,31 @@ const ProductConfigurator = () => {
 
                 {/* Step 1.5: Variant Selection (only for AirPods 4 and Pro 2) */}
                 {selectedGeneration === 'airpods-4' && (
-                  <div className="bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800 rounded-xl p-4">
-                    <div className="flex items-start gap-2 mb-3">
-                      <AlertCircle className="w-5 h-5 text-amber-600 dark:text-amber-400 flex-shrink-0 mt-0.5" />
+                  <div className="bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800 rounded-xl p-3 md:p-4">
+                    <div className="flex items-start gap-2 mb-2 md:mb-3">
+                      <AlertCircle className="w-4 h-4 md:w-5 md:h-5 text-amber-600 dark:text-amber-400 flex-shrink-0 mt-0.5" />
                       <div>
-                        <p className="text-sm font-semibold text-amber-800 dark:text-amber-200">
-                          {isEnglish ? 'Which version do you have?' : 'Welke versie heb je?'}
-                        </p>
-                        <p className="text-xs text-amber-700 dark:text-amber-300">
-                          {isEnglish 
-                            ? 'AirPods 4 comes in 2 versions. Go to Settings → Bluetooth → tap the (i) next to your AirPods and scroll down. Model number starts with A.'
-                            : 'AirPods 4 bestaat in 2 versies. Ga naar Instellingen → Bluetooth → klik op de (i) naast je AirPods en scroll naar beneden. Modelnummer begint met A.'
-                          }
+                        <p className="text-xs md:text-sm font-semibold text-amber-800 dark:text-amber-200">
+                          {isEnglish ? 'Which version?' : 'Welke versie?'}
                         </p>
                       </div>
                     </div>
-                    <div className="space-y-2">
+                    <div className="space-y-1.5 md:space-y-2">
                       {airpods4Variants.map((v) => (
                         <button
                           key={v.value}
                           onClick={() => setSelectedAirpods4Variant(v.value)}
-                          className={`w-full flex items-center justify-between px-4 py-3 rounded-lg text-sm transition-all ${
+                          className={`w-full flex items-center justify-between px-3 py-2 md:px-4 md:py-3 rounded-lg text-xs md:text-sm transition-all ${
                             selectedAirpods4Variant === v.value
                               ? 'bg-primary text-primary-foreground'
                               : 'bg-white dark:bg-secondary text-foreground hover:bg-gray-50 dark:hover:bg-secondary/80 border border-border'
                           }`}
                         >
-                          <div className="flex items-center gap-3">
-                            {selectedAirpods4Variant === v.value && <Check className="w-4 h-4" />}
+                          <div className="flex items-center gap-2">
+                            {selectedAirpods4Variant === v.value && <Check className="w-3 h-3 md:w-4 md:h-4" />}
                             <span className="font-medium">{v.label}</span>
                           </div>
-                          <span className={`text-xs ${selectedAirpods4Variant === v.value ? 'text-primary-foreground/80' : 'text-muted-foreground'}`}>
+                          <span className={`text-[10px] md:text-xs ${selectedAirpods4Variant === v.value ? 'text-primary-foreground/80' : 'text-muted-foreground'}`}>
                             {v.modelNumbers}
                           </span>
                         </button>
@@ -316,37 +303,29 @@ const ProductConfigurator = () => {
                 )}
 
                 {selectedGeneration === 'airpods-pro-2' && (
-                  <div className="bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800 rounded-xl p-4">
-                    <div className="flex items-start gap-2 mb-3">
-                      <AlertCircle className="w-5 h-5 text-amber-600 dark:text-amber-400 flex-shrink-0 mt-0.5" />
-                      <div>
-                        <p className="text-sm font-semibold text-amber-800 dark:text-amber-200">
-                          {isEnglish ? 'Which connection does your case have?' : 'Welke aansluiting heeft jouw case?'}
-                        </p>
-                        <p className="text-xs text-amber-700 dark:text-amber-300">
-                          {isEnglish 
-                            ? 'AirPods Pro 2 comes with Lightning or USB-C. Check the bottom of your case, or go to Settings → Bluetooth → tap the (i) next to your AirPods and scroll down. Model number starts with A.'
-                            : 'AirPods Pro 2 bestaat met Lightning of USB-C. Check de onderkant van je case, of ga naar Instellingen → Bluetooth → klik op de (i) naast je AirPods en scroll naar beneden. Modelnummer begint met A.'
-                          }
-                        </p>
-                      </div>
+                  <div className="bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800 rounded-xl p-3 md:p-4">
+                    <div className="flex items-start gap-2 mb-2 md:mb-3">
+                      <AlertCircle className="w-4 h-4 md:w-5 md:h-5 text-amber-600 dark:text-amber-400 flex-shrink-0 mt-0.5" />
+                      <p className="text-xs md:text-sm font-semibold text-amber-800 dark:text-amber-200">
+                        {isEnglish ? 'Lightning or USB-C?' : 'Lightning of USB-C?'}
+                      </p>
                     </div>
-                    <div className="space-y-2">
+                    <div className="space-y-1.5 md:space-y-2">
                       {pro2Variants.map((v) => (
                         <button
                           key={v.value}
                           onClick={() => setSelectedPro2Variant(v.value)}
-                          className={`w-full flex items-center justify-between px-4 py-3 rounded-lg text-sm transition-all ${
+                          className={`w-full flex items-center justify-between px-3 py-2 md:px-4 md:py-3 rounded-lg text-xs md:text-sm transition-all ${
                             selectedPro2Variant === v.value
                               ? 'bg-primary text-primary-foreground'
                               : 'bg-white dark:bg-secondary text-foreground hover:bg-gray-50 dark:hover:bg-secondary/80 border border-border'
                           }`}
                         >
-                          <div className="flex items-center gap-3">
-                            {selectedPro2Variant === v.value && <Check className="w-4 h-4" />}
+                          <div className="flex items-center gap-2">
+                            {selectedPro2Variant === v.value && <Check className="w-3 h-3 md:w-4 md:h-4" />}
                             <span className="font-medium">{v.label}</span>
                           </div>
-                          <span className={`text-xs ${selectedPro2Variant === v.value ? 'text-primary-foreground/80' : 'text-muted-foreground'}`}>
+                          <span className={`text-[10px] md:text-xs ${selectedPro2Variant === v.value ? 'text-primary-foreground/80' : 'text-muted-foreground'}`}>
                             {v.modelNumbers}
                           </span>
                         </button>
@@ -357,16 +336,16 @@ const ProductConfigurator = () => {
 
                 {/* Step 2: Side */}
                 <div className={!variantSelected && needsVariantSelection ? 'opacity-50 pointer-events-none' : ''}>
-                  <label className="block text-sm font-semibold text-foreground mb-3">
+                  <label className="block text-xs md:text-sm font-semibold text-foreground mb-2 md:mb-3">
                     {needsVariantSelection ? '3' : '2'}. {isEnglish ? 'What are you missing?' : 'Wat mis je?'}
                   </label>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-1.5 md:gap-2">
                     {sides.map((side) => (
                       <button
                         key={side.value}
                         onClick={() => setSelectedSide(side.value)}
                         disabled={!variantSelected && needsVariantSelection}
-                        className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
+                        className={`px-2.5 py-1.5 md:px-4 md:py-2 rounded-lg text-xs md:text-sm font-medium transition-all ${
                           selectedSide === side.value
                             ? 'bg-primary text-primary-foreground'
                             : 'bg-secondary text-muted-foreground hover:bg-secondary/80'
@@ -380,10 +359,10 @@ const ProductConfigurator = () => {
 
                 {/* Step 3: Condition */}
                 <div className={!variantSelected && needsVariantSelection ? 'opacity-50 pointer-events-none' : ''}>
-                  <label className="block text-sm font-semibold text-foreground mb-3">
+                  <label className="block text-xs md:text-sm font-semibold text-foreground mb-2 md:mb-3">
                     {needsVariantSelection ? '4' : '3'}. {isEnglish ? 'Choose condition' : 'Kies de staat'}
                   </label>
-                  <div className="space-y-2">
+                  <div className="space-y-1.5 md:space-y-2">
                     {conditions.map((condition) => {
                       const conditionVariant = product?.variants.find((v) => v.condition === condition);
                       const isAvailable = conditionVariant && conditionVariant.stock > 0;
@@ -393,7 +372,7 @@ const ProductConfigurator = () => {
                           key={condition}
                           onClick={() => isAvailable && setSelectedCondition(condition)}
                           disabled={!isAvailable || (!variantSelected && needsVariantSelection)}
-                          className={`w-full flex items-center justify-between px-4 py-3 rounded-lg text-sm transition-all ${
+                          className={`w-full flex items-center justify-between px-3 py-2 md:px-4 md:py-3 rounded-lg text-xs md:text-sm transition-all ${
                             selectedCondition === condition
                               ? 'bg-primary text-primary-foreground'
                               : isAvailable
@@ -401,13 +380,13 @@ const ProductConfigurator = () => {
                               : 'bg-secondary/50 text-muted-foreground/50 cursor-not-allowed'
                           }`}
                         >
-                          <div className="flex items-center gap-3">
+                          <div className="flex items-center gap-2">
                             {selectedCondition === condition && (
-                              <Check className="w-4 h-4" />
+                              <Check className="w-3 h-3 md:w-4 md:h-4" />
                             )}
                             <div className="text-left">
                               <span className="font-medium">{condLabels[condition]}</span>
-                              <p className={`text-xs ${selectedCondition === condition ? 'text-primary-foreground/80' : 'text-muted-foreground'}`}>
+                              <p className={`text-[10px] md:text-xs ${selectedCondition === condition ? 'text-primary-foreground/80' : 'text-muted-foreground'} hidden md:block`}>
                                 {condDescriptions[condition]}
                               </p>
                             </div>
@@ -422,56 +401,52 @@ const ProductConfigurator = () => {
                 </div>
 
                 {/* Price & CTA */}
-                <div className="pt-4 border-t border-border">
-                  <div className="flex items-center justify-between mb-4">
+                <div className="pt-3 md:pt-4 border-t border-border">
+                  <div className="flex items-center justify-between mb-3 md:mb-4">
                     <div>
-                      <p className="text-sm text-muted-foreground">{isEnglish ? 'Your selection:' : 'Jouw selectie:'}</p>
-                      <p className="font-semibold text-foreground">{productName}</p>
-                      <p className="text-xs text-muted-foreground">
-                        {isEnglish ? 'Condition:' : 'Staat:'} {condLabels[selectedCondition]}
-                      </p>
+                      <p className="text-xs md:text-sm text-muted-foreground">{isEnglish ? 'Your selection:' : 'Jouw selectie:'}</p>
+                      <p className="font-semibold text-foreground text-sm md:text-base">{productName}</p>
                     </div>
                     <div className="text-right">
-                      <p className="text-sm text-muted-foreground">{isEnglish ? 'Price' : 'Prijs'}</p>
-                      <p className="text-2xl font-bold text-primary">
+                      <p className="text-xl md:text-2xl font-bold text-primary">
                         {variant ? `€${variant.price.toFixed(2).replace('.', ',')}` : '-'}
                       </p>
                     </div>
                   </div>
 
                   {!variantSelected && needsVariantSelection ? (
-                    <Button disabled className="w-full" size="lg">
-                      {isEnglish ? 'Select your version above first' : 'Selecteer eerst je versie hierboven'}
+                    <Button disabled className="w-full" size="default">
+                      {isEnglish ? 'Select version first' : 'Selecteer eerst je versie'}
                     </Button>
                   ) : product && variant ? (
-                    <div className="space-y-2">
+                    <div className="space-y-1.5 md:space-y-2">
                       <Button 
                         onClick={handleAddToCart}
                         disabled={isAdding || variant.stock === 0}
                         className="w-full transition-all" 
-                        size="lg"
+                        size="default"
                       >
                         {isAdding ? (
                           <>
-                            <CheckCircle2 className="w-5 h-5 mr-2 animate-in zoom-in duration-200" />
+                            <CheckCircle2 className="w-4 h-4 md:w-5 md:h-5 mr-2 animate-in zoom-in duration-200" />
                             {isEnglish ? 'Added!' : 'Toegevoegd!'}
                           </>
                         ) : (
                           <>
-                            <ShoppingCart className="w-5 h-5 mr-2" />
+                            <ShoppingCart className="w-4 h-4 md:w-5 md:h-5 mr-2" />
                             {isEnglish ? 'Add to cart' : 'In winkelmandje'}
                           </>
                         )}
                       </Button>
                       <Link 
                         to={`${prefix}/product/${product.slug}`}
-                        className="block text-center text-sm text-muted-foreground hover:text-primary transition-colors"
+                        className="block text-center text-xs md:text-sm text-muted-foreground hover:text-primary transition-colors"
                       >
-                        {isEnglish ? 'Or view product details →' : 'Of bekijk productdetails →'}
+                        {isEnglish ? 'View product details →' : 'Productdetails →'}
                       </Link>
                     </div>
                   ) : (
-                    <Button disabled className="w-full" size="lg">
+                    <Button disabled className="w-full" size="default">
                       {isEnglish ? 'Product not found' : 'Product niet gevonden'}
                     </Button>
                   )}

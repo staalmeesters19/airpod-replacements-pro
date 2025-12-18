@@ -85,18 +85,17 @@ const Hulp = () => {
         
         <main className="flex-1">
           {/* Hero */}
-          <div className="bg-gradient-to-b from-secondary/30 to-background py-16">
-            <div className="container mx-auto px-4 max-w-3xl">
-              <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center">
+          <div className="bg-gradient-to-b from-secondary/30 to-background py-6 md:py-16">
+            <div className="container mx-auto px-3 md:px-4 max-w-3xl">
+              <h1 className="text-xl md:text-5xl font-bold mb-2 md:mb-6 text-center">
                 Hulp & ondersteuning
               </h1>
-              <p className="text-lg text-muted-foreground text-center max-w-2xl mx-auto mb-8">
-                Nieuwe AirPod of case ontvangen? Hier vind je alle stappen om hem te koppelen en werkend te krijgen. 
-                Loopt iets niet zoals verwacht? We helpen je op weg.
+              <p className="text-xs md:text-lg text-muted-foreground text-center max-w-2xl mx-auto mb-4 md:mb-8">
+                Nieuwe AirPod of case ontvangen? Hier vind je alle stappen om hem te koppelen.
               </p>
               
-              {/* Quick nav */}
-              <div className="bg-background rounded-2xl border border-border p-6">
+              {/* Quick nav - hidden on mobile */}
+              <div className="bg-background rounded-xl md:rounded-2xl border border-border p-4 md:p-6 hidden md:block">
                 <p className="font-medium mb-3">In deze gids vind je:</p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li><a href="#koppelen" className="hover:text-primary transition-colors">→ Koppelen van een losse AirPod</a></li>
@@ -111,15 +110,14 @@ const Hulp = () => {
           </div>
 
           {/* Help Content */}
-          <div className="container mx-auto px-4 max-w-3xl py-12">
+          <div className="container mx-auto px-3 md:px-4 max-w-3xl py-6 md:py-12">
             
-            {/* Koppelen van een losse AirPod */}
-            <section id="koppelen" className="mb-16 scroll-mt-24">
-              <h2 className="text-2xl font-semibold mb-6">Koppelen van een losse AirPod</h2>
+            <section id="koppelen" className="mb-8 md:mb-16 scroll-mt-24">
+              <h2 className="text-lg md:text-2xl font-semibold mb-3 md:mb-6">Koppelen van een losse AirPod</h2>
               
-              <Accordion type="single" collapsible className="space-y-3">
-                <AccordionItem value="kan-koppelen" className="border border-border rounded-xl px-6 data-[state=open]:bg-secondary/30">
-                  <AccordionTrigger className="text-left font-medium hover:no-underline">
+              <Accordion type="single" collapsible className="space-y-2 md:space-y-3">
+                <AccordionItem value="kan-koppelen" className="border border-border rounded-xl px-4 md:px-6 data-[state=open]:bg-secondary/30">
+                  <AccordionTrigger className="text-left text-sm md:text-base font-medium hover:no-underline">
                     Kan ik één losse AirPod koppelen aan mijn bestaande set?
                   </AccordionTrigger>
                   <AccordionContent className="text-muted-foreground">

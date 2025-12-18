@@ -39,7 +39,7 @@ const OverOns = () => {
 
       <main className="flex-1">
         <div className="container mx-auto px-3 md:px-6 lg:px-10 py-4 md:py-8">
-          <Breadcrumb className="mb-4 md:mb-6 text-xs md:text-sm">
+          <Breadcrumb className="mb-3 md:mb-6 text-xs md:text-sm hidden md:flex">
             <BreadcrumbList>
               <BreadcrumbItem>
                 <BreadcrumbLink asChild>
@@ -54,11 +54,11 @@ const OverOns = () => {
           </Breadcrumb>
 
           {/* Hero Section */}
-          <header className="mb-8 md:mb-16">
-            <span className="text-xs md:text-sm text-primary bg-primary/10 px-2 py-0.5 md:px-3 md:py-1 rounded-full mb-3 md:mb-4 inline-block">
+          <header className="mb-6 md:mb-16">
+            <span className="text-[10px] md:text-sm text-primary bg-primary/10 px-2 py-0.5 md:px-3 md:py-1 rounded-full mb-2 md:mb-4 inline-block">
               Voorheen Airpods-handel
             </span>
-            <h1 className="text-xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-6">
+            <h1 className="text-xl md:text-4xl lg:text-5xl font-bold mb-2 md:mb-6">
               Over RepairPods
             </h1>
             <p className="text-sm md:text-xl text-muted-foreground max-w-3xl">
@@ -67,247 +67,206 @@ const OverOns = () => {
           </header>
 
           {/* Ons Verhaal */}
-          <section className="mb-16">
-            <h2 className="text-2xl md:text-3xl font-semibold mb-6">Ons verhaal</h2>
+          <section className="mb-8 md:mb-16">
+            <h2 className="text-lg md:text-3xl font-semibold mb-3 md:mb-6">Ons verhaal</h2>
             <div className="prose prose-neutral dark:prose-invert max-w-none">
-              <p className="text-lg text-muted-foreground mb-4">
+              <p className="text-sm md:text-lg text-muted-foreground mb-3 md:mb-4">
                 RepairPods is begonnen als Airpods-handel, ongeveer drie jaar geleden. Twee broers zagen 
                 een probleem dat iedereen herkent: je verliest één AirPod, of je oplaadcase gaat kapot. 
-                Bij Apple en de meeste winkels moet je dan een compleet nieuwe set kopen. Zonde van je 
-                geld, en zonde van de AirPod die nog prima werkt.
+                Bij Apple en de meeste winkels moet je dan een compleet nieuwe set kopen.
               </p>
-              <p className="text-lg text-muted-foreground mb-4">
+              <p className="text-sm md:text-lg text-muted-foreground mb-3 md:mb-4 hidden md:block">
                 Op Marktplaats en vage webshops vond je wel losse AirPods, maar hoe wist je of ze echt 
                 waren? En wie gaf er garantie op? Die frustratie was het startpunt. De broers begonnen 
                 aan de keukentafel: {"'"}s avonds AirPods testen, schoonmaken en verzenden. Overdag alles 
                 leren over generaties, modelnummers en firmware.
               </p>
-              <p className="text-lg text-muted-foreground">
+              <p className="text-sm md:text-lg text-muted-foreground">
                 In drie jaar tijd is Airpods-handel uitgegroeid tot RepairPods: een gespecialiseerde 
-                webshop die duizenden AirPods-sets weer compleet heeft gemaakt voor klanten in Nederland 
-                en heel Europa. De nieuwe naam past beter bij de missie: AirPods repareren in plaats van 
-                weggooien en opnieuw kopen.
+                webshop die duizenden AirPods-sets weer compleet heeft gemaakt.
               </p>
             </div>
           </section>
 
           {/* Waarom losse AirPods */}
-          <section className="mb-16 bg-secondary/30 rounded-2xl p-8 md:p-12">
-            <h2 className="text-2xl md:text-3xl font-semibold mb-6">
-              Waarom losse AirPods en losse oplaadcases?
+          <section className="mb-8 md:mb-16 bg-secondary/30 rounded-xl md:rounded-2xl p-4 md:p-12">
+            <h2 className="text-lg md:text-3xl font-semibold mb-4 md:mb-6">
+              Waarom losse AirPods?
             </h2>
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid md:grid-cols-2 gap-4 md:gap-8">
               <div>
-                <h3 className="text-xl font-medium mb-3">Het probleem</h3>
-                <p className="text-muted-foreground mb-4">
-                  Eén AirPod kwijtraken gebeurt vaker dan je denkt. Of je oplaadcase valt en de scharnier 
-                  breekt. Het frustrerende: Apple en reguliere winkels verkopen vrijwel alleen complete 
+                <h3 className="text-sm md:text-xl font-medium mb-2 md:mb-3">Het probleem</h3>
+                <p className="text-xs md:text-base text-muted-foreground">
+                  Eén AirPod kwijtraken gebeurt vaker dan je denkt. Apple verkoopt vrijwel alleen complete 
                   sets. Voor één verloren oortje betaal je dan €150 of meer.
                 </p>
               </div>
               <div>
-                <h3 className="text-xl font-medium mb-3">De oplossing</h3>
-                <p className="text-muted-foreground mb-4">
-                  Bij RepairPods koop je precies wat je nodig hebt. Een losse linker AirPod. Een losse 
-                  rechter AirPod. Of alleen een oplaadcase. Goedkoper, sneller, en een stuk duurzamer 
-                  dan een hele nieuwe set aanschaffen.
+                <h3 className="text-sm md:text-xl font-medium mb-2 md:mb-3">De oplossing</h3>
+                <p className="text-xs md:text-base text-muted-foreground">
+                  Bij RepairPods koop je precies wat je nodig hebt. Goedkoper, sneller, en duurzamer.
                 </p>
               </div>
             </div>
           </section>
 
           {/* Zo werken wij */}
-          <section className="mb-16">
-            <h2 className="text-2xl md:text-3xl font-semibold mb-8">Zo werken wij</h2>
-            <div className="grid md:grid-cols-3 gap-6">
-              <Card className="p-6">
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-                  <Search className="h-6 w-6 text-primary" />
+          <section className="mb-8 md:mb-16">
+            <h2 className="text-lg md:text-3xl font-semibold mb-4 md:mb-8">Zo werken wij</h2>
+            <div className="grid grid-cols-3 md:grid-cols-3 gap-2 md:gap-6">
+              <Card className="p-3 md:p-6">
+                <div className="w-8 h-8 md:w-12 md:h-12 rounded-full bg-primary/10 flex items-center justify-center mb-2 md:mb-4">
+                  <Search className="h-4 w-4 md:h-6 md:w-6 text-primary" />
                 </div>
-                <h3 className="text-xl font-medium mb-3">Selectie & inkoop</h3>
-                <p className="text-muted-foreground">
-                  We kopen uitsluitend originele Apple-partijen via betrouwbare leveranciers: retouren, 
-                  overschotten en voorraadpartijen van winkels en distributeurs. Geen inkoop van 
-                  particulieren. Producten worden gesorteerd op generatie en onderdeel (links, rechts, case).
+                <h3 className="text-xs md:text-xl font-medium mb-1 md:mb-3">Inkoop</h3>
+                <p className="text-[10px] md:text-base text-muted-foreground hidden md:block">
+                  We kopen uitsluitend originele Apple-partijen via betrouwbare leveranciers.
                 </p>
               </Card>
               
-              <Card className="p-6">
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-                  <TestTube className="h-6 w-6 text-primary" />
+              <Card className="p-3 md:p-6">
+                <div className="w-8 h-8 md:w-12 md:h-12 rounded-full bg-primary/10 flex items-center justify-center mb-2 md:mb-4">
+                  <TestTube className="h-4 w-4 md:h-6 md:w-6 text-primary" />
                 </div>
-                <h3 className="text-xl font-medium mb-3">Testen & controleren</h3>
-                <p className="text-muted-foreground">
-                  Elke AirPod wordt getest op geluid, microfoon, verbinding en batterijduur. Bij Pro-modellen 
-                  controleren we ook de noise cancelling en sensoren. Oplaadcases testen we op laadpoort, 
-                  batterij en LED-indicatie. Pas als alles werkt, gaat het product online.
+                <h3 className="text-xs md:text-xl font-medium mb-1 md:mb-3">Testen</h3>
+                <p className="text-[10px] md:text-base text-muted-foreground hidden md:block">
+                  Elke AirPod wordt getest op geluid, microfoon, verbinding en batterijduur.
                 </p>
               </Card>
               
-              <Card className="p-6">
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-                  <Sparkles className="h-6 w-6 text-primary" />
+              <Card className="p-3 md:p-6">
+                <div className="w-8 h-8 md:w-12 md:h-12 rounded-full bg-primary/10 flex items-center justify-center mb-2 md:mb-4">
+                  <Sparkles className="h-4 w-4 md:h-6 md:w-6 text-primary" />
                 </div>
-                <h3 className="text-xl font-medium mb-3">Reinigen & hygiëne</h3>
-                <p className="text-muted-foreground">
-                  Alle onderdelen worden professioneel gereinigd. In-ear modellen krijgen waar nodig nieuwe 
-                  siliconen tips. Geen enkel product verlaat ons magazijn zonder visuele en hygiënische 
-                  controle. Daarna krijgt elk product een eerlijke conditie-indeling.
+                <h3 className="text-xs md:text-xl font-medium mb-1 md:mb-3">Reinigen</h3>
+                <p className="text-[10px] md:text-base text-muted-foreground hidden md:block">
+                  Alle onderdelen worden professioneel gereinigd met nieuwe tips waar nodig.
                 </p>
               </Card>
             </div>
           </section>
 
           {/* Onze beloftes */}
-          <section className="mb-16">
-            <h2 className="text-2xl md:text-3xl font-semibold mb-8">Onze beloftes aan jou</h2>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              <div className="flex items-start space-x-4">
-                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  <Check className="h-5 w-5 text-primary" />
+          <section className="mb-8 md:mb-16">
+            <h2 className="text-lg md:text-3xl font-semibold mb-4 md:mb-8">Onze beloftes</h2>
+            <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6">
+              <div className="flex items-start space-x-2 md:space-x-4">
+                <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                  <Check className="h-4 w-4 md:h-5 md:w-5 text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-medium mb-1">100% origineel Apple</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Geen namaak of kloons. Alle producten zijn echte Apple-onderdelen.
+                  <h3 className="font-medium text-xs md:text-base mb-0.5 md:mb-1">100% origineel</h3>
+                  <p className="text-[10px] md:text-sm text-muted-foreground hidden md:block">
+                    Geen namaak of kloons.
                   </p>
                 </div>
               </div>
               
-              <div className="flex items-start space-x-4">
-                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  <Shield className="h-5 w-5 text-primary" />
+              <div className="flex items-start space-x-2 md:space-x-4">
+                <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                  <Shield className="h-4 w-4 md:h-5 md:w-5 text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-medium mb-1">Garantie inbegrepen</h3>
-                  <p className="text-sm text-muted-foreground">
-                    12 maanden op nieuwe producten, 6 maanden op refurbished. Bovenop de wettelijke garantie.
+                  <h3 className="font-medium text-xs md:text-base mb-0.5 md:mb-1">Garantie</h3>
+                  <p className="text-[10px] md:text-sm text-muted-foreground hidden md:block">
+                    Tot 12 maanden garantie.
                   </p>
                 </div>
               </div>
               
-              <div className="flex items-start space-x-4">
-                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  <Check className="h-5 w-5 text-primary" />
+              <div className="flex items-start space-x-2 md:space-x-4">
+                <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                  <Check className="h-4 w-4 md:h-5 md:w-5 text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-medium mb-1">Minimaal 80% batterij</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Elke AirPod en case wordt getest. Batterijcapaciteit is minimaal 80% bij verkoop.
+                  <h3 className="font-medium text-xs md:text-base mb-0.5 md:mb-1">80% batterij</h3>
+                  <p className="text-[10px] md:text-sm text-muted-foreground hidden md:block">
+                    Minimaal 80% bij verkoop.
                   </p>
                 </div>
               </div>
               
-              <div className="flex items-start space-x-4">
-                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  <TruckIcon className="h-5 w-5 text-primary" />
+              <div className="flex items-start space-x-2 md:space-x-4">
+                <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                  <TruckIcon className="h-4 w-4 md:h-5 md:w-5 text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-medium mb-1">Binnen 24 uur verzonden</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Bestellingen op werkdagen worden dezelfde of volgende dag verstuurd. Heel Europa.
+                  <h3 className="font-medium text-xs md:text-base mb-0.5 md:mb-1">Snelle verzending</h3>
+                  <p className="text-[10px] md:text-sm text-muted-foreground hidden md:block">
+                    Binnen 24 uur verzonden.
                   </p>
                 </div>
               </div>
               
-              <div className="flex items-start space-x-4">
-                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  <Check className="h-5 w-5 text-primary" />
+              <div className="flex items-start space-x-2 md:space-x-4">
+                <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                  <Check className="h-4 w-4 md:h-5 md:w-5 text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-medium mb-1">14 dagen bedenktijd</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Niet tevreden? Bij fouten onzerzijds betalen wij het retourlabel.
+                  <h3 className="font-medium text-xs md:text-base mb-0.5 md:mb-1">14 dagen retour</h3>
+                  <p className="text-[10px] md:text-sm text-muted-foreground hidden md:block">
+                    Niet tevreden? Retourneren.
                   </p>
                 </div>
               </div>
               
-              <div className="flex items-start space-x-4">
-                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  <MessageCircle className="h-5 w-5 text-primary" />
+              <div className="flex items-start space-x-2 md:space-x-4">
+                <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                  <MessageCircle className="h-4 w-4 md:h-5 md:w-5 text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-medium mb-1">Persoonlijke support</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Bereikbaar via WhatsApp en e-mail. Echte mensen, geen chatbots.
+                  <h3 className="font-medium text-xs md:text-base mb-0.5 md:mb-1">Support</h3>
+                  <p className="text-[10px] md:text-sm text-muted-foreground hidden md:block">
+                    WhatsApp & e-mail.
                   </p>
                 </div>
               </div>
             </div>
             
-            <div className="mt-8 flex flex-wrap gap-4">
-              <Button variant="outline" asChild>
-                <Link to="/faq">Bekijk veelgestelde vragen</Link>
+            <div className="mt-4 md:mt-8 flex flex-wrap gap-2 md:gap-4">
+              <Button variant="outline" size="sm" asChild className="text-xs md:text-sm">
+                <Link to="/faq">Veelgestelde vragen</Link>
               </Button>
-              <Button variant="outline" asChild>
-                <Link to="/hulp">Contact opnemen</Link>
+              <Button variant="outline" size="sm" asChild className="text-xs md:text-sm">
+                <Link to="/hulp">Contact</Link>
               </Button>
             </div>
           </section>
 
           {/* Duurzaamheid */}
-          <section className="mb-16 bg-primary/5 rounded-2xl p-8 md:p-12">
-            <div className="flex items-start gap-4 mb-6">
-              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                <Leaf className="h-6 w-6 text-primary" />
+          <section className="mb-8 md:mb-16 bg-primary/5 rounded-xl md:rounded-2xl p-4 md:p-12">
+            <div className="flex items-start gap-3 md:gap-4 mb-3 md:mb-6">
+              <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                <Leaf className="h-5 w-5 md:h-6 md:w-6 text-primary" />
               </div>
               <div>
-                <h2 className="text-2xl md:text-3xl font-semibold mb-2">
+                <h2 className="text-lg md:text-3xl font-semibold mb-1 md:mb-2">
                   Duurzamer met losse AirPods
                 </h2>
-                <p className="text-muted-foreground">
+                <p className="text-xs md:text-base text-muted-foreground">
                   Minder e-waste, meer hergebruik
                 </p>
               </div>
             </div>
-            <div className="prose prose-neutral dark:prose-invert max-w-none">
-              <p className="text-muted-foreground mb-4">
-                Elk jaar belanden miljoenen elektronica-producten op de afvalberg, terwijl ze nog prima 
-                werken. AirPods zijn daar geen uitzondering op. Bij RepairPods geven we zoveel mogelijk 
-                onderdelen een tweede leven. Dat is niet alleen goed voor je portemonnee, maar ook voor 
-                het milieu.
-              </p>
-              <p className="text-muted-foreground">
-                De broers achter RepairPods zijn tech-liefhebbers, maar haten verspilling. Door losse 
-                vervanging mogelijk te maken, hoef jij niet een complete set weg te gooien omdat er 
-                één onderdeel mist of kapot is. Dat is circulariteit in de praktijk: repareren in plaats 
-                van vervangen.
-              </p>
-            </div>
-          </section>
-
-          {/* Reviews */}
-          <section className="mb-16">
-            <h2 className="text-2xl md:text-3xl font-semibold mb-6">
-              Wat klanten over ons zeggen
-            </h2>
-            <p className="text-lg text-muted-foreground mb-6">
-              In drie jaar tijd hebben we duizenden klanten geholpen hun AirPods-set weer compleet te 
-              maken. Van mensen die één oortje kwijtraakten in de sportschool, tot ondernemers die hun 
-              hele team van vervangende AirPods voorzagen. De reviews spreken voor zich: betrouwbaar, 
-              snel en precies wat je nodig hebt.
+            <p className="text-xs md:text-base text-muted-foreground">
+              Bij RepairPods geven we onderdelen een tweede leven. Goed voor je portemonnee én het milieu.
             </p>
-            <Button asChild>
-              <Link to="/reviews">Bekijk alle reviews</Link>
-            </Button>
           </section>
 
           {/* CTA */}
-          <section className="bg-secondary/30 rounded-2xl p-8 md:p-12 text-center">
-            <h2 className="text-2xl md:text-3xl font-semibold mb-4">
-              Maak je AirPods-set weer compleet
+          <section className="bg-secondary/30 rounded-xl md:rounded-2xl p-4 md:p-12 text-center">
+            <h2 className="text-lg md:text-3xl font-semibold mb-2 md:mb-4">
+              Maak je set weer compleet
             </h2>
-            <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Of je nu een losse linker AirPod zoekt, een rechter AirPod, of alleen een oplaadcase nodig 
-              hebt – bij RepairPods vind je precies wat je mist. 100% origineel Apple, met garantie, en 
-              morgen in huis.
+            <p className="text-xs md:text-lg text-muted-foreground mb-4 md:mb-8 max-w-2xl mx-auto">
+              100% origineel Apple, met garantie, morgen in huis.
             </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Button size="lg" asChild>
-                <Link to="/losse-airpods">Bekijk losse AirPods</Link>
+            <div className="flex flex-wrap justify-center gap-2 md:gap-4">
+              <Button size="sm" asChild className="text-xs md:text-base">
+                <Link to="/losse-airpods">Losse AirPods</Link>
               </Button>
-              <Button size="lg" variant="outline" asChild>
-                <Link to="/losse-oplaadcases">Bekijk oplaadcases</Link>
+              <Button size="sm" variant="outline" asChild className="text-xs md:text-base">
+                <Link to="/losse-oplaadcases">Oplaadcases</Link>
               </Button>
             </div>
           </section>

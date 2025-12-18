@@ -46,7 +46,9 @@ const ProductDetail = () => {
   };
   const [selectedCondition, setSelectedCondition] = useState<Condition | null>(null);
   const [pro2Variant, setPro2Variant] = useState<Pro2Variant>('lightning');
-  const [gen4Variant, setGen4Variant] = useState<Gen4Variant>('zonder-anc');
+  // Determine initial gen4 variant based on current product
+  const initialGen4Variant: Gen4Variant = product?.model === 'airpods-4-anc' ? 'met-anc' : 'zonder-anc';
+  const [gen4Variant, setGen4Variant] = useState<Gen4Variant>(initialGen4Variant);
 
   // Translation helpers for conditions
   const getConditionLabel = (condition: Condition) => {
@@ -107,8 +109,36 @@ const ProductDetail = () => {
 
   // Check if product needs variant selector
   const isPro2 = product.model === 'airpods-pro-2';
-  const isGen4 = product.model === 'airpods-4';
+  const isGen4 = product.model === 'airpods-4' || product.model === 'airpods-4-anc';
   const needsVariantSelector = isPro2 || isGen4;
+
+  // Helper function to navigate between AirPods 4 variants
+  const navigateToGen4Variant = (variant: Gen4Variant) => {
+    if (!product) return;
+    const currentSlug = product.slug;
+    let newSlug: string;
+    
+    if (variant === 'met-anc') {
+      // Navigate to ANC version: add '-anc' before the side/type suffix
+      if (currentSlug.includes('-anc')) {
+        newSlug = currentSlug; // Already ANC
+      } else {
+        // Insert '-anc' before -links, -rechts, or -oplaadcase
+        newSlug = currentSlug
+          .replace('airpods-4e-generatie-links', 'airpods-4e-generatie-anc-links')
+          .replace('airpods-4e-generatie-rechts', 'airpods-4e-generatie-anc-rechts')
+          .replace('airpods-4e-generatie-oplaadcase', 'airpods-4e-generatie-anc-oplaadcase');
+      }
+    } else {
+      // Navigate to non-ANC version: remove '-anc'
+      newSlug = currentSlug.replace('-anc', '');
+    }
+    
+    if (newSlug !== currentSlug) {
+      navigate(`/product/${newSlug}`);
+    }
+    setGen4Variant(variant);
+  };
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -237,7 +267,7 @@ const ProductDetail = () => {
                   </h3>
                   <div className="grid grid-cols-2 gap-3">
                     <button
-                      onClick={() => setGen4Variant('zonder-anc')}
+                      onClick={() => navigateToGen4Variant('zonder-anc')}
                       className={`p-4 rounded-xl border-2 text-left transition-all ${
                         gen4Variant === 'zonder-anc'
                           ? 'border-primary bg-primary/5'
@@ -250,7 +280,7 @@ const ProductDetail = () => {
                       </p>
                     </button>
                     <button
-                      onClick={() => setGen4Variant('met-anc')}
+                      onClick={() => navigateToGen4Variant('met-anc')}
                       className={`p-4 rounded-xl border-2 text-left transition-all ${
                         gen4Variant === 'met-anc'
                           ? 'border-primary bg-primary/5'

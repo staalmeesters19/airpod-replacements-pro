@@ -76,30 +76,30 @@ const BlogWelkeAirpods = () => {
       <Header />
 
       <main className="min-h-screen bg-background">
-        <article className="py-12 md:py-20">
-          <div className="container max-w-3xl mx-auto px-4">
+        <article className="py-6 md:py-20">
+          <div className="container max-w-3xl mx-auto px-3 md:px-4">
             
             {/* Breadcrumb */}
-            <Link to="/blog" className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary mb-8 transition-colors">
-              <ChevronLeft className="w-4 h-4" />
+            <Link to="/blog" className="inline-flex items-center gap-1 md:gap-2 text-xs md:text-base text-muted-foreground hover:text-primary mb-4 md:mb-8 transition-colors">
+              <ChevronLeft className="w-3 h-3 md:w-4 md:h-4" />
               Terug naar blog
             </Link>
 
             {/* Meta info */}
-            <div className="flex items-center gap-4 text-sm text-muted-foreground mb-6">
-              <span className="flex items-center gap-1.5">
-                <Calendar className="w-4 h-4" />
+            <div className="flex items-center gap-2 md:gap-4 text-[10px] md:text-sm text-muted-foreground mb-3 md:mb-6">
+              <span className="flex items-center gap-1">
+                <Calendar className="w-3 h-3 md:w-4 md:h-4" />
                 15 januari 2024
               </span>
-              <span className="flex items-center gap-1.5">
-                <Clock className="w-4 h-4" />
-                8 min leestijd
+              <span className="flex items-center gap-1">
+                <Clock className="w-3 h-3 md:w-4 md:h-4" />
+                8 min
               </span>
             </div>
 
             {/* H1 */}
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-8 leading-tight">
-              Welke AirPods heb ik? De complete gids voor modelnummers en generaties
+            <h1 className="text-xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-4 md:mb-8 leading-tight">
+              Welke AirPods heb ik? De complete gids voor modelnummers
             </h1>
 
             {/* Intro */}

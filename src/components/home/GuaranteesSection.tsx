@@ -12,6 +12,7 @@ const GuaranteesSection = () => {
       title: '500+ 5-star reviews',
       description: 'Rated #1 on Trustpilot',
       isTrustpilot: true,
+      link: 'https://nl.trustpilot.com/review/airpodshandel.nl',
     },
     {
       icon: CheckCircle,
@@ -44,6 +45,7 @@ const GuaranteesSection = () => {
       title: '500+ 5-sterren reviews',
       description: 'Beoordeeld #1 op Trustpilot',
       isTrustpilot: true,
+      link: 'https://nl.trustpilot.com/review/airpodshandel.nl',
     },
     {
       icon: CheckCircle,
@@ -72,6 +74,19 @@ const GuaranteesSection = () => {
     },
   ];
 
+  const CardContent = ({ item }: { item: typeof guarantees[0] }) => (
+    <>
+      <div className={`w-8 h-8 md:w-12 md:h-12 rounded-lg md:rounded-xl flex items-center justify-center mb-1.5 md:mb-4 mx-auto md:mx-0 ${'isTrustpilot' in item && item.isTrustpilot ? 'bg-[#00b67a]/10' : 'bg-primary/10'}`}>
+        <item.icon className={`w-4 h-4 md:w-6 md:h-6 ${'isTrustpilot' in item && item.isTrustpilot ? 'text-[#00b67a] fill-[#00b67a]' : 'text-primary'}`} />
+      </div>
+      <h3 className="font-semibold text-foreground text-[10px] md:text-base leading-tight">{item.title}</h3>
+      <p className="text-sm text-muted-foreground hidden md:block">{item.description}</p>
+      {'isTrustpilot' in item && item.isTrustpilot && (
+        <p className="text-[8px] md:text-xs text-[#00b67a] font-medium mt-0.5 md:mt-1">★ Trustpilot</p>
+      )}
+    </>
+  );
+
   return (
     <section className="py-8 md:py-20 bg-secondary/30">
       <div className="container mx-auto px-3 md:px-6 lg:px-10">
@@ -91,19 +106,24 @@ const GuaranteesSection = () => {
         {/* Guarantees grid */}
         <div className="grid grid-cols-3 md:grid-cols-3 gap-2 md:gap-8 mb-4 md:mb-10">
           {guarantees.map((item, index) => (
-            <div 
-              key={index} 
-              className="bg-background rounded-xl md:rounded-2xl p-2 md:p-6 shadow-sm border border-border hover:border-primary/20 hover:shadow-md transition-all text-center md:text-left"
-            >
-              <div className={`w-8 h-8 md:w-12 md:h-12 rounded-lg md:rounded-xl flex items-center justify-center mb-1.5 md:mb-4 mx-auto md:mx-0 ${'isTrustpilot' in item && item.isTrustpilot ? 'bg-[#00b67a]/10' : 'bg-primary/10'}`}>
-                <item.icon className={`w-4 h-4 md:w-6 md:h-6 ${'isTrustpilot' in item && item.isTrustpilot ? 'text-[#00b67a] fill-[#00b67a]' : 'text-primary'}`} />
+            'link' in item && item.link ? (
+              <a
+                key={index}
+                href={item.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-background rounded-xl md:rounded-2xl p-2 md:p-6 shadow-sm border border-border hover:border-[#00b67a]/40 hover:shadow-md transition-all text-center md:text-left cursor-pointer"
+              >
+                <CardContent item={item} />
+              </a>
+            ) : (
+              <div 
+                key={index} 
+                className="bg-background rounded-xl md:rounded-2xl p-2 md:p-6 shadow-sm border border-border hover:border-primary/20 hover:shadow-md transition-all text-center md:text-left"
+              >
+                <CardContent item={item} />
               </div>
-              <h3 className="font-semibold text-foreground text-[10px] md:text-base leading-tight">{item.title}</h3>
-              <p className="text-sm text-muted-foreground hidden md:block">{item.description}</p>
-              {'isTrustpilot' in item && item.isTrustpilot && (
-                <p className="text-[8px] md:text-xs text-[#00b67a] font-medium mt-0.5 md:mt-1">★ Trustpilot</p>
-              )}
-            </div>
+            )
           ))}
         </div>
 

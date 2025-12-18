@@ -69,29 +69,29 @@ const BlogLosseAirpodKwijt = () => {
       <Header />
 
       <main className="flex-1">
-        <article className="container mx-auto px-4 md:px-6 lg:px-10 py-8 max-w-4xl">
+        <article className="container mx-auto px-3 md:px-6 lg:px-10 py-6 md:py-8 max-w-4xl">
           {/* Back link */}
           <Link
             to="/blog"
-            className="inline-flex items-center text-sm text-muted-foreground hover:text-primary mb-6"
+            className="inline-flex items-center text-xs md:text-sm text-muted-foreground hover:text-primary mb-4 md:mb-6"
           >
-            <ChevronLeft className="h-4 w-4 mr-1" />
+            <ChevronLeft className="h-3 w-3 md:h-4 md:w-4 mr-1" />
             Terug naar blog
           </Link>
 
           {/* Article header */}
-          <header className="mb-10">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
-              Losse AirPod kwijt? Dit is de goedkoopste manier om hem te vervangen (Apple vs. RePairPods)
+          <header className="mb-6 md:mb-10">
+            <h1 className="text-xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-6 leading-tight">
+              Losse AirPod kwijt? De goedkoopste manier om te vervangen
             </h1>
-            <div className="flex items-center gap-4 text-sm text-muted-foreground">
+            <div className="flex items-center gap-2 md:gap-4 text-[10px] md:text-sm text-muted-foreground">
               <span className="flex items-center gap-1">
-                <Calendar className="h-4 w-4" />
+                <Calendar className="h-3 w-3 md:h-4 md:w-4" />
                 Januari 2025
               </span>
               <span className="flex items-center gap-1">
-                <Clock className="h-4 w-4" />
-                10 min leestijd
+                <Clock className="h-3 w-3 md:h-4 md:w-4" />
+                10 min
               </span>
             </div>
           </header>

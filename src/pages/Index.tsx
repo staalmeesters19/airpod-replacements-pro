@@ -4,7 +4,6 @@ import { useTranslation } from 'react-i18next';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import Hero from '@/components/home/Hero';
-import USPStrip from '@/components/home/USPStrip';
 import ProductConfigurator from '@/components/home/ProductConfigurator';
 import PodFinder from '@/components/home/PodFinder';
 import MissingSide from '@/components/home/MissingSide';
@@ -14,7 +13,6 @@ import TrustpilotWidget from '@/components/home/TrustpilotWidget';
 import TrustBadges from '@/components/home/TrustBadges';
 import CustomerQuoteHighlight from '@/components/home/CustomerQuoteHighlight';
 import GuaranteesSection from '@/components/home/GuaranteesSection';
-
 const Index = () => {
   const { i18n } = useTranslation();
   const location = useLocation();
@@ -87,17 +85,14 @@ const Index = () => {
           {/* Hero met achtergrondafbeelding */}
           <Hero />
           
-          {/* USP Strip */}
-          <USPStrip />
+          {/* Onze beloftes / Garanties */}
+          <GuaranteesSection />
           
           {/* Product Configurator - Stel je AirPod samen */}
           <ProductConfigurator />
           
           {/* AirPodFinder Widget */}
           <PodFinder />
-          
-          {/* Onze beloftes / Garanties */}
-          <GuaranteesSection />
           
           {/* Welke kant mis jij? */}
           <MissingSide />

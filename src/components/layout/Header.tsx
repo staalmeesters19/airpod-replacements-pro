@@ -71,6 +71,7 @@ const Header = () => {
     { label: t('nav:menu.whichAirpods'), href: isEnglish ? '/en/which-airpods' : '/welke-airpods' },
     { label: t('nav:menu.blog'), href: `${prefix}/blog` },
     { label: t('nav:menu.reviews'), href: `${prefix}/reviews` },
+    { label: t('nav:menu.faq'), href: isEnglish ? '/en/faq' : '/faq' },
     { label: t('nav:menu.aboutUs'), href: isEnglish ? '/en/about-us' : '/over-ons' },
   ];
 

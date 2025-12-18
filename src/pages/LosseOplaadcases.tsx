@@ -186,7 +186,7 @@ const LosseOplaadcases = () => {
           </p>
 
           {cases.length > 0 ? (
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-6 mb-8 md:mb-16">
+            <div className="grid grid-cols-3 gap-2 md:grid-cols-3 lg:grid-cols-4 md:gap-6 mb-8 md:mb-16">
               {cases.map((product) => (
                 <ProductCard key={product.id} product={product} isEnglish={isEnglish} />
               ))}
@@ -200,7 +200,7 @@ const LosseOplaadcases = () => {
             </div>
           )}
 
-          <section className="mt-16 prose prose-neutral dark:prose-invert max-w-none">
+          <section className="mt-8 md:mt-16 prose prose-neutral dark:prose-invert max-w-none hidden md:block">
             <h2 className="text-2xl font-semibold mb-4">
               {isEnglish ? 'Buy a charging case: the most affordable solution' : 'Losse oplaadcase kopen: de voordeligste oplossing'}
             </h2>
@@ -229,15 +229,15 @@ const LosseOplaadcases = () => {
             </p>
           </section>
 
-          <section className="mt-16">
-            <h2 className="text-2xl font-semibold mb-6">{isEnglish ? 'Frequently asked questions about charging cases' : 'Veelgestelde vragen over oplaadcases'}</h2>
+          <section className="mt-8 md:mt-16">
+            <h2 className="text-lg md:text-2xl font-semibold mb-4 md:mb-6">{isEnglish ? 'FAQ' : 'Veelgestelde vragen'}</h2>
             <Accordion type="single" collapsible className="w-full">
               {faqItems.map((item, index) => (
                 <AccordionItem key={index} value={`item-${index}`}>
-                  <AccordionTrigger className="text-left">
+                  <AccordionTrigger className="text-left text-sm md:text-base">
                     {item.question}
                   </AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground">
+                  <AccordionContent className="text-muted-foreground text-sm">
                     {item.answer}
                   </AccordionContent>
                 </AccordionItem>
@@ -245,27 +245,27 @@ const LosseOplaadcases = () => {
             </Accordion>
           </section>
 
-          <section className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6">
+          <section className="mt-8 md:mt-16 grid grid-cols-3 gap-2 md:gap-6">
             <Link 
               to={`${prefix}${isEnglish ? '/single-airpods' : '/losse-airpods'}`} 
-              className="p-6 bg-secondary/30 rounded-xl hover:bg-secondary/50 transition-colors"
+              className="p-3 md:p-6 bg-secondary/30 rounded-xl hover:bg-secondary/50 transition-colors text-center md:text-left"
             >
-              <h3 className="font-semibold mb-2">{isEnglish ? 'Single AirPods' : 'Losse AirPods'}</h3>
-              <p className="text-sm text-muted-foreground">{isEnglish ? 'Lost an AirPod? View single earbuds' : 'AirPod kwijt? Bekijk losse oortjes'}</p>
+              <h3 className="font-semibold text-xs md:text-base mb-1 md:mb-2">{isEnglish ? 'AirPods' : 'AirPods'}</h3>
+              <p className="text-[10px] md:text-sm text-muted-foreground hidden md:block">{isEnglish ? 'Lost an AirPod? View single earbuds' : 'AirPod kwijt? Bekijk losse oortjes'}</p>
             </Link>
             <Link 
               to={`${prefix}${isEnglish ? '/which-airpods' : '/welke-airpods'}`} 
-              className="p-6 bg-secondary/30 rounded-xl hover:bg-secondary/50 transition-colors"
+              className="p-3 md:p-6 bg-secondary/30 rounded-xl hover:bg-secondary/50 transition-colors text-center md:text-left"
             >
-              <h3 className="font-semibold mb-2">{isEnglish ? 'Which AirPods do I have?' : 'Welke AirPods heb ik?'}</h3>
-              <p className="text-sm text-muted-foreground">{isEnglish ? 'Find out your AirPods generation' : 'Ontdek je AirPods generatie'}</p>
+              <h3 className="font-semibold text-xs md:text-base mb-1 md:mb-2">{isEnglish ? 'Which?' : 'Welke?'}</h3>
+              <p className="text-[10px] md:text-sm text-muted-foreground hidden md:block">{isEnglish ? 'Find out your AirPods generation' : 'Ontdek je AirPods generatie'}</p>
             </Link>
             <Link 
               to={prefix || '/'} 
-              className="p-6 bg-secondary/30 rounded-xl hover:bg-secondary/50 transition-colors"
+              className="p-3 md:p-6 bg-secondary/30 rounded-xl hover:bg-secondary/50 transition-colors text-center md:text-left"
             >
-              <h3 className="font-semibold mb-2">{isEnglish ? 'All products' : 'Alle producten'}</h3>
-              <p className="text-sm text-muted-foreground">{isEnglish ? 'View our complete range' : 'Bekijk ons complete assortiment'}</p>
+              <h3 className="font-semibold text-xs md:text-base mb-1 md:mb-2">{isEnglish ? 'All' : 'Alles'}</h3>
+              <p className="text-[10px] md:text-sm text-muted-foreground hidden md:block">{isEnglish ? 'View our complete range' : 'Bekijk ons complete assortiment'}</p>
             </Link>
           </section>
         </div>

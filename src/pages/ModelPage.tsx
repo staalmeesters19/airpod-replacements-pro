@@ -166,8 +166,9 @@ const ModelPage = () => {
       <Header />
 
       <main className="flex-1">
-        <div className="container mx-auto px-4 md:px-6 lg:px-10 py-8">
-          <Breadcrumb className="mb-6">
+        <div className="container mx-auto px-3 md:px-6 lg:px-10 py-4 md:py-8">
+          {/* Breadcrumb - hidden on mobile for cleaner look */}
+          <Breadcrumb className="mb-4 md:mb-6 hidden md:block">
             <BreadcrumbList>
               <BreadcrumbItem>
                 <BreadcrumbLink asChild>
@@ -187,27 +188,27 @@ const ModelPage = () => {
             </BreadcrumbList>
           </Breadcrumb>
 
-          <header className="mb-12">
-            <div className="flex items-center gap-3 mb-4">
-              <span className="text-sm text-muted-foreground bg-secondary px-3 py-1 rounded-full">
+          <header className="mb-6 md:mb-12">
+            <div className="flex items-center gap-2 mb-2 md:mb-4">
+              <span className="text-xs md:text-sm text-muted-foreground bg-secondary px-2 md:px-3 py-0.5 md:py-1 rounded-full">
                 {modelData.year}
               </span>
-              <span className="text-sm text-muted-foreground">
+              <span className="text-xs md:text-sm text-muted-foreground">
                 Model: {modelData.modelNumbers.join(' / ')}
               </span>
             </div>
-            <h1 className="text-3xl md:text-4xl font-bold mb-4">
+            <h1 className="text-xl md:text-3xl lg:text-4xl font-bold mb-2 md:mb-4">
               Losse {modelData.name} Kopen
             </h1>
-            <p className="text-lg text-muted-foreground max-w-3xl mb-6">
-              {modelData.description} Kies uit 5 verschillende condities.
+            <p className="text-sm md:text-lg text-muted-foreground max-w-3xl mb-3 md:mb-6">
+              {modelData.description}
             </p>
             
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-1.5 md:gap-2">
               {modelData.features.map((feature) => (
                 <span 
                   key={feature}
-                  className="text-sm px-3 py-1.5 bg-primary/10 text-primary rounded-full"
+                  className="text-xs md:text-sm px-2 md:px-3 py-1 md:py-1.5 bg-primary/10 text-primary rounded-full"
                 >
                   {feature}
                 </span>
@@ -216,8 +217,8 @@ const ModelPage = () => {
           </header>
 
           {products.length > 0 ? (
-            <section className="mb-16">
-              <h2 className="text-2xl font-semibold mb-6">
+            <section className="mb-8 md:mb-16">
+              <h2 className="text-lg md:text-2xl font-semibold mb-3 md:mb-6">
                 Beschikbare producten
               </h2>
               <div className="grid grid-cols-3 gap-2 md:gap-6">
@@ -238,43 +239,43 @@ const ModelPage = () => {
               </div>
             </section>
           ) : (
-            <div className="text-center py-12 bg-secondary/30 rounded-xl">
-              <p className="text-muted-foreground mb-4">
+            <div className="text-center py-8 md:py-12 bg-secondary/30 rounded-xl">
+              <p className="text-sm md:text-base text-muted-foreground mb-4">
                 Er zijn momenteel geen producten beschikbaar voor {modelData.name}.
               </p>
-              <Button asChild>
+              <Button asChild size="sm">
                 <Link to="/losse-airpods">Bekijk alle losse AirPods</Link>
               </Button>
             </div>
           )}
 
-          <section className="mt-16 prose prose-neutral dark:prose-invert max-w-none">
-            <h2 className="text-2xl font-semibold mb-4">
+          <section className="mt-8 md:mt-16">
+            <h2 className="text-lg md:text-2xl font-semibold mb-2 md:mb-4">
               Alles over {modelData.name}
             </h2>
-            <p className="text-muted-foreground mb-6">
+            <p className="text-sm md:text-base text-muted-foreground mb-4 md:mb-6">
               {modelData.description} Bij RePairPods kun je losse {modelData.shortName} oortjes en 
               oplaadcases kopen als vervanging. Alle producten zijn 100% origineel Apple en worden 
               de volgende dag geleverd.
             </p>
 
-            <h3 className="text-xl font-medium mb-3">Kenmerken</h3>
-            <ul className="list-disc list-inside text-muted-foreground space-y-2 mb-6">
+            <h3 className="text-base md:text-xl font-medium mb-2 md:mb-3">Kenmerken</h3>
+            <ul className="list-disc list-inside text-sm md:text-base text-muted-foreground space-y-1 md:space-y-2 mb-4 md:mb-6">
               {modelData.features.map((feature) => (
                 <li key={feature}>{feature}</li>
               ))}
             </ul>
           </section>
 
-          <section className="mt-16">
-            <h2 className="text-2xl font-semibold mb-6">Veelgestelde vragen</h2>
+          <section className="mt-8 md:mt-16">
+            <h2 className="text-lg md:text-2xl font-semibold mb-3 md:mb-6">Veelgestelde vragen</h2>
             <Accordion type="single" collapsible className="w-full">
               {faqItems.map((item, index) => (
                 <AccordionItem key={index} value={`item-${index}`}>
-                  <AccordionTrigger className="text-left">
+                  <AccordionTrigger className="text-left text-sm md:text-base">
                     {item.question}
                   </AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground">
+                  <AccordionContent className="text-sm md:text-base text-muted-foreground">
                     {item.answer}
                   </AccordionContent>
                 </AccordionItem>
@@ -282,17 +283,17 @@ const ModelPage = () => {
             </Accordion>
           </section>
 
-          <section className="mt-16">
-            <h2 className="text-2xl font-semibold mb-6">Andere generaties</h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+          <section className="mt-8 md:mt-16">
+            <h2 className="text-lg md:text-2xl font-semibold mb-3 md:mb-6">Andere generaties</h2>
+            <div className="grid grid-cols-3 md:grid-cols-6 gap-2 md:gap-4">
               {modelPages.filter((m) => m.slug !== slug).map((model) => (
                 <Link 
                   key={model.slug} 
                   to={`/model/${model.slug}`}
-                  className="p-4 bg-secondary/30 rounded-xl hover:bg-secondary/50 transition-colors text-center"
+                  className="p-2 md:p-4 bg-secondary/30 rounded-lg md:rounded-xl hover:bg-secondary/50 transition-colors text-center"
                 >
-                  <h3 className="font-medium text-sm">{model.shortName}</h3>
-                  <p className="text-xs text-muted-foreground">{model.year}</p>
+                  <h3 className="font-medium text-xs md:text-sm">{model.shortName}</h3>
+                  <p className="text-[10px] md:text-xs text-muted-foreground">{model.year}</p>
                 </Link>
               ))}
             </div>

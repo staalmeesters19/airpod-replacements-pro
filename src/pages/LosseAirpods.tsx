@@ -215,7 +215,7 @@ const LosseAirpods = () => {
           </p>
 
           {earbuds.length > 0 ? (
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-6 mb-8 md:mb-16">
+          <div className="grid grid-cols-3 gap-2 md:grid-cols-3 lg:grid-cols-4 md:gap-6 mb-8 md:mb-16">
               {earbuds.map((product) => (
                 <ProductCard key={product.id} product={product} isEnglish={isEnglish} />
               ))}

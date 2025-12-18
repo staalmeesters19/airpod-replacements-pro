@@ -1,4 +1,4 @@
-import { Shield, Truck, RotateCcw, CheckCircle, Battery, Headphones } from 'lucide-react';
+import { Star, Truck, RotateCcw, CheckCircle, Battery, Headphones } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 
 const GuaranteesSection = () => {
@@ -8,9 +8,10 @@ const GuaranteesSection = () => {
 
   const guarantees = isEnglish ? [
     {
-      icon: Shield,
-      title: 'Up to 12 months warranty',
-      description: '6 months on refurbished, 12 months on new products',
+      icon: Star,
+      title: '500+ 5-star reviews',
+      description: 'Rated #1 on Trustpilot',
+      isTrustpilot: true,
     },
     {
       icon: CheckCircle,
@@ -39,9 +40,10 @@ const GuaranteesSection = () => {
     },
   ] : [
     {
-      icon: Shield,
-      title: 'Tot 12 maanden garantie',
-      description: '6 maanden op refurbished, 12 maanden op nieuwe producten',
+      icon: Star,
+      title: '500+ 5-sterren reviews',
+      description: 'Beoordeeld #1 op Trustpilot',
+      isTrustpilot: true,
     },
     {
       icon: CheckCircle,
@@ -93,11 +95,14 @@ const GuaranteesSection = () => {
               key={index} 
               className="bg-background rounded-xl md:rounded-2xl p-2 md:p-6 shadow-sm border border-border hover:border-primary/20 hover:shadow-md transition-all text-center md:text-left"
             >
-              <div className="w-8 h-8 md:w-12 md:h-12 rounded-lg md:rounded-xl bg-primary/10 flex items-center justify-center mb-1.5 md:mb-4 mx-auto md:mx-0">
-                <item.icon className="w-4 h-4 md:w-6 md:h-6 text-primary" />
+              <div className={`w-8 h-8 md:w-12 md:h-12 rounded-lg md:rounded-xl flex items-center justify-center mb-1.5 md:mb-4 mx-auto md:mx-0 ${'isTrustpilot' in item && item.isTrustpilot ? 'bg-[#00b67a]/10' : 'bg-primary/10'}`}>
+                <item.icon className={`w-4 h-4 md:w-6 md:h-6 ${'isTrustpilot' in item && item.isTrustpilot ? 'text-[#00b67a] fill-[#00b67a]' : 'text-primary'}`} />
               </div>
               <h3 className="font-semibold text-foreground text-[10px] md:text-base leading-tight">{item.title}</h3>
               <p className="text-sm text-muted-foreground hidden md:block">{item.description}</p>
+              {'isTrustpilot' in item && item.isTrustpilot && (
+                <p className="text-[8px] md:text-xs text-[#00b67a] font-medium mt-0.5 md:mt-1">★ Trustpilot</p>
+              )}
             </div>
           ))}
         </div>

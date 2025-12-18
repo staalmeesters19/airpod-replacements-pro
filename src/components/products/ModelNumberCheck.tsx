@@ -79,8 +79,10 @@ const ModelNumberCheck = ({ product, pro2Variant, gen4Variant }: ModelNumberChec
 
   if (product.model === 'airpods-pro-2') {
     modelNumbers = airpodsPro2Variants[pro2Variant || 'lightning'];
-  } else if (product.model === 'airpods-4') {
-    modelNumbers = airpods4Variants[gen4Variant || 'zonder-anc'];
+  } else if (product.model === 'airpods-4' || product.model === 'airpods-4-anc') {
+    // For ANC model, default to 'met-anc', otherwise use provided variant or 'zonder-anc'
+    const defaultVariant = product.model === 'airpods-4-anc' ? 'met-anc' : 'zonder-anc';
+    modelNumbers = airpods4Variants[gen4Variant || defaultVariant];
   } else {
     modelNumbers = modelNumberMapping[product.model];
   }
@@ -90,7 +92,7 @@ const ModelNumberCheck = ({ product, pro2Variant, gen4Variant }: ModelNumberChec
   }
 
   const isPro2 = product.model === 'airpods-pro-2';
-  const isGen4 = product.model === 'airpods-4';
+  const isGen4 = product.model === 'airpods-4' || product.model === 'airpods-4-anc';
 
   // Translations
   const t = {

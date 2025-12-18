@@ -220,7 +220,7 @@ const ModelPage = () => {
               <h2 className="text-2xl font-semibold mb-6">
                 Beschikbare producten
               </h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="grid grid-cols-3 gap-2 md:gap-6">
                 {/* Order: Links, Case(s), Rechts */}
                 {leftEarbuds.map((product) => (
                   <ProductCard key={product.id} product={product} />

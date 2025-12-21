@@ -1,5 +1,5 @@
 import { Star } from 'lucide-react';
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 const TrustStrip = () => {
   const location = useLocation();
@@ -47,12 +47,14 @@ const TrustStrip = () => {
       <div className="hidden sm:block w-px h-4 bg-border" />
 
       {/* Reviews link */}
-      <Link 
-        to={`${prefix}/reviews`}
+      <a 
+        href="https://ie.trustpilot.com/review/airpodshandel.nl"
+        target="_blank"
+        rel="noopener noreferrer"
         className="text-xs sm:text-sm text-primary hover:underline font-medium"
       >
-        {isEnglish ? '300+ reviews →' : '300+ reviews →'}
-      </Link>
+        300+ reviews →
+      </a>
     </div>
   );
 };

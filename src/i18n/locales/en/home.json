@@ -77,5 +77,50 @@
     "freeShipping": "Free shipping",
     "shippingSubtext": "To all of Netherlands",
     "warrantySubtext": "On all products"
+  },
+  "whyChoose": {
+    "title": "Why RePairPods?",
+    "subtitle": "Discover why thousands of customers choose us",
+    "conditions": {
+      "title": "5 condition choices",
+      "description": "From New to Budget – choose the price-quality that fits you"
+    },
+    "original": {
+      "title": "100% original Apple",
+      "description": "Guaranteed genuine Apple parts, no fakes"
+    },
+    "warranty": {
+      "title": "Up to 1 year warranty",
+      "description": "Order worry-free with extended warranty"
+    },
+    "shipping": {
+      "title": "Next day delivery",
+      "description": "Order today, delivered to your door tomorrow"
+    },
+    "support": {
+      "title": "WhatsApp support",
+      "description": "Direct personal advice via WhatsApp or email"
+    }
+  },
+  "seoContent": {
+    "title": "Buy Single AirPods",
+    "intro": "Lost an AirPod or is one of your earbuds broken? No worries – at RePairPods you can easily buy single AirPods. Whether you need a single earbud, a new charging case, or even silicone tips, we offer everything at a competitive price. No unnecessary costs for a complete set, with us you buy exactly what you need.",
+    "solution": "At RePairPods we guarantee exclusively original Apple products. Each product is professionally tested for functionality and battery health before being shipped to you. This way you can be sure you receive a reliable product.",
+    "products": {
+      "airpods2": "Classic and reliable, ideal for daily use",
+      "airpods3": "Improved sound quality with spatial audio",
+      "airpodsPro1": "Premium sound with active noise cancellation",
+      "airpodsPro2": "The latest model with superior noise cancellation"
+    },
+    "quality": "Additionally, we are the only webshop offering 5 different conditions: from new to budget. This way you decide how much you want to spend and which quality suits you best. With our fast shipping, you'll have a complete set again tomorrow.",
+    "whyBuy": {
+      "title": "Why buy a single AirPod?",
+      "savings": "Buying a single AirPod saves you up to 70% compared to a complete new set. At Apple you easily pay €200+ for new AirPods Pro, while with us you buy a replacement earbud from €39. Smart, right?",
+      "sustainability": "Additionally, you're making a sustainable choice. By only replacing what's broken or lost, you reduce electronic waste. We give products a second life and thus contribute to a circular economy. Good for your wallet and the environment."
+    },
+    "about": {
+      "title": "About RePairPods",
+      "description": "RePairPods is the specialist in single AirPods and charging cases in the Netherlands. Previously known as Airpods-handel, we help dozens of customers daily to complete their AirPods set again. With over 360 positive reviews on Trustpilot and a 4.9 star rating, you can count on quality and service. Our customer service is ready to help via WhatsApp, email, or phone."
+    }
   }
 }

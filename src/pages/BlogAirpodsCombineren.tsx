@@ -98,16 +98,16 @@ const BlogAirpodsCombineren = () => {
           </header>
 
           {/* Article content */}
-          <div className="prose prose-neutral dark:prose-invert max-w-none">
+          <div className="prose prose-lg max-w-none text-foreground/90">
             
             {/* Inleiding */}
-            <p className="text-lg leading-relaxed">
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-8">
               Je hebt één AirPod verloren of misschien is de batterij van je linker of rechter oortje 
               niet meer wat het was. Je andere AirPod werkt nog prima, dus de logische vraag is: 
               <strong> kan ik gewoon een losse AirPod kopen en die laten samenwerken met mijn oude oortje?</strong>
             </p>
 
-            <p>
+            <p className="mb-8">
               Het korte antwoord: ja, dat kan – maar alleen als je de juiste generatie kiest. 
               AirPods combineren per generatie is cruciaal voor een goede werking. In dit artikel 
               leggen we precies uit welke combinaties wél werken, welke niet, en hoe je ervoor zorgt 
@@ -115,25 +115,27 @@ const BlogAirpodsCombineren = () => {
             </p>
 
             {/* Sectie 1 */}
-            <h2>Waarom generatie en model zo belangrijk zijn</h2>
+            <h2 className="text-2xl md:text-3xl font-semibold text-foreground mt-12 mb-6">
+              Waarom generatie en model zo belangrijk zijn
+            </h2>
             
-            <p>
+            <p className="mb-4">
               Apple brengt regelmatig nieuwe generaties AirPods uit, en hoewel ze er vaak vergelijkbaar 
               uitzien, zitten er onder de motorkap belangrijke verschillen. Elke generatie heeft zijn 
               eigen chip (zoals de H1 of H2), specifieke firmware, en unieke hardware-kenmerken.
             </p>
 
-            <p>
+            <p className="mb-4">
               <strong>De gouden regel:</strong> je losse vervangende AirPod moet exact dezelfde generatie 
               en hetzelfde model zijn als je bestaande oortje. Een AirPod 2e generatie kan niet samenwerken 
               met een AirPod 3e generatie, ook al passen ze fysiek misschien in dezelfde case.
             </p>
 
-            <p>
+            <p className="mb-4">
               Het is belangrijk om het verschil te begrijpen tussen de verschillende AirPods-lijnen:
             </p>
 
-            <ul>
+            <ul className="list-disc pl-6 mb-6 space-y-2">
               <li>
                 <strong>AirPods (standaard)</strong> – Beschikbaar in 1e, 2e, 3e en 4e generatie. 
                 Elk met eigen ontwerp en specificaties.
@@ -144,7 +146,7 @@ const BlogAirpodsCombineren = () => {
               </li>
             </ul>
 
-            <p>
+            <p className="mb-8">
               Weet je niet precies welke generatie je hebt? Bekijk dan onze uitgebreide gids{' '}
               <Link to="/welke-airpods" className="text-primary hover:underline">
                 "Welke AirPods heb ik?"
@@ -153,28 +155,30 @@ const BlogAirpodsCombineren = () => {
             </p>
 
             {/* Sectie 2 */}
-            <h2>Zo check je eerst welke AirPods je hebt</h2>
+            <h2 className="text-2xl md:text-3xl font-semibold text-foreground mt-12 mb-6">
+              Zo check je eerst welke AirPods je hebt
+            </h2>
 
-            <p>
+            <p className="mb-6">
               Voordat je een losse AirPod bestelt, is het essentieel om te weten welke generatie je 
               momenteel hebt. Er zijn twee eenvoudige manieren om dit te achterhalen:
             </p>
 
-            <p><strong>Methode 1: Via je iPhone</strong></p>
-            <ol>
+            <h3 className="text-xl font-semibold text-foreground mt-8 mb-4">Methode 1: Via je iPhone</h3>
+            <ol className="list-decimal pl-6 mb-6 space-y-2">
               <li>Zorg dat je AirPods verbonden zijn met je iPhone.</li>
               <li>Ga naar Instellingen → Bluetooth.</li>
               <li>Tik op het (i)-icoon naast je AirPods.</li>
               <li>Scroll naar beneden om het modelnummer te zien.</li>
             </ol>
 
-            <p><strong>Methode 2: Via je oplaadcase of oortje</strong></p>
-            <ul>
+            <h3 className="text-xl font-semibold text-foreground mt-8 mb-4">Methode 2: Via je oplaadcase of oortje</h3>
+            <ul className="list-disc pl-6 mb-6 space-y-2">
               <li>Open je oplaadcase en kijk aan de binnenkant van het deksel voor het modelnummer.</li>
               <li>Op de AirPod zelf staat het modelnummer in kleine letters onder de "kop" van het oortje.</li>
             </ul>
 
-            <p>
+            <p className="mb-8">
               Met dit modelnummer kun je precies bepalen welke generatie je hebt. Voor een complete 
               lijst van alle modelnummers en wat ze betekenen, bekijk onze{' '}
               <Link to="/welke-airpods" className="text-primary hover:underline">
@@ -183,22 +187,24 @@ const BlogAirpodsCombineren = () => {
             </p>
 
             {/* Sectie 3 */}
-            <h2>Overzicht per generatie – welke combinaties werken wél en welke niet?</h2>
+            <h2 className="text-2xl md:text-3xl font-semibold text-foreground mt-12 mb-6">
+              Overzicht per generatie – welke combinaties werken wél en welke niet?
+            </h2>
 
-            <p>
+            <p className="mb-6">
               Laten we per generatie bekijken wat de regels zijn voor het combineren van AirPods. 
               Dit helpt je om precies te begrijpen wat wel en niet werkt.
             </p>
 
-            <h3>AirPods 1e en 2e generatie</h3>
+            <h3 className="text-xl font-semibold text-foreground mt-8 mb-4">AirPods 1e en 2e generatie</h3>
 
-            <p>
+            <p className="mb-4">
               De AirPods 1e en 2e generatie lijken visueel sterk op elkaar, maar zijn <strong>niet 
               onderling te combineren</strong>. De 1e generatie heeft de W1-chip, terwijl de 2e generatie 
               de nieuwere H1-chip heeft. Deze chips communiceren niet met elkaar.
             </p>
 
-            <ul>
+            <ul className="space-y-2 mb-6">
               <li className="flex items-center gap-2">
                 <Check className="h-4 w-4 text-green-500 flex-shrink-0" />
                 <span>AirPod 2e gen links + AirPod 2e gen rechts = <strong>werkt</strong></span>
@@ -209,21 +215,21 @@ const BlogAirpodsCombineren = () => {
               </li>
             </ul>
 
-            <p>
+            <p className="mb-8">
               Heb je AirPods 2e generatie? Bekijk dan onze{' '}
               <Link to="/model/airpods-2e-generatie" className="text-primary hover:underline">
                 losse AirPods 2e generatie
               </Link>.
             </p>
 
-            <h3>AirPods 3e generatie</h3>
+            <h3 className="text-xl font-semibold text-foreground mt-8 mb-4">AirPods 3e generatie</h3>
 
-            <p>
+            <p className="mb-4">
               De AirPods 3e generatie introduceerde een volledig nieuw ontwerp met kortere stelen 
               en Spatial Audio. Deze zijn <strong>alleen compatibel met andere 3e generatie oortjes</strong>.
             </p>
 
-            <ul>
+            <ul className="space-y-2 mb-6">
               <li className="flex items-center gap-2">
                 <Check className="h-4 w-4 text-green-500 flex-shrink-0" />
                 <span>AirPod 3e gen links + AirPod 3e gen rechts = <strong>werkt</strong></span>
@@ -234,22 +240,22 @@ const BlogAirpodsCombineren = () => {
               </li>
             </ul>
 
-            <p>
+            <p className="mb-8">
               Bekijk ons aanbod{' '}
               <Link to="/model/airpods-3e-generatie" className="text-primary hover:underline">
                 losse AirPods 3e generatie
               </Link>.
             </p>
 
-            <h3>AirPods 4e generatie</h3>
+            <h3 className="text-xl font-semibold text-foreground mt-8 mb-4">AirPods 4e generatie</h3>
 
-            <p>
+            <p className="mb-4">
               De nieuwste standaard AirPods, uitgebracht in 2024, zijn er in twee varianten: 
               met en zonder Active Noise Cancellation. Belangrijk: ook deze twee varianten zijn 
               <strong> onderling niet compatibel</strong>.
             </p>
 
-            <ul>
+            <ul className="space-y-2 mb-6">
               <li className="flex items-center gap-2">
                 <Check className="h-4 w-4 text-green-500 flex-shrink-0" />
                 <span>AirPod 4e gen (standaard) + AirPod 4e gen (standaard) = <strong>werkt</strong></span>
@@ -264,22 +270,22 @@ const BlogAirpodsCombineren = () => {
               </li>
             </ul>
 
-            <p>
+            <p className="mb-8">
               Bekijk onze{' '}
               <Link to="/model/airpods-4e-generatie" className="text-primary hover:underline">
                 losse AirPods 4e generatie
               </Link>.
             </p>
 
-            <h3>AirPods Pro 1e generatie</h3>
+            <h3 className="text-xl font-semibold text-foreground mt-8 mb-4">AirPods Pro 1e generatie</h3>
 
-            <p>
+            <p className="mb-4">
               De originele AirPods Pro met Active Noise Cancellation en siliconen oortips. 
               Deze werken <strong>alleen samen met andere AirPods Pro 1e generatie oortjes</strong>. 
               Ze zijn niet compatibel met de standaard AirPods of met AirPods Pro 2.
             </p>
 
-            <ul>
+            <ul className="space-y-2 mb-6">
               <li className="flex items-center gap-2">
                 <Check className="h-4 w-4 text-green-500 flex-shrink-0" />
                 <span>AirPod Pro 1 links + AirPod Pro 1 rechts = <strong>werkt</strong></span>
@@ -290,22 +296,22 @@ const BlogAirpodsCombineren = () => {
               </li>
             </ul>
 
-            <p>
+            <p className="mb-8">
               Bekijk onze{' '}
               <Link to="/model/airpods-pro-1e-generatie" className="text-primary hover:underline">
                 losse AirPods Pro 1e generatie
               </Link>.
             </p>
 
-            <h3>AirPods Pro 2e generatie</h3>
+            <h3 className="text-xl font-semibold text-foreground mt-8 mb-4">AirPods Pro 2e generatie</h3>
 
-            <p>
+            <p className="mb-4">
               De nieuwste Pro-variant met de H2-chip, verbeterde noise cancellation en Adaptive Audio. 
               Let op: er zijn twee versies – met Lightning en met USB-C aansluiting op de case. 
               De <strong>oortjes zelf zijn wel onderling compatibel</strong>, maar de cases niet.
             </p>
 
-            <ul>
+            <ul className="space-y-2 mb-6">
               <li className="flex items-center gap-2">
                 <Check className="h-4 w-4 text-green-500 flex-shrink-0" />
                 <span>AirPod Pro 2 links + AirPod Pro 2 rechts = <strong>werkt</strong></span>
@@ -316,26 +322,31 @@ const BlogAirpodsCombineren = () => {
               </li>
             </ul>
 
-            <p>
+            <p className="mb-8">
               Bekijk onze{' '}
               <Link to="/model/airpods-pro-2e-generatie" className="text-primary hover:underline">
                 losse AirPods Pro 2e generatie
               </Link>.
             </p>
 
-            <p>
-              <strong>Bij RePairPods leveren we altijd de juiste generatie</strong> wanneer je correct 
-              kiest op onze website. Twijfel je? Neem dan contact met ons op – we helpen je graag.
-            </p>
+            <div className="bg-accent/50 rounded-xl p-4 my-6 flex gap-3">
+              <Lightbulb className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+              <div>
+                <p className="font-medium mb-1">Twijfel je?</p>
+                <p className="text-sm mb-0"><strong>Bij RePairPods leveren we altijd de juiste generatie</strong> wanneer je correct kiest op onze website. Neem contact met ons op – we helpen je graag.</p>
+              </div>
+            </div>
 
             {/* Sectie 4 */}
-            <h2>Kan ik links en rechts van elkaar mixen (bijv. links 2e gen, rechts 3e gen)?</h2>
+            <h2 className="text-2xl md:text-3xl font-semibold text-foreground mt-12 mb-6">
+              Kan ik links en rechts van elkaar mixen?
+            </h2>
 
-            <p>
+            <p className="mb-4">
               Dit is een veelgestelde vraag, en het antwoord is duidelijk: <strong>nee, dit werkt niet</strong>.
             </p>
 
-            <p>
+            <p className="mb-4">
               Beide AirPods in een set vormen samen één geheel. Ze communiceren constant met elkaar 
               en met je oplaadcase via dezelfde chip en firmware. Wanneer je probeert om oortjes van 
               verschillende generaties te combineren, gebeurt het volgende:

@@ -98,16 +98,16 @@ const BlogLosseAirpodKwijt = () => {
           </header>
 
           {/* Article content */}
-          <div className="prose prose-neutral dark:prose-invert max-w-none">
+          <div className="prose prose-lg max-w-none text-foreground/90">
             
             {/* Inleiding */}
-            <p className="text-lg leading-relaxed">
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-8">
               Je kent het scenario: je haalt je AirPods uit je zak en er zit er nog maar één in de case. 
               De andere is verdwenen. Misschien gevallen tijdens het sporten, achtergebleven op de bank bij vrienden, 
               of simpelweg spoorloos verdwenen. Het frustrerende? Je andere AirPod en de oplaadcase werken nog perfect.
             </p>
 
-            <p>
+            <p className="mb-8">
               Veel mensen denken in deze situatie dat ze gedwongen zijn om een volledig nieuwe set AirPods te kopen. 
               Dat is begrijpelijk – Apple verkoopt immers vooral complete sets. Maar hier is het goede nieuws: 
               je hebt meerdere opties om een <strong>losse AirPod te vervangen</strong>, en sommige zijn veel voordeliger 
@@ -160,78 +160,84 @@ const BlogLosseAirpodKwijt = () => {
             </p>
 
             {/* Sectie 2 */}
-            <h2>Optie 1 – een compleet nieuwe set AirPods kopen</h2>
+            <h2 className="text-2xl md:text-3xl font-semibold text-foreground mt-12 mb-6">
+              Optie 1 – een compleet nieuwe set AirPods kopen
+            </h2>
 
-            <p>
+            <p className="mb-4">
               De meest voor de hand liggende, maar ook duurste oplossing: gewoon een gloednieuwe set AirPods kopen. 
               Dit betekent dat je een nieuwe linker AirPod, rechter AirPod én oplaadcase krijgt.
             </p>
 
-            <p><strong>Voordelen:</strong></p>
-            <ul>
+            <h3 className="text-xl font-semibold text-foreground mt-8 mb-4">Voordelen:</h3>
+            <ul className="list-disc pl-6 mb-6 space-y-2">
               <li>Alles is nieuw met 100% batterijcapaciteit</li>
               <li>Geen gedoe met koppelen of compatibiliteit</li>
               <li>Volledige fabrieksgarantie</li>
             </ul>
 
-            <p><strong>Nadelen:</strong></p>
-            <ul>
+            <h3 className="text-xl font-semibold text-foreground mt-8 mb-4">Nadelen:</h3>
+            <ul className="list-disc pl-6 mb-6 space-y-2">
               <li>Veruit de duurste optie</li>
               <li>Zonde als je nog een perfect werkend oortje en case hebt</li>
               <li>Niet duurzaam – je gooit werkende onderdelen weg</li>
             </ul>
 
-            <p>
+            <p className="mb-8">
               <strong>Wanneer is dit logisch?</strong> Een nieuwe set kan zinvol zijn als je AirPods al 3-4 jaar oud zijn 
               en de batterij van beide oortjes merkbaar achteruitgaat. Ook als je wilt upgraden naar een nieuwere 
               generatie (bijvoorbeeld van AirPods 2 naar AirPods 4) is een complete set logisch.
             </p>
 
             {/* Sectie 3 */}
-            <h2>Optie 2 – losse AirPod via Apple laten vervangen</h2>
+            <h2 className="text-2xl md:text-3xl font-semibold text-foreground mt-12 mb-6">
+              Optie 2 – losse AirPod via Apple laten vervangen
+            </h2>
 
-            <p>
+            <p className="mb-4">
               Wat veel mensen niet weten: Apple biedt de mogelijkheid om een losse AirPod te laten vervangen. 
               Dit kun je doen via een Apple Store, een Authorized Service Provider, of online via de Apple Support-website.
             </p>
 
-            <p>
+            <p className="mb-6">
               Het gaat hierbij om een origineel Apple-onderdeel, wat natuurlijk een groot pluspunt is. 
               Het nadeel? De kosten voor vervanging zijn vaak relatief hoog – soms bijna de helft van de prijs 
               van een nieuwe set. Daarnaast moet je vaak wachten op een afspraak of op verzending.
             </p>
 
-            <p><strong>Voordelen:</strong></p>
-            <ul>
+            <h3 className="text-xl font-semibold text-foreground mt-8 mb-4">Voordelen:</h3>
+            <ul className="list-disc pl-6 mb-6 space-y-2">
               <li>100% origineel Apple-onderdeel</li>
               <li>Officiële service met Apple-garantie</li>
             </ul>
 
-            <p><strong>Nadelen:</strong></p>
-            <ul>
+            <h3 className="text-xl font-semibold text-foreground mt-8 mb-4">Nadelen:</h3>
+            <ul className="list-disc pl-6 mb-8 space-y-2">
               <li>Relatief duur, vaak bijna de helft van een nieuwe set</li>
               <li>Niet altijd direct beschikbaar</li>
               <li>Vereist een Apple Store-bezoek of verzending naar Apple</li>
             </ul>
 
             {/* Sectie 4 */}
-            <h2>Optie 3 – losse AirPod via RePairPods (origineel, maar vaak voordeliger)</h2>
+            <h2 className="text-2xl md:text-3xl font-semibold text-foreground mt-12 mb-6">
+              Optie 3 – losse AirPod via RePairPods (origineel, maar vaak voordeliger)
+            </h2>
 
-            <p>
+            <p className="mb-4">
               Dit is waar RePairPods in beeld komt. Wij zijn gespecialiseerd in precies dit probleem: 
               mensen die één <Link to="/losse-airpods" className="text-primary hover:underline">losse AirPod</Link> kwijt 
               zijn en niet een hele set willen kopen.
             </p>
 
-            <p>
+            <p className="mb-6">
               Bij RePairPods vind je <strong>100% originele Apple-onderdelen</strong> – geen namaak, geen replica's. 
               We bieden losse linker en rechter AirPods aan voor alle gangbare generaties: van{' '}
               <Link to="/model/airpods-2e-generatie" className="text-primary hover:underline">AirPods 2e generatie</Link> tot{' '}
               <Link to="/model/airpods-pro-2e-generatie" className="text-primary hover:underline">AirPods Pro 2e generatie</Link>.
             </p>
 
-            <p><strong>Waarom kiezen klanten voor RePairPods?</strong></p>
-            <ul>
+            <h3 className="text-xl font-semibold text-foreground mt-8 mb-4">Waarom kiezen klanten voor RePairPods?</h3>
+            <ul className="list-disc pl-6 mb-6 space-y-3">
               <li>
                 <strong>Je betaalt alleen voor wat je mist</strong> – Heb je alleen je rechter AirPod verloren? 
                 Dan koop je alleen een rechter AirPod. Simpel.
@@ -252,7 +258,7 @@ const BlogLosseAirpodKwijt = () => {
               </li>
             </ul>
 
-            <p>
+            <p className="mb-8">
               Bekijk ons complete aanbod van{' '}
               <Link to="/losse-airpods" className="text-primary hover:underline">losse AirPods</Link> of{' '}
               <Link to="/losse-oplaadcases" className="text-primary hover:underline">losse oplaadcases</Link> en 
@@ -260,52 +266,44 @@ const BlogLosseAirpodKwijt = () => {
             </p>
 
             {/* Sectie 5 */}
-            <h2>Optie 4 – Namaak of tweedehands losse AirPods (Marktplaats, goedkope webshops)</h2>
+            <h2 className="text-2xl md:text-3xl font-semibold text-foreground mt-12 mb-6">
+              Optie 4 – Namaak of tweedehands losse AirPods
+            </h2>
 
-            <p>
+            <p className="mb-4">
               Het is verleidelijk: op Marktplaats of bij obscure webshops vind je "AirPods" voor een fractie 
               van de normale prijs. Maar hier schuilt een groot risico.
             </p>
 
-            <p><strong>Risico's van namaak AirPods:</strong></p>
-            <ul>
-              <li>
-                <strong>Slechte geluidskwaliteit</strong> – Namaak AirPods klinken zelden zoals het origineel.
-              </li>
-              <li>
-                <strong>Pairing-problemen</strong> – Vaak werken ze niet goed met je iPhone of koppelen ze 
-                niet met je bestaande oortje.
-              </li>
-              <li>
-                <strong>Batterijproblemen</strong> – De batterij gaat vaak veel sneller leeg en kan zelfs 
-                veiligheidsrisico's opleveren.
-              </li>
-              <li>
-                <strong>Geen garantie</strong> – Als er iets misgaat, heb je geen verhaal.
-              </li>
-              <li>
-                <strong>Privacyrisico's</strong> – Onbetrouwbare apparaten kunnen potentieel een veiligheidsrisico vormen.
-              </li>
+            <h3 className="text-xl font-semibold text-foreground mt-8 mb-4">Risico's van namaak AirPods:</h3>
+            <ul className="list-disc pl-6 mb-6 space-y-2">
+              <li><strong>Slechte geluidskwaliteit</strong> – Namaak AirPods klinken zelden zoals het origineel.</li>
+              <li><strong>Pairing-problemen</strong> – Vaak werken ze niet goed met je iPhone of koppelen ze niet met je bestaande oortje.</li>
+              <li><strong>Batterijproblemen</strong> – De batterij gaat vaak veel sneller leeg en kan zelfs veiligheidsrisico's opleveren.</li>
+              <li><strong>Geen garantie</strong> – Als er iets misgaat, heb je geen verhaal.</li>
+              <li><strong>Privacyrisico's</strong> – Onbetrouwbare apparaten kunnen potentieel een veiligheidsrisico vormen.</li>
             </ul>
 
-            <p>
+            <p className="mb-4">
               <strong>Tweedehands via Marktplaats</strong> kan in theorie een origineel product opleveren, maar 
               je weet nooit zeker wat je krijgt. Is de batterij nog goed? Werkt de AirPod echt? Is het überhaupt origineel?
             </p>
 
-            <p>
+            <p className="mb-8">
               Kortom: wat op korte termijn goedkoop lijkt, is vaak duurkoop. Je betaalt uiteindelijk meer als je 
               alsnog een fatsoenlijke vervanging moet kopen.
             </p>
 
             {/* Sectie 6 */}
-            <h2>Prijsvergelijking: nieuwe set vs. losse AirPod</h2>
+            <h2 className="text-2xl md:text-3xl font-semibold text-foreground mt-12 mb-6">
+              Prijsvergelijking: nieuwe set vs. losse AirPod
+            </h2>
 
-            <p>
+            <p className="mb-4">
               Laten we de opties eens naast elkaar zetten op basis van wat je er gemiddeld voor betaalt:
             </p>
 
-            <ul>
+            <ul className="list-disc pl-6 mb-8 space-y-3">
               <li>
                 <strong>Nieuwe volledige set AirPods</strong> – De hoogste prijs, maar je krijgt alles nieuw. 
                 Afhankelijk van de generatie spreek je al snel over €150 tot €280 of meer.
@@ -321,19 +319,21 @@ const BlogLosseAirpodKwijt = () => {
               </li>
             </ul>
 
-            <p>
+            <p className="mb-8">
               Bij RePairPods focussen we op de beste prijs-kwaliteitverhouding. Je koopt precies wat je nodig 
               hebt, tegen een eerlijke prijs, met de zekerheid van een origineel Apple-product.
             </p>
 
             {/* Sectie 7 */}
-            <h2>Hoe bepaal je welke oplossing voor jou het voordeligst is?</h2>
+            <h2 className="text-2xl md:text-3xl font-semibold text-foreground mt-12 mb-6">
+              Hoe bepaal je welke oplossing voor jou het voordeligst is?
+            </h2>
 
-            <p>
+            <p className="mb-4">
               Niet zeker welke optie het beste bij jouw situatie past? Gebruik deze simpele beslislogica:
             </p>
 
-            <ul>
+            <ul className="list-disc pl-6 mb-6 space-y-3">
               <li>
                 <strong>Je AirPods zijn nog relatief nieuw (1-2 jaar oud)</strong>, de batterij van je overgebleven 
                 oortje is nog prima, en je case werkt goed → <em>Kies voor een losse AirPod via RePairPods</em>.

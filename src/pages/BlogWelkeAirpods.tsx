@@ -2,8 +2,14 @@ import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
-import { Calendar, Clock, ChevronLeft } from 'lucide-react';
-
+import { Calendar, Clock, ChevronLeft, Check, Lightbulb } from 'lucide-react';
+import { Card } from '@/components/ui/card';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from '@/components/ui/accordion';
 const faqItems = [
   {
     question: "Waar vind ik het modelnummer van mijn AirPods?",
@@ -156,25 +162,46 @@ const BlogWelkeAirpods = () => {
                 De snelste manier om te ontdekken welke AirPods je hebt, is via je iPhone of iPad. Volg deze stappen:
               </p>
 
-              <ol className="list-decimal pl-6 mb-6 space-y-3">
-                <li>Zorg dat je AirPods verbonden zijn met je iPhone (doe ze in je oren of open de case naast je telefoon)</li>
-                <li>Open de app <strong>Instellingen</strong></li>
-                <li>Tik op <strong>Bluetooth</strong></li>
-                <li>Zoek je AirPods in de lijst met verbonden apparaten</li>
-                <li>Tik op het <strong>(i)</strong>-icoontje rechts naast de naam van je AirPods</li>
-                <li>Scroll naar beneden – hier zie je het <strong>modelnummer</strong> van zowel je linker als rechter AirPod</li>
-              </ol>
+              <Card className="p-6 my-6 bg-secondary/30">
+                <h3 className="text-lg font-semibold mb-4 flex items-center gap-2">
+                  <Check className="h-5 w-5 text-primary" />
+                  Stappenplan: modelnummer vinden via iPhone
+                </h3>
+                <ol className="space-y-3 mb-0">
+                  <li className="flex gap-3">
+                    <span className="flex-shrink-0 w-6 h-6 rounded-full bg-primary text-primary-foreground text-sm flex items-center justify-center font-medium">1</span>
+                    <span>Zorg dat je AirPods verbonden zijn met je iPhone (doe ze in je oren of open de case naast je telefoon)</span>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="flex-shrink-0 w-6 h-6 rounded-full bg-primary text-primary-foreground text-sm flex items-center justify-center font-medium">2</span>
+                    <span>Open de app <strong>Instellingen</strong></span>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="flex-shrink-0 w-6 h-6 rounded-full bg-primary text-primary-foreground text-sm flex items-center justify-center font-medium">3</span>
+                    <span>Tik op <strong>Bluetooth</strong></span>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="flex-shrink-0 w-6 h-6 rounded-full bg-primary text-primary-foreground text-sm flex items-center justify-center font-medium">4</span>
+                    <span>Zoek je AirPods in de lijst en tik op het <strong>(i)</strong>-icoontje</span>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="flex-shrink-0 w-6 h-6 rounded-full bg-primary text-primary-foreground text-sm flex items-center justify-center font-medium">5</span>
+                    <span>Scroll naar beneden – hier zie je het <strong>modelnummer</strong></span>
+                  </li>
+                </ol>
+              </Card>
 
               <p className="mb-4">
                 Het modelnummer begint altijd met de letter "A" gevolgd door vier cijfers, bijvoorbeeld A2032 of A2931. 
                 Met dit nummer kun je in de onderstaande tabel precies opzoeken welke generatie je hebt.
               </p>
 
-              <div className="bg-muted/50 rounded-xl p-6 mb-8">
-                <p className="text-sm text-muted-foreground">
-                  <strong>Tip:</strong> Zijn je AirPods niet verbonden of heb je ze niet bij de hand? Dan kun je het modelnummer 
-                  ook fysiek aflezen van de oplaadcase of het oortje zelf. Lees hieronder hoe dat werkt.
-                </p>
+              <div className="bg-accent/50 rounded-xl p-4 my-6 flex gap-3">
+                <Lightbulb className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                <div>
+                  <p className="font-medium mb-1">Tip:</p>
+                  <p className="text-sm mb-0">Zijn je AirPods niet verbonden of heb je ze niet bij de hand? Dan kun je het modelnummer ook fysiek aflezen van de oplaadcase of het oortje zelf.</p>
+                </div>
               </div>
 
               {/* Section: Modelnummer fysiek */}
@@ -451,30 +478,32 @@ const BlogWelkeAirpods = () => {
                 RePairPods is dé specialist in losse AirPods en oplaadcases in Nederland. Dit is waarom klanten voor ons kiezen:
               </p>
 
-              <ul className="list-disc pl-6 mb-8 space-y-3">
-                <li>
-                  <strong>100% originele Apple-onderdelen</strong> – Geen namaak of compatibele alternatieven. 
-                  Elk product dat we verkopen is een origineel Apple-onderdeel.
-                </li>
-                <li>
-                  <strong>Zorgvuldig getest</strong> – Elke AirPod en oplaadcase wordt getest op geluid, batterijcapaciteit 
-                  en Bluetooth-connectie voordat we het verzenden.
-                </li>
-                <li>
-                  <strong>Specialist in losse onderdelen</strong> – Waar andere winkels alleen complete sets verkopen, 
-                  bieden wij precies het onderdeel dat je nodig hebt.
-                </li>
-                <li>
-                  <strong>Snel geleverd</strong> – Bestel voor 17:00 uur en je pakket wordt dezelfde dag verzonden.
-                </li>
-                <li>
-                  <strong>Afhalen in Amsterdam</strong> – Liever eerst testen? Je kunt je bestelling ook ophalen en 
-                  ter plekke uitproberen bij ons in Amsterdam.
-                </li>
-                <li>
-                  <strong>Garantie en retour</strong> – Niet tevreden? Je kunt je aankoop binnen 14 dagen retourneren.
-                </li>
-              </ul>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 my-6">
+                <div className="flex items-start gap-3 p-3 bg-muted/30 rounded-lg">
+                  <Check className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                  <span className="text-sm"><strong>100% origineel</strong> – Elk product is een origineel Apple-onderdeel.</span>
+                </div>
+                <div className="flex items-start gap-3 p-3 bg-muted/30 rounded-lg">
+                  <Check className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                  <span className="text-sm"><strong>Zorgvuldig getest</strong> – Getest op geluid, batterij en Bluetooth.</span>
+                </div>
+                <div className="flex items-start gap-3 p-3 bg-muted/30 rounded-lg">
+                  <Check className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                  <span className="text-sm"><strong>Specialist</strong> – Precies het onderdeel dat je nodig hebt.</span>
+                </div>
+                <div className="flex items-start gap-3 p-3 bg-muted/30 rounded-lg">
+                  <Check className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                  <span className="text-sm"><strong>Snel geleverd</strong> – Bestel voor 17:00, dezelfde dag verzonden.</span>
+                </div>
+                <div className="flex items-start gap-3 p-3 bg-muted/30 rounded-lg">
+                  <Check className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                  <span className="text-sm"><strong>Afhalen in Amsterdam</strong> – Uitproberen voor je koopt.</span>
+                </div>
+                <div className="flex items-start gap-3 p-3 bg-muted/30 rounded-lg">
+                  <Check className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                  <span className="text-sm"><strong>14 dagen retour</strong> – Niet tevreden? Geld terug.</span>
+                </div>
+              </div>
 
               {/* Section: Conclusie */}
               <h2 className="text-2xl md:text-3xl font-semibold text-foreground mt-12 mb-6">
@@ -493,18 +522,23 @@ const BlogWelkeAirpods = () => {
                 precies welke generatie je hebt.
               </p>
 
-              {/* Section: FAQ */}
               <h2 className="text-2xl md:text-3xl font-semibold text-foreground mt-12 mb-6">
                 Veelgestelde vragen over "Welke AirPods heb ik?"
               </h2>
 
-              <div className="space-y-6 mb-12">
-                {faqItems.map((item, index) => (
-                  <div key={index} className="border-b border-border pb-6">
-                    <h3 className="text-lg font-semibold text-foreground mb-3">{item.question}</h3>
-                    <p className="text-muted-foreground">{item.answer}</p>
-                  </div>
-                ))}
+              <div className="mb-12">
+                <Accordion type="single" collapsible className="w-full">
+                  {faqItems.map((item, index) => (
+                    <AccordionItem key={index} value={`item-${index}`}>
+                      <AccordionTrigger className="text-left font-medium">
+                        {item.question}
+                      </AccordionTrigger>
+                      <AccordionContent className="text-muted-foreground">
+                        {item.answer}
+                      </AccordionContent>
+                    </AccordionItem>
+                  ))}
+                </Accordion>
               </div>
 
               {/* CTA */}

@@ -2,13 +2,14 @@ import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
-import { Calendar, Clock, ChevronLeft, Check, X } from 'lucide-react';
+import { Calendar, Clock, ChevronLeft, Check, X, Lightbulb, AlertCircle } from 'lucide-react';
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
+import { Card } from '@/components/ui/card';
 
 const faqItems = [
   {
@@ -361,34 +362,46 @@ const BlogAirpodsCombineren = () => {
               Volg dit stappenplan om je nieuwe en oude AirPod als één set te laten werken:
             </p>
 
-            <ol>
-              <li>
-                <strong>Plaats beide oortjes in de case</strong> – Doe je bestaande AirPod en de nieuwe 
-                vervangende AirPod samen in je oplaadcase.
-              </li>
-              <li>
-                <strong>Sluit het deksel</strong> – Laat de case gesloten en wacht ongeveer 30 seconden.
-              </li>
-              <li>
-                <strong>Open het deksel bij je iPhone</strong> – Houd de case met geopend deksel dicht 
-                bij je iPhone (binnen 5 cm).
-              </li>
-              <li>
-                <strong>Houd de setup-knop ingedrukt</strong> – Druk op de knop aan de achterkant van 
-                de case en houd deze ingedrukt tot het statuslampje wit knippert.
-              </li>
-              <li>
-                <strong>Volg de instructies op je iPhone</strong> – Er verschijnt een setup-animatie. 
-                Tik op "Verbind" en volg de stappen.
-              </li>
-              <li>
-                <strong>Test beide oortjes</strong> – Speel wat muziek af en controleer of beide 
-                AirPods geluid geven.
-              </li>
-              <li>
-                <strong>Klaar!</strong> – Je AirPods werken nu weer als complete set.
-              </li>
-            </ol>
+            <Card className="p-6 my-6 bg-secondary/30">
+              <h3 className="text-lg font-semibold mb-4 flex items-center gap-2">
+                <Check className="h-5 w-5 text-primary" />
+                Stappenplan: losse AirPod koppelen
+              </h3>
+              <ol className="space-y-3 mb-0">
+                <li className="flex gap-3">
+                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-primary text-primary-foreground text-sm flex items-center justify-center font-medium">1</span>
+                  <span><strong>Plaats beide oortjes in de case</strong> – Doe je bestaande AirPod en de nieuwe vervangende AirPod samen in je oplaadcase.</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-primary text-primary-foreground text-sm flex items-center justify-center font-medium">2</span>
+                  <span><strong>Sluit het deksel</strong> – Laat de case gesloten en wacht ongeveer 30 seconden.</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-primary text-primary-foreground text-sm flex items-center justify-center font-medium">3</span>
+                  <span><strong>Open het deksel bij je iPhone</strong> – Houd de case met geopend deksel dicht bij je iPhone (binnen 5 cm).</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-primary text-primary-foreground text-sm flex items-center justify-center font-medium">4</span>
+                  <span><strong>Houd de setup-knop ingedrukt</strong> – Druk op de knop aan de achterkant van de case tot het lampje wit knippert.</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-primary text-primary-foreground text-sm flex items-center justify-center font-medium">5</span>
+                  <span><strong>Volg de instructies op je iPhone</strong> – Er verschijnt een setup-animatie. Tik op "Verbind".</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-primary text-primary-foreground text-sm flex items-center justify-center font-medium">6</span>
+                  <span><strong>Test beide oortjes</strong> – Speel muziek af en controleer of beide AirPods geluid geven.</span>
+                </li>
+              </ol>
+            </Card>
+
+            <div className="bg-accent/50 rounded-xl p-4 my-6 flex gap-3">
+              <Lightbulb className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+              <div>
+                <p className="font-medium mb-1">Tip voor succesvol koppelen:</p>
+                <p className="text-sm mb-0">Zorg dat Bluetooth aanstaat, beide AirPods voldoende zijn opgeladen, en je iPhone ontgrendeld is tijdens het koppelproces.</p>
+              </div>
+            </div>
 
             <p>
               Dit proces is identiek aan het koppelen van een officiële Apple-vervanging. Zolang je 
@@ -448,46 +461,59 @@ const BlogAirpodsCombineren = () => {
               en hoe je ze oplost:
             </p>
 
-            <h3>Probleem: Eén AirPod geeft geen geluid</h3>
-            <p>
-              <strong>Mogelijke oorzaak:</strong> De AirPods zijn niet correct gekoppeld, of de 
-              contactpunten in de case zijn vuil.
-            </p>
-            <p>
-              <strong>Oplossing:</strong> Reset je AirPods (houd de knop 15 seconden ingedrukt tot 
-              het lampje oranje en dan wit knippert). Maak de contactpunten schoon met een droge, 
-              pluisvrije doek.
-            </p>
+            <div className="space-y-4 my-6">
+              <Card className="p-4">
+                <h4 className="font-semibold mb-2 flex items-center gap-2">
+                  <AlertCircle className="h-4 w-4 text-orange-500" />
+                  Probleem: Eén AirPod geeft geen geluid
+                </h4>
+                <p className="text-sm text-muted-foreground mb-2">
+                  <strong>Mogelijke oorzaak:</strong> De AirPods zijn niet correct gekoppeld, of de contactpunten in de case zijn vuil.
+                </p>
+                <p className="text-sm mb-0">
+                  <strong>Oplossing:</strong> Reset je AirPods (houd de knop 15 seconden ingedrukt tot het lampje oranje en dan wit knippert). Maak de contactpunten schoon met een droge, pluisvrije doek.
+                </p>
+              </Card>
 
-            <h3>Probleem: AirPods worden niet als "paar" herkend</h3>
-            <p>
-              <strong>Mogelijke oorzaak:</strong> Je hebt per ongeluk oortjes van verschillende 
-              generaties, of één van de oortjes is namaak.
-            </p>
-            <p>
-              <strong>Oplossing:</strong> Controleer de modelnummers van beide oortjes. Ze moeten 
-              exact overeenkomen. Bij twijfel, check via je iPhone-instellingen.
-            </p>
+              <Card className="p-4">
+                <h4 className="font-semibold mb-2 flex items-center gap-2">
+                  <AlertCircle className="h-4 w-4 text-orange-500" />
+                  Probleem: AirPods worden niet als "paar" herkend
+                </h4>
+                <p className="text-sm text-muted-foreground mb-2">
+                  <strong>Mogelijke oorzaak:</strong> Je hebt per ongeluk oortjes van verschillende generaties, of één is namaak.
+                </p>
+                <p className="text-sm mb-0">
+                  <strong>Oplossing:</strong> Controleer de modelnummers van beide oortjes. Ze moeten exact overeenkomen. Bij twijfel, check via je iPhone-instellingen.
+                </p>
+              </Card>
 
-            <h3>Probleem: Verschil in volume of balans tussen links en rechts</h3>
-            <p>
-              <strong>Mogelijke oorzaak:</strong> De speaker of mesh van één oortje is verstopt, 
-              of er is een firmware-mismatch.
-            </p>
-            <p>
-              <strong>Oplossing:</strong> Maak de speakers voorzichtig schoon. Update je AirPods 
-              naar de laatste firmware door ze in de case te leggen terwijl je iPhone in de buurt is.
-            </p>
+              <Card className="p-4">
+                <h4 className="font-semibold mb-2 flex items-center gap-2">
+                  <AlertCircle className="h-4 w-4 text-orange-500" />
+                  Probleem: Verschil in volume of balans
+                </h4>
+                <p className="text-sm text-muted-foreground mb-2">
+                  <strong>Mogelijke oorzaak:</strong> De speaker of mesh van één oortje is verstopt, of er is een firmware-mismatch.
+                </p>
+                <p className="text-sm mb-0">
+                  <strong>Oplossing:</strong> Maak de speakers voorzichtig schoon. Update je AirPods naar de laatste firmware door ze in de case te leggen terwijl je iPhone in de buurt is.
+                </p>
+              </Card>
 
-            <h3>Probleem: Koppeling blijft mislukken</h3>
-            <p>
-              <strong>Mogelijke oorzaak:</strong> De vervangende AirPod is van een verkeerde generatie, 
-              of het is geen origineel Apple-product.
-            </p>
-            <p>
-              <strong>Oplossing:</strong> Controleer nogmaals of de generaties overeenkomen. 
-              Bij RePairPods krijg je gegarandeerd originele onderdelen van de juiste generatie.
-            </p>
+              <Card className="p-4">
+                <h4 className="font-semibold mb-2 flex items-center gap-2">
+                  <AlertCircle className="h-4 w-4 text-orange-500" />
+                  Probleem: Koppeling blijft mislukken
+                </h4>
+                <p className="text-sm text-muted-foreground mb-2">
+                  <strong>Mogelijke oorzaak:</strong> De vervangende AirPod is van een verkeerde generatie, of het is geen origineel Apple-product.
+                </p>
+                <p className="text-sm mb-0">
+                  <strong>Oplossing:</strong> Controleer nogmaals of de generaties overeenkomen. Bij RePairPods krijg je gegarandeerd originele onderdelen van de juiste generatie.
+                </p>
+              </Card>
+            </div>
 
             {/* Sectie 8 */}
             <h2>Waarom een originele losse AirPod wél werkt (en namaak vaak niet)</h2>

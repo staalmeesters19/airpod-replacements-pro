@@ -49,5 +49,28 @@
     "goodDesc": "Lichte gebruikssporen, werkt perfect",
     "usedDesc": "Zichtbare gebruikssporen, volledig functioneel",
     "limitedDesc": "Meer gebruikssporen, budget-optie"
+  },
+  "conditionExplainer": {
+    "title": "Wat betekenen de condities?",
+    "new": {
+      "label": "Nieuw",
+      "description": "Gloednieuw en ongebruikt product uit geopende Apple verpakking. Het product is nooit gedragen of gebruikt en verkeert in perfecte staat, precies zoals je het van Apple zou verwachten."
+    },
+    "excellent": {
+      "label": "Uitstekend",
+      "description": "Nauwelijks te onderscheiden van nieuw. Het product is minimaal gebruikt en heeft geen of vrijwel onzichtbare sporen. Batterijgezondheid 90% of hoger. Dit is onze meest populaire keuze."
+    },
+    "good": {
+      "label": "Goed",
+      "description": "Lichte gebruikssporen die bij normaal gebruik niet opvallen. De AirPod werkt 100% en heeft een batterijgezondheid van minimaal 80%. Uitstekende prijs-kwaliteit verhouding."
+    },
+    "used": {
+      "label": "Gebruikt",
+      "description": "Duidelijk zichtbare gebruikssporen zoals kleine krasjes of lichte verkleuring. Het product is volledig functioneel met een batterijgezondheid van minimaal 70%."
+    },
+    "limited": {
+      "label": "Beperkt",
+      "description": "De meest voordelige optie. Zichtbare slijtage en gebruikssporen aanwezig. Het product functioneert naar behoren maar kan een lagere batterijgezondheid hebben. Perfect als budgetkeuze."
+    }
   }
 }

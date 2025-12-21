@@ -1,13 +1,18 @@
 import { useState, useMemo } from 'react';
 import { useParams, Link, useNavigate, useLocation } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
-import { ShoppingCart, Check, Package, Shield, TruckIcon } from 'lucide-react';
+import { ShoppingCart, Check, Package, Shield, TruckIcon, ChevronDown, Sparkles, Star, ThumbsUp, Circle, Tag } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card } from '@/components/ui/card';
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from '@/components/ui/collapsible';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -342,6 +347,94 @@ const ProductDetail = () => {
                     </button>
                   ))}
                 </div>
+
+                {/* Condition Explainer Dropdown */}
+                <Collapsible className="mt-3">
+                  <CollapsibleTrigger className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors group">
+                    <ChevronDown className="h-4 w-4 transition-transform group-data-[state=open]:rotate-180" />
+                    <span>{isEnglish ? 'What do the conditions mean?' : 'Wat betekenen de condities?'}</span>
+                  </CollapsibleTrigger>
+                  <CollapsibleContent className="mt-3">
+                    <div className="space-y-3 p-4 bg-secondary/30 rounded-xl border border-border">
+                      {/* Nieuw */}
+                      <div className="flex gap-3">
+                        <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
+                          <Sparkles className="h-4 w-4 text-primary" />
+                        </div>
+                        <div>
+                          <span className="font-semibold text-sm">{isEnglish ? 'New' : 'Nieuw'}</span>
+                          <p className="text-xs text-muted-foreground mt-0.5">
+                            {isEnglish 
+                              ? 'Brand new and unused product from opened Apple packaging. The product has never been worn or used and is in perfect condition.'
+                              : 'Gloednieuw en ongebruikt product uit geopende Apple verpakking. Het product is nooit gedragen of gebruikt en verkeert in perfecte staat.'}
+                          </p>
+                        </div>
+                      </div>
+                      
+                      {/* Uitstekend */}
+                      <div className="flex gap-3">
+                        <div className="flex-shrink-0 w-8 h-8 rounded-full bg-green-500/10 flex items-center justify-center">
+                          <Star className="h-4 w-4 text-green-600" />
+                        </div>
+                        <div>
+                          <span className="font-semibold text-sm">{isEnglish ? 'Excellent' : 'Uitstekend'}</span>
+                          <span className="ml-2 text-xs text-primary font-medium">{isEnglish ? 'Popular choice' : 'Populaire keuze'}</span>
+                          <p className="text-xs text-muted-foreground mt-0.5">
+                            {isEnglish 
+                              ? 'Barely distinguishable from new. Minimal use, battery health 90% or higher.'
+                              : 'Nauwelijks te onderscheiden van nieuw. Minimaal gebruikt, batterijgezondheid 90% of hoger.'}
+                          </p>
+                        </div>
+                      </div>
+                      
+                      {/* Goed */}
+                      <div className="flex gap-3">
+                        <div className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-500/10 flex items-center justify-center">
+                          <ThumbsUp className="h-4 w-4 text-blue-600" />
+                        </div>
+                        <div>
+                          <span className="font-semibold text-sm">{isEnglish ? 'Good' : 'Goed'}</span>
+                          <p className="text-xs text-muted-foreground mt-0.5">
+                            {isEnglish 
+                              ? 'Light signs of use, works 100%. Battery health at least 80%. Excellent value for money.'
+                              : 'Lichte gebruikssporen, werkt 100%. Batterijgezondheid minimaal 80%. Uitstekende prijs-kwaliteit.'}
+                          </p>
+                        </div>
+                      </div>
+                      
+                      {/* Gebruikt */}
+                      <div className="flex gap-3">
+                        <div className="flex-shrink-0 w-8 h-8 rounded-full bg-orange-500/10 flex items-center justify-center">
+                          <Circle className="h-4 w-4 text-orange-600" />
+                        </div>
+                        <div>
+                          <span className="font-semibold text-sm">{isEnglish ? 'Used' : 'Gebruikt'}</span>
+                          <p className="text-xs text-muted-foreground mt-0.5">
+                            {isEnglish 
+                              ? 'Visible signs of use. Fully functional, battery health at least 70%.'
+                              : 'Zichtbare gebruikssporen. Volledig functioneel, batterijgezondheid minimaal 70%.'}
+                          </p>
+                        </div>
+                      </div>
+                      
+                      {/* Beperkt */}
+                      <div className="flex gap-3">
+                        <div className="flex-shrink-0 w-8 h-8 rounded-full bg-muted flex items-center justify-center">
+                          <Tag className="h-4 w-4 text-muted-foreground" />
+                        </div>
+                        <div>
+                          <span className="font-semibold text-sm">{isEnglish ? 'Limited' : 'Beperkt'}</span>
+                          <span className="ml-2 text-xs text-muted-foreground">{isEnglish ? 'Budget option' : 'Budget optie'}</span>
+                          <p className="text-xs text-muted-foreground mt-0.5">
+                            {isEnglish 
+                              ? 'Most affordable option. Visible wear, may have lower battery health. Works properly.'
+                              : 'Meest voordelige optie. Zichtbare slijtage, mogelijk lagere batterijgezondheid. Werkt naar behoren.'}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </CollapsibleContent>
+                </Collapsible>
               </div>
 
               {/* Price & Add to Cart */}

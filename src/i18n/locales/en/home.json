@@ -1,4 +1,10 @@
 {
+  "blogPreview": {
+    "label": "Blog",
+    "title": "Tips & Guides",
+    "subtitle": "Helpful articles about replacing and maintaining AirPods",
+    "viewAll": "View all articles"
+  },
   "howItWorks": {
     "title": "How It Works",
     "subtitle": "Complete your set in 4 simple steps",

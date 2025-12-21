@@ -24,6 +24,7 @@ import {
 import { mockProducts, conditionLabels, conditionDescriptions, Condition } from '@/data/mockProducts';
 import ProductCard from '@/components/products/ProductCard';
 import ModelNumberCheck, { Pro2Variant, Gen4Variant } from '@/components/products/ModelNumberCheck';
+import TrustStrip from '@/components/products/TrustStrip';
 
 const ProductDetail = () => {
   const { slug } = useParams();
@@ -486,7 +487,8 @@ const ProductDetail = () => {
                 </div>
               </div>
 
-              {/* Product Info Cards */}
+              {/* Trust Strip */}
+              <TrustStrip />
               <div className="space-y-3 sm:space-y-4 pt-4 sm:pt-6">
                 <Card className="p-3 sm:p-6">
                   <h3 className="font-semibold mb-2 sm:mb-3 text-sm sm:text-base">

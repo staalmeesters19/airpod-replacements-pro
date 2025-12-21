@@ -42,34 +42,34 @@ const WhyChooseUs = () => {
   ];
 
   return (
-    <section className="py-16 md:py-20 bg-muted/30">
+    <section className="py-12 md:py-16 lg:py-20 bg-muted/30">
       <div className="container max-w-6xl mx-auto px-4">
         {/* Section Header */}
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-3">
+        <div className="text-center mb-8 md:mb-12">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-2 md:mb-3">
             {t('whyChoose.title')}
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-sm md:text-base lg:text-lg text-muted-foreground max-w-2xl mx-auto px-2">
             {t('whyChoose.subtitle')}
           </p>
         </div>
 
-        {/* Reasons Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 md:gap-8">
+        {/* Reasons Grid - 2 cols mobile, 3 cols tablet, 5 cols desktop */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4 lg:gap-6">
           {reasons.map((reason, index) => {
             const Icon = reason.icon;
             return (
               <div
                 key={index}
-                className="flex flex-col items-center text-center p-6 bg-background rounded-xl border border-border/50 shadow-sm hover:shadow-md hover:border-primary/30 transition-all duration-300"
+                className="flex flex-col items-center text-center p-3 md:p-4 lg:p-6 bg-background rounded-lg md:rounded-xl border border-border/50 shadow-sm hover:shadow-md hover:border-primary/30 transition-all duration-300"
               >
-                <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-                  <Icon className="w-7 h-7 text-primary" />
+                <div className="w-10 h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 rounded-full bg-primary/10 flex items-center justify-center mb-2 md:mb-3 lg:mb-4">
+                  <Icon className="w-5 h-5 md:w-6 md:h-6 lg:w-7 lg:h-7 text-primary" />
                 </div>
-                <h3 className="font-semibold text-foreground mb-2 text-base">
+                <h3 className="font-semibold text-foreground mb-1 md:mb-2 text-xs md:text-sm lg:text-base leading-tight">
                   {t(reason.titleKey)}
                 </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
+                <p className="text-xs md:text-sm text-muted-foreground leading-relaxed hidden sm:block">
                   {t(reason.descKey)}
                 </p>
               </div>

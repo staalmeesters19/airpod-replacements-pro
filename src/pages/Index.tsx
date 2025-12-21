@@ -14,6 +14,7 @@ import TrustBadges from '@/components/home/TrustBadges';
 import CustomerQuoteHighlight from '@/components/home/CustomerQuoteHighlight';
 import GuaranteesSection from '@/components/home/GuaranteesSection';
 import WhyChooseUs from '@/components/home/WhyChooseUs';
+import HowItWorks from '@/components/home/HowItWorks';
 import SEOContentBlock from '@/components/home/SEOContentBlock';
 const Index = () => {
   const { i18n } = useTranslation();
@@ -107,6 +108,9 @@ const Index = () => {
           
           {/* Klant Quote Highlight */}
           <CustomerQuoteHighlight />
+          
+          {/* How It Works - 4 Steps */}
+          <HowItWorks />
           
           {/* Why Choose Us - SEO Section */}
           <WhyChooseUs />

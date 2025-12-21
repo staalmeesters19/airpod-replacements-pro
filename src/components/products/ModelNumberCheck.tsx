@@ -1,7 +1,9 @@
-import { AlertTriangle } from 'lucide-react';
+import { AlertTriangle, ChevronDown } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { Card } from '@/components/ui/card';
 import { Product } from '@/data/mockProducts';
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
+import { useState } from 'react';
 
 interface ModelNumbers {
   left: string;
@@ -74,13 +76,13 @@ interface ModelNumberCheckProps {
 const ModelNumberCheck = ({ product, pro2Variant, gen4Variant }: ModelNumberCheckProps) => {
   const location = useLocation();
   const isEnglish = location.pathname.startsWith('/en');
+  const [isOpen, setIsOpen] = useState(true);
   
   let modelNumbers: ModelNumbers | undefined;
 
   if (product.model === 'airpods-pro-2') {
     modelNumbers = airpodsPro2Variants[pro2Variant || 'lightning'];
   } else if (product.model === 'airpods-4' || product.model === 'airpods-4-anc') {
-    // For ANC model, default to 'met-anc', otherwise use provided variant or 'zonder-anc'
     const defaultVariant = product.model === 'airpods-4-anc' ? 'met-anc' : 'zonder-anc';
     modelNumbers = airpods4Variants[gen4Variant || defaultVariant];
   } else {
@@ -93,6 +95,7 @@ const ModelNumberCheck = ({ product, pro2Variant, gen4Variant }: ModelNumberChec
 
   const isPro2 = product.model === 'airpods-pro-2';
   const isGen4 = product.model === 'airpods-4' || product.model === 'airpods-4-anc';
+  const isSimpleProduct = !isPro2 && !isGen4;
 
   // Translations
   const t = {
@@ -122,13 +125,9 @@ const ModelNumberCheck = ({ product, pro2Variant, gen4Variant }: ModelNumberChec
     notSure: isEnglish ? "Not sure which AirPods you have? Check our page" : "Weet je niet zeker welke AirPods je hebt? Bekijk onze pagina",
   };
 
-  return (
-    <Card className="p-5 border-amber-200 bg-amber-50/50 dark:bg-amber-950/20 dark:border-amber-800">
-      <div className="flex items-start gap-3 mb-4">
-        <AlertTriangle className="h-5 w-5 text-amber-600 flex-shrink-0 mt-0.5" />
-        <h3 className="font-semibold text-foreground">{t.title}</h3>
-      </div>
-      
+  // Content to render (shared between collapsible and non-collapsible versions)
+  const renderContent = () => (
+    <>
       {isPro2 ? (
         <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
           <span dangerouslySetInnerHTML={{ __html: t.pro2Warning }} />{' '}
@@ -224,6 +223,41 @@ const ModelNumberCheck = ({ product, pro2Variant, gen4Variant }: ModelNumberChec
       <p className="text-xs text-muted-foreground mt-3">
         {t.helpText}
       </p>
+    </>
+  );
+
+  // For simple products (AirPods 2, 3, Pro 1), make it collapsible
+  if (isSimpleProduct) {
+    return (
+      <Card className="p-5 border-amber-200 bg-amber-50/50 dark:bg-amber-950/20 dark:border-amber-800">
+        <Collapsible open={isOpen} onOpenChange={setIsOpen}>
+          <CollapsibleTrigger className="w-full">
+            <div className="flex items-center justify-between gap-3">
+              <div className="flex items-center gap-3">
+                <AlertTriangle className="h-5 w-5 text-amber-600 flex-shrink-0" />
+                <h3 className="font-semibold text-foreground text-left">{t.title}</h3>
+              </div>
+              <ChevronDown 
+                className={`h-5 w-5 text-muted-foreground transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} 
+              />
+            </div>
+          </CollapsibleTrigger>
+          <CollapsibleContent className="mt-4">
+            {renderContent()}
+          </CollapsibleContent>
+        </Collapsible>
+      </Card>
+    );
+  }
+
+  // For Pro 2 and Gen 4, keep it always visible (no collapsible)
+  return (
+    <Card className="p-5 border-amber-200 bg-amber-50/50 dark:bg-amber-950/20 dark:border-amber-800">
+      <div className="flex items-start gap-3 mb-4">
+        <AlertTriangle className="h-5 w-5 text-amber-600 flex-shrink-0 mt-0.5" />
+        <h3 className="font-semibold text-foreground">{t.title}</h3>
+      </div>
+      {renderContent()}
     </Card>
   );
 };

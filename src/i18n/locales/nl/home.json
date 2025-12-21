@@ -1,4 +1,24 @@
 {
+  "howItWorks": {
+    "title": "Zo werkt het",
+    "subtitle": "In 4 simpele stappen weer een complete set",
+    "step1": {
+      "title": "Kies je model",
+      "description": "Selecteer je AirPods generatie"
+    },
+    "step2": {
+      "title": "Selecteer conditie",
+      "description": "Van nieuw tot budget"
+    },
+    "step3": {
+      "title": "Wij verzenden",
+      "description": "Binnen 24 uur onderweg"
+    },
+    "step4": {
+      "title": "Geniet!",
+      "description": "Weer een complete set"
+    }
+  },
   "hero": {
     "title": "Losse AirPod kwijt?",
     "subtitle": "Koop alleen wat je nodig hebt",

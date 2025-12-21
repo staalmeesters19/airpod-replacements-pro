@@ -32,37 +32,37 @@ const SEOContentBlock = () => {
   ];
 
   return (
-    <section className="py-16 md:py-20 bg-background">
+    <section className="py-10 md:py-14 lg:py-20 bg-background">
       <div className="container max-w-4xl mx-auto px-4">
         {/* Main SEO Content */}
-        <article className="prose prose-lg max-w-none">
+        <article className="prose prose-sm md:prose-base lg:prose-lg max-w-none">
           {/* First Section: Losse AirPods kopen */}
-          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">
+          <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-foreground mb-4 md:mb-6">
             {t('seoContent.title')}
           </h2>
           
-          <p className="text-muted-foreground leading-relaxed mb-6">
+          <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-4 md:mb-6">
             {t('seoContent.intro')}
           </p>
 
-          <p className="text-muted-foreground leading-relaxed mb-8">
+          <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-6 md:mb-8">
             {t('seoContent.solution')}
           </p>
 
-          {/* Product Links */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-8">
+          {/* Product Links - 2 cols on mobile */}
+          <div className="grid grid-cols-2 gap-2 md:gap-4 my-6 md:my-8">
             {productLinks.map((product, index) => (
               <Link
                 key={index}
                 to={product.path}
-                className="group flex items-start gap-3 p-4 bg-muted/50 rounded-lg border border-border/50 hover:border-primary/50 hover:bg-muted transition-all duration-200 no-underline"
+                className="group flex items-start gap-2 md:gap-3 p-3 md:p-4 bg-muted/50 rounded-lg border border-border/50 hover:border-primary/50 hover:bg-muted transition-all duration-200 no-underline"
               >
-                <ChevronRight className="w-5 h-5 text-primary mt-0.5 flex-shrink-0 group-hover:translate-x-1 transition-transform" />
+                <ChevronRight className="w-4 h-4 md:w-5 md:h-5 text-primary mt-0.5 flex-shrink-0 group-hover:translate-x-1 transition-transform" />
                 <div>
-                  <span className="font-semibold text-foreground group-hover:text-primary transition-colors">
+                  <span className="font-semibold text-foreground group-hover:text-primary transition-colors text-sm md:text-base">
                     {product.name}
                   </span>
-                  <span className="text-muted-foreground text-sm block mt-1">
+                  <span className="text-muted-foreground text-xs md:text-sm block mt-0.5 md:mt-1 hidden sm:block">
                     {t(product.descKey)}
                   </span>
                 </div>
@@ -70,29 +70,29 @@ const SEOContentBlock = () => {
             ))}
           </div>
 
-          <p className="text-muted-foreground leading-relaxed mb-10">
+          <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-8 md:mb-10">
             {t('seoContent.quality')}
           </p>
 
           {/* Second Section: Why buy a single AirPod */}
-          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6 mt-12">
+          <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-foreground mb-4 md:mb-6 mt-8 md:mt-12">
             {t('seoContent.whyBuy.title')}
           </h2>
 
-          <p className="text-muted-foreground leading-relaxed mb-6">
+          <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-4 md:mb-6">
             {t('seoContent.whyBuy.savings')}
           </p>
 
-          <p className="text-muted-foreground leading-relaxed mb-6">
+          <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-4 md:mb-6">
             {t('seoContent.whyBuy.sustainability')}
           </p>
 
           {/* Third Section: About RePairPods */}
-          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6 mt-12">
+          <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-foreground mb-4 md:mb-6 mt-8 md:mt-12">
             {t('seoContent.about.title')}
           </h2>
 
-          <p className="text-muted-foreground leading-relaxed">
+          <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
             {t('seoContent.about.description')}
           </p>
         </article>

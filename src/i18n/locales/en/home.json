@@ -1,4 +1,24 @@
 {
+  "howItWorks": {
+    "title": "How It Works",
+    "subtitle": "Complete your set in 4 simple steps",
+    "step1": {
+      "title": "Choose your model",
+      "description": "Select your AirPods generation"
+    },
+    "step2": {
+      "title": "Select condition",
+      "description": "From new to budget"
+    },
+    "step3": {
+      "title": "We ship",
+      "description": "Dispatched within 24 hours"
+    },
+    "step4": {
+      "title": "Enjoy!",
+      "description": "Complete set again"
+    }
+  },
   "hero": {
     "title": "Lost a single AirPod?",
     "subtitle": "Buy only what you need",

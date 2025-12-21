@@ -28,7 +28,12 @@ const TrustStrip = () => {
       <div className="hidden sm:block w-px h-4 bg-border" />
 
       {/* Google Reviews */}
-      <div className="flex items-center gap-2">
+      <a 
+        href="https://share.google/1vhWubZ3EcYWZAg96" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="flex items-center gap-2 hover:opacity-80 transition-opacity"
+      >
         <div className="flex items-center gap-0.5">
           {[...Array(5)].map((_, i) => (
             <Star key={i} className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-[#FBBC04] text-[#FBBC04]" />
@@ -36,7 +41,7 @@ const TrustStrip = () => {
         </div>
         <span className="text-xs sm:text-sm font-medium text-foreground">4.9/5</span>
         <span className="text-xs sm:text-sm text-muted-foreground">Google</span>
-      </div>
+      </a>
 
       {/* Divider */}
       <div className="hidden sm:block w-px h-4 bg-border" />

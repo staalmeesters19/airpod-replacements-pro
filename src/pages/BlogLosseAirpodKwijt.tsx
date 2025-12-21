@@ -2,13 +2,14 @@ import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
-import { Calendar, Clock, ChevronLeft } from 'lucide-react';
+import { Calendar, Clock, ChevronLeft, Check, X, Lightbulb, DollarSign } from 'lucide-react';
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
+import { Card } from '@/components/ui/card';
 
 const faqItems = [
   {
@@ -121,24 +122,38 @@ const BlogLosseAirpodKwijt = () => {
               Wanneer je een AirPod kwijtraakt, heb je grofweg vier opties. Elk heeft zijn eigen voor- en nadelen:
             </p>
 
-            <ul>
-              <li>
-                <strong>Optie 1: Nieuwe volledige set AirPods kopen</strong> – Je krijgt alles nieuw, maar het is 
-                veruit de duurste oplossing. Zonde als je nog een werkend oortje en case hebt.
-              </li>
-              <li>
-                <strong>Optie 2: Losse AirPod via Apple laten vervangen</strong> – Origineel onderdeel, maar 
-                vaak prijzig en je moet naar een Apple Store of servicepunt.
-              </li>
-              <li>
-                <strong>Optie 3: Originele losse AirPod via RePairPods</strong> – 100% origineel Apple-onderdeel, 
-                vaak voordeliger dan Apple en snel geleverd.
-              </li>
-              <li>
-                <strong>Optie 4: Goedkope namaak of tweedehands via Marktplaats</strong> – Lijkt goedkoop, maar 
-                brengt risico's met zich mee qua kwaliteit en compatibiliteit.
-              </li>
-            </ul>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
+              <Card className="p-4 border-l-4 border-l-muted-foreground">
+                <h4 className="font-semibold mb-2">Optie 1: Nieuwe volledige set</h4>
+                <p className="text-sm text-muted-foreground mb-0">
+                  Je krijgt alles nieuw, maar het is veruit de duurste oplossing. Zonde als je nog een werkend oortje en case hebt.
+                </p>
+              </Card>
+              <Card className="p-4 border-l-4 border-l-muted-foreground">
+                <h4 className="font-semibold mb-2">Optie 2: Via Apple vervangen</h4>
+                <p className="text-sm text-muted-foreground mb-0">
+                  Origineel onderdeel, maar vaak prijzig en je moet naar een Apple Store of servicepunt.
+                </p>
+              </Card>
+              <Card className="p-4 border-l-4 border-l-primary">
+                <h4 className="font-semibold mb-2 flex items-center gap-2">
+                  <Check className="h-4 w-4 text-primary" />
+                  Optie 3: Via RePairPods
+                </h4>
+                <p className="text-sm text-muted-foreground mb-0">
+                  100% origineel Apple-onderdeel, vaak voordeliger dan Apple en snel geleverd.
+                </p>
+              </Card>
+              <Card className="p-4 border-l-4 border-l-destructive">
+                <h4 className="font-semibold mb-2 flex items-center gap-2">
+                  <X className="h-4 w-4 text-destructive" />
+                  Optie 4: Namaak/Marktplaats
+                </h4>
+                <p className="text-sm text-muted-foreground mb-0">
+                  Lijkt goedkoop, maar brengt risico's met zich mee qua kwaliteit en compatibiliteit.
+                </p>
+              </Card>
+            </div>
 
             <p>
               Laten we elke optie in detail bekijken, zodat je precies weet wat je kunt verwachten.
@@ -392,25 +407,49 @@ const BlogLosseAirpodKwijt = () => {
 
             <p>
               Een veelgestelde vraag: werkt een losse vervangende AirPod gewoon met mijn bestaande set en case? 
-              Het antwoord is ja – mits het een origineel Apple-onderdeel is van de juiste generatie. Het 
-              koppelproces is identiek aan wat je zou doen bij een officiële Apple-vervanging.
+              Het antwoord is ja – mits het een origineel Apple-onderdeel is van de juiste generatie.
             </p>
 
-            <p><strong>Stappenplan om je nieuwe AirPod te koppelen:</strong></p>
-            <ol>
-              <li>Zorg dat je iPhone of iPad is bijgewerkt naar de laatste iOS-versie.</li>
-              <li>Plaats je bestaande AirPod en de nieuwe vervangende AirPod samen in de oplaadcase.</li>
-              <li>Sluit het deksel en wacht 30 seconden.</li>
-              <li>Open het deksel en houd de case dicht bij je iPhone.</li>
-              <li>Houd de setup-knop aan de achterkant van de case ingedrukt tot het statuslampje wit knippert.</li>
-              <li>Op je iPhone verschijnt een setup-scherm – volg de instructies.</li>
-              <li>Je AirPods zijn nu gekoppeld en klaar voor gebruik!</li>
-            </ol>
+            <Card className="p-6 my-6 bg-secondary/30">
+              <h3 className="text-lg font-semibold mb-4 flex items-center gap-2">
+                <Check className="h-5 w-5 text-primary" />
+                Stappenplan: nieuwe AirPod koppelen
+              </h3>
+              <ol className="space-y-3 mb-0">
+                <li className="flex gap-3">
+                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-primary text-primary-foreground text-sm flex items-center justify-center font-medium">1</span>
+                  <span>Zorg dat je iPhone of iPad is bijgewerkt naar de laatste iOS-versie.</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-primary text-primary-foreground text-sm flex items-center justify-center font-medium">2</span>
+                  <span>Plaats je bestaande AirPod en de nieuwe vervangende AirPod samen in de oplaadcase.</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-primary text-primary-foreground text-sm flex items-center justify-center font-medium">3</span>
+                  <span>Sluit het deksel en wacht 30 seconden.</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-primary text-primary-foreground text-sm flex items-center justify-center font-medium">4</span>
+                  <span>Open het deksel en houd de case dicht bij je iPhone.</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-primary text-primary-foreground text-sm flex items-center justify-center font-medium">5</span>
+                  <span>Houd de setup-knop ingedrukt tot het statuslampje wit knippert.</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-primary text-primary-foreground text-sm flex items-center justify-center font-medium">6</span>
+                  <span>Op je iPhone verschijnt een setup-scherm – volg de instructies.</span>
+                </li>
+              </ol>
+            </Card>
 
-            <p>
-              Het hele proces duurt meestal minder dan twee minuten. Heb je moeite met koppelen? In onze 
-              winkel in Amsterdam helpen we je graag persoonlijk.
-            </p>
+            <div className="bg-accent/50 rounded-xl p-4 my-6 flex gap-3">
+              <Lightbulb className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+              <div>
+                <p className="font-medium mb-1">Tip:</p>
+                <p className="text-sm mb-0">Het hele proces duurt meestal minder dan twee minuten. Heb je moeite met koppelen? In onze winkel in Amsterdam helpen we je graag persoonlijk.</p>
+              </div>
+            </div>
 
             {/* Sectie 10 */}
             <h2>Duurzaamheid: waarom losse vervanging beter is voor je portemonnee én het milieu</h2>
@@ -449,34 +488,35 @@ const BlogLosseAirpodKwijt = () => {
             <h2>Waarom RePairPods een logische keuze is bij een kwijtgeraakte AirPod</h2>
 
             <p>
-              Even samengevat waarom duizenden klanten voor RePairPods kiezen wanneer ze een losse AirPod nodig hebben:
+              Even samengevat waarom duizenden klanten voor RePairPods kiezen:
             </p>
 
-            <ul>
-              <li>
-                <strong>100% originele Apple-onderdelen</strong> – Geen namaak, geen compromissen op kwaliteit.
-              </li>
-              <li>
-                <strong>Specialisten in losse AirPods en oplaadcases</strong> – Dit is wat we doen. We begrijpen 
-                het probleem en bieden de oplossing.
-              </li>
-              <li>
-                <strong>Eerlijke prijzen</strong> – Vaak voordeliger dan Apple's eigen vervangingsservice.
-              </li>
-              <li>
-                <strong>Meerdere condities</strong> – Kies uit nieuw, uitstekend, goed, of gebruikt, afhankelijk 
-                van je budget.
-              </li>
-              <li>
-                <strong>Snelle levering</strong> – Vandaag besteld, morgen in huis.
-              </li>
-              <li>
-                <strong>Afhalen in Amsterdam</strong> – Persoonlijk advies en directe hulp bij koppelen.
-              </li>
-              <li>
-                <strong>Grondig getest</strong> – Elk product wordt gecontroleerd op geluid, batterij en connectiviteit.
-              </li>
-            </ul>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 my-6">
+              <div className="flex items-start gap-3 p-3 bg-muted/30 rounded-lg">
+                <Check className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                <span className="text-sm"><strong>100% originele Apple-onderdelen</strong> – Geen namaak, geen compromissen.</span>
+              </div>
+              <div className="flex items-start gap-3 p-3 bg-muted/30 rounded-lg">
+                <Check className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                <span className="text-sm"><strong>Specialisten</strong> – Dit is wat we doen. We begrijpen het probleem.</span>
+              </div>
+              <div className="flex items-start gap-3 p-3 bg-muted/30 rounded-lg">
+                <Check className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                <span className="text-sm"><strong>Eerlijke prijzen</strong> – Vaak voordeliger dan Apple.</span>
+              </div>
+              <div className="flex items-start gap-3 p-3 bg-muted/30 rounded-lg">
+                <Check className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                <span className="text-sm"><strong>Meerdere condities</strong> – Van nieuw tot budget.</span>
+              </div>
+              <div className="flex items-start gap-3 p-3 bg-muted/30 rounded-lg">
+                <Check className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                <span className="text-sm"><strong>Snelle levering</strong> – Vandaag besteld, morgen in huis.</span>
+              </div>
+              <div className="flex items-start gap-3 p-3 bg-muted/30 rounded-lg">
+                <Check className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                <span className="text-sm"><strong>Afhalen in Amsterdam</strong> – Persoonlijk advies.</span>
+              </div>
+            </div>
 
             {/* Conclusie */}
             <h2>Conclusie</h2>

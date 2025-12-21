@@ -49,5 +49,28 @@
     "goodDesc": "Light signs of use, works perfectly",
     "usedDesc": "Visible signs of use, fully functional",
     "limitedDesc": "More signs of use, budget option"
+  },
+  "conditionExplainer": {
+    "title": "What do the conditions mean?",
+    "new": {
+      "label": "New",
+      "description": "Brand new and unused product from opened Apple packaging. The product has never been worn or used and is in perfect condition, exactly as you would expect from Apple."
+    },
+    "excellent": {
+      "label": "Excellent",
+      "description": "Barely distinguishable from new. The product has been minimally used and has no or barely visible marks. Battery health 90% or higher. This is our most popular choice."
+    },
+    "good": {
+      "label": "Good",
+      "description": "Light signs of use that are not noticeable during normal use. The AirPod works 100% and has a battery health of at least 80%. Excellent value for money."
+    },
+    "used": {
+      "label": "Used",
+      "description": "Clearly visible signs of use such as small scratches or slight discoloration. The product is fully functional with a battery health of at least 70%."
+    },
+    "limited": {
+      "label": "Limited",
+      "description": "The most affordable option. Visible wear and signs of use present. The product functions properly but may have lower battery health. Perfect as a budget choice."
+    }
   }
 }

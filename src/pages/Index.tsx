@@ -15,6 +15,7 @@ import CustomerQuoteHighlight from '@/components/home/CustomerQuoteHighlight';
 import GuaranteesSection from '@/components/home/GuaranteesSection';
 import WhyChooseUs from '@/components/home/WhyChooseUs';
 import HowItWorks from '@/components/home/HowItWorks';
+import BlogPreview from '@/components/home/BlogPreview';
 import SEOContentBlock from '@/components/home/SEOContentBlock';
 const Index = () => {
   const { i18n } = useTranslation();
@@ -117,6 +118,9 @@ const Index = () => {
           
           {/* Trustpilot Reviews */}
           <TrustpilotWidget />
+          
+          {/* Blog Preview - Latest Articles */}
+          <BlogPreview />
           
           {/* Trust Badges & Payment Methods */}
           <TrustBadges />

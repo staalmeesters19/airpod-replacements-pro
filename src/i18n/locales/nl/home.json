@@ -1,4 +1,10 @@
 {
+  "blogPreview": {
+    "label": "Blog",
+    "title": "Tips & Gidsen",
+    "subtitle": "Handige artikelen over AirPods vervangen en onderhouden",
+    "viewAll": "Bekijk alle artikelen"
+  },
   "howItWorks": {
     "title": "Zo werkt het",
     "subtitle": "In 4 simpele stappen weer een complete set",

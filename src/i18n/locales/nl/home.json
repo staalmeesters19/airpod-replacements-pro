@@ -77,5 +77,50 @@
     "freeShipping": "Gratis verzending",
     "shippingSubtext": "Naar heel Nederland",
     "warrantySubtext": "Op alle producten"
+  },
+  "whyChoose": {
+    "title": "Waarom RePairPods?",
+    "subtitle": "Ontdek waarom duizenden klanten voor ons kiezen",
+    "conditions": {
+      "title": "5 conditiekeuzes",
+      "description": "Van Nieuw tot Budget – kies de prijs-kwaliteit die bij jou past"
+    },
+    "original": {
+      "title": "100% origineel Apple",
+      "description": "Gegarandeerd echte Apple onderdelen, geen namaak"
+    },
+    "warranty": {
+      "title": "Tot 1 jaar garantie",
+      "description": "Zorgeloos bestellen met uitgebreide garantie"
+    },
+    "shipping": {
+      "title": "Morgen in huis",
+      "description": "Vandaag besteld, morgen in je brievenbus"
+    },
+    "support": {
+      "title": "WhatsApp support",
+      "description": "Direct persoonlijk advies via WhatsApp of e-mail"
+    }
+  },
+  "seoContent": {
+    "title": "Losse AirPods kopen",
+    "intro": "Ben je een AirPod kwijt of is één van je oortjes kapot? Geen zorgen – bij RePairPods koop je eenvoudig losse AirPods. Of je nu een enkel oortje, een nieuwe oplaadcase of zelfs siliconen tips nodig hebt, wij bieden alles aan voor een scherpe prijs. Geen onnodige kosten voor een complete set, bij ons koop je precies wat je nodig hebt.",
+    "solution": "Bij RePairPods garanderen we uitsluitend originele Apple producten. Elk product wordt professioneel getest op functionaliteit en batterijgezondheid voordat het naar jou wordt verzonden. Zo weet je zeker dat je een betrouwbaar product ontvangt.",
+    "products": {
+      "airpods2": "Klassiek en betrouwbaar, ideaal voor dagelijks gebruik",
+      "airpods3": "Verbeterde geluidskwaliteit met ruimtelijke audio",
+      "airpodsPro1": "Premium geluid met actieve ruisonderdrukking",
+      "airpodsPro2": "Het nieuwste model met superieure ruisonderdrukking"
+    },
+    "quality": "Daarnaast bieden we als enige webshop maar liefst 5 verschillende condities aan: van nieuw tot budget. Zo bepaal jij zelf hoeveel je wilt uitgeven én welke kwaliteit het beste bij jou past. Met onze snelle verzending heb je morgen weer een complete set.",
+    "whyBuy": {
+      "title": "Waarom een losse AirPod kopen?",
+      "savings": "Een losse AirPod kopen bespaart je tot 70% ten opzichte van een complete nieuwe set. Bij Apple betaal je al snel €200+ voor nieuwe AirPods Pro, terwijl je bij ons vanaf €39 een vervangend oortje koopt. Slim, toch?",
+      "sustainability": "Daarnaast maak je een duurzame keuze. Door alleen te vervangen wat kapot of kwijt is, verminder je elektronisch afval. Wij geven producten een tweede leven en dragen zo bij aan een circulaire economie. Goed voor je portemonnee én het milieu."
+    },
+    "about": {
+      "title": "Over RePairPods",
+      "description": "RePairPods is dé specialist in losse AirPods en oplaadcases in Nederland. Voorheen bekend als Airpods-handel, helpen wij dagelijks tientallen klanten hun AirPods set weer compleet te maken. Met meer dan 360 positieve reviews op Trustpilot en een 4.9 sterren beoordeling, kun je rekenen op kwaliteit en service. Onze klantenservice staat voor je klaar via WhatsApp, e-mail of telefoon."
+    }
   }
 }

@@ -13,6 +13,8 @@ import TrustpilotWidget from '@/components/home/TrustpilotWidget';
 import TrustBadges from '@/components/home/TrustBadges';
 import CustomerQuoteHighlight from '@/components/home/CustomerQuoteHighlight';
 import GuaranteesSection from '@/components/home/GuaranteesSection';
+import WhyChooseUs from '@/components/home/WhyChooseUs';
+import SEOContentBlock from '@/components/home/SEOContentBlock';
 const Index = () => {
   const { i18n } = useTranslation();
   const location = useLocation();
@@ -106,11 +108,17 @@ const Index = () => {
           {/* Klant Quote Highlight */}
           <CustomerQuoteHighlight />
           
+          {/* Why Choose Us - SEO Section */}
+          <WhyChooseUs />
+          
           {/* Trustpilot Reviews */}
           <TrustpilotWidget />
           
           {/* Trust Badges & Payment Methods */}
           <TrustBadges />
+          
+          {/* SEO Content Block - Long-form content */}
+          <SEOContentBlock />
         </main>
 
         <Footer />

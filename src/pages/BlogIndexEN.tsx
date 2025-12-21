@@ -6,6 +6,14 @@ import { Calendar, Clock, ArrowRight } from 'lucide-react';
 
 const blogs = [
   {
+    slug: 'airpods-battery-replacement',
+    title: 'AirPods Battery Replacement: All Options and Costs Compared',
+    excerpt: 'AirPods battery dead? Discover all options: Apple battery service, buying a single AirPod, or a new set. We compare prices and find the cheapest solution.',
+    date: '2025-01-28',
+    readTime: '12 min',
+    image: '/placeholder.svg'
+  },
+  {
     slug: 'how-to-pair-airpods',
     title: 'How to pair AirPods: pairing a replacement AirPod or charging case',
     excerpt: 'Learn how to pair AirPods after replacing an earbud or case. Step-by-step guide for resetting and pairing all AirPods generations.',

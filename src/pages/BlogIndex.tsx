@@ -6,6 +6,14 @@ import { Calendar, Clock, ArrowRight } from 'lucide-react';
 
 const blogs = [
   {
+    slug: 'airpods-batterij-vervangen',
+    title: 'AirPods batterij vervangen: alle opties en kosten vergeleken',
+    excerpt: 'AirPods batterij leeg? Ontdek alle opties: Apple batterijservice, losse AirPod kopen of nieuwe set. We vergelijken prijzen en vinden de goedkoopste oplossing.',
+    date: '2025-01-28',
+    readTime: '12 min',
+    image: '/placeholder.svg'
+  },
+  {
     slug: 'airpods-opnieuw-pairen',
     title: 'AirPods opnieuw pairen: zo koppel je een vervangend oortje of oplaadcase',
     excerpt: 'Leer hoe je AirPods opnieuw koppelt na het vervangen van een oortje of case. Stap-voor-stap uitleg voor resetten en pairen van alle AirPods generaties.',

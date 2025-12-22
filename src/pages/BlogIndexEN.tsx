@@ -6,6 +6,14 @@ import { Calendar, Clock, ArrowRight } from 'lucide-react';
 
 const blogs = [
   {
+    slug: 'how-to-clean-airpods',
+    title: 'How to Clean AirPods: Complete Maintenance Guide (2024)',
+    excerpt: 'Learn how to properly clean your AirPods. Step-by-step instructions, do\'s and don\'ts, and tips for hygiene and sound quality.',
+    date: '2025-01-31',
+    readTime: '12 min',
+    image: '/placeholder.svg'
+  },
+  {
     slug: 'airpods-vs-airpods-pro',
     title: 'AirPods vs AirPods Pro: What\'s the Difference and Which Should You Choose?',
     excerpt: 'Complete comparison between AirPods and AirPods Pro. Discover differences in sound quality, noise cancelling, fit, and price.',

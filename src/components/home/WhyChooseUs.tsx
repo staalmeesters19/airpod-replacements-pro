@@ -5,7 +5,8 @@ import {
   BadgeCheck, 
   Shield, 
   Truck, 
-  MessageCircle 
+  MessageCircle,
+  RotateCcw
 } from 'lucide-react';
 
 const WhyChooseUs = () => {
@@ -39,6 +40,11 @@ const WhyChooseUs = () => {
       titleKey: 'whyChoose.support.title',
       descKey: 'whyChoose.support.description',
     },
+    {
+      icon: RotateCcw,
+      titleKey: 'whyChoose.return.title',
+      descKey: 'whyChoose.return.description',
+    },
   ];
 
   return (
@@ -55,7 +61,7 @@ const WhyChooseUs = () => {
         </div>
 
         {/* Reasons Grid - 2 cols mobile, 3 cols tablet, 5 cols desktop */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4 lg:gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 md:gap-4 lg:gap-6">
           {reasons.map((reason, index) => {
             const Icon = reason.icon;
             return (

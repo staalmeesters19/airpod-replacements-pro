@@ -6,6 +6,14 @@ import { Calendar, Clock, ArrowRight } from 'lucide-react';
 
 const blogs = [
   {
+    slug: 'airpods-schoonmaken',
+    title: 'AirPods Schoonmaken: Complete Gids voor Onderhoud (2024)',
+    excerpt: 'Leer hoe je je AirPods correct schoonmaakt. Stap-voor-stap instructies, do\'s en don\'ts, en tips voor hygiëne en geluidskwaliteit.',
+    date: '2025-01-31',
+    readTime: '12 min',
+    image: '/placeholder.svg'
+  },
+  {
     slug: 'airpods-vs-airpods-pro',
     title: 'AirPods vs AirPods Pro: Wat is het verschil en welke moet je kiezen?',
     excerpt: 'Uitgebreide vergelijking tussen AirPods en AirPods Pro. Ontdek de verschillen in geluidskwaliteit, noise cancelling, pasvorm en prijs.',

@@ -13,7 +13,7 @@ import TrustpilotWidget from '@/components/home/TrustpilotWidget';
 import TrustBadges from '@/components/home/TrustBadges';
 import CustomerQuoteHighlight from '@/components/home/CustomerQuoteHighlight';
 import GuaranteesSection from '@/components/home/GuaranteesSection';
-
+import WhyChooseUs from '@/components/home/WhyChooseUs';
 import HowItWorks from '@/components/home/HowItWorks';
 import BlogPreview from '@/components/home/BlogPreview';
 import SEOContentBlock from '@/components/home/SEOContentBlock';
@@ -112,6 +112,9 @@ const Index = () => {
           
           {/* How It Works - 4 Steps */}
           <HowItWorks />
+          
+          {/* Why Choose Us - SEO Section */}
+          <WhyChooseUs />
           
           {/* Trustpilot Reviews */}
           <TrustpilotWidget />

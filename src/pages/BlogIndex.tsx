@@ -6,6 +6,46 @@ import { Calendar, Clock, ArrowRight } from 'lucide-react';
 
 const blogs = [
   {
+    slug: 'een-airpod-werkt-niet',
+    title: 'Eén AirPod Werkt Niet? Oorzaken & Oplossingen',
+    excerpt: 'Linker of rechter AirPod werkt niet meer? Ontdek de meest voorkomende oorzaken en oplossingen. Van reset tot vervanging.',
+    date: '2025-02-05',
+    readTime: '10 min',
+    image: '/placeholder.svg'
+  },
+  {
+    slug: 'airpods-case-laadt-niet',
+    title: 'AirPods Case Laadt Niet Op? Dit Kun Je Doen',
+    excerpt: 'AirPods oplaadcase laadt niet meer op? Ontdek de oorzaken en oplossingen. Van schoonmaken tot vervanging.',
+    date: '2025-02-04',
+    readTime: '9 min',
+    image: '/placeholder.svg'
+  },
+  {
+    slug: 'airpods-waterschade',
+    title: 'AirPods Waterschade: Wat Te Doen Als Ze Nat Zijn',
+    excerpt: 'AirPods in water gevallen of door de was gegaan? Ontdek wat je direct moet doen om ze te redden.',
+    date: '2025-02-03',
+    readTime: '8 min',
+    image: '/placeholder.svg'
+  },
+  {
+    slug: 'airpods-pro-oortips',
+    title: 'AirPods Pro Oortips: Welke Maat Past Bij Jou?',
+    excerpt: 'De siliconen oortips van je AirPods Pro bepalen comfort en geluidskwaliteit. Leer hoe je de perfecte maat vindt.',
+    date: '2025-02-02',
+    readTime: '9 min',
+    image: '/placeholder.svg'
+  },
+  {
+    slug: 'airpods-reparatie-kosten',
+    title: 'AirPods Reparatie Kosten: Apple vs Alternatieven',
+    excerpt: 'Wat kost AirPods reparatie bij Apple? Vergelijk prijzen en ontdek goedkopere alternatieven.',
+    date: '2025-02-01',
+    readTime: '10 min',
+    image: '/placeholder.svg'
+  },
+  {
     slug: 'airpods-schoonmaken',
     title: 'AirPods Schoonmaken: Complete Gids voor Onderhoud (2024)',
     excerpt: 'Leer hoe je je AirPods correct schoonmaakt. Stap-voor-stap instructies, do\'s en don\'ts, en tips voor hygiëne en geluidskwaliteit.',

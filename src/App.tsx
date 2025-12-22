@@ -20,6 +20,7 @@ import BlogLosseAirpodKwijt from "./pages/BlogLosseAirpodKwijt";
 import BlogAirpodsCombineren from "./pages/BlogAirpodsCombineren";
 import BlogAirpodsOpnieuwPairen from "./pages/BlogAirpodsOpnieuwPairen";
 import BlogAirpodsBatterijVervangen from "./pages/BlogAirpodsBatterijVervangen";
+import BlogAirpodsVsAirpodsPro from "./pages/BlogAirpodsVsAirpodsPro";
 import FAQ from "./pages/FAQ";
 import FAQEN from "./pages/FAQEN";
 import Hulp from "./pages/Hulp";
@@ -73,6 +74,7 @@ const App = () => (
               <Route path="/blog/airpods-combineren-per-generatie" element={<BlogAirpodsCombineren />} />
               <Route path="/blog/airpods-opnieuw-pairen" element={<BlogAirpodsOpnieuwPairen />} />
               <Route path="/blog/airpods-batterij-vervangen" element={<BlogAirpodsBatterijVervangen />} />
+              <Route path="/blog/airpods-vs-airpods-pro" element={<BlogAirpodsVsAirpodsPro />} />
               <Route path="/faq" element={<FAQ />} />
               <Route path="/hulp" element={<Hulp />} />
               <Route path="/over-ons" element={<OverOns />} />
@@ -91,6 +93,7 @@ const App = () => (
               <Route path="/en/blog/airpods-mixing-generations" element={<BlogAirpodsCombineren />} />
               <Route path="/en/blog/airpods-re-pairing" element={<BlogAirpodsOpnieuwPairen />} />
               <Route path="/en/blog/airpods-battery-replacement" element={<BlogAirpodsBatterijVervangen />} />
+              <Route path="/en/blog/airpods-vs-airpods-pro" element={<BlogAirpodsVsAirpodsPro />} />
               <Route path="/en/faq" element={<FAQEN />} />
               <Route path="/en/help" element={<HelpEN />} />
               <Route path="/en/about-us" element={<AboutUs />} />

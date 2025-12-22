@@ -6,6 +6,14 @@ import { Calendar, Clock, ArrowRight } from 'lucide-react';
 
 const blogs = [
   {
+    slug: 'airpods-vs-airpods-pro',
+    title: 'AirPods vs AirPods Pro: Wat is het verschil en welke moet je kiezen?',
+    excerpt: 'Uitgebreide vergelijking tussen AirPods en AirPods Pro. Ontdek de verschillen in geluidskwaliteit, noise cancelling, pasvorm en prijs.',
+    date: '2025-01-30',
+    readTime: '11 min',
+    image: '/placeholder.svg'
+  },
+  {
     slug: 'airpods-batterij-vervangen',
     title: 'AirPods batterij vervangen: alle opties en kosten vergeleken',
     excerpt: 'AirPods batterij leeg? Ontdek alle opties: Apple batterijservice, losse AirPod kopen of nieuwe set. We vergelijken prijzen en vinden de goedkoopste oplossing.',

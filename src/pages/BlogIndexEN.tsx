@@ -6,6 +6,46 @@ import { Calendar, Clock, ArrowRight } from 'lucide-react';
 
 const blogs = [
   {
+    slug: 'one-airpod-not-working',
+    title: 'One AirPod Not Working? Causes & Solutions',
+    excerpt: 'Left or right AirPod not working? Discover the most common causes and solutions. From reset to replacement.',
+    date: '2025-02-05',
+    readTime: '10 min',
+    image: '/placeholder.svg'
+  },
+  {
+    slug: 'airpods-case-not-charging',
+    title: 'AirPods Case Not Charging? Here\'s What to Do',
+    excerpt: 'AirPods charging case not charging anymore? Discover the causes and solutions. From cleaning to replacement.',
+    date: '2025-02-04',
+    readTime: '9 min',
+    image: '/placeholder.svg'
+  },
+  {
+    slug: 'airpods-water-damage',
+    title: 'AirPods Water Damage: What To Do When They Get Wet',
+    excerpt: 'AirPods fell in water or went through the wash? Discover what to do immediately to save them.',
+    date: '2025-02-03',
+    readTime: '8 min',
+    image: '/placeholder.svg'
+  },
+  {
+    slug: 'airpods-pro-ear-tips',
+    title: 'AirPods Pro Ear Tips: Which Size Fits You?',
+    excerpt: 'The silicone ear tips of your AirPods Pro determine comfort and sound quality. Learn how to find the perfect size.',
+    date: '2025-02-02',
+    readTime: '9 min',
+    image: '/placeholder.svg'
+  },
+  {
+    slug: 'airpods-repair-costs',
+    title: 'AirPods Repair Costs: Apple vs Alternatives',
+    excerpt: 'What does AirPods repair cost at Apple? Compare prices and discover cheaper alternatives.',
+    date: '2025-02-01',
+    readTime: '10 min',
+    image: '/placeholder.svg'
+  },
+  {
     slug: 'how-to-clean-airpods',
     title: 'How to Clean AirPods: Complete Maintenance Guide (2024)',
     excerpt: 'Learn how to properly clean your AirPods. Step-by-step instructions, do\'s and don\'ts, and tips for hygiene and sound quality.',

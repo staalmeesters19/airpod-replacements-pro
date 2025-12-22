@@ -10,7 +10,7 @@ import MissingSide from '@/components/home/MissingSide';
 import GenerationSelector from '@/components/home/GenerationSelector';
 import CaseSelector from '@/components/home/CaseSelector';
 import TrustpilotWidget from '@/components/home/TrustpilotWidget';
-import TrustBadges from '@/components/home/TrustBadges';
+
 import CustomerQuoteHighlight from '@/components/home/CustomerQuoteHighlight';
 import GuaranteesSection from '@/components/home/GuaranteesSection';
 import WhyChooseUs from '@/components/home/WhyChooseUs';
@@ -121,9 +121,6 @@ const Index = () => {
           
           {/* Blog Preview - Latest Articles */}
           <BlogPreview />
-          
-          {/* Trust Badges & Payment Methods */}
-          <TrustBadges />
           
           {/* SEO Content Block - Long-form content */}
           <SEOContentBlock />

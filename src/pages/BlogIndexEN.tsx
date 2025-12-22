@@ -6,6 +6,14 @@ import { Calendar, Clock, ArrowRight } from 'lucide-react';
 
 const blogs = [
   {
+    slug: 'airpods-vs-airpods-pro',
+    title: 'AirPods vs AirPods Pro: What\'s the Difference and Which Should You Choose?',
+    excerpt: 'Complete comparison between AirPods and AirPods Pro. Discover differences in sound quality, noise cancelling, fit, and price.',
+    date: '2025-01-30',
+    readTime: '11 min',
+    image: '/placeholder.svg'
+  },
+  {
     slug: 'airpods-battery-replacement',
     title: 'AirPods Battery Replacement: All Options and Costs Compared',
     excerpt: 'AirPods battery dead? Discover all options: Apple battery service, buying a single AirPod, or a new set. We compare prices and find the cheapest solution.',

@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
-import { Minus, Plus, Trash2, Check, Sparkles, Cable, PenTool } from 'lucide-react';
+import { Minus, Plus, Trash2, Check, Sparkles } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 import { Badge } from '@/components/ui/badge';
@@ -7,6 +7,11 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { useCart } from '@/context/CartContext';
 import { useToast } from '@/hooks/use-toast';
+
+// Import upsell product images
+import siliconeCase from '@/assets/upsell/silicone-case.png';
+import chargingCable from '@/assets/upsell/charging-cable.png';
+import cleanerPen from '@/assets/upsell/cleaner-pen.png';
 
 // Upsell products data
 const upsellProducts = [
@@ -18,9 +23,7 @@ const upsellProducts = [
     originalPrice: 10,
     salePrice: 5,
     discount: 50,
-    icon: Sparkles,
-    color: 'bg-gradient-to-br from-pink-100 to-purple-100',
-    iconColor: 'text-purple-500',
+    image: siliconeCase,
   },
   {
     id: 'upsell-cable',
@@ -30,9 +33,7 @@ const upsellProducts = [
     originalPrice: 15,
     salePrice: 10,
     discount: 33,
-    icon: Cable,
-    color: 'bg-gradient-to-br from-blue-100 to-cyan-100',
-    iconColor: 'text-blue-500',
+    image: chargingCable,
   },
   {
     id: 'upsell-cleaner',
@@ -42,9 +43,7 @@ const upsellProducts = [
     originalPrice: 10,
     salePrice: 5,
     discount: 50,
-    icon: PenTool,
-    color: 'bg-gradient-to-br from-green-100 to-emerald-100',
-    iconColor: 'text-green-500',
+    image: cleanerPen,
   },
 ];
 
@@ -240,29 +239,31 @@ const Cart = () => {
                     </Badge>
                   </div>
                   
-                  {/* Mobile: Horizontal scroll | Desktop: Grid */}
-                  <div className="sm:grid sm:grid-cols-3 sm:gap-4 flex overflow-x-auto gap-3 pb-2 -mx-4 px-4 sm:mx-0 sm:px-0 snap-x snap-mandatory scrollbar-hide">
+                  <div className="grid grid-cols-3 gap-2 sm:gap-4">
                     {upsellProducts.map((product) => {
-                      const IconComponent = product.icon;
                       const inCart = isUpsellInCart(product.id);
                       
                       return (
                         <div 
                           key={product.id}
-                          className={`relative rounded-xl border p-3 sm:p-4 transition-all flex-shrink-0 w-[140px] sm:w-auto snap-start ${
+                          className={`relative rounded-xl border p-2 sm:p-4 transition-all ${
                             inCart 
                               ? 'border-primary/50 bg-primary/5' 
                               : 'hover:border-primary/30 hover:shadow-md bg-card'
                           }`}
                         >
                           {/* Discount Badge */}
-                          <Badge className="absolute -top-2 -right-2 bg-red-500 hover:bg-red-500 text-white text-[10px] sm:text-xs px-1.5 sm:px-2 py-0.5">
+                          <Badge className="absolute -top-1.5 -right-1.5 sm:-top-2 sm:-right-2 bg-red-500 hover:bg-red-500 text-white text-[9px] sm:text-xs px-1 sm:px-2 py-0.5">
                             -{product.discount}%
                           </Badge>
                           
-                          {/* Product Icon */}
-                          <div className={`w-12 h-12 sm:w-14 sm:h-14 rounded-lg ${product.color} flex items-center justify-center mb-2 mx-auto`}>
-                            <IconComponent className={`h-6 w-6 sm:h-7 sm:w-7 ${product.iconColor}`} />
+                          {/* Product Image */}
+                          <div className="w-full aspect-square rounded-lg bg-muted/50 overflow-hidden mb-2">
+                            <img 
+                              src={product.image} 
+                              alt={isEnglish ? product.nameEN : product.name}
+                              className="w-full h-full object-contain p-1 sm:p-2"
+                            />
                           </div>
                           
                           {/* Product Name */}
@@ -303,13 +304,6 @@ const Cart = () => {
                         </div>
                       );
                     })}
-                  </div>
-                  
-                  {/* Mobile scroll indicator */}
-                  <div className="flex justify-center gap-1 mt-2 sm:hidden">
-                    {upsellProducts.map((_, i) => (
-                      <div key={i} className="h-1 w-6 rounded-full bg-muted" />
-                    ))}
                   </div>
                 </div>
               </div>

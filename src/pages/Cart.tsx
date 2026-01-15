@@ -229,24 +229,19 @@ const Cart = () => {
                 </div>
 
                 {/* Upsell Section */}
-                <div className="mt-8 pt-8 border-t">
-                  <div className="flex items-center gap-2 mb-4">
+                <div className="mt-8 pt-6 border-t">
+                  <div className="flex flex-wrap items-center gap-2 mb-3">
                     <Sparkles className="h-5 w-5 text-primary" />
-                    <h3 className="font-semibold text-lg">
+                    <h3 className="font-semibold text-base sm:text-lg">
                       {isEnglish ? 'Complete your order' : 'Maak je bestelling compleet'}
                     </h3>
                     <Badge variant="secondary" className="bg-primary/10 text-primary text-xs">
                       {isEnglish ? 'Special offer' : 'Speciale aanbieding'}
                     </Badge>
                   </div>
-                  <p className="text-sm text-muted-foreground mb-4">
-                    {isEnglish 
-                      ? 'Add these accessories at a special discount - only with your order!'
-                      : 'Voeg deze accessoires toe met speciale korting - alleen bij je bestelling!'
-                    }
-                  </p>
                   
-                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                  {/* Mobile: Horizontal scroll | Desktop: Grid */}
+                  <div className="sm:grid sm:grid-cols-3 sm:gap-4 flex overflow-x-auto gap-3 pb-2 -mx-4 px-4 sm:mx-0 sm:px-0 snap-x snap-mandatory scrollbar-hide">
                     {upsellProducts.map((product) => {
                       const IconComponent = product.icon;
                       const inCart = isUpsellInCart(product.id);
@@ -254,33 +249,33 @@ const Cart = () => {
                       return (
                         <div 
                           key={product.id}
-                          className={`relative rounded-xl border p-4 transition-all ${
+                          className={`relative rounded-xl border p-3 sm:p-4 transition-all flex-shrink-0 w-[140px] sm:w-auto snap-start ${
                             inCart 
                               ? 'border-primary/50 bg-primary/5' 
-                              : 'hover:border-primary/30 hover:shadow-md'
+                              : 'hover:border-primary/30 hover:shadow-md bg-card'
                           }`}
                         >
                           {/* Discount Badge */}
-                          <Badge className="absolute -top-2 -right-2 bg-red-500 hover:bg-red-500 text-white text-xs px-2">
+                          <Badge className="absolute -top-2 -right-2 bg-red-500 hover:bg-red-500 text-white text-[10px] sm:text-xs px-1.5 sm:px-2 py-0.5">
                             -{product.discount}%
                           </Badge>
                           
                           {/* Product Icon */}
-                          <div className={`w-16 h-16 rounded-lg ${product.color} flex items-center justify-center mb-3 mx-auto`}>
-                            <IconComponent className={`h-8 w-8 ${product.iconColor}`} />
+                          <div className={`w-12 h-12 sm:w-14 sm:h-14 rounded-lg ${product.color} flex items-center justify-center mb-2 mx-auto`}>
+                            <IconComponent className={`h-6 w-6 sm:h-7 sm:w-7 ${product.iconColor}`} />
                           </div>
                           
                           {/* Product Name */}
-                          <h4 className="font-medium text-sm text-center mb-2 line-clamp-2">
+                          <h4 className="font-medium text-xs sm:text-sm text-center mb-1.5 line-clamp-2 leading-tight">
                             {isEnglish ? product.nameEN : product.name}
                           </h4>
                           
                           {/* Pricing */}
-                          <div className="flex items-center justify-center gap-2 mb-3">
-                            <span className="text-muted-foreground line-through text-sm">
+                          <div className="flex items-center justify-center gap-1.5 mb-2">
+                            <span className="text-muted-foreground line-through text-xs">
                               {formatPrice(product.originalPrice)}
                             </span>
-                            <span className="text-primary font-bold text-lg">
+                            <span className="text-primary font-bold text-sm sm:text-base">
                               {formatPrice(product.salePrice)}
                             </span>
                           </div>
@@ -289,18 +284,18 @@ const Cart = () => {
                           <Button
                             variant={inCart ? "secondary" : "default"}
                             size="sm"
-                            className="w-full"
+                            className="w-full h-8 text-xs sm:text-sm"
                             onClick={() => handleAddUpsell(product)}
                             disabled={inCart}
                           >
                             {inCart ? (
                               <>
-                                <Check className="h-4 w-4 mr-1" />
+                                <Check className="h-3 w-3 sm:h-4 sm:w-4 mr-1" />
                                 {isEnglish ? 'Added' : 'Toegevoegd'}
                               </>
                             ) : (
                               <>
-                                <Plus className="h-4 w-4 mr-1" />
+                                <Plus className="h-3 w-3 sm:h-4 sm:w-4 mr-1" />
                                 {isEnglish ? 'Add' : 'Toevoegen'}
                               </>
                             )}
@@ -308,6 +303,13 @@ const Cart = () => {
                         </div>
                       );
                     })}
+                  </div>
+                  
+                  {/* Mobile scroll indicator */}
+                  <div className="flex justify-center gap-1 mt-2 sm:hidden">
+                    {upsellProducts.map((_, i) => (
+                      <div key={i} className="h-1 w-6 rounded-full bg-muted" />
+                    ))}
                   </div>
                 </div>
               </div>

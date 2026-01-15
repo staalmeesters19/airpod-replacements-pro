@@ -1,21 +1,98 @@
 import { Link, useLocation } from 'react-router-dom';
-import { Minus, Plus, Trash2, ArrowRight } from 'lucide-react';
+import { Minus, Plus, Trash2, Check, Sparkles, Cable, PenTool } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
+import { Badge } from '@/components/ui/badge';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { useCart } from '@/context/CartContext';
+import { useToast } from '@/hooks/use-toast';
+
+// Upsell products data
+const upsellProducts = [
+  {
+    id: 'upsell-case',
+    slug: 'airpods-silicone-case',
+    name: 'Siliconen AirPods Hoesje',
+    nameEN: 'Silicone AirPods Case',
+    originalPrice: 10,
+    salePrice: 5,
+    discount: 50,
+    icon: Sparkles,
+    color: 'bg-gradient-to-br from-pink-100 to-purple-100',
+    iconColor: 'text-purple-500',
+  },
+  {
+    id: 'upsell-cable',
+    slug: 'charging-cable',
+    name: 'Oplaadkabel',
+    nameEN: 'Charging Cable',
+    originalPrice: 15,
+    salePrice: 10,
+    discount: 33,
+    icon: Cable,
+    color: 'bg-gradient-to-br from-blue-100 to-cyan-100',
+    iconColor: 'text-blue-500',
+  },
+  {
+    id: 'upsell-cleaner',
+    slug: 'airpods-cleaner-pen',
+    name: 'AirPods Cleanerpen',
+    nameEN: 'AirPods Cleaner Pen',
+    originalPrice: 10,
+    salePrice: 5,
+    discount: 50,
+    icon: PenTool,
+    color: 'bg-gradient-to-br from-green-100 to-emerald-100',
+    iconColor: 'text-green-500',
+  },
+];
 
 const Cart = () => {
-  const { items, removeItem, updateQuantity, totalPrice } = useCart();
+  const { items, removeItem, updateQuantity, totalPrice, addItem } = useCart();
   const location = useLocation();
   const isEnglish = location.pathname.startsWith('/en');
+  const { toast } = useToast();
 
   const formatPrice = (price: number) => {
     return new Intl.NumberFormat('nl-NL', {
       style: 'currency',
       currency: 'EUR',
     }).format(price);
+  };
+
+  const handleAddUpsell = (product: typeof upsellProducts[0]) => {
+    // Check if already in cart
+    const alreadyInCart = items.some(item => item.productId === product.id);
+    if (alreadyInCart) {
+      toast({
+        title: isEnglish ? 'Already in cart' : 'Al in winkelwagen',
+        description: isEnglish 
+          ? 'This product is already in your cart'
+          : 'Dit product zit al in je winkelwagen',
+      });
+      return;
+    }
+
+    addItem({
+      productId: product.id,
+      productSlug: product.slug,
+      productName: isEnglish ? product.nameEN : product.name,
+      condition: 'nieuw',
+      price: product.salePrice,
+      image: '', // No image for upsell items
+    });
+
+    toast({
+      title: isEnglish ? 'Added!' : 'Toegevoegd!',
+      description: isEnglish 
+        ? `${product.nameEN} has been added to your cart`
+        : `${product.name} is toegevoegd aan je winkelwagen`,
+    });
+  };
+
+  const isUpsellInCart = (productId: string) => {
+    return items.some(item => item.productId === productId);
   };
 
   return (
@@ -149,6 +226,89 @@ const Cart = () => {
                       </div>
                     </div>
                   ))}
+                </div>
+
+                {/* Upsell Section */}
+                <div className="mt-8 pt-8 border-t">
+                  <div className="flex items-center gap-2 mb-4">
+                    <Sparkles className="h-5 w-5 text-primary" />
+                    <h3 className="font-semibold text-lg">
+                      {isEnglish ? 'Complete your order' : 'Maak je bestelling compleet'}
+                    </h3>
+                    <Badge variant="secondary" className="bg-primary/10 text-primary text-xs">
+                      {isEnglish ? 'Special offer' : 'Speciale aanbieding'}
+                    </Badge>
+                  </div>
+                  <p className="text-sm text-muted-foreground mb-4">
+                    {isEnglish 
+                      ? 'Add these accessories at a special discount - only with your order!'
+                      : 'Voeg deze accessoires toe met speciale korting - alleen bij je bestelling!'
+                    }
+                  </p>
+                  
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    {upsellProducts.map((product) => {
+                      const IconComponent = product.icon;
+                      const inCart = isUpsellInCart(product.id);
+                      
+                      return (
+                        <div 
+                          key={product.id}
+                          className={`relative rounded-xl border p-4 transition-all ${
+                            inCart 
+                              ? 'border-primary/50 bg-primary/5' 
+                              : 'hover:border-primary/30 hover:shadow-md'
+                          }`}
+                        >
+                          {/* Discount Badge */}
+                          <Badge className="absolute -top-2 -right-2 bg-red-500 hover:bg-red-500 text-white text-xs px-2">
+                            -{product.discount}%
+                          </Badge>
+                          
+                          {/* Product Icon */}
+                          <div className={`w-16 h-16 rounded-lg ${product.color} flex items-center justify-center mb-3 mx-auto`}>
+                            <IconComponent className={`h-8 w-8 ${product.iconColor}`} />
+                          </div>
+                          
+                          {/* Product Name */}
+                          <h4 className="font-medium text-sm text-center mb-2 line-clamp-2">
+                            {isEnglish ? product.nameEN : product.name}
+                          </h4>
+                          
+                          {/* Pricing */}
+                          <div className="flex items-center justify-center gap-2 mb-3">
+                            <span className="text-muted-foreground line-through text-sm">
+                              {formatPrice(product.originalPrice)}
+                            </span>
+                            <span className="text-primary font-bold text-lg">
+                              {formatPrice(product.salePrice)}
+                            </span>
+                          </div>
+                          
+                          {/* Add Button */}
+                          <Button
+                            variant={inCart ? "secondary" : "default"}
+                            size="sm"
+                            className="w-full"
+                            onClick={() => handleAddUpsell(product)}
+                            disabled={inCart}
+                          >
+                            {inCart ? (
+                              <>
+                                <Check className="h-4 w-4 mr-1" />
+                                {isEnglish ? 'Added' : 'Toegevoegd'}
+                              </>
+                            ) : (
+                              <>
+                                <Plus className="h-4 w-4 mr-1" />
+                                {isEnglish ? 'Add' : 'Toevoegen'}
+                              </>
+                            )}
+                          </Button>
+                        </div>
+                      );
+                    })}
+                  </div>
                 </div>
               </div>
 

@@ -165,8 +165,15 @@ const CartDrawer = ({ open, onOpenChange }: CartDrawerProps) => {
 
               {/* Actions */}
               <div className="space-y-2">
-                <Button className="w-full" size="lg">
-                  {isEnglish ? 'Checkout' : 'Afrekenen'}
+                <Button 
+                  className="w-full" 
+                  size="lg" 
+                  asChild
+                  onClick={() => onOpenChange(false)}
+                >
+                  <Link to={isEnglish ? '/en/checkout' : '/checkout'}>
+                    {isEnglish ? 'Checkout' : 'Afrekenen'}
+                  </Link>
                 </Button>
                 <Button
                   variant="outline"

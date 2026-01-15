@@ -33,6 +33,7 @@ import Hulp from "./pages/Hulp";
 import HelpEN from "./pages/HelpEN";
 import OverOns from "./pages/OverOns";
 import AboutUs from "./pages/AboutUs";
+import Checkout from "./pages/Checkout";
 import NotFound from "./pages/NotFound";
 import WhatsAppWidget from "./components/layout/WhatsAppWidget";
 import ScrollToTop from "./components/layout/ScrollToTop";
@@ -90,6 +91,7 @@ const App = () => (
               <Route path="/faq" element={<FAQ />} />
               <Route path="/hulp" element={<Hulp />} />
               <Route path="/over-ons" element={<OverOns />} />
+              <Route path="/checkout" element={<Checkout />} />
 
               {/* English routes */}
               <Route path="/en" element={<Index />} />
@@ -116,6 +118,7 @@ const App = () => (
               <Route path="/en/help" element={<HelpEN />} />
               <Route path="/en/about-us" element={<AboutUs />} />
               <Route path="/en/which-airpods-do-i-have" element={<WelkeAirPods />} />
+              <Route path="/en/checkout" element={<Checkout />} />
               
               {/* Catch-all */}
               <Route path="*" element={<NotFound />} />

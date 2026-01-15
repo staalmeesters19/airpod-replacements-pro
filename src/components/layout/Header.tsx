@@ -11,14 +11,12 @@ import {
 } from '@/components/ui/dropdown-menu';
 import USPStrip from './USPStrip';
 import LanguageSwitcher from './LanguageSwitcher';
-import CartDrawer from './CartDrawer';
 import { useCart } from '@/context/CartContext';
 import { useTranslation } from 'react-i18next';
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [expandedMobileMenu, setExpandedMobileMenu] = useState<string | null>(null);
-  const [cartOpen, setCartOpen] = useState(false);
   const { totalItems } = useCart();
   const { t } = useTranslation(['nav', 'common']);
   const location = useLocation();
@@ -158,17 +156,17 @@ const Header = () => {
                 variant="ghost" 
                 size="icon" 
                 className="relative"
-                onClick={() => setCartOpen(true)}
+                asChild
               >
-                <ShoppingCart className="h-5 w-5" />
-                {totalItems > 0 && (
-                  <span className="absolute -top-1 -right-1 h-5 w-5 rounded-full bg-primary text-primary-foreground text-xs flex items-center justify-center animate-in zoom-in duration-200">
-                    {totalItems > 99 ? '99+' : totalItems}
-                  </span>
-                )}
+                <Link to={isEnglish ? '/en/cart' : '/winkelwagen'}>
+                  <ShoppingCart className="h-5 w-5" />
+                  {totalItems > 0 && (
+                    <span className="absolute -top-1 -right-1 h-5 w-5 rounded-full bg-primary text-primary-foreground text-xs flex items-center justify-center animate-in zoom-in duration-200">
+                      {totalItems > 99 ? '99+' : totalItems}
+                    </span>
+                  )}
+                </Link>
               </Button>
-
-              <CartDrawer open={cartOpen} onOpenChange={setCartOpen} />
 
               {/* Mobile menu button */}
               <Button

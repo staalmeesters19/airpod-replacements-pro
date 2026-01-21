@@ -18,8 +18,10 @@ const upsellProducts = [
   {
     id: 'upsell-case',
     slug: 'airpods-silicone-case',
-    name: 'Siliconen AirPods Hoesje',
-    nameEN: 'Silicone AirPods Case',
+    name: 'Siliconen Hoesje',
+    nameEN: 'Silicone Case',
+    benefit: 'Beschermt tegen krassen & vallen',
+    benefitEN: 'Protects against scratches & drops',
     originalPrice: 10,
     salePrice: 5,
     discount: 50,
@@ -30,6 +32,8 @@ const upsellProducts = [
     slug: 'charging-cable',
     name: 'Oplaadkabel',
     nameEN: 'Charging Cable',
+    benefit: 'Altijd een reserve bij de hand',
+    benefitEN: 'Always have a spare ready',
     originalPrice: 15,
     salePrice: 10,
     discount: 33,
@@ -38,8 +42,10 @@ const upsellProducts = [
   {
     id: 'upsell-cleaner',
     slug: 'airpods-cleaner-pen',
-    name: 'AirPods Cleanerpen',
-    nameEN: 'AirPods Cleaner Pen',
+    name: 'Cleanerpen',
+    nameEN: 'Cleaner Pen',
+    benefit: 'Schonere oortjes = beter geluid',
+    benefitEN: 'Cleaner AirPods = better sound',
     originalPrice: 10,
     salePrice: 5,
     discount: 50,
@@ -266,10 +272,13 @@ const Cart = () => {
                             />
                           </div>
                           
-                          {/* Product Name */}
-                          <h4 className="font-medium text-xs sm:text-sm text-center mb-1.5 line-clamp-2 leading-tight">
+                          {/* Product Name & Benefit */}
+                          <h4 className="font-medium text-xs sm:text-sm text-center mb-0.5 line-clamp-1 leading-tight">
                             {isEnglish ? product.nameEN : product.name}
                           </h4>
+                          <p className="text-[10px] sm:text-xs text-muted-foreground text-center mb-1.5 line-clamp-2 leading-tight">
+                            {isEnglish ? product.benefitEN : product.benefit}
+                          </p>
                           
                           {/* Pricing */}
                           <div className="flex items-center justify-center gap-1.5 mb-2">

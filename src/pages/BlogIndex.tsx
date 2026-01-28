@@ -87,7 +87,7 @@ const blogs = [
   },
   {
     slug: 'losse-airpod-kwijt-vervangen',
-    title: 'Losse AirPod kwijt? Dit is de goedkoopste manier om hem te vervangen (Apple vs. RePairPods)',
+    title: 'Losse AirPod kwijt? Dit is de goedkoopste manier om hem te vervangen (Apple vs. Earbud restore)',
     excerpt: 'Eén AirPod kwijt? Ontdek alle opties om je losse AirPod te vervangen: van een nieuwe set tot een originele losse AirPod. We vergelijken prijzen en kwaliteit.',
     date: '2025-01-20',
     readTime: '10 min',
@@ -107,9 +107,9 @@ const BlogIndex = () => {
   return (
     <>
       <Helmet>
-        <title>Blog | RePairPods - Tips & Gidsen voor AirPods</title>
+        <title>Blog | Earbud restore - Tips & Gidsen voor AirPods</title>
         <meta name="description" content="Lees onze blogs over AirPods: modelnummers herkennen, generaties vergelijken, en tips voor het vervangen van losse AirPods en oplaadcases." />
-        <link rel="canonical" href="https://repairpods.nl/blog" />
+        <link rel="canonical" href="https://earbudrestore.nl/blog" />
       </Helmet>
 
       <Header />

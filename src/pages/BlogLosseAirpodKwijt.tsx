@@ -14,10 +14,10 @@ import { Card } from '@/components/ui/card';
 const faqItems = [
   {
     question: 'Kan ik een losse AirPod kopen zonder nieuwe case?',
-    answer: 'Ja, bij RePairPods kun je een losse linker of rechter AirPod kopen zonder dat je een nieuwe oplaadcase nodig hebt. Je bestaande case werkt gewoon met de vervangende AirPod, mits deze van dezelfde generatie is.',
+    answer: 'Ja, bij Earbud restore kun je een losse linker of rechter AirPod kopen zonder dat je een nieuwe oplaadcase nodig hebt. Je bestaande case werkt gewoon met de vervangende AirPod, mits deze van dezelfde generatie is.',
   },
   {
-    question: 'Is een losse AirPod van RePairPods origineel?',
+    question: 'Is een losse AirPod van Earbud restore origineel?',
     answer: 'Absoluut. Alle AirPods die wij verkopen zijn 100% originele Apple-onderdelen. We testen elk product op geluidskwaliteit, batterijcapaciteit en Bluetooth-connectiviteit voordat we het versturen.',
   },
   {
@@ -30,7 +30,7 @@ const faqItems = [
   },
   {
     question: 'Hoe snel ontvang ik mijn losse AirPod?',
-    answer: 'Bij RePairPods geldt: vandaag besteld, morgen in huis. Je kunt ook kiezen voor afhalen in onze winkel in Amsterdam, waar we je direct kunnen helpen met koppelen.',
+    answer: 'Bij Earbud restore geldt: vandaag besteld, morgen in huis. Je kunt ook kiezen voor afhalen in onze winkel in Amsterdam, waar we je direct kunnen helpen met koppelen.',
   },
   {
     question: 'Krijg ik garantie op een losse AirPod?',
@@ -55,13 +55,13 @@ const BlogLosseAirpodKwijt = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Helmet>
-        <title>Losse AirPod kwijt? Dit is de goedkoopste manier om hem te vervangen | RePairPods</title>
+        <title>Losse AirPod kwijt? Dit is de goedkoopste manier om hem te vervangen | Earbud restore</title>
         <meta
           name="description"
-          content="Eén AirPod kwijt? Ontdek de goedkoopste manier om je losse AirPod te vervangen. Vergelijk Apple, RePairPods en andere opties. 100% origineel, snel geleverd."
+          content="Eén AirPod kwijt? Ontdek de goedkoopste manier om je losse AirPod te vervangen. Vergelijk Apple, Earbud restore en andere opties. 100% origineel, snel geleverd."
         />
         <meta name="keywords" content="losse airpod kwijt, airpod kwijt wat nu, losse airpod vervangen, goedkoop airpod vervangen, airpod verloren, airpods vervangen" />
-        <link rel="canonical" href="https://repairpods.nl/blog/losse-airpod-kwijt-vervangen" />
+        <link rel="canonical" href="https://earbudrestore.nl/blog/losse-airpod-kwijt-vervangen" />
         <script type="application/ld+json">
           {JSON.stringify(faqSchema)}
         </script>

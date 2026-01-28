@@ -87,7 +87,7 @@ const blogs = [
   },
   {
     slug: 'lost-single-airpod-replacement',
-    title: 'Lost a single AirPod? The cheapest way to replace it (Apple vs. RePairPods)',
+    title: 'Lost a single AirPod? The cheapest way to replace it (Apple vs. Earbud restore)',
     excerpt: 'Lost one AirPod? Discover all options to replace your single AirPod: from a new set to an original single AirPod. We compare prices and quality.',
     date: '2025-01-20',
     readTime: '10 min',
@@ -107,9 +107,9 @@ const BlogIndexEN = () => {
   return (
     <>
       <Helmet>
-        <title>Blog | RePairPods - Tips & Guides for AirPods</title>
+        <title>Blog | Earbud restore - Tips & Guides for AirPods</title>
         <meta name="description" content="Read our blogs about AirPods: identifying model numbers, comparing generations, and tips for replacing single AirPods and charging cases." />
-        <link rel="canonical" href="https://repairpods.nl/en/blog" />
+        <link rel="canonical" href="https://earbudrestore.nl/en/blog" />
         <html lang="en" />
       </Helmet>
 

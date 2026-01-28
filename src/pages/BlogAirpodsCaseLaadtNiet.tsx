@@ -246,7 +246,7 @@ const BlogAirpodsCaseLaadtNiet = () => {
         <title>{t.metaTitle}</title>
         <meta name="description" content={t.metaDescription} />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href={`https://repairpods.nl${isNL ? '/blog/airpods-case-laadt-niet' : '/en/blog/airpods-case-not-charging'}`} />
+        <link rel="canonical" href={`https://earbudrestore.nl${isNL ? '/blog/airpods-case-laadt-niet' : '/en/blog/airpods-case-not-charging'}`} />
         <meta property="og:title" content={t.metaTitle} />
         <meta property="og:description" content={t.metaDescription} />
         <meta property="og:type" content="article" />

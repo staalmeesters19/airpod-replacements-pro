@@ -57,11 +57,11 @@ const articleSchema = {
   "description": "Ontdek welk AirPods-model je hebt aan de hand van modelnummers. Complete gids voor alle generaties AirPods en AirPods Pro.",
   "author": {
     "@type": "Organization",
-    "name": "RePairPods"
+    "name": "Earbud restore"
   },
   "publisher": {
     "@type": "Organization",
-    "name": "RePairPods"
+    "name": "Earbud restore"
   },
   "datePublished": "2024-01-15",
   "dateModified": "2024-01-15"
@@ -71,9 +71,9 @@ const BlogWelkeAirpods = () => {
   return (
     <>
       <Helmet>
-        <title>Welke AirPods heb ik? De complete gids voor modelnummers en generaties | RePairPods</title>
+        <title>Welke AirPods heb ik? De complete gids voor modelnummers en generaties | Earbud restore</title>
         <meta name="description" content="Ontdek welk AirPods-model je hebt aan de hand van modelnummers. Complete gids voor AirPods 1, 2, 3, 4, Pro 1 en Pro 2. Vind je generatie en bestel het juiste onderdeel." />
-        <link rel="canonical" href="https://repairpods.nl/blog/welke-airpods-heb-ik" />
+        <link rel="canonical" href="https://earbudrestore.nl/blog/welke-airpods-heb-ik" />
         <meta name="keywords" content="welke airpods heb ik, airpods model bepalen, welke generatie airpods, modelnummer airpods, airpods generatie herkennen" />
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
@@ -119,7 +119,7 @@ const BlogWelkeAirpods = () => {
               </p>
 
               <p className="mb-8">
-                Bij RePairPods zijn we gespecialiseerd in losse AirPods en oplaadcases. We leveren uitsluitend 100% originele 
+                Bij Earbud restore zijn we gespecialiseerd in losse AirPods en oplaadcases. We leveren uitsluitend 100% originele 
                 Apple-onderdelen, zorgvuldig getest op geluid, batterij en connectie. In deze uitgebreide gids leggen we stap 
                 voor stap uit hoe je achterhaalt welke AirPods je hebt, wat de verschillen zijn tussen de generaties, en hoe 
                 je het juiste vervangende onderdeel kiest.

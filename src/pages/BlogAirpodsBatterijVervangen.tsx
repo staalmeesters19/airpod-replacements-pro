@@ -26,7 +26,7 @@ const faqItemsNL = [
   },
   {
     question: "Is een losse AirPod kopen goedkoper dan batterijvervanging?",
-    answer: "Ja, bij RePairPods koop je een losse AirPod vanaf €44,95, wat aanzienlijk goedkoper is dan de €89 die Apple rekent voor batterijservice. Bovendien krijg je een AirPod met verse batterij."
+    answer: "Ja, bij Earbud restore koop je een losse AirPod vanaf €44,95, wat aanzienlijk goedkoper is dan de €89 die Apple rekent voor batterijservice. Bovendien krijg je een AirPod met verse batterij."
   },
   {
     question: "Hoe weet ik of mijn AirPods-batterij slecht is?",
@@ -34,7 +34,7 @@ const faqItemsNL = [
   },
   {
     question: "Kan ik een nieuwe oplaadcase kopen als alleen de case-batterij slecht is?",
-    answer: "Ja, bij RePairPods verkopen we losse oplaadcases voor alle AirPods-generaties. Dit is vaak de beste oplossing als je oortjes nog goed werken maar de case niet meer oplaadt. Een losse case kost tussen de €49,95 en €79,95."
+    answer: "Ja, bij Earbud restore verkopen we losse oplaadcases voor alle AirPods-generaties. Dit is vaak de beste oplossing als je oortjes nog goed werken maar de case niet meer oplaadt. Een losse case kost tussen de €49,95 en €79,95."
   }
 ];
 
@@ -53,7 +53,7 @@ const faqItemsEN = [
   },
   {
     question: "Is buying a single AirPod cheaper than battery replacement?",
-    answer: "Yes, at RePairPods you can buy a single AirPod from €44.95, which is significantly cheaper than the €89 Apple charges for battery service. Plus, you get an AirPod with a fresh battery."
+    answer: "Yes, at Earbud restore you can buy a single AirPod from €44.95, which is significantly cheaper than the €89 Apple charges for battery service. Plus, you get an AirPod with a fresh battery."
   },
   {
     question: "How do I know if my AirPods battery is bad?",
@@ -61,7 +61,7 @@ const faqItemsEN = [
   },
   {
     question: "Can I buy a new charging case if only the case battery is bad?",
-    answer: "Yes, at RePairPods we sell loose charging cases for all AirPods generations. This is often the best solution if your earbuds still work well but the case no longer charges. A loose case costs between €49.95 and €79.95."
+    answer: "Yes, at Earbud restore we sell loose charging cases for all AirPods generations. This is often the best solution if your earbuds still work well but the case no longer charges. A loose case costs between €49.95 and €79.95."
   }
 ];
 
@@ -95,11 +95,11 @@ const BlogAirpodsBatterijVervangen = () => {
       : "Complete gids voor AirPods batterij vervangen. Vergelijk prijzen bij Apple vs een losse AirPod kopen. Vind de goedkoopste oplossing voor je AirPods.",
     "author": {
       "@type": "Organization",
-      "name": "RePairPods"
+      "name": "Earbud restore"
     },
     "publisher": {
       "@type": "Organization",
-      "name": "RePairPods"
+      "name": "Earbud restore"
     },
     "datePublished": "2025-01-28",
     "dateModified": "2025-01-28"
@@ -128,9 +128,9 @@ const BlogAirpodsBatterijVervangen = () => {
     return (
       <>
         <Helmet>
-          <title>AirPods Battery Replacement: All Options and Costs Compared | RePairPods</title>
+          <title>AirPods Battery Replacement: All Options and Costs Compared | Earbud restore</title>
           <meta name="description" content="AirPods battery dead? Discover all options: Apple battery service, buying a single AirPod, or a new set. We compare prices and find the cheapest solution." />
-          <link rel="canonical" href="https://repairpods.nl/en/blog/airpods-battery-replacement" />
+          <link rel="canonical" href="https://earbudrestore.nl/en/blog/airpods-battery-replacement" />
           <meta name="keywords" content="airpods battery replacement, airpods battery dead, replace airpods battery, airpods battery life, airpods battery cost" />
           <html lang="en" />
           <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
@@ -277,12 +277,12 @@ const BlogAirpodsBatterijVervangen = () => {
                 </div>
 
                 <h2 className="text-2xl md:text-3xl font-semibold text-foreground mt-12 mb-6">
-                  Option 2: Buy a Single AirPod at RePairPods
+                  Option 2: Buy a Single AirPod at Earbud restore
                 </h2>
 
                 <p className="mb-4">
                   The smarter alternative: buy a <Link to={links.losseAirpods} className="text-primary hover:underline">single original AirPod</Link>{' '}
-                  with a fresh battery. At RePairPods, we offer 100% original Apple AirPods, thoroughly 
+                  with a fresh battery. At Earbud restore, we offer 100% original Apple AirPods, thoroughly 
                   tested for sound, battery, and connectivity.
                 </p>
 
@@ -291,7 +291,7 @@ const BlogAirpodsBatterijVervangen = () => {
                     <thead>
                       <tr className="border-b border-border">
                         <th className="text-left py-3 px-4 font-semibold text-foreground">Model</th>
-                        <th className="text-left py-3 px-4 font-semibold text-foreground">Price at RePairPods</th>
+                        <th className="text-left py-3 px-4 font-semibold text-foreground">Price at Earbud restore</th>
                         <th className="text-left py-3 px-4 font-semibold text-foreground">Savings vs Apple</th>
                       </tr>
                     </thead>
@@ -494,7 +494,7 @@ const BlogAirpodsBatterijVervangen = () => {
                 </p>
 
                 <ul className="list-disc pl-6 mb-6 space-y-2">
-                  <li><strong>1 AirPod with poor battery:</strong> Buy a <Link to={links.losseAirpods} className="text-primary hover:underline">single AirPod</Link> at RePairPods – saves up to €44</li>
+                  <li><strong>1 AirPod with poor battery:</strong> Buy a <Link to={links.losseAirpods} className="text-primary hover:underline">single AirPod</Link> at Earbud restore – saves up to €44</li>
                   <li><strong>Case battery dead:</strong> Buy a <Link to={links.losseOplaadcases} className="text-primary hover:underline">single charging case</Link> – saves up to €39</li>
                   <li><strong>Both earbuds worn:</strong> Buy 2 single AirPods – still cheaper than Apple</li>
                   <li><strong>Everything worn + want to upgrade:</strong> Consider a new set of the latest generation</li>
@@ -564,9 +564,9 @@ const BlogAirpodsBatterijVervangen = () => {
   return (
     <>
       <Helmet>
-        <title>AirPods batterij vervangen: alle opties en kosten vergeleken | RePairPods</title>
+        <title>AirPods batterij vervangen: alle opties en kosten vergeleken | Earbud restore</title>
         <meta name="description" content="AirPods batterij leeg? Ontdek alle opties: Apple batterijservice, losse AirPod kopen of nieuwe set. We vergelijken prijzen en vinden de goedkoopste oplossing." />
-        <link rel="canonical" href="https://repairpods.nl/blog/airpods-batterij-vervangen" />
+        <link rel="canonical" href="https://earbudrestore.nl/blog/airpods-batterij-vervangen" />
         <meta name="keywords" content="airpods batterij vervangen, airpods batterij leeg, airpods accu vervangen, airpods batterijduur, airpods batterij kosten" />
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>

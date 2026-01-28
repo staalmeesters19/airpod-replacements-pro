@@ -55,13 +55,13 @@ const BlogAirpodsCombineren = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Helmet>
-        <title>Werkt een nieuwe losse AirPod met mijn oude oortje? | RePairPods</title>
+        <title>Werkt een nieuwe losse AirPod met mijn oude oortje? | Earbud restore</title>
         <meta
           name="description"
           content="Ontdek of een nieuwe losse AirPod werkt met je oude oortje. Alles over AirPods combineren per generatie, compatibiliteit en het koppelen van vervangende AirPods."
         />
         <meta name="keywords" content="werkt losse airpod met oude airpod, losse airpod combineren, nieuwe airpod met oude set, airpods combineren per generatie, airpods compatibiliteit" />
-        <link rel="canonical" href="https://repairpods.nl/blog/airpods-combineren-per-generatie" />
+        <link rel="canonical" href="https://earbudrestore.nl/blog/airpods-combineren-per-generatie" />
         <script type="application/ld+json">
           {JSON.stringify(faqSchema)}
         </script>
@@ -333,7 +333,7 @@ const BlogAirpodsCombineren = () => {
               <Lightbulb className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
               <div>
                 <p className="font-medium mb-1">Twijfel je?</p>
-                <p className="text-sm mb-0"><strong>Bij RePairPods leveren we altijd de juiste generatie</strong> wanneer je correct kiest op onze website. Neem contact met ons op – we helpen je graag.</p>
+                <p className="text-sm mb-0"><strong>Bij Earbud restore leveren we altijd de juiste generatie</strong> wanneer je correct kiest op onze website. Neem contact met ons op – we helpen je graag.</p>
               </div>
             </div>
 
@@ -521,7 +521,7 @@ const BlogAirpodsCombineren = () => {
                   <strong>Mogelijke oorzaak:</strong> De vervangende AirPod is van een verkeerde generatie, of het is geen origineel Apple-product.
                 </p>
                 <p className="text-sm mb-0">
-                  <strong>Oplossing:</strong> Controleer nogmaals of de generaties overeenkomen. Bij RePairPods krijg je gegarandeerd originele onderdelen van de juiste generatie.
+                  <strong>Oplossing:</strong> Controleer nogmaals of de generaties overeenkomen. Bij Earbud restore krijg je gegarandeerd originele onderdelen van de juiste generatie.
                 </p>
               </Card>
             </div>
@@ -679,7 +679,7 @@ const BlogAirpodsCombineren = () => {
             </p>
 
             <p>
-              Bij RePairPods maken we het je gemakkelijk: selecteer je generatie, kies links of rechts, 
+              Bij Earbud restore maken we het je gemakkelijk: selecteer je generatie, kies links of rechts, 
               en ontvang morgen je vervangende AirPod. 100% origineel, getest, en klaar om te koppelen 
               met je bestaande set.
             </p>

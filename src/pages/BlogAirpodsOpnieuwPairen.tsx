@@ -55,13 +55,13 @@ const BlogAirpodsOpnieuwPairen = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Helmet>
-        <title>AirPods opnieuw pairen: zo koppel je een vervangend oortje of oplaadcase | RePairPods</title>
+        <title>AirPods opnieuw pairen: zo koppel je een vervangend oortje of oplaadcase | Earbud restore</title>
         <meta
           name="description"
           content="Leer hoe je AirPods opnieuw koppelt na het vervangen van een oortje of case. Stap-voor-stap uitleg voor resetten en pairen van alle AirPods generaties."
         />
         <meta name="keywords" content="airpods opnieuw pairen, airpods opnieuw koppelen, losse airpod koppelen, airpods resetten en verbinden, airpods verbinden met iphone" />
-        <link rel="canonical" href="https://repairpods.nl/blog/airpods-opnieuw-pairen" />
+        <link rel="canonical" href="https://earbudrestore.nl/blog/airpods-opnieuw-pairen" />
         <script type="application/ld+json">
           {JSON.stringify(faqSchema)}
         </script>
@@ -117,7 +117,7 @@ const BlogAirpodsOpnieuwPairen = () => {
             </p>
 
             <p>
-              Bij <strong>RePairPods</strong> zijn we gespecialiseerd in{' '}
+              Bij <strong>Earbud restore</strong> zijn we gespecialiseerd in{' '}
               <Link to="/losse-airpods" className="text-primary hover:underline">losse AirPods</Link> en{' '}
               <Link to="/losse-oplaadcases" className="text-primary hover:underline">losse oplaadcases</Link>. 
               We weten dus precies welke stappen je moet volgen om alles weer soepel te laten werken.
@@ -495,14 +495,14 @@ const BlogAirpodsOpnieuwPairen = () => {
             </ul>
 
             <p>
-              Bij <strong>RePairPods</strong> verkopen we uitsluitend 100% originele Apple-onderdelen. 
+              Bij <strong>Earbud restore</strong> verkopen we uitsluitend 100% originele Apple-onderdelen. 
               Elk product wordt getest op geluid, batterijcapaciteit en Bluetooth-connectiviteit 
               voordat het naar jou wordt verzonden. Zo weet je zeker dat je vervangende AirPod 
               probleemloos koppelt met je bestaande set.
             </p>
 
             {/* Sectie 9 */}
-            <h2>Stappenplan: zo bestel je een vervangend oortje of oplaadcase bij RePairPods</h2>
+            <h2>Stappenplan: zo bestel je een vervangend oortje of oplaadcase bij Earbud restore</h2>
 
             <p>
               Heb je een vervangende AirPod of oplaadcase nodig? Zo bestel je het juiste onderdeel:

@@ -109,14 +109,14 @@ const BlogAirpodsVsAirpodsPro = () => {
       ],
       
       lostPodTitle: "AirPod Kwijt of Kapot?",
-      lostPodText: "Heb je een AirPod verloren of is er eentje kapot? Bij RePairPods kun je losse AirPods en oplaadcases bestellen. Dit is vaak veel voordeliger dan een compleet nieuw setje kopen.",
+      lostPodText: "Heb je een AirPod verloren of is er eentje kapot? Bij Earbud restore kun je losse AirPods en oplaadcases bestellen. Dit is vaak veel voordeliger dan een compleet nieuw setje kopen.",
       
       checkModelTitle: "Weet je niet welk model je hebt?",
       checkModelText: "Gebruik onze handige tool om te ontdekken welk AirPods-model je bezit.",
       checkModelButton: "Ontdek je model",
       
       ctaTitle: "Losse AirPod Nodig?",
-      ctaText: "Bij RePairPods vind je losse AirPods en oplaadcases voor alle generaties. Origineel Apple, scherpe prijzen en snelle levering.",
+      ctaText: "Bij Earbud restore vind je losse AirPods en oplaadcases voor alle generaties. Origineel Apple, scherpe prijzen en snelle levering.",
       ctaButton: "Bekijk ons assortiment",
       
       faqTitle: "Veelgestelde Vragen",
@@ -220,14 +220,14 @@ const BlogAirpodsVsAirpodsPro = () => {
       ],
       
       lostPodTitle: "Lost or Broken AirPod?",
-      lostPodText: "Lost an AirPod or is one broken? At RePairPods you can order single AirPods and charging cases. This is often much more affordable than buying a complete new set.",
+      lostPodText: "Lost an AirPod or is one broken? At Earbud restore you can order single AirPods and charging cases. This is often much more affordable than buying a complete new set.",
       
       checkModelTitle: "Not sure which model you have?",
       checkModelText: "Use our handy tool to discover which AirPods model you own.",
       checkModelButton: "Discover your model",
       
       ctaTitle: "Need a Single AirPod?",
-      ctaText: "At RePairPods you'll find single AirPods and charging cases for all generations. Original Apple, competitive prices, and fast delivery.",
+      ctaText: "At Earbud restore you'll find single AirPods and charging cases for all generations. Original Apple, competitive prices, and fast delivery.",
       ctaButton: "View our products",
       
       faqTitle: "Frequently Asked Questions",
@@ -311,12 +311,12 @@ const BlogAirpodsVsAirpodsPro = () => {
     "description": t.metaDescription,
     "author": {
       "@type": "Organization",
-      "name": "RePairPods"
+      "name": "Earbud restore"
     },
     "publisher": {
       "@type": "Organization",
-      "name": "RePairPods",
-      "url": "https://repairpods.nl"
+      "name": "Earbud restore",
+      "url": "https://earbudrestore.nl"
     },
     "datePublished": "2024-01-15",
     "dateModified": new Date().toISOString().split('T')[0]
@@ -326,15 +326,15 @@ const BlogAirpodsVsAirpodsPro = () => {
     <>
       <Helmet>
         <html lang={isEnglish ? "en" : "nl"} />
-        <title>{t.title} | RePairPods</title>
+        <title>{t.title} | Earbud restore</title>
         <meta name="description" content={t.metaDescription} />
         <meta name="keywords" content={isEnglish 
           ? "airpods vs airpods pro, airpods comparison, airpods pro difference, noise cancelling airpods, which airpods to buy"
           : "airpods vs airpods pro, airpods vergelijking, airpods pro verschil, noise cancelling airpods, welke airpods kopen"
         } />
-        <link rel="canonical" href={`https://repairpods.nl${isEnglish ? '/en/blog/airpods-vs-airpods-pro' : '/blog/airpods-vs-airpods-pro'}`} />
-        <link rel="alternate" hrefLang="nl" href="https://repairpods.nl/blog/airpods-vs-airpods-pro" />
-        <link rel="alternate" hrefLang="en" href="https://repairpods.nl/en/blog/airpods-vs-airpods-pro" />
+        <link rel="canonical" href={`https://earbudrestore.nl${isEnglish ? '/en/blog/airpods-vs-airpods-pro' : '/blog/airpods-vs-airpods-pro'}`} />
+        <link rel="alternate" hrefLang="nl" href="https://earbudrestore.nl/blog/airpods-vs-airpods-pro" />
+        <link rel="alternate" hrefLang="en" href="https://earbudrestore.nl/en/blog/airpods-vs-airpods-pro" />
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
       </Helmet>

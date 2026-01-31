@@ -13,27 +13,27 @@ import { Card } from '@/components/ui/card';
 
 const faqItems = [
   {
-    question: 'Kan ik een losse AirPod kopen zonder nieuwe case?',
-    answer: 'Ja, bij Earbud restore kun je een losse linker of rechter AirPod kopen zonder dat je een nieuwe oplaadcase nodig hebt. Je bestaande case werkt gewoon met de vervangende AirPod, mits deze van dezelfde generatie is.',
+    question: 'Kan ik een los oortje kopen zonder nieuwe oplaadcase?',
+    answer: 'Ja, bij Earbud restore kun je een los linker of rechter oortje kopen zonder dat je een nieuwe oplaadcase nodig hebt. Je bestaande case werkt gewoon met het vervangende oortje, mits deze van dezelfde generatie is.',
   },
   {
-    question: 'Is een losse AirPod van Earbud restore origineel?',
-    answer: 'Absoluut. Alle AirPods die wij verkopen zijn 100% originele Apple-onderdelen. We testen elk product op geluidskwaliteit, batterijcapaciteit en Bluetooth-connectiviteit voordat we het versturen.',
+    question: 'Zijn de onderdelen bij Earbud restore origineel?',
+    answer: 'Absoluut. Alle oortjes die wij verkopen zijn 100% originele onderdelen. We testen elk product op geluidskwaliteit, batterijcapaciteit en Bluetooth-connectiviteit voordat we het versturen.',
   },
   {
-    question: 'Werkt een losse AirPod altijd met mijn bestaande set?',
-    answer: 'Ja, een originele losse AirPod koppelt automatisch met je bestaande oplaadcase en andere AirPod. Het enige wat belangrijk is, is dat je de juiste generatie kiest. Een AirPod 3e generatie werkt bijvoorbeeld alleen met een AirPods 3e generatie case.',
+    question: 'Werkt een los oortje altijd met mijn bestaande set?',
+    answer: 'Ja, een origineel los oortje koppelt automatisch met je bestaande oplaadcase en andere oortje. Het enige wat belangrijk is, is dat je de juiste generatie kiest. Een 3e generatie oortje werkt bijvoorbeeld alleen met een 3e generatie case.',
   },
   {
-    question: 'Wat als mijn AirPods al oud zijn?',
-    answer: 'Als je AirPods ouder zijn dan 3-4 jaar en de batterij van je overgebleven oortje ook al minder wordt, kan het voordeliger zijn om een volledig nieuwe set te overwegen. Bij relatief nieuwe AirPods (1-2 jaar oud) is een losse vervanging vrijwel altijd de slimste keuze.',
+    question: 'Wat als mijn oortjes al oud zijn?',
+    answer: 'Als je oortjes ouder zijn dan 3-4 jaar en de batterij van je overgebleven oortje ook al minder wordt, kan het voordeliger zijn om een volledig nieuw setje te overwegen. Bij relatief nieuwe oortjes (1-2 jaar oud) is een losse vervanging vrijwel altijd de slimste keuze.',
   },
   {
-    question: 'Hoe snel ontvang ik mijn losse AirPod?',
+    question: 'Hoe snel ontvang ik mijn vervangende oortje?',
     answer: 'Bij Earbud restore geldt: vandaag besteld, morgen in huis. Je kunt ook kiezen voor afhalen in onze winkel in Amsterdam, waar we je direct kunnen helpen met koppelen.',
   },
   {
-    question: 'Krijg ik garantie op een losse AirPod?',
+    question: 'Krijg ik garantie op een los oortje?',
     answer: 'Ja, al onze producten worden geleverd met garantie. Mocht er onverhoopt iets mis zijn, dan lossen we dat snel en netjes voor je op.',
   },
 ];
@@ -52,18 +52,38 @@ const BlogLosseAirpodKwijt = () => {
     }))
   };
 
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Eén oortje kwijt of kapot? Zo vervang je alleen wat je mist",
+    "description": "Je hebt één oortje verloren – de ander en je case werken nog prima. Ontdek de goedkoopste manier om alleen te vervangen wat je nodig hebt.",
+    "author": {
+      "@type": "Organization",
+      "name": "Earbud restore"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Earbud restore"
+    },
+    "datePublished": "2025-01-20",
+    "dateModified": "2025-01-31"
+  };
+
   return (
     <div className="min-h-screen flex flex-col">
       <Helmet>
-        <title>Losse AirPod kwijt? Dit is de goedkoopste manier om hem te vervangen | Earbud restore</title>
+        <title>Eén oortje kwijt? De goedkoopste manier om te vervangen | Earbud restore</title>
         <meta
           name="description"
-          content="Eén AirPod kwijt? Ontdek de goedkoopste manier om je losse AirPod te vervangen. Vergelijk Apple, Earbud restore en andere opties. 100% origineel, snel geleverd."
+          content="Je hebt één oortje verloren – de ander en je case werken nog prima. Ontdek hoe je alleen vervangt wat je mist en bespaar tot 60% ten opzichte van een nieuwe set."
         />
-        <meta name="keywords" content="losse airpod kwijt, airpod kwijt wat nu, losse airpod vervangen, goedkoop airpod vervangen, airpod verloren, airpods vervangen" />
-        <link rel="canonical" href="https://earbudrestore.nl/blog/losse-airpod-kwijt-vervangen" />
+        <meta name="keywords" content="oortje kwijt, los oortje vervangen, vervanging draadloos oortje, oortje verloren, goedkoop vervangen, set completeren" />
+        <link rel="canonical" href="https://earbudrestore.nl/blog/oortje-kwijt-vervangen" />
         <script type="application/ld+json">
           {JSON.stringify(faqSchema)}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify(articleSchema)}
         </script>
       </Helmet>
 
@@ -83,7 +103,7 @@ const BlogLosseAirpodKwijt = () => {
           {/* Article header */}
           <header className="mb-6 md:mb-10">
             <h1 className="text-xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-6 leading-tight">
-              Losse AirPod kwijt? De goedkoopste manier om te vervangen
+              Eén oortje kwijt? Zo vervang je alleen wat je mist
             </h1>
             <div className="flex items-center gap-2 md:gap-4 text-[10px] md:text-sm text-muted-foreground">
               <span className="flex items-center gap-1">
@@ -100,39 +120,53 @@ const BlogLosseAirpodKwijt = () => {
           {/* Article content */}
           <div className="prose prose-lg max-w-none text-foreground/90">
             
-            {/* Inleiding */}
+            {/* Inleiding - USER FIRST */}
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-8">
-              Je kent het scenario: je haalt je AirPods uit je zak en er zit er nog maar één in de case. 
-              De andere is verdwenen. Misschien gevallen tijdens het sporten, achtergebleven op de bank bij vrienden, 
-              of simpelweg spoorloos verdwenen. Het frustrerende? Je andere AirPod en de oplaadcase werken nog perfect.
+              Je haalt je oortjes uit je zak en er zit er nog maar één in de case. 
+              De andere is verdwenen – misschien gevallen tijdens het sporten, achtergebleven bij vrienden, 
+              of simpelweg spoorloos. Je andere oortje en de oplaadcase werken nog perfect – en nu?
             </p>
 
             <p className="mb-8">
-              Veel mensen denken in deze situatie dat ze gedwongen zijn om een volledig nieuwe set AirPods te kopen. 
-              Dat is begrijpelijk – Apple verkoopt immers vooral complete sets. Maar hier is het goede nieuws: 
-              je hebt meerdere opties om een <strong>losse AirPod te vervangen</strong>, en sommige zijn veel voordeliger 
-              dan je denkt. In dit artikel vergelijken we alle mogelijkheden, van een nieuwe set tot een losse 
-              originele AirPod via Earbud restore, zodat jij de beste keuze kunt maken voor jouw situatie.
+              Dit komt veel voor bij draadloze oordopjes, waaronder de populaire modellen van bekende merken. 
+              Veel mensen denken dat ze gedwongen zijn om een volledig nieuw setje te kopen. 
+              Dat is begrijpelijk, maar niet noodzakelijk. In dit artikel vergelijken we alle mogelijkheden, 
+              van een nieuw setje tot een <strong>los vervangend oortje</strong> via Earbud restore, 
+              zodat jij de beste keuze kunt maken voor jouw situatie.
             </p>
 
-            {/* Sectie 1 */}
-            <h2>Eén AirPod kwijt – wat zijn je opties?</h2>
+            {/* Sectie 1 - Wat is het probleem */}
+            <h2 className="text-2xl md:text-3xl font-semibold text-foreground mt-12 mb-6">
+              Wat is het probleem?
+            </h2>
             
             <p>
-              Wanneer je een AirPod kwijtraakt, heb je grofweg vier opties. Elk heeft zijn eigen voor- en nadelen:
+              Wanneer je één draadloos oortje verliest, heb je een dilemma. Je overgebleven oortje 
+              en oplaadcase functioneren nog prima, maar je kunt niet in stereo luisteren. 
+              Dit is frustrerend, want het voelt alsof je gedwongen wordt om veel geld uit te geven 
+              terwijl je eigenlijk maar één onderdeel mist.
+            </p>
+
+            {/* Sectie 2 - Opties */}
+            <h2 className="text-2xl md:text-3xl font-semibold text-foreground mt-12 mb-6">
+              Welke opties heb je?
+            </h2>
+
+            <p>
+              Wanneer je een oortje kwijtraakt, heb je grofweg vier opties. Elk heeft zijn eigen voor- en nadelen:
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
               <Card className="p-4 border-l-4 border-l-muted-foreground">
-                <h4 className="font-semibold mb-2">Optie 1: Nieuwe volledige set</h4>
+                <h4 className="font-semibold mb-2">Optie 1: Volledig nieuw setje</h4>
                 <p className="text-sm text-muted-foreground mb-0">
                   Je krijgt alles nieuw, maar het is veruit de duurste oplossing. Zonde als je nog een werkend oortje en case hebt.
                 </p>
               </Card>
               <Card className="p-4 border-l-4 border-l-muted-foreground">
-                <h4 className="font-semibold mb-2">Optie 2: Via Apple vervangen</h4>
+                <h4 className="font-semibold mb-2">Optie 2: Via de fabrikant</h4>
                 <p className="text-sm text-muted-foreground mb-0">
-                  Origineel onderdeel, maar vaak prijzig en je moet naar een Apple Store of servicepunt.
+                  Origineel onderdeel, maar vaak prijzig en je moet naar een servicepunt of lang wachten.
                 </p>
               </Card>
               <Card className="p-4 border-l-4 border-l-primary">
@@ -141,7 +175,7 @@ const BlogLosseAirpodKwijt = () => {
                   Optie 3: Via Earbud restore
                 </h4>
                 <p className="text-sm text-muted-foreground mb-0">
-                  100% origineel Apple-onderdeel, vaak voordeliger dan Apple en snel geleverd.
+                  100% origineel onderdeel, vaak voordeliger dan de fabrikant en snel geleverd.
                 </p>
               </Card>
               <Card className="p-4 border-l-4 border-l-destructive">
@@ -159,19 +193,19 @@ const BlogLosseAirpodKwijt = () => {
               Laten we elke optie in detail bekijken, zodat je precies weet wat je kunt verwachten.
             </p>
 
-            {/* Sectie 2 */}
+            {/* Sectie 3 */}
             <h2 className="text-2xl md:text-3xl font-semibold text-foreground mt-12 mb-6">
-              Optie 1 – een compleet nieuwe set AirPods kopen
+              Optie 1 – een compleet nieuw setje kopen
             </h2>
 
             <p className="mb-4">
-              De meest voor de hand liggende, maar ook duurste oplossing: gewoon een gloednieuwe set AirPods kopen. 
-              Dit betekent dat je een nieuwe linker AirPod, rechter AirPod én oplaadcase krijgt.
+              De meest voor de hand liggende, maar ook duurste oplossing: gewoon een compleet nieuw setje kopen. 
+              Dit betekent dat je een linker oortje, rechter oortje én oplaadcase krijgt.
             </p>
 
             <h3 className="text-xl font-semibold text-foreground mt-8 mb-4">Voordelen:</h3>
             <ul className="list-disc pl-6 mb-6 space-y-2">
-              <li>Alles is nieuw met 100% batterijcapaciteit</li>
+              <li>Alles is vers met optimale batterijcapaciteit</li>
               <li>Geen gedoe met koppelen of compatibiliteit</li>
               <li>Volledige fabrieksgarantie</li>
             </ul>
@@ -184,66 +218,66 @@ const BlogLosseAirpodKwijt = () => {
             </ul>
 
             <p className="mb-8">
-              <strong>Wanneer is dit logisch?</strong> Een nieuwe set kan zinvol zijn als je AirPods al 3-4 jaar oud zijn 
+              <strong>Wanneer is dit logisch?</strong> Een nieuw setje kan zinvol zijn als je oortjes al 3-4 jaar oud zijn 
               en de batterij van beide oortjes merkbaar achteruitgaat. Ook als je wilt upgraden naar een nieuwere 
-              generatie (bijvoorbeeld van AirPods 2 naar AirPods 4) is een complete set logisch.
+              generatie is een complete set logisch.
             </p>
 
-            {/* Sectie 3 */}
+            {/* Sectie 4 */}
             <h2 className="text-2xl md:text-3xl font-semibold text-foreground mt-12 mb-6">
-              Optie 2 – losse AirPod via Apple laten vervangen
+              Optie 2 – vervanging via de fabrikant
             </h2>
 
             <p className="mb-4">
-              Wat veel mensen niet weten: Apple biedt de mogelijkheid om een losse AirPod te laten vervangen. 
-              Dit kun je doen via een Apple Store, een Authorized Service Provider, of online via de Apple Support-website.
+              Wat veel mensen niet weten: fabrikanten bieden de mogelijkheid om een los oortje te laten vervangen. 
+              Dit kun je doen via een officiële winkel, een Authorized Service Provider, of online via de supportwebsite.
             </p>
 
             <p className="mb-6">
-              Het gaat hierbij om een origineel Apple-onderdeel, wat natuurlijk een groot pluspunt is. 
+              Het gaat hierbij om een origineel onderdeel, wat natuurlijk een groot pluspunt is. 
               Het nadeel? De kosten voor vervanging zijn vaak relatief hoog – soms bijna de helft van de prijs 
-              van een nieuwe set. Daarnaast moet je vaak wachten op een afspraak of op verzending.
+              van een nieuw setje. Daarnaast moet je vaak wachten op een afspraak of op verzending.
             </p>
 
             <h3 className="text-xl font-semibold text-foreground mt-8 mb-4">Voordelen:</h3>
             <ul className="list-disc pl-6 mb-6 space-y-2">
-              <li>100% origineel Apple-onderdeel</li>
-              <li>Officiële service met Apple-garantie</li>
+              <li>100% origineel onderdeel</li>
+              <li>Officiële service met fabrieksgarantie</li>
             </ul>
 
             <h3 className="text-xl font-semibold text-foreground mt-8 mb-4">Nadelen:</h3>
             <ul className="list-disc pl-6 mb-8 space-y-2">
-              <li>Relatief duur, vaak bijna de helft van een nieuwe set</li>
+              <li>Relatief duur, vaak bijna de helft van een nieuw setje</li>
               <li>Niet altijd direct beschikbaar</li>
-              <li>Vereist een Apple Store-bezoek of verzending naar Apple</li>
+              <li>Vereist een winkelbezoek of verzending naar de fabrikant</li>
             </ul>
 
-            {/* Sectie 4 */}
+            {/* Sectie 5 */}
             <h2 className="text-2xl md:text-3xl font-semibold text-foreground mt-12 mb-6">
-              Optie 3 – losse AirPod via Earbud restore (origineel, maar vaak voordeliger)
+              Optie 3 – los oortje via Earbud restore (origineel, maar vaak voordeliger)
             </h2>
 
             <p className="mb-4">
               Dit is waar Earbud restore in beeld komt. Wij zijn gespecialiseerd in precies dit probleem: 
-              mensen die één <Link to="/losse-airpods" className="text-primary hover:underline">losse AirPod</Link> kwijt 
+              mensen die één <Link to="/losse-airpods" className="text-primary hover:underline">los oortje</Link> kwijt 
               zijn en niet een hele set willen kopen.
             </p>
 
             <p className="mb-6">
-              Bij Earbud restore vind je <strong>100% originele Apple-onderdelen</strong> – geen namaak, geen replica's. 
-              We bieden losse linker en rechter AirPods aan voor alle gangbare generaties: van{' '}
-              <Link to="/model/airpods-2e-generatie" className="text-primary hover:underline">AirPods 2e generatie</Link> tot{' '}
-              <Link to="/model/airpods-pro-2e-generatie" className="text-primary hover:underline">AirPods Pro 2e generatie</Link>.
+              Bij Earbud restore vind je <strong>100% originele onderdelen</strong> – geen namaak, geen replica's. 
+              We bieden losse linker en rechter oortjes aan voor alle gangbare generaties: van{' '}
+              <Link to="/model/airpods-2e-generatie" className="text-primary hover:underline">2e generatie</Link> tot{' '}
+              <Link to="/model/airpods-pro-2e-generatie" className="text-primary hover:underline">Pro 2e generatie</Link>.
             </p>
 
             <h3 className="text-xl font-semibold text-foreground mt-8 mb-4">Waarom kiezen klanten voor Earbud restore?</h3>
             <ul className="list-disc pl-6 mb-6 space-y-3">
               <li>
-                <strong>Je betaalt alleen voor wat je mist</strong> – Heb je alleen je rechter AirPod verloren? 
-                Dan koop je alleen een rechter AirPod. Simpel.
+                <strong>Je betaalt alleen voor wat je mist</strong> – Heb je alleen je rechter oortje verloren? 
+                Dan koop je alleen een rechter oortje. Simpel.
               </li>
               <li>
-                <strong>Vaak voordeliger dan Apple</strong> – Doordat wij ons specifiek richten op losse onderdelen, 
+                <strong>Vaak voordeliger dan de fabrikant</strong> – Doordat wij ons specifiek richten op losse onderdelen, 
                 kunnen we scherpe prijzen bieden.
               </li>
               <li>
@@ -260,25 +294,25 @@ const BlogLosseAirpodKwijt = () => {
 
             <p className="mb-8">
               Bekijk ons complete aanbod van{' '}
-              <Link to="/losse-airpods" className="text-primary hover:underline">losse AirPods</Link> of{' '}
+              <Link to="/losse-airpods" className="text-primary hover:underline">losse oortjes</Link> of{' '}
               <Link to="/losse-oplaadcases" className="text-primary hover:underline">losse oplaadcases</Link> en 
               vind precies wat je nodig hebt.
             </p>
 
-            {/* Sectie 5 */}
+            {/* Sectie 6 - Risico's namaak */}
             <h2 className="text-2xl md:text-3xl font-semibold text-foreground mt-12 mb-6">
-              Optie 4 – Namaak of tweedehands losse AirPods
+              Optie 4 – Namaak of tweedehands losse oortjes
             </h2>
 
             <p className="mb-4">
-              Het is verleidelijk: op Marktplaats of bij obscure webshops vind je "AirPods" voor een fractie 
+              Het is verleidelijk: op Marktplaats of bij obscure webshops vind je oortjes voor een fractie 
               van de normale prijs. Maar hier schuilt een groot risico.
             </p>
 
-            <h3 className="text-xl font-semibold text-foreground mt-8 mb-4">Risico's van namaak AirPods:</h3>
+            <h3 className="text-xl font-semibold text-foreground mt-8 mb-4">Risico's van namaak oortjes:</h3>
             <ul className="list-disc pl-6 mb-6 space-y-2">
-              <li><strong>Slechte geluidskwaliteit</strong> – Namaak AirPods klinken zelden zoals het origineel.</li>
-              <li><strong>Pairing-problemen</strong> – Vaak werken ze niet goed met je iPhone of koppelen ze niet met je bestaande oortje.</li>
+              <li><strong>Slechte geluidskwaliteit</strong> – Namaak oortjes klinken zelden zoals het origineel.</li>
+              <li><strong>Koppelproblemen</strong> – Vaak werken ze niet goed met je telefoon of koppelen ze niet met je bestaande oortje.</li>
               <li><strong>Batterijproblemen</strong> – De batterij gaat vaak veel sneller leeg en kan zelfs veiligheidsrisico's opleveren.</li>
               <li><strong>Geen garantie</strong> – Als er iets misgaat, heb je geen verhaal.</li>
               <li><strong>Privacyrisico's</strong> – Onbetrouwbare apparaten kunnen potentieel een veiligheidsrisico vormen.</li>
@@ -286,7 +320,7 @@ const BlogLosseAirpodKwijt = () => {
 
             <p className="mb-4">
               <strong>Tweedehands via Marktplaats</strong> kan in theorie een origineel product opleveren, maar 
-              je weet nooit zeker wat je krijgt. Is de batterij nog goed? Werkt de AirPod echt? Is het überhaupt origineel?
+              je weet nooit zeker wat je krijgt. Is de batterij nog goed? Werkt het oortje echt? Is het überhaupt origineel?
             </p>
 
             <p className="mb-8">
@@ -294,39 +328,9 @@ const BlogLosseAirpodKwijt = () => {
               alsnog een fatsoenlijke vervanging moet kopen.
             </p>
 
-            {/* Sectie 6 */}
+            {/* Sectie 7 - Wanneer vervangen slimmer is */}
             <h2 className="text-2xl md:text-3xl font-semibold text-foreground mt-12 mb-6">
-              Prijsvergelijking: nieuwe set vs. losse AirPod
-            </h2>
-
-            <p className="mb-4">
-              Laten we de opties eens naast elkaar zetten op basis van wat je er gemiddeld voor betaalt:
-            </p>
-
-            <ul className="list-disc pl-6 mb-8 space-y-3">
-              <li>
-                <strong>Nieuwe volledige set AirPods</strong> – De hoogste prijs, maar je krijgt alles nieuw. 
-                Afhankelijk van de generatie spreek je al snel over €150 tot €280 of meer.
-              </li>
-              <li>
-                <strong>Apple replacement losse AirPod</strong> – Origineel onderdeel, maar de kosten liggen 
-                vaak tussen de €80 en €110, afhankelijk van het model. Dat is bijna de helft van een nieuwe set.
-              </li>
-              <li>
-                <strong>Earbud restore losse AirPod</strong> – Ook 100% origineel, maar vaak voordeliger dan de 
-                officiële Apple-vervanging. Bovendien bieden we verschillende condities aan, waardoor je nog 
-                meer kunt besparen als je kiest voor een "uitstekende" of "goede" staat in plaats van nieuw.
-              </li>
-            </ul>
-
-            <p className="mb-8">
-              Bij Earbud restore focussen we op de beste prijs-kwaliteitverhouding. Je koopt precies wat je nodig 
-              hebt, tegen een eerlijke prijs, met de zekerheid van een origineel Apple-product.
-            </p>
-
-            {/* Sectie 7 */}
-            <h2 className="text-2xl md:text-3xl font-semibold text-foreground mt-12 mb-6">
-              Hoe bepaal je welke oplossing voor jou het voordeligst is?
+              Wanneer vervangen slimmer is dan een nieuw setje
             </h2>
 
             <p className="mb-4">
@@ -335,94 +339,92 @@ const BlogLosseAirpodKwijt = () => {
 
             <ul className="list-disc pl-6 mb-6 space-y-3">
               <li>
-                <strong>Je AirPods zijn nog relatief nieuw (1-2 jaar oud)</strong>, de batterij van je overgebleven 
-                oortje is nog prima, en je case werkt goed → <em>Kies voor een losse AirPod via Earbud restore</em>.
+                <strong>Je oortjes zijn nog relatief jong (1-2 jaar oud)</strong>, de batterij van je overgebleven 
+                oortje is nog prima, en je case werkt goed → <em>Kies voor een los oortje via Earbud restore</em>.
               </li>
               <li>
-                <strong>Je AirPods zijn 3-4 jaar oud</strong> en de batterij gaat merkbaar achteruit → 
-                <em>Overweeg een nieuwe set, eventueel een upgrade naar een nieuwere generatie</em>.
+                <strong>Je oortjes zijn 3-4 jaar oud</strong> en de batterij gaat merkbaar achteruit → 
+                <em>Overweeg een nieuw setje, eventueel een upgrade naar een nieuwere generatie</em>.
               </li>
               <li>
                 <strong>Je wilt zeker zijn van originele kwaliteit en garantie</strong> → 
-                <em>Kies Apple of Earbud restore, nooit namaak</em>.
+                <em>Kies de fabrikant of Earbud restore, nooit namaak</em>.
               </li>
             </ul>
 
-            <p><strong>Een praktijkvoorbeeld:</strong></p>
-            <p>
-              Stel: je hebt AirPods 3e generatie van ongeveer een jaar oud en je verliest je rechter AirPod. 
-              Je linker AirPod werkt nog prima, de batterij is nog goed, en je MagSafe-case is in perfecte staat. 
-              In dit geval is een{' '}
-              <Link to="/model/airpods-3e-generatie" className="text-primary hover:underline">
-                losse rechter AirPod 3e generatie
-              </Link>{' '}
-              via RePairPods verreweg de slimste en voordeligste keuze. Je bespaart gemakkelijk meer dan de 
-              helft ten opzichte van een nieuwe set.
+            {/* Sectie 8 - Compatibiliteit */}
+            <h2 className="text-2xl md:text-3xl font-semibold text-foreground mt-12 mb-6">
+              Welke onderdelen zijn compatibel met mijn set?
+            </h2>
+
+            <p className="mb-4">
+              Het is cruciaal om de juiste generatie te kiezen. Een oortje van de 2e generatie werkt niet 
+              samen met een 3e generatie, ook al lijken ze op elkaar. Dit komt door verschillende chips en firmware.
             </p>
 
-            {/* Sectie 8 */}
-            <h2>Zo kies je de juiste losse AirPod (model + links/rechts)</h2>
-
-            <p>
-              Om de juiste losse AirPod te bestellen, moet je twee dingen weten: welke generatie AirPods je hebt, 
-              en welke kant je mist (links of rechts).
+            <p className="mb-4">
+              Bekijk per generatie wat bij jou past:
             </p>
 
+            <ul className="list-disc pl-6 mb-6 space-y-2">
+              <li>
+                <Link to="/model/airpods-2e-generatie" className="text-primary hover:underline">
+                  2e generatie onderdelen
+                </Link>
+              </li>
+              <li>
+                <Link to="/model/airpods-3e-generatie" className="text-primary hover:underline">
+                  3e generatie onderdelen
+                </Link>
+              </li>
+              <li>
+                <Link to="/model/airpods-4e-generatie" className="text-primary hover:underline">
+                  4e generatie onderdelen
+                </Link>
+              </li>
+              <li>
+                <Link to="/model/airpods-pro-1e-generatie" className="text-primary hover:underline">
+                  Pro 1e generatie onderdelen
+                </Link>
+              </li>
+              <li>
+                <Link to="/model/airpods-pro-2e-generatie" className="text-primary hover:underline">
+                  Pro 2e generatie onderdelen
+                </Link>
+              </li>
+            </ul>
+
             <p>
-              <strong>Weet je niet welke generatie je hebt?</strong> Geen probleem. Bekijk onze handige gids{' '}
+              Weet je niet precies welke generatie je hebt? Gebruik onze{' '}
               <Link to="/welke-airpods" className="text-primary hover:underline">
-                "Welke AirPods heb ik?"
+                modelnummer-checker
               </Link>{' '}
-              waarin we je stap voor stap helpen om je model te identificeren aan de hand van het modelnummer.
+              om je exacte model te identificeren.
             </p>
 
-            <p><strong>Mini-stappenplan:</strong></p>
-            <ol>
-              <li>
-                <strong>Check je generatie</strong> – Kijk in je iPhone onder Instellingen → Bluetooth → tik 
-                op het (i)-icoontje bij je AirPods, of bekijk het modelnummer in je case.
-              </li>
-              <li>
-                <strong>Bepaal welke kant je mist</strong> – Links of rechts? Dit klinkt simpel, maar dubbelcheck 
-                even: de L of R staat vaak op de AirPod zelf (of op je oplaadcase bij de holte).
-              </li>
-              <li>
-                <strong>Ga naar de juiste categorie</strong> – Bekijk ons aanbod{' '}
-                <Link to="/losse-airpods" className="text-primary hover:underline">losse AirPods</Link> en filter 
-                op jouw generatie en kant.
-              </li>
-            </ol>
+            {/* Sectie 9 - Koppelen */}
+            <h2 className="text-2xl md:text-3xl font-semibold text-foreground mt-12 mb-6">
+              Hoe koppel je een vervangend oortje met je bestaande set?
+            </h2>
 
-            <p>
-              We hebben losse AirPods beschikbaar voor alle populaire modellen:{' '}
-              <Link to="/model/airpods-2e-generatie" className="text-primary hover:underline">AirPods 2</Link>,{' '}
-              <Link to="/model/airpods-3e-generatie" className="text-primary hover:underline">AirPods 3</Link>,{' '}
-              <Link to="/model/airpods-4e-generatie" className="text-primary hover:underline">AirPods 4</Link>,{' '}
-              <Link to="/model/airpods-pro-1e-generatie" className="text-primary hover:underline">AirPods Pro 1</Link> en{' '}
-              <Link to="/model/airpods-pro-2e-generatie" className="text-primary hover:underline">AirPods Pro 2</Link>.
-            </p>
-
-            {/* Sectie 9 */}
-            <h2>Hoe koppel je een vervangende losse AirPod met je bestaande set?</h2>
-
-            <p>
-              Een veelgestelde vraag: werkt een losse vervangende AirPod gewoon met mijn bestaande set en case? 
-              Het antwoord is ja – mits het een origineel Apple-onderdeel is van de juiste generatie.
+            <p className="mb-4">
+              Een veelgestelde vraag: werkt een los vervangend oortje gewoon met mijn bestaande set en case? 
+              Het antwoord is ja – mits het een origineel onderdeel is van de juiste generatie.
             </p>
 
             <Card className="p-6 my-6 bg-secondary/30">
               <h3 className="text-lg font-semibold mb-4 flex items-center gap-2">
                 <Check className="h-5 w-5 text-primary" />
-                Stappenplan: nieuwe AirPod koppelen
+                Stappenplan: vervangend oortje koppelen
               </h3>
               <ol className="space-y-3 mb-0">
                 <li className="flex gap-3">
                   <span className="flex-shrink-0 w-6 h-6 rounded-full bg-primary text-primary-foreground text-sm flex items-center justify-center font-medium">1</span>
-                  <span>Zorg dat je iPhone of iPad is bijgewerkt naar de laatste iOS-versie.</span>
+                  <span>Zorg dat je telefoon is bijgewerkt naar de laatste software-versie.</span>
                 </li>
                 <li className="flex gap-3">
                   <span className="flex-shrink-0 w-6 h-6 rounded-full bg-primary text-primary-foreground text-sm flex items-center justify-center font-medium">2</span>
-                  <span>Plaats je bestaande AirPod en de nieuwe vervangende AirPod samen in de oplaadcase.</span>
+                  <span>Plaats je bestaande oortje en het vervangende oortje samen in de oplaadcase.</span>
                 </li>
                 <li className="flex gap-3">
                   <span className="flex-shrink-0 w-6 h-6 rounded-full bg-primary text-primary-foreground text-sm flex items-center justify-center font-medium">3</span>
@@ -430,7 +432,7 @@ const BlogLosseAirpodKwijt = () => {
                 </li>
                 <li className="flex gap-3">
                   <span className="flex-shrink-0 w-6 h-6 rounded-full bg-primary text-primary-foreground text-sm flex items-center justify-center font-medium">4</span>
-                  <span>Open het deksel en houd de case dicht bij je iPhone.</span>
+                  <span>Open het deksel en houd de case dicht bij je telefoon.</span>
                 </li>
                 <li className="flex gap-3">
                   <span className="flex-shrink-0 w-6 h-6 rounded-full bg-primary text-primary-foreground text-sm flex items-center justify-center font-medium">5</span>
@@ -438,7 +440,7 @@ const BlogLosseAirpodKwijt = () => {
                 </li>
                 <li className="flex gap-3">
                   <span className="flex-shrink-0 w-6 h-6 rounded-full bg-primary text-primary-foreground text-sm flex items-center justify-center font-medium">6</span>
-                  <span>Op je iPhone verschijnt een setup-scherm – volg de instructies.</span>
+                  <span>Op je telefoon verschijnt een setup-scherm – volg de instructies.</span>
                 </li>
               </ol>
             </Card>
@@ -451,20 +453,22 @@ const BlogLosseAirpodKwijt = () => {
               </div>
             </div>
 
-            {/* Sectie 10 */}
-            <h2>Duurzaamheid: waarom losse vervanging beter is voor je portemonnee én het milieu</h2>
+            {/* Sectie 10 - Duurzaamheid */}
+            <h2 className="text-2xl md:text-3xl font-semibold text-foreground mt-12 mb-6">
+              Duurzaamheid: waarom losse vervanging beter is
+            </h2>
 
-            <p>
-              Laten we eerlijk zijn: het is zonde om een complete set AirPods weg te gooien omdat je één 
+            <p className="mb-4">
+              Laten we eerlijk zijn: het is zonde om een complete set weg te gooien omdat je één 
               oortje kwijt bent. Je goede oortje werkt nog prima. Je oplaadcase doet het nog perfect. 
-              Waarom zou je dan alles weggooien en nieuw kopen?
+              Waarom zou je dan alles weggooien?
             </p>
 
-            <p>
-              Door te kiezen voor een losse vervangende AirPod:
+            <p className="mb-4">
+              Door te kiezen voor een los vervangend oortje:
             </p>
 
-            <ul>
+            <ul className="list-disc pl-6 mb-6 space-y-2">
               <li>
                 <strong>Bespaar je geld</strong> – Je betaalt alleen voor wat je daadwerkelijk nodig hebt.
               </li>
@@ -473,84 +477,48 @@ const BlogLosseAirpodKwijt = () => {
                 werkende onderdelen te behouden, draag je bij aan een duurzamere wereld.
               </li>
               <li>
-                <strong>Verleng je de levensduur van je set</strong> – Goede onderhoud en gerichte vervanging 
+                <strong>Verleng de levensduur van je set</strong> – Goed onderhoud en gerichte vervanging 
                 betekent dat je set langer meegaat.
               </li>
             </ul>
 
-            <p>
-              De naam <strong>RePairPods</strong> is niet voor niets gekozen. Het combineert "Re" (opnieuw), 
-              "Pair" (koppelen, maar ook paar) en "Repair" (repareren) met "Pods". Onze missie is simpel: 
-              help mensen hun AirPods-set compleet te houden zonder onnodige verspilling.
-            </p>
-
-            {/* Sectie 11 */}
-            <h2>Waarom RePairPods een logische keuze is bij een kwijtgeraakte AirPod</h2>
-
-            <p>
-              Even samengevat waarom duizenden klanten voor RePairPods kiezen:
-            </p>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 my-6">
-              <div className="flex items-start gap-3 p-3 bg-muted/30 rounded-lg">
-                <Check className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                <span className="text-sm"><strong>100% originele Apple-onderdelen</strong> – Geen namaak, geen compromissen.</span>
-              </div>
-              <div className="flex items-start gap-3 p-3 bg-muted/30 rounded-lg">
-                <Check className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                <span className="text-sm"><strong>Specialisten</strong> – Dit is wat we doen. We begrijpen het probleem.</span>
-              </div>
-              <div className="flex items-start gap-3 p-3 bg-muted/30 rounded-lg">
-                <Check className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                <span className="text-sm"><strong>Eerlijke prijzen</strong> – Vaak voordeliger dan Apple.</span>
-              </div>
-              <div className="flex items-start gap-3 p-3 bg-muted/30 rounded-lg">
-                <Check className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                <span className="text-sm"><strong>Meerdere condities</strong> – Van nieuw tot budget.</span>
-              </div>
-              <div className="flex items-start gap-3 p-3 bg-muted/30 rounded-lg">
-                <Check className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                <span className="text-sm"><strong>Snelle levering</strong> – Vandaag besteld, morgen in huis.</span>
-              </div>
-              <div className="flex items-start gap-3 p-3 bg-muted/30 rounded-lg">
-                <Check className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                <span className="text-sm"><strong>Afhalen in Amsterdam</strong> – Persoonlijk advies.</span>
-              </div>
-            </div>
-
             {/* Conclusie */}
-            <h2>Conclusie</h2>
+            <h2 className="text-2xl md:text-3xl font-semibold text-foreground mt-12 mb-6">
+              Conclusie
+            </h2>
 
-            <p>
-              Een losse AirPod kwijtraken is vervelend, maar het hoeft geen dure aangelegenheid te zijn. 
-              Je hebt meerdere opties, van een volledig nieuwe set tot een losse originele vervanging. 
-              Voor de meeste mensen – zeker als je AirPods nog relatief nieuw zijn – is een losse originele 
-              AirPod veruit de goedkoopste en meest logische oplossing.
+            <p className="mb-4">
+              Een los oortje kwijtraken is vervelend, maar het hoeft geen dure aangelegenheid te zijn. 
+              Je hebt meerdere opties, van een volledig nieuw setje tot een losse originele vervanging. 
+              Voor de meeste mensen – zeker als je oortjes nog relatief jong zijn – is een los origineel 
+              oortje veruit de goedkoopste en meest logische oplossing.
             </p>
 
-            <p>
-              Bij RePairPods maken we het je gemakkelijk: kies je generatie, selecteer links of rechts, 
+            <p className="mb-4">
+              Bij Earbud restore maken we het je gemakkelijk: kies je generatie, selecteer links of rechts, 
               kies de conditie die bij je budget past, en bestel. Simpel, snel, en zonder gedoe.
             </p>
 
-            <p>
-              <strong>Klaar om je verloren AirPod te vervangen?</strong>
+            <p className="mb-4">
+              <strong>Klaar om je verloren oortje te vervangen?</strong>
             </p>
 
-            <p>
+            <p className="mb-2">
               <Link to="/welke-airpods" className="text-primary hover:underline font-medium">
-                Check eerst welke AirPods je hebt →
+                Check eerst welke generatie je hebt →
               </Link>
             </p>
 
-            <p>
+            <p className="mb-8">
               <Link to="/losse-airpods" className="text-primary hover:underline font-medium">
-                Bekijk ons aanbod losse AirPods →
+                Bekijk ons aanbod losse oortjes →
               </Link>
             </p>
 
             {/* FAQ Section */}
-            <h2>Veelgestelde vragen over een losse AirPod vervangen</h2>
+            <h2 className="text-2xl md:text-3xl font-semibold text-foreground mt-12 mb-6">
+              Veelgestelde vragen over losse vervanging
+            </h2>
           </div>
 
           {/* FAQ Accordion */}
@@ -569,14 +537,37 @@ const BlogLosseAirpodKwijt = () => {
             </Accordion>
           </div>
 
+          {/* Gerelateerde artikelen */}
+          <div className="mb-12">
+            <h2 className="text-xl font-semibold text-foreground mb-4">Gerelateerde artikelen</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <Link to="/blog/airpods-opnieuw-pairen" className="block p-4 bg-card rounded-lg border border-border hover:border-primary/50 transition-colors">
+                <h3 className="font-medium text-foreground mb-1">Vervangend oortje koppelen</h3>
+                <p className="text-sm text-muted-foreground">Stap-voor-stap handleiding</p>
+              </Link>
+              <Link to="/blog/airpods-combineren-per-generatie" className="block p-4 bg-card rounded-lg border border-border hover:border-primary/50 transition-colors">
+                <h3 className="font-medium text-foreground mb-1">Compatibiliteit per generatie</h3>
+                <p className="text-sm text-muted-foreground">Welke onderdelen werken samen?</p>
+              </Link>
+              <Link to="/welke-airpods" className="block p-4 bg-card rounded-lg border border-border hover:border-primary/50 transition-colors">
+                <h3 className="font-medium text-foreground mb-1">Welke generatie heb ik?</h3>
+                <p className="text-sm text-muted-foreground">Modelnummer checker</p>
+              </Link>
+              <Link to="/losse-airpods" className="block p-4 bg-card rounded-lg border border-border hover:border-primary/50 transition-colors">
+                <h3 className="font-medium text-foreground mb-1">Bekijk losse oortjes</h3>
+                <p className="text-sm text-muted-foreground">Alle generaties beschikbaar</p>
+              </Link>
+            </div>
+          </div>
+
           {/* CTA */}
           <div className="bg-secondary/30 rounded-2xl p-8 text-center">
             <h3 className="text-xl font-semibold mb-4">
-              Ben je een losse AirPod kwijt?
+              Ben je een oortje kwijt?
             </h3>
             <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
               Nu je weet welke opties je hebt, is het tijd om actie te ondernemen. Bekijk onze losse 
-              AirPods per generatie en bestel precies het oortje dat je nodig hebt – snel, voordelig, 
+              oortjes per generatie en bestel precies het onderdeel dat je nodig hebt – snel, voordelig, 
               en 100% origineel.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -584,15 +575,22 @@ const BlogLosseAirpodKwijt = () => {
                 to="/losse-airpods"
                 className="inline-flex items-center justify-center px-6 py-3 bg-primary text-primary-foreground rounded-full font-medium hover:bg-primary/90 transition-colors"
               >
-                Bekijk losse AirPods
+                Bekijk losse oortjes
               </Link>
               <Link
                 to="/welke-airpods"
                 className="inline-flex items-center justify-center px-6 py-3 bg-secondary text-foreground rounded-full font-medium hover:bg-secondary/80 transition-colors"
               >
-                Welke AirPods heb ik?
+                Welke generatie heb ik?
               </Link>
             </div>
+          </div>
+
+          {/* Disclaimer */}
+          <div className="mt-12 pt-8 border-t border-border">
+            <p className="text-xs text-muted-foreground text-center">
+              Earbud restore is een onafhankelijke aanbieder en niet gelieerd aan Apple Inc.
+            </p>
           </div>
         </article>
       </main>
@@ -603,6 +601,3 @@ const BlogLosseAirpodKwijt = () => {
 };
 
 export default BlogLosseAirpodKwijt;
-
-
-

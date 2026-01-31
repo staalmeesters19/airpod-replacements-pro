@@ -24,17 +24,17 @@ const Index = () => {
 
   const seoData = {
     nl: {
-      title: 'Losse AirPods en Oplaadcases Kopen | RePairPods',
+      title: 'Losse AirPods en Oplaadcases Kopen | Earbud restore',
       description: 'Koop losse AirPods links of rechts, en originele oplaadcases. Eén AirPod kwijt? Vervang alleen wat je mist. 100% originele Apple onderdelen, morgen in huis. Voorheen Airpods-handel.',
-      keywords: 'losse airpods, airpod links, airpod rechts, oplaadcase, airpods vervangen, losse airpod kopen, airpods case los, repairpods',
-      canonical: 'https://repairpods.nl',
+      keywords: 'losse airpods, airpod links, airpod rechts, oplaadcase, airpods vervangen, losse airpod kopen, airpods case los, earbud restore',
+      canonical: 'https://earbudrestore.nl',
       storeDescription: 'Specialist in losse AirPods en oplaadcases. Vervang alleen wat je kwijt bent.',
     },
     en: {
-      title: 'Buy Single AirPods & Charging Cases | RePairPods',
+      title: 'Buy Single AirPods & Charging Cases | Earbud restore',
       description: 'Buy single AirPods left or right, and original charging cases. Lost an AirPod? Replace only what you need. 100% original Apple parts, fast delivery to Europe.',
-      keywords: 'single airpods, airpod left, airpod right, charging case, airpods replacement, buy single airpod, airpods case only, repairpods',
-      canonical: 'https://repairpods.nl/en',
+      keywords: 'single airpods, airpod left, airpod right, charging case, airpods replacement, buy single airpod, airpods case only, earbud restore',
+      canonical: 'https://earbudrestore.nl/en',
       storeDescription: 'Specialist in single AirPods and charging cases. Replace only what you lost.',
     },
   };
@@ -51,20 +51,20 @@ const Index = () => {
         <link rel="canonical" href={seo.canonical} />
         
         {/* Hreflang tags for multilingual SEO */}
-        <link rel="alternate" hrefLang="nl" href="https://repairpods.nl" />
-        <link rel="alternate" hrefLang="en" href="https://repairpods.nl/en" />
-        <link rel="alternate" hrefLang="x-default" href="https://repairpods.nl" />
+        <link rel="alternate" hrefLang="nl" href="https://earbudrestore.nl" />
+        <link rel="alternate" hrefLang="en" href="https://earbudrestore.nl/en" />
+        <link rel="alternate" hrefLang="x-default" href="https://earbudrestore.nl" />
         
         {/* Structured Data for SEO */}
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Store",
-            "name": "RePairPods",
+            "name": "Earbud restore",
             "alternateName": "Airpods-handel",
             "description": seo.storeDescription,
             "url": seo.canonical,
-            "image": "https://repairpods.nl/og-image.jpg",
+            "image": "https://earbudrestore.nl/og-image.jpg",
             "address": {
               "@type": "PostalAddress",
               "addressLocality": "Amsterdam",
@@ -76,7 +76,7 @@ const Index = () => {
               "reviewCount": "1000"
             },
             "sameAs": [
-              "https://nl.trustpilot.com/review/repairpods.nl"
+              "https://nl.trustpilot.com/review/earbudrestore.nl"
             ]
           })}
         </script>

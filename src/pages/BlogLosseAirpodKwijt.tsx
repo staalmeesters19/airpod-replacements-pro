@@ -112,7 +112,7 @@ const BlogLosseAirpodKwijt = () => {
               Dat is begrijpelijk – Apple verkoopt immers vooral complete sets. Maar hier is het goede nieuws: 
               je hebt meerdere opties om een <strong>losse AirPod te vervangen</strong>, en sommige zijn veel voordeliger 
               dan je denkt. In dit artikel vergelijken we alle mogelijkheden, van een nieuwe set tot een losse 
-              originele AirPod via RePairPods, zodat jij de beste keuze kunt maken voor jouw situatie.
+              originele AirPod via Earbud restore, zodat jij de beste keuze kunt maken voor jouw situatie.
             </p>
 
             {/* Sectie 1 */}
@@ -138,7 +138,7 @@ const BlogLosseAirpodKwijt = () => {
               <Card className="p-4 border-l-4 border-l-primary">
                 <h4 className="font-semibold mb-2 flex items-center gap-2">
                   <Check className="h-4 w-4 text-primary" />
-                  Optie 3: Via RePairPods
+                  Optie 3: Via Earbud restore
                 </h4>
                 <p className="text-sm text-muted-foreground mb-0">
                   100% origineel Apple-onderdeel, vaak voordeliger dan Apple en snel geleverd.
@@ -220,23 +220,23 @@ const BlogLosseAirpodKwijt = () => {
 
             {/* Sectie 4 */}
             <h2 className="text-2xl md:text-3xl font-semibold text-foreground mt-12 mb-6">
-              Optie 3 – losse AirPod via RePairPods (origineel, maar vaak voordeliger)
+              Optie 3 – losse AirPod via Earbud restore (origineel, maar vaak voordeliger)
             </h2>
 
             <p className="mb-4">
-              Dit is waar RePairPods in beeld komt. Wij zijn gespecialiseerd in precies dit probleem: 
+              Dit is waar Earbud restore in beeld komt. Wij zijn gespecialiseerd in precies dit probleem: 
               mensen die één <Link to="/losse-airpods" className="text-primary hover:underline">losse AirPod</Link> kwijt 
               zijn en niet een hele set willen kopen.
             </p>
 
             <p className="mb-6">
-              Bij RePairPods vind je <strong>100% originele Apple-onderdelen</strong> – geen namaak, geen replica's. 
+              Bij Earbud restore vind je <strong>100% originele Apple-onderdelen</strong> – geen namaak, geen replica's. 
               We bieden losse linker en rechter AirPods aan voor alle gangbare generaties: van{' '}
               <Link to="/model/airpods-2e-generatie" className="text-primary hover:underline">AirPods 2e generatie</Link> tot{' '}
               <Link to="/model/airpods-pro-2e-generatie" className="text-primary hover:underline">AirPods Pro 2e generatie</Link>.
             </p>
 
-            <h3 className="text-xl font-semibold text-foreground mt-8 mb-4">Waarom kiezen klanten voor RePairPods?</h3>
+            <h3 className="text-xl font-semibold text-foreground mt-8 mb-4">Waarom kiezen klanten voor Earbud restore?</h3>
             <ul className="list-disc pl-6 mb-6 space-y-3">
               <li>
                 <strong>Je betaalt alleen voor wat je mist</strong> – Heb je alleen je rechter AirPod verloren? 
@@ -313,14 +313,14 @@ const BlogLosseAirpodKwijt = () => {
                 vaak tussen de €80 en €110, afhankelijk van het model. Dat is bijna de helft van een nieuwe set.
               </li>
               <li>
-                <strong>RePairPods losse AirPod</strong> – Ook 100% origineel, maar vaak voordeliger dan de 
+                <strong>Earbud restore losse AirPod</strong> – Ook 100% origineel, maar vaak voordeliger dan de 
                 officiële Apple-vervanging. Bovendien bieden we verschillende condities aan, waardoor je nog 
                 meer kunt besparen als je kiest voor een "uitstekende" of "goede" staat in plaats van nieuw.
               </li>
             </ul>
 
             <p className="mb-8">
-              Bij RePairPods focussen we op de beste prijs-kwaliteitverhouding. Je koopt precies wat je nodig 
+              Bij Earbud restore focussen we op de beste prijs-kwaliteitverhouding. Je koopt precies wat je nodig 
               hebt, tegen een eerlijke prijs, met de zekerheid van een origineel Apple-product.
             </p>
 
@@ -336,7 +336,7 @@ const BlogLosseAirpodKwijt = () => {
             <ul className="list-disc pl-6 mb-6 space-y-3">
               <li>
                 <strong>Je AirPods zijn nog relatief nieuw (1-2 jaar oud)</strong>, de batterij van je overgebleven 
-                oortje is nog prima, en je case werkt goed → <em>Kies voor een losse AirPod via RePairPods</em>.
+                oortje is nog prima, en je case werkt goed → <em>Kies voor een losse AirPod via Earbud restore</em>.
               </li>
               <li>
                 <strong>Je AirPods zijn 3-4 jaar oud</strong> en de batterij gaat merkbaar achteruit → 
@@ -344,7 +344,7 @@ const BlogLosseAirpodKwijt = () => {
               </li>
               <li>
                 <strong>Je wilt zeker zijn van originele kwaliteit en garantie</strong> → 
-                <em>Kies Apple of RePairPods, nooit namaak</em>.
+                <em>Kies Apple of Earbud restore, nooit namaak</em>.
               </li>
             </ul>
 

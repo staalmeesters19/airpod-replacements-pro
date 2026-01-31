@@ -70,7 +70,7 @@ const TrustBadges = () => {
           <div className="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-12">
             {/* Trustpilot */}
             <a 
-              href="https://nl.trustpilot.com/review/repairpods.nl" 
+              href="https://nl.trustpilot.com/review/earbudrestore.nl" 
               target="_blank" 
               rel="noopener noreferrer"
               className="flex items-center gap-3 hover:opacity-80 transition-opacity"

@@ -77,18 +77,18 @@ const App = () => (
               <Route path="/losse-oplaadcases" element={<LosseOplaadcases />} />
               <Route path="/model/:slug" element={<ModelPage />} />
               <Route path="/blog" element={<BlogIndex />} />
-              <Route path="/blog/welke-airpods-heb-ik" element={<BlogWelkeAirpods />} />
-              <Route path="/blog/losse-airpod-kwijt-vervangen" element={<BlogLosseAirpodKwijt />} />
-              <Route path="/blog/airpods-combineren-per-generatie" element={<BlogAirpodsCombineren />} />
-              <Route path="/blog/airpods-opnieuw-pairen" element={<BlogAirpodsOpnieuwPairen />} />
-              <Route path="/blog/airpods-batterij-vervangen" element={<BlogAirpodsBatterijVervangen />} />
-              <Route path="/blog/airpods-vs-airpods-pro" element={<BlogAirpodsVsAirpodsPro />} />
-              <Route path="/blog/airpods-schoonmaken" element={<BlogAirpodsSchoonmaken />} />
-              <Route path="/blog/een-airpod-werkt-niet" element={<BlogEenAirpodWerktNiet />} />
-              <Route path="/blog/airpods-case-laadt-niet" element={<BlogAirpodsCaseLaadtNiet />} />
-              <Route path="/blog/airpods-waterschade" element={<BlogAirpodsWaterschade />} />
-              <Route path="/blog/airpods-pro-oortips" element={<BlogAirpodsProOortips />} />
-              <Route path="/blog/airpods-reparatie-kosten" element={<BlogAirpodsReparatieKosten />} />
+              <Route path="/blog/modelnummer-herkennen" element={<BlogWelkeAirpods />} />
+              <Route path="/blog/oortje-kwijt-vervangen" element={<BlogLosseAirpodKwijt />} />
+              <Route path="/blog/oortjes-combineren-per-generatie" element={<BlogAirpodsCombineren />} />
+              <Route path="/blog/vervangend-oortje-koppelen" element={<BlogAirpodsOpnieuwPairen />} />
+              <Route path="/blog/batterij-vervangen-opties" element={<BlogAirpodsBatterijVervangen />} />
+              <Route path="/blog/standaard-vs-pro-vergelijking" element={<BlogAirpodsVsAirpodsPro />} />
+              <Route path="/blog/oortjes-schoonmaken" element={<BlogAirpodsSchoonmaken />} />
+              <Route path="/blog/een-oortje-werkt-niet" element={<BlogEenAirpodWerktNiet />} />
+              <Route path="/blog/oplaadcase-laadt-niet" element={<BlogAirpodsCaseLaadtNiet />} />
+              <Route path="/blog/oortjes-waterschade" element={<BlogAirpodsWaterschade />} />
+              <Route path="/blog/siliconen-oortips-kiezen" element={<BlogAirpodsProOortips />} />
+              <Route path="/blog/reparatie-kosten-vergelijken" element={<BlogAirpodsReparatieKosten />} />
               <Route path="/faq" element={<FAQ />} />
               <Route path="/hulp" element={<Hulp />} />
               <Route path="/over-ons" element={<OverOns />} />
@@ -104,18 +104,18 @@ const App = () => (
               <Route path="/en/charging-cases" element={<LosseOplaadcases />} />
               <Route path="/en/model/:slug" element={<ModelPage />} />
               <Route path="/en/blog" element={<BlogIndexEN />} />
-              <Route path="/en/blog/which-airpods-do-i-have" element={<BlogWelkeAirpods />} />
-              <Route path="/en/blog/single-airpod-lost-replacement" element={<BlogLosseAirpodKwijt />} />
-              <Route path="/en/blog/airpods-mixing-generations" element={<BlogAirpodsCombineren />} />
-              <Route path="/en/blog/airpods-re-pairing" element={<BlogAirpodsOpnieuwPairen />} />
-              <Route path="/en/blog/airpods-battery-replacement" element={<BlogAirpodsBatterijVervangen />} />
-              <Route path="/en/blog/airpods-vs-airpods-pro" element={<BlogAirpodsVsAirpodsPro />} />
-              <Route path="/en/blog/how-to-clean-airpods" element={<BlogAirpodsSchoonmaken />} />
-              <Route path="/en/blog/one-airpod-not-working" element={<BlogEenAirpodWerktNiet />} />
-              <Route path="/en/blog/airpods-case-not-charging" element={<BlogAirpodsCaseLaadtNiet />} />
-              <Route path="/en/blog/airpods-water-damage" element={<BlogAirpodsWaterschade />} />
-              <Route path="/en/blog/airpods-pro-ear-tips" element={<BlogAirpodsProOortips />} />
-              <Route path="/en/blog/airpods-repair-costs" element={<BlogAirpodsReparatieKosten />} />
+              <Route path="/en/blog/identify-model-number" element={<BlogWelkeAirpods />} />
+              <Route path="/en/blog/single-earbud-replacement" element={<BlogLosseAirpodKwijt />} />
+              <Route path="/en/blog/mixing-earbuds-generations" element={<BlogAirpodsCombineren />} />
+              <Route path="/en/blog/pair-replacement-earbud" element={<BlogAirpodsOpnieuwPairen />} />
+              <Route path="/en/blog/battery-replacement-options" element={<BlogAirpodsBatterijVervangen />} />
+              <Route path="/en/blog/standard-vs-pro-comparison" element={<BlogAirpodsVsAirpodsPro />} />
+              <Route path="/en/blog/how-to-clean-earbuds" element={<BlogAirpodsSchoonmaken />} />
+              <Route path="/en/blog/one-earbud-not-working" element={<BlogEenAirpodWerktNiet />} />
+              <Route path="/en/blog/charging-case-not-working" element={<BlogAirpodsCaseLaadtNiet />} />
+              <Route path="/en/blog/earbuds-water-damage" element={<BlogAirpodsWaterschade />} />
+              <Route path="/en/blog/silicone-ear-tips-guide" element={<BlogAirpodsProOortips />} />
+              <Route path="/en/blog/repair-costs-comparison" element={<BlogAirpodsReparatieKosten />} />
               <Route path="/en/faq" element={<FAQEN />} />
               <Route path="/en/help" element={<HelpEN />} />
               <Route path="/en/about-us" element={<AboutUs />} />

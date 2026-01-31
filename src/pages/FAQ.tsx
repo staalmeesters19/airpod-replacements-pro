@@ -39,13 +39,13 @@ const FAQ = () => {
   return (
     <>
       <Helmet>
-        <title>Veelgestelde vragen over bestellen, verzending en garantie | RePairPods</title>
+        <title>Veelgestelde vragen over bestellen, verzending en garantie | Earbud restore</title>
         <meta
           name="description"
-          content="Antwoorden op al je vragen over losse AirPods kopen bij RePairPods. Informatie over betalen, verzending, garantie, retourneren en onze productcondities."
+          content="Antwoorden op al je vragen over losse AirPods kopen bij Earbud restore. Informatie over betalen, verzending, garantie, retourneren en onze productcondities."
         />
         <meta name="keywords" content="losse airpods kopen, airpods garantie, airpods verzending, refurbished airpods, airpod vervangen" />
-        <link rel="canonical" href="https://repairpods.nl/faq" />
+        <link rel="canonical" href="https://earbudrestore.nl/faq" />
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
@@ -53,7 +53,7 @@ const FAQ = () => {
             "mainEntity": [
               {
                 "@type": "Question",
-                "name": "Hoe kan ik betalen bij RePairPods?",
+                "name": "Hoe kan ik betalen bij Earbud restore?",
                 "acceptedAnswer": {
                   "@type": "Answer",
                   "text": "Je kunt betalen met iDEAL, Bancontact, creditcard (Visa, Mastercard), PayPal, Apple Pay en Google Pay. Alle betalingen gaan direct en veilig bij het afrekenen."
@@ -103,7 +103,7 @@ const FAQ = () => {
                   <li><a href="#retourneren" className="hover:text-primary transition-colors">→ Retourneren & omruilen</a></li>
                   <li><a href="#garantie" className="hover:text-primary transition-colors">→ Garantie & zekerheid</a></li>
                   <li><a href="#product" className="hover:text-primary transition-colors">→ Product & condities</a></li>
-                  <li><a href="#contact" className="hover:text-primary transition-colors">→ Over RePairPods</a></li>
+                  <li><a href="#contact" className="hover:text-primary transition-colors">→ Over Earbud restore</a></li>
                 </ul>
               </div>
             </div>
@@ -118,7 +118,7 @@ const FAQ = () => {
               <Accordion type="single" collapsible className="space-y-2 md:space-y-3">
                 <AccordionItem value="betalen" className="border border-border rounded-xl px-4 md:px-6 data-[state=open]:bg-secondary/30">
                   <AccordionTrigger className="text-left text-sm md:text-base font-medium hover:no-underline">
-                    Hoe kan ik betalen bij RePairPods?
+                    Hoe kan ik betalen bij Earbud restore?
                   </AccordionTrigger>
                   <AccordionContent className="text-muted-foreground">
                     <p className="mb-4">
@@ -142,7 +142,7 @@ const FAQ = () => {
                   </AccordionTrigger>
                   <AccordionContent className="text-muted-foreground">
                     <p className="mb-4">
-                      Nee, achteraf betalen is niet mogelijk bij RePairPods. Alle betalingen gaan direct bij het afrekenen.
+                      Nee, achteraf betalen is niet mogelijk bij Earbud restore. Alle betalingen gaan direct bij het afrekenen.
                     </p>
                     <p className="mb-4">
                       We hebben hier bewust voor gekozen. Door direct af te rekenen houden we onze prijzen laag en het proces simpel. Geen gedoe met facturen of incasso's achteraf.
@@ -284,7 +284,7 @@ const FAQ = () => {
                       Dat hangt af van de reden voor de retour. We vinden het belangrijk om hier eerlijk en duidelijk over te zijn.
                     </p>
                     
-                    <p className="font-medium text-foreground mb-2">RePairPods betaalt bij:</p>
+                    <p className="font-medium text-foreground mb-2">Earbud restore betaalt bij:</p>
                     <ul className="list-disc list-inside space-y-1 mb-4">
                       <li>Verkeerd product geleverd</li>
                       <li>Defect product bij ontvangst</li>
@@ -529,9 +529,9 @@ const FAQ = () => {
               </Accordion>
             </section>
 
-            {/* Over RePairPods & contact */}
+            {/* Over Earbud restore & contact */}
             <section id="contact" className="mb-16 scroll-mt-24">
-              <h2 className="text-2xl font-semibold mb-6">Over RePairPods & contact</h2>
+              <h2 className="text-2xl font-semibold mb-6">Over Earbud restore & contact</h2>
               
               <Accordion type="single" collapsible className="space-y-3">
                 <AccordionItem value="sets" className="border border-border rounded-xl px-6 data-[state=open]:bg-secondary/30">
@@ -545,7 +545,7 @@ const FAQ = () => {
                     </p>
                     <p>
                       Zo voorkom je verspilling. Je vervangt alleen wat je kwijt bent of kapot is, niet meer. 
-                      Dat is waar RePairPods om draait.
+                      Dat is waar Earbud restore om draait.
                     </p>
                   </AccordionContent>
                 </AccordionItem>
@@ -560,7 +560,7 @@ const FAQ = () => {
                     </p>
                     <ul className="space-y-2">
                       <li><strong>WhatsApp:</strong> +31 6 12345678 (snelste reactie)</li>
-                      <li><strong>E-mail:</strong> info@repairpods.nl</li>
+                      <li><strong>E-mail:</strong> info@earbudrestore.nl</li>
                       <li><strong>Instagram:</strong> @airpodshandel</li>
                     </ul>
                   </AccordionContent>

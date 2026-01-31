@@ -27,12 +27,12 @@ const OverOns = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Helmet>
-        <title>Over RepairPods – Specialist in Losse AirPods en Oplaadcases</title>
+        <title>Over Earbud restore – Specialist in Losse AirPods en Oplaadcases</title>
         <meta 
           name="description" 
-          content="RepairPods: dé specialist in losse AirPods en oplaadcases. Twee broers helpen je AirPods-set weer compleet te maken. 100% origineel Apple, garantie inbegrepen." 
+          content="Earbud restore: dé specialist in losse AirPods en oplaadcases. Twee broers helpen je AirPods-set weer compleet te maken. 100% origineel Apple, garantie inbegrepen." 
         />
-        <link rel="canonical" href="https://repairpods.nl/over-ons" />
+        <link rel="canonical" href="https://earbudrestore.nl/over-ons" />
       </Helmet>
 
       <Header />
@@ -59,7 +59,7 @@ const OverOns = () => {
               Voorheen Airpods-handel
             </span>
             <h1 className="text-xl md:text-4xl lg:text-5xl font-bold mb-2 md:mb-6">
-              Over RepairPods
+              Over Earbud restore
             </h1>
             <p className="text-sm md:text-xl text-muted-foreground max-w-3xl">
               Dé specialist in losse AirPods en oplaadcases.
@@ -71,7 +71,7 @@ const OverOns = () => {
             <h2 className="text-lg md:text-3xl font-semibold mb-3 md:mb-6">Ons verhaal</h2>
             <div className="prose prose-neutral dark:prose-invert max-w-none">
               <p className="text-sm md:text-lg text-muted-foreground mb-3 md:mb-4">
-                RepairPods is begonnen als Airpods-handel, ongeveer drie jaar geleden. Twee broers zagen 
+                Earbud restore is begonnen als Airpods-handel, ongeveer drie jaar geleden. Twee broers zagen
                 een probleem dat iedereen herkent: je verliest één AirPod, of je oplaadcase gaat kapot. 
                 Bij Apple en de meeste winkels moet je dan een compleet nieuwe set kopen.
               </p>
@@ -82,7 +82,7 @@ const OverOns = () => {
                 leren over generaties, modelnummers en firmware.
               </p>
               <p className="text-sm md:text-lg text-muted-foreground">
-                In drie jaar tijd is Airpods-handel uitgegroeid tot RepairPods: een gespecialiseerde 
+                In drie jaar tijd is Airpods-handel uitgegroeid tot Earbud restore: een gespecialiseerde 
                 webshop die duizenden AirPods-sets weer compleet heeft gemaakt.
               </p>
             </div>
@@ -104,7 +104,7 @@ const OverOns = () => {
               <div>
                 <h3 className="text-sm md:text-xl font-medium mb-2 md:mb-3">De oplossing</h3>
                 <p className="text-xs md:text-base text-muted-foreground">
-                  Bij RepairPods koop je precies wat je nodig hebt. Goedkoper, sneller, en duurzamer.
+                  Bij Earbud restore koop je precies wat je nodig hebt. Goedkoper, sneller, en duurzamer.
                 </p>
               </div>
             </div>
@@ -249,7 +249,7 @@ const OverOns = () => {
               </div>
             </div>
             <p className="text-xs md:text-base text-muted-foreground">
-              Bij RepairPods geven we onderdelen een tweede leven. Goed voor je portemonnee én het milieu.
+              Bij Earbud restore geven we onderdelen een tweede leven. Goed voor je portemonnee én het milieu.
             </p>
           </section>
 

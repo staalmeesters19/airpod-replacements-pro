@@ -424,17 +424,17 @@ const BlogAirpodsSchoonmaken = () => {
   return (
     <>
       <Helmet>
-        <title>{t.title} | RePairPods</title>
+        <title>{t.title} | Earbud restore</title>
         <meta name="description" content={t.metaDescription} />
         <meta name="keywords" content={isEnglish 
           ? "clean airpods, airpods cleaning, how to clean airpods, airpods maintenance, clean airpods pro, airpods speaker mesh, cleaning airpods case"
           : "airpods schoonmaken, airpods reinigen, hoe airpods schoonmaken, airpods onderhoud, airpods pro schoonmaken, speaker mesh reinigen, oplaadcase schoonmaken"
         } />
-        <link rel="canonical" href={`https://repairpods.nl${isEnglish ? '/en/blog/how-to-clean-airpods' : '/blog/airpods-schoonmaken'}`} />
+        <link rel="canonical" href={`https://earbudrestore.nl${isEnglish ? '/en/blog/how-to-clean-airpods' : '/blog/airpods-schoonmaken'}`} />
         <meta property="og:title" content={t.title} />
         <meta property="og:description" content={t.metaDescription} />
         <meta property="og:type" content="article" />
-        <meta property="og:url" content={`https://repairpods.nl${isEnglish ? '/en/blog/how-to-clean-airpods' : '/blog/airpods-schoonmaken'}`} />
+        <meta property="og:url" content={`https://earbudrestore.nl${isEnglish ? '/en/blog/how-to-clean-airpods' : '/blog/airpods-schoonmaken'}`} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={t.title} />
         <meta name="twitter:description" content={t.metaDescription} />

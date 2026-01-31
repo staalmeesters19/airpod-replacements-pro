@@ -87,7 +87,7 @@ const Header = () => {
             {/* Logo */}
             <Link to={prefix || '/'} className="flex items-center">
               <span className="text-xl font-semibold text-foreground tracking-tight">
-                Re<span className="text-primary">Pair</span>Pods
+                Earbud <span className="text-primary">restore</span>
               </span>
             </Link>
 

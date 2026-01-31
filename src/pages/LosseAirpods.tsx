@@ -33,7 +33,7 @@ import { useTranslation } from 'react-i18next';
 const faqItemsNL = [
   {
     question: 'Kan ik een losse AirPod kopen als vervanging?',
-    answer: 'Ja, bij RePairPods kun je losse AirPods per stuk kopen. Of je nu je linker of rechter AirPod kwijt bent, wij hebben alle generaties op voorraad.',
+    answer: 'Ja, bij Earbud restore kun je losse AirPods per stuk kopen. Of je nu je linker of rechter AirPod kwijt bent, wij hebben alle generaties op voorraad.',
   },
   {
     question: 'Werkt een losse AirPod met mijn bestaande set?',
@@ -52,7 +52,7 @@ const faqItemsNL = [
 const faqItemsEN = [
   {
     question: 'Can I buy a single AirPod as a replacement?',
-    answer: 'Yes, at RePairPods you can buy single AirPods individually. Whether you lost your left or right AirPod, we have all generations in stock.',
+    answer: 'Yes, at Earbud restore you can buy single AirPods individually. Whether you lost your left or right AirPod, we have all generations in stock.',
   },
   {
     question: 'Does a single AirPod work with my existing set?',
@@ -125,7 +125,7 @@ const LosseAirpods = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Helmet>
-        <title>{isEnglish ? 'Buy Single AirPods | Left or Right AirPod | RePairPods' : 'Losse AirPods Kopen | Links en Rechts per Stuk | RePairPods'}</title>
+        <title>{isEnglish ? 'Buy Single AirPods | Left or Right AirPod | Earbud restore' : 'Losse AirPods Kopen | Links en Rechts per Stuk | Earbud restore'}</title>
         <meta
           name="description"
           content={isEnglish 
@@ -134,7 +134,7 @@ const LosseAirpods = () => {
           }
         />
         <meta name="keywords" content={isEnglish ? 'single airpods, buy left airpod, buy right airpod, single airpod, airpod replacement' : 'losse airpods, airpod links kopen, airpod rechts kopen, losse airpod, airpod per stuk, airpods vervangen'} />
-        <link rel="canonical" href={isEnglish ? 'https://repairpods.nl/en/single-airpods' : 'https://repairpods.nl/losse-airpods'} />
+        <link rel="canonical" href={isEnglish ? 'https://earbudrestore.nl/en/single-airpods' : 'https://earbudrestore.nl/losse-airpods'} />
       </Helmet>
 
       <Header />
@@ -235,8 +235,8 @@ const LosseAirpods = () => {
             </h2>
             <p className="text-muted-foreground mb-6">
               {isEnglish 
-                ? "It happens more often than you think: you lose one AirPod or the battery of your left or right earbud starts to deteriorate. At Apple you often have to buy a completely new set, but at RePairPods you can order a single AirPod individually. That saves you up to 70% of the cost of a new set!"
-                : "Het gebeurt vaker dan je denkt: je verliest één AirPod of de batterij van je linker of rechter oortje gaat achteruit. Bij Apple moet je dan vaak een volledig nieuwe set kopen, maar bij RePairPods kun je een losse AirPod per stuk bestellen. Dat scheelt je tot wel 70% van de kosten van een nieuwe set!"
+                ? "It happens more often than you think: you lose one AirPod or the battery of your left or right earbud starts to deteriorate. At Apple you often have to buy a completely new set, but at Earbud restore you can order a single AirPod individually. That saves you up to 70% of the cost of a new set!"
+                : "Het gebeurt vaker dan je denkt: je verliest één AirPod of de batterij van je linker of rechter oortje gaat achteruit. Bij Apple moet je dan vaak een volledig nieuwe set kopen, maar bij Earbud restore kun je een losse AirPod per stuk bestellen. Dat scheelt je tot wel 70% van de kosten van een nieuwe set!"
               }
             </p>
             

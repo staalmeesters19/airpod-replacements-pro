@@ -323,7 +323,7 @@ const BlogAirpodsBatterijVervangen = () => {
                 <Card className="p-6 my-8 bg-primary/5 border-primary/20">
                   <h3 className="text-lg font-semibold mb-4 flex items-center gap-2">
                     <Check className="h-5 w-5 text-primary" />
-                    Why Choose RePairPods?
+                    Why Choose Earbud restore?
                   </h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                     <div className="flex items-start gap-2">
@@ -360,7 +360,7 @@ const BlogAirpodsBatterijVervangen = () => {
                 <p className="mb-4">
                   Is your case battery dead but your earbuds still working fine? Then you don't need 
                   new AirPods – just a new <Link to={links.losseOplaadcases} className="text-primary hover:underline">charging case</Link>. 
-                  At RePairPods, we sell original cases for all generations:
+                  At Earbud restore, we sell original cases for all generations:
                 </p>
 
                 <ul className="list-disc pl-6 mb-8 space-y-2">
@@ -405,7 +405,7 @@ const BlogAirpodsBatterijVervangen = () => {
                       <tr className="border-b border-border">
                         <th className="text-left py-3 px-4 font-semibold text-foreground">Scenario</th>
                         <th className="text-left py-3 px-4 font-semibold text-foreground">Apple</th>
-                        <th className="text-left py-3 px-4 font-semibold text-foreground">RePairPods</th>
+                        <th className="text-left py-3 px-4 font-semibold text-foreground">Earbud restore</th>
                       </tr>
                     </thead>
                     <tbody className="text-sm">

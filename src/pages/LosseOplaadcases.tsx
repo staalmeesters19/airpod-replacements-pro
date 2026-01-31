@@ -33,7 +33,7 @@ import { useTranslation } from 'react-i18next';
 const faqItemsNL = [
   {
     question: 'Kan ik een losse oplaadcase kopen zonder AirPods?',
-    answer: 'Ja, bij RePairPods verkopen we losse oplaadcases zonder AirPods. Perfect als je case kwijt of kapot is, maar je AirPods nog prima werken.',
+    answer: 'Ja, bij Earbud restore verkopen we losse oplaadcases zonder AirPods. Perfect als je case kwijt of kapot is, maar je AirPods nog prima werken.',
   },
   {
     question: 'Past elke oplaadcase op elke AirPod generatie?',
@@ -52,7 +52,7 @@ const faqItemsNL = [
 const faqItemsEN = [
   {
     question: 'Can I buy a charging case without AirPods?',
-    answer: 'Yes, at RePairPods we sell charging cases without AirPods. Perfect if your case is lost or broken, but your AirPods still work fine.',
+    answer: 'Yes, at Earbud restore we sell charging cases without AirPods. Perfect if your case is lost or broken, but your AirPods still work fine.',
   },
   {
     question: 'Does every charging case fit every AirPods generation?',
@@ -107,7 +107,7 @@ const LosseOplaadcases = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Helmet>
-        <title>{isEnglish ? 'Buy AirPods Charging Case | All Generations | RePairPods' : 'Losse Oplaadcase Kopen | AirPods Cases per Generatie | RePairPods'}</title>
+        <title>{isEnglish ? 'Buy AirPods Charging Case | All Generations | Earbud restore' : 'Losse Oplaadcase Kopen | AirPods Cases per Generatie | Earbud restore'}</title>
         <meta
           name="description"
           content={isEnglish 
@@ -116,7 +116,7 @@ const LosseOplaadcases = () => {
           }
         />
         <meta name="keywords" content={isEnglish ? 'airpods charging case, buy airpods case, replacement case airpods, airpods case only' : 'losse oplaadcase, airpods case kopen, oplaadcase airpods, airpods case los, airpods hoesje kopen'} />
-        <link rel="canonical" href={isEnglish ? 'https://repairpods.nl/en/charging-cases' : 'https://repairpods.nl/losse-oplaadcases'} />
+        <link rel="canonical" href={isEnglish ? 'https://earbudrestore.nl/en/charging-cases' : 'https://earbudrestore.nl/losse-oplaadcases'} />
       </Helmet>
 
       <Header />
@@ -206,8 +206,8 @@ const LosseOplaadcases = () => {
             </h2>
             <p className="text-muted-foreground mb-6">
               {isEnglish 
-                ? "Your charging case is lost or broken, but your AirPods still work fine. Why would you buy a completely new set? At RePairPods you can order a replacement original Apple charging case for a fraction of the price. Save up to 60% compared to a new set!"
-                : "Je oplaadcase is kwijt of kapot, maar je AirPods werken nog prima. Waarom zou je dan een compleet nieuwe set kopen? Bij RePairPods bestel je een losse originele Apple oplaadcase voor een fractie van de prijs. Bespaar tot 60% ten opzichte van een nieuwe set!"
+                ? "Your charging case is lost or broken, but your AirPods still work fine. Why would you buy a completely new set? At Earbud restore you can order a replacement original Apple charging case for a fraction of the price. Save up to 60% compared to a new set!"
+                : "Je oplaadcase is kwijt of kapot, maar je AirPods werken nog prima. Waarom zou je dan een compleet nieuwe set kopen? Bij Earbud restore bestel je een losse originele Apple oplaadcase voor een fractie van de prijs. Bespaar tot 60% ten opzichte van een nieuwe set!"
               }
             </p>
             
@@ -223,8 +223,8 @@ const LosseOplaadcases = () => {
             <h3 className="text-xl font-medium mb-3">{isEnglish ? 'All cases are 100% original Apple' : 'Alle cases zijn 100% origineel Apple'}</h3>
             <p className="text-muted-foreground mb-6">
               {isEnglish 
-                ? "At RePairPods we only sell original Apple charging cases. No fakes, no replicas. Every case is carefully tested for battery capacity and charging functionality before shipping."
-                : "Bij RePairPods verkopen we uitsluitend originele Apple oplaadcases. Geen namaak, geen replicas. Elke case wordt zorgvuldig getest op batterijcapaciteit en oplaadfunctionaliteit voordat deze wordt verzonden."
+                ? "At Earbud restore we only sell original Apple charging cases. No fakes, no replicas. Every case is carefully tested for battery capacity and charging functionality before shipping."
+                : "Bij Earbud restore verkopen we uitsluitend originele Apple oplaadcases. Geen namaak, geen replicas. Elke case wordt zorgvuldig getest op batterijcapaciteit en oplaadfunctionaliteit voordat deze wordt verzonden."
               }
             </p>
           </section>

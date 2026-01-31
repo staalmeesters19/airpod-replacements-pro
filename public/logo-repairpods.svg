@@ -5,6 +5,6 @@
     .logo-accent { fill: #0A887A; }
   </style>
   <text x="0" y="28" class="logo-text">
-    <tspan class="logo-primary">Re</tspan><tspan class="logo-accent">Pair</tspan><tspan class="logo-primary">Pods</tspan>
+    <tspan class="logo-primary">Earbud </tspan><tspan class="logo-accent">restore</tspan>
   </text>
 </svg>

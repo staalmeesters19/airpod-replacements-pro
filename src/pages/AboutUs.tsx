@@ -27,12 +27,12 @@ const AboutUs = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Helmet>
-        <title>About Us – Specialist in Single AirPods & Charging Cases | RePairPods</title>
+        <title>About Us – Specialist in Single AirPods & Charging Cases | Earbud restore</title>
         <meta 
           name="description" 
-          content="RePairPods: the specialist in single AirPods and charging cases. Two brothers help you complete your AirPods set. 100% original Apple, warranty included." 
+          content="Earbud restore: the specialist in single AirPods and charging cases. Two brothers help you complete your AirPods set. 100% original Apple, warranty included." 
         />
-        <link rel="canonical" href="https://repairpods.nl/en/about-us" />
+        <link rel="canonical" href="https://earbudrestore.nl/en/about-us" />
         <html lang="en" />
       </Helmet>
 
@@ -60,7 +60,7 @@ const AboutUs = () => {
               Formerly Airpods-handel
             </span>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-              About RePairPods
+              About Earbud restore
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl">
               The specialist in single AirPods and charging cases. We help you complete your AirPods set – without buying a whole new set.
@@ -72,7 +72,7 @@ const AboutUs = () => {
             <h2 className="text-2xl md:text-3xl font-semibold mb-6">Our story</h2>
             <div className="prose prose-neutral dark:prose-invert max-w-none">
               <p className="text-lg text-muted-foreground mb-4">
-                RePairPods started as Airpods-handel about three years ago. Two brothers saw a 
+                Earbud restore started as Airpods-handel about three years ago. Two brothers saw a 
                 problem everyone recognizes: you lose one AirPod, or your charging case breaks. 
                 At Apple and most stores, you have to buy a complete new set. A waste of money 
                 and of the AirPod that still works perfectly.
@@ -85,7 +85,7 @@ const AboutUs = () => {
                 model numbers, and firmware during the day.
               </p>
               <p className="text-lg text-muted-foreground">
-                In three years, Airpods-handel has grown into RePairPods: a specialized webshop 
+                In three years, Airpods-handel has grown into Earbud restore: a specialized webshop 
                 that has completed thousands of AirPods sets for customers in the Netherlands 
                 and across Europe. The new name better fits the mission: repairing AirPods 
                 instead of throwing them away and buying new.
@@ -110,7 +110,7 @@ const AboutUs = () => {
               <div>
                 <h3 className="text-xl font-medium mb-3">The solution</h3>
                 <p className="text-muted-foreground mb-4">
-                  At RePairPods, you buy exactly what you need. A single left AirPod. A single 
+                  At Earbud restore, you buy exactly what you need. A single left AirPod. A single 
                   right AirPod. Or just a charging case. Cheaper, faster, and much more 
                   sustainable than buying a whole new set.
                 </p>
@@ -266,12 +266,12 @@ const AboutUs = () => {
             <div className="prose prose-neutral dark:prose-invert max-w-none">
               <p className="text-muted-foreground mb-4">
                 Every year millions of electronics end up in landfills while they still work 
-                perfectly. AirPods are no exception. At RePairPods, we give as many parts as 
+                perfectly. AirPods are no exception. At Earbud restore, we give as many parts as 
                 possible a second life. That's not only good for your wallet, but also for 
                 the environment.
               </p>
               <p className="text-muted-foreground">
-                The brothers behind RePairPods are tech lovers, but hate waste. By making 
+                The brothers behind Earbud restore are tech lovers, but hate waste. By making 
                 single replacement possible, you don't have to throw away a complete set 
                 because one part is missing or broken. That's circularity in practice: 
                 repair instead of replace.
@@ -302,7 +302,7 @@ const AboutUs = () => {
             </h2>
             <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
               Whether you're looking for a single left AirPod, a right AirPod, or just a 
-              charging case – at RePairPods you'll find exactly what you're missing. 100% 
+              charging case – at Earbud restore you'll find exactly what you're missing. 100% 
               original Apple, with warranty, and delivered tomorrow.
             </p>
             <div className="flex flex-wrap justify-center gap-4">

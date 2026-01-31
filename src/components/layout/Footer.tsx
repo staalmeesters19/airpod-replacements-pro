@@ -16,7 +16,7 @@ const Footer = () => {
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
             <h3 className="text-base md:text-lg font-semibold mb-1 md:mb-2">
-              Re<span className="text-primary">Pair</span>Pods
+              Earbud <span className="text-primary">restore</span>
             </h3>
             <p className="text-xs md:text-sm text-muted-foreground mb-0.5 md:mb-1">{t('common:brand.tagline')}</p>
             <p className="text-xs md:text-sm text-muted-foreground">
@@ -90,7 +90,7 @@ const Footer = () => {
         <div className="pt-4 md:pt-6 border-t border-border">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-2 md:space-y-0">
             <p className="text-xs md:text-sm text-muted-foreground">
-              © 2025 RePairPods
+              © 2025 Earbud restore
             </p>
             <div className="flex space-x-4 md:space-x-6 text-xs md:text-sm">
               <Link to={`${prefix}/privacybeleid`} className="text-muted-foreground hover:text-primary transition-colors">

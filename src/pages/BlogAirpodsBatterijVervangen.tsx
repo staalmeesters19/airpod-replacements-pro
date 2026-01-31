@@ -712,12 +712,12 @@ const BlogAirpodsBatterijVervangen = () => {
               </div>
 
               <h2 className="text-2xl md:text-3xl font-semibold text-foreground mt-12 mb-6">
-                Optie 2: Losse AirPod kopen bij RePairPods
+                Optie 2: Los vervangend oortje kopen
               </h2>
 
               <p className="mb-4">
-                Het slimmere alternatief: koop een <Link to={links.losseAirpods} className="text-primary hover:underline">losse originele AirPod</Link>{' '}
-                met verse batterij. Bij RePairPods bieden we 100% originele Apple AirPods, grondig 
+                Het slimmere alternatief: koop een <Link to={links.losseAirpods} className="text-primary hover:underline">los origineel oortje</Link>{' '}
+                met verse batterij. Bij Earbud restore bieden we 100% originele onderdelen, grondig 
                 getest op geluid, batterij en connectiviteit.
               </p>
 
@@ -726,8 +726,8 @@ const BlogAirpodsBatterijVervangen = () => {
                   <thead>
                     <tr className="border-b border-border">
                       <th className="text-left py-3 px-4 font-semibold text-foreground">Model</th>
-                      <th className="text-left py-3 px-4 font-semibold text-foreground">Prijs bij RePairPods</th>
-                      <th className="text-left py-3 px-4 font-semibold text-foreground">Besparing vs Apple</th>
+                      <th className="text-left py-3 px-4 font-semibold text-foreground">Prijs bij Earbud restore</th>
+                      <th className="text-left py-3 px-4 font-semibold text-foreground">Besparing vs fabrikant</th>
                     </tr>
                   </thead>
                   <tbody className="text-sm">
@@ -758,32 +758,32 @@ const BlogAirpodsBatterijVervangen = () => {
               <Card className="p-6 my-8 bg-primary/5 border-primary/20">
                 <h3 className="text-lg font-semibold mb-4 flex items-center gap-2">
                   <Check className="h-5 w-5 text-primary" />
-                  Waarom kiezen voor RePairPods?
+                  Waarom kiezen voor Earbud restore?
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                   <div className="flex items-start gap-2">
                     <Check className="h-4 w-4 text-primary flex-shrink-0 mt-1" />
-                    <span className="text-sm">100% originele Apple AirPods</span>
+                    <span className="text-sm">100% origineel – Elk product is een origineel onderdeel</span>
                   </div>
                   <div className="flex items-start gap-2">
                     <Check className="h-4 w-4 text-primary flex-shrink-0 mt-1" />
-                    <span className="text-sm">Verse batterij in elke AirPod</span>
+                    <span className="text-sm">Zorgvuldig getest – Getest op geluid, batterij en Bluetooth</span>
                   </div>
                   <div className="flex items-start gap-2">
                     <Check className="h-4 w-4 text-primary flex-shrink-0 mt-1" />
-                    <span className="text-sm">Getest op geluid, batterij & connectie</span>
+                    <span className="text-sm">Specialist – Precies het onderdeel dat je nodig hebt</span>
                   </div>
                   <div className="flex items-start gap-2">
                     <Check className="h-4 w-4 text-primary flex-shrink-0 mt-1" />
-                    <span className="text-sm">30 dagen retourrecht</span>
+                    <span className="text-sm">Snel geleverd – Bestel voor 17:00, dezelfde dag verzonden</span>
                   </div>
                   <div className="flex items-start gap-2">
                     <Check className="h-4 w-4 text-primary flex-shrink-0 mt-1" />
-                    <span className="text-sm">Gratis verzending</span>
+                    <span className="text-sm">Afhalen in Amsterdam – Uitproberen voor je koopt</span>
                   </div>
                   <div className="flex items-start gap-2">
                     <Check className="h-4 w-4 text-primary flex-shrink-0 mt-1" />
-                    <span className="text-sm">Uitstekende <Link to={links.reviews} className="text-primary hover:underline">klantbeoordelingen</Link></span>
+                    <span className="text-sm">14 dagen retour – Niet tevreden? Geld terug</span>
                   </div>
                 </div>
               </Card>
@@ -794,8 +794,8 @@ const BlogAirpodsBatterijVervangen = () => {
 
               <p className="mb-4">
                 Is je case-batterij leeg maar werken je oortjes nog prima? Dan heb je geen nieuwe 
-                AirPods nodig – alleen een nieuwe <Link to={links.losseOplaadcases} className="text-primary hover:underline">oplaadcase</Link>. 
-                Bij RePairPods verkopen we originele cases voor alle generaties:
+                oortjes nodig – alleen een nieuwe <Link to={links.losseOplaadcases} className="text-primary hover:underline">oplaadcase</Link>. 
+                Bij Earbud restore verkopen we originele cases voor alle generaties:
               </p>
 
               <ul className="list-disc pl-6 mb-8 space-y-2">
@@ -839,8 +839,8 @@ const BlogAirpodsBatterijVervangen = () => {
                   <thead>
                     <tr className="border-b border-border">
                       <th className="text-left py-3 px-4 font-semibold text-foreground">Scenario</th>
-                      <th className="text-left py-3 px-4 font-semibold text-foreground">Apple</th>
-                      <th className="text-left py-3 px-4 font-semibold text-foreground">RePairPods</th>
+                      <th className="text-left py-3 px-4 font-semibold text-foreground">Fabrikant</th>
+                      <th className="text-left py-3 px-4 font-semibold text-foreground">Earbud restore</th>
                     </tr>
                   </thead>
                   <tbody className="text-sm">
@@ -929,9 +929,9 @@ const BlogAirpodsBatterijVervangen = () => {
               </p>
 
               <ul className="list-disc pl-6 mb-6 space-y-2">
-                <li><strong>1 AirPod met slechte batterij:</strong> Koop een <Link to={links.losseAirpods} className="text-primary hover:underline">losse AirPod</Link> bij RePairPods – bespaar tot €44</li>
+                <li><strong>1 oortje met slechte batterij:</strong> Koop een <Link to={links.losseAirpods} className="text-primary hover:underline">los vervangend oortje</Link> bij Earbud restore – bespaar tot €44</li>
                 <li><strong>Case-batterij leeg:</strong> Koop een <Link to={links.losseOplaadcases} className="text-primary hover:underline">losse oplaadcase</Link> – bespaar tot €39</li>
-                <li><strong>Beide oortjes versleten:</strong> Koop 2 losse AirPods – nog steeds goedkoper dan Apple</li>
+                <li><strong>Beide oortjes versleten:</strong> Koop 2 losse oortjes – nog steeds goedkoper dan de fabrikant</li>
                 <li><strong>Alles versleten + wil upgraden:</strong> Overweeg een nieuwe set van de nieuwste generatie</li>
               </ul>
 

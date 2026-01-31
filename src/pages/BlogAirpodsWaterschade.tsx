@@ -10,10 +10,10 @@ const BlogAirpodsWaterschade = () => {
 
   const content = {
     nl: {
-      title: "AirPods Waterschade: Wat Te Doen Als Ze Nat Zijn",
-      metaTitle: "AirPods Waterschade? Dit Moet Je Direct Doen [2024]",
-      metaDescription: "AirPods in water gevallen of door de was gegaan? Ontdek wat je direct moet doen om ze te redden en wanneer vervanging nodig is.",
-      intro: "Je AirPods in het toilet laten vallen of per ongeluk meegewassen? Paniek is begrijpelijk, maar snel en correct handelen kan je AirPods nog redden. Hier lees je precies wat je moet doen.",
+      title: "Waterschade aan je oortjes: wat te doen als ze nat zijn",
+      metaTitle: "Waterschade aan je oortjes? Dit moet je direct doen",
+      metaDescription: "Oortjes in water gevallen of door de was gegaan? Ontdek wat je direct moet doen om ze te redden en wanneer vervanging nodig is.",
+      intro: "Je oortjes in het toilet laten vallen of per ongeluk meegewassen? Paniek is begrijpelijk, maar snel en correct handelen kan je oortjes nog redden. Hier lees je precies wat je moet doen.",
       
       whatIsTheProblem: "Wat is het probleem?",
       whatIsTheProblemText: "Water en elektronica gaan niet samen. Wanneer vocht in je AirPods komt, kan dit kortsluiting veroorzaken en interne componenten beschadigen. De schade is vaak niet direct zichtbaar maar kan later problemen geven.",
@@ -117,10 +117,10 @@ const BlogAirpodsWaterschade = () => {
       readAlso: "Lees ook:"
     },
     en: {
-      title: "AirPods Water Damage: What To Do When They Get Wet",
-      metaTitle: "AirPods Water Damage? Do This Immediately [2024]",
-      metaDescription: "AirPods fell in water or went through the wash? Discover what to do immediately to save them and when replacement is needed.",
-      intro: "Dropped your AirPods in the toilet or accidentally washed them? Panic is understandable, but acting quickly and correctly can still save your AirPods. Here's exactly what to do.",
+      title: "Water Damage: What To Do When Your Earbuds Get Wet",
+      metaTitle: "Earbud Water Damage? Do This Immediately",
+      metaDescription: "Earbuds fell in water or went through the wash? Discover what to do immediately to save them and when replacement is needed.",
+      intro: "Dropped your earbuds in the toilet or accidentally washed them? Panic is understandable, but acting quickly and correctly can still save your earbuds. Here's exactly what to do.",
       
       whatIsTheProblem: "What is the problem?",
       whatIsTheProblemText: "Water and electronics don't mix. When moisture gets into your AirPods, it can cause short circuits and damage internal components. The damage is often not immediately visible but can cause problems later.",
@@ -258,7 +258,7 @@ const BlogAirpodsWaterschade = () => {
         <title>{t.metaTitle}</title>
         <meta name="description" content={t.metaDescription} />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href={`https://earbudrestore.nl${isNL ? '/blog/airpods-waterschade' : '/en/blog/airpods-water-damage'}`} />
+        <link rel="canonical" href={`https://earbudrestore.nl${isNL ? '/blog/oortjes-waterschade' : '/en/blog/earbuds-water-damage'}`} />
         <meta property="og:title" content={t.metaTitle} />
         <meta property="og:description" content={t.metaDescription} />
         <meta property="og:type" content="article" />

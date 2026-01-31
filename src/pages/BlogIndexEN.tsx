@@ -6,97 +6,97 @@ import { Calendar, Clock, ArrowRight } from 'lucide-react';
 
 const blogs = [
   {
-    slug: 'one-airpod-not-working',
-    title: 'One AirPod Not Working? Causes & Solutions',
-    excerpt: 'Left or right AirPod not working? Discover the most common causes and solutions. From reset to replacement.',
+    slug: 'one-earbud-not-working',
+    title: 'One Earbud Not Working? Causes & Solutions',
+    excerpt: 'Left or right earbud not working? Discover the most common causes and solutions. From reset to replacement.',
     date: '2025-02-05',
     readTime: '10 min',
     image: '/placeholder.svg'
   },
   {
-    slug: 'airpods-case-not-charging',
-    title: 'AirPods Case Not Charging? Here\'s What to Do',
-    excerpt: 'AirPods charging case not charging anymore? Discover the causes and solutions. From cleaning to replacement.',
+    slug: 'charging-case-not-charging',
+    title: 'Charging Case Not Charging? Here\'s What to Do',
+    excerpt: 'Charging case not charging anymore? Discover the causes and solutions. From cleaning to replacement.',
     date: '2025-02-04',
     readTime: '9 min',
     image: '/placeholder.svg'
   },
   {
-    slug: 'airpods-water-damage',
-    title: 'AirPods Water Damage: What To Do When They Get Wet',
-    excerpt: 'AirPods fell in water or went through the wash? Discover what to do immediately to save them.',
+    slug: 'earbuds-water-damage',
+    title: 'Water Damage: What To Do When Your Earbuds Get Wet',
+    excerpt: 'Earbuds fell in water or went through the wash? Discover what to do immediately to save them.',
     date: '2025-02-03',
     readTime: '8 min',
     image: '/placeholder.svg'
   },
   {
-    slug: 'airpods-pro-ear-tips',
-    title: 'AirPods Pro Ear Tips: Which Size Fits You?',
-    excerpt: 'The silicone ear tips of your AirPods Pro determine comfort and sound quality. Learn how to find the perfect size.',
+    slug: 'silicone-ear-tips-guide',
+    title: 'Silicone Ear Tips: Which Size Fits You?',
+    excerpt: 'The silicone ear tips determine comfort and sound quality. Learn how to find the perfect size.',
     date: '2025-02-02',
     readTime: '9 min',
     image: '/placeholder.svg'
   },
   {
-    slug: 'airpods-repair-costs',
-    title: 'AirPods Repair Costs: Apple vs Alternatives',
-    excerpt: 'What does AirPods repair cost at Apple? Compare prices and discover cheaper alternatives.',
+    slug: 'repair-costs-comparison',
+    title: 'Repair Costs: Manufacturer vs Alternatives',
+    excerpt: 'What does repair cost at the manufacturer? Compare prices and discover cheaper alternatives.',
     date: '2025-02-01',
     readTime: '10 min',
     image: '/placeholder.svg'
   },
   {
-    slug: 'how-to-clean-airpods',
-    title: 'How to Clean AirPods: Complete Maintenance Guide (2024)',
-    excerpt: 'Learn how to properly clean your AirPods. Step-by-step instructions, do\'s and don\'ts, and tips for hygiene and sound quality.',
+    slug: 'how-to-clean-earbuds',
+    title: 'How to Clean Earbuds: Complete Maintenance Guide',
+    excerpt: 'Learn how to properly clean your earbuds. Step-by-step instructions, do\'s and don\'ts, and tips for hygiene and sound quality.',
     date: '2025-01-31',
     readTime: '12 min',
     image: '/placeholder.svg'
   },
   {
-    slug: 'airpods-vs-airpods-pro',
-    title: 'AirPods vs AirPods Pro: What\'s the Difference and Which Should You Choose?',
-    excerpt: 'Complete comparison between AirPods and AirPods Pro. Discover differences in sound quality, noise cancelling, fit, and price.',
+    slug: 'standard-vs-pro-comparison',
+    title: 'Standard vs Pro Earbuds: What\'s the Difference and Which Should You Choose?',
+    excerpt: 'Complete comparison between standard and Pro earbuds. Discover differences in sound quality, noise cancelling, fit, and price.',
     date: '2025-01-30',
     readTime: '11 min',
     image: '/placeholder.svg'
   },
   {
-    slug: 'airpods-battery-replacement',
-    title: 'AirPods Battery Replacement: All Options and Costs Compared',
-    excerpt: 'AirPods battery dead? Discover all options: Apple battery service, buying a single AirPod, or a new set. We compare prices and find the cheapest solution.',
+    slug: 'battery-replacement-options',
+    title: 'Battery Replacement: All Options and Costs Compared',
+    excerpt: 'Battery dead? Discover all options: manufacturer battery service, buying a single unit, or a new set. We compare prices and find the cheapest solution.',
     date: '2025-01-28',
     readTime: '12 min',
     image: '/placeholder.svg'
   },
   {
-    slug: 'how-to-pair-airpods',
-    title: 'How to pair AirPods: pairing a replacement AirPod or charging case',
-    excerpt: 'Learn how to pair AirPods after replacing an earbud or case. Step-by-step guide for resetting and pairing all AirPods generations.',
+    slug: 'how-to-pair-replacement-earbud',
+    title: 'How to Pair a Replacement Earbud: Pairing a Single Unit',
+    excerpt: 'Learn how to pair earbuds after replacing a unit or case. Step-by-step guide for resetting and pairing.',
     date: '2025-01-25',
     readTime: '10 min',
     image: '/placeholder.svg'
   },
   {
-    slug: 'combine-airpods-by-generation',
-    title: 'Can I use a new single AirPod with my old one? How combining works by generation',
-    excerpt: 'Find out if a new single AirPod works with your old earbud. Everything about combining AirPods by generation, compatibility, and pairing replacement AirPods.',
+    slug: 'combine-earbuds-by-generation',
+    title: 'Can I Use a Replacement Earbud with My Old One? How Combining Works by Generation',
+    excerpt: 'Find out if a replacement earbud works with your old one. Everything about combining by generation, compatibility, and pairing replacements.',
     date: '2025-01-22',
     readTime: '9 min',
     image: '/placeholder.svg'
   },
   {
-    slug: 'lost-single-airpod-replacement',
-    title: 'Lost a single AirPod? The cheapest way to replace it (Apple vs. Earbud restore)',
-    excerpt: 'Lost one AirPod? Discover all options to replace your single AirPod: from a new set to an original single AirPod. We compare prices and quality.',
+    slug: 'lost-single-earbud-replacement',
+    title: 'Lost a Single Earbud? The Cheapest Way to Replace It',
+    excerpt: 'Lost one earbud? Discover all options to replace it: from a new set to an original single unit. We compare prices and quality.',
     date: '2025-01-20',
     readTime: '10 min',
     image: '/placeholder.svg'
   },
   {
-    slug: 'which-airpods-do-i-have',
-    title: 'Which AirPods do I have? The complete guide to model numbers and generations',
-    excerpt: 'Find out exactly which AirPods model you have using model numbers. Useful when you want to replace a single AirPod or charging case.',
+    slug: 'identify-your-model',
+    title: 'Which Model Do I Have? The Complete Guide to Model Numbers and Generations',
+    excerpt: 'Find out exactly which model you have using model numbers. Useful when you want to replace a single earbud or charging case.',
     date: '2025-01-15',
     readTime: '8 min',
     image: '/placeholder.svg'
@@ -107,8 +107,8 @@ const BlogIndexEN = () => {
   return (
     <>
       <Helmet>
-        <title>Blog | Earbud restore - Tips & Guides for AirPods</title>
-        <meta name="description" content="Read our blogs about AirPods: identifying model numbers, comparing generations, and tips for replacing single AirPods and charging cases." />
+        <title>Blog | Earbud restore - Tips & Guides</title>
+        <meta name="description" content="Read our blogs about earbuds: identifying model numbers, comparing generations, and tips for replacing single units and charging cases." />
         <link rel="canonical" href="https://earbudrestore.nl/en/blog" />
         <html lang="en" />
       </Helmet>
@@ -122,7 +122,7 @@ const BlogIndexEN = () => {
               Blog
             </h1>
             <p className="text-xs md:text-lg text-muted-foreground mb-6 md:mb-12">
-              Tips, guides, and news about AirPods.
+              Tips, guides, and news about wireless earbuds.
             </p>
 
             <div className="space-y-4 md:space-y-8">

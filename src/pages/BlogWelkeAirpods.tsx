@@ -53,8 +53,8 @@ const faqSchema = {
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "Welke AirPods heb ik? De complete gids voor modelnummers en generaties",
-  "description": "Ontdek welk AirPods-model je hebt aan de hand van modelnummers. Complete gids voor alle generaties AirPods en AirPods Pro.",
+  "headline": "Welk model heb ik? De complete gids voor modelnummers en generaties",
+  "description": "Ontdek welk model je hebt aan de hand van modelnummers. Complete gids voor alle generaties draadloze oortjes.",
   "author": {
     "@type": "Organization",
     "name": "Earbud restore"
@@ -71,10 +71,10 @@ const BlogWelkeAirpods = () => {
   return (
     <>
       <Helmet>
-        <title>Welke AirPods heb ik? De complete gids voor modelnummers en generaties | Earbud restore</title>
-        <meta name="description" content="Ontdek welk AirPods-model je hebt aan de hand van modelnummers. Complete gids voor AirPods 1, 2, 3, 4, Pro 1 en Pro 2. Vind je generatie en bestel het juiste onderdeel." />
-        <link rel="canonical" href="https://earbudrestore.nl/blog/welke-airpods-heb-ik" />
-        <meta name="keywords" content="welke airpods heb ik, airpods model bepalen, welke generatie airpods, modelnummer airpods, airpods generatie herkennen" />
+        <title>Welk model heb ik? De complete gids voor modelnummers en generaties | Earbud restore</title>
+        <meta name="description" content="Ontdek welk model je hebt aan de hand van modelnummers. Complete gids voor alle generaties draadloze oortjes. Vind je generatie en bestel het juiste onderdeel." />
+        <link rel="canonical" href="https://earbudrestore.nl/blog/modelnummer-herkennen" />
+        <meta name="keywords" content="welk model heb ik, model bepalen, welke generatie oortjes, modelnummer herkennen, generatie herkennen" />
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
       </Helmet>
@@ -105,7 +105,7 @@ const BlogWelkeAirpods = () => {
 
             {/* H1 */}
             <h1 className="text-xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-4 md:mb-8 leading-tight">
-              Welke AirPods heb ik? De complete gids voor modelnummers
+              Welk model heb ik? De complete gids voor modelnummers
             </h1>
 
             {/* Intro */}

@@ -88,11 +88,11 @@ const BlogAirpodsBatterijVervangen = () => {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": isEnglish 
-      ? "AirPods battery replacement: all options and costs compared" 
-      : "AirPods batterij vervangen: alle opties en kosten vergeleken",
+      ? "Earbud battery replacement: all options and costs compared" 
+      : "Batterij vervangen: alle opties en kosten vergeleken",
     "description": isEnglish
-      ? "Complete guide to AirPods battery replacement. Compare prices at Apple vs buying a single AirPod. Find the cheapest solution for your AirPods."
-      : "Complete gids voor AirPods batterij vervangen. Vergelijk prijzen bij Apple vs een losse AirPod kopen. Vind de goedkoopste oplossing voor je AirPods.",
+      ? "Complete guide to earbud battery replacement. Compare prices and find the cheapest solution for your wireless earbuds."
+      : "Complete gids voor batterij vervangen. Vergelijk prijzen en vind de goedkoopste oplossing voor je draadloze oortjes.",
     "author": {
       "@type": "Organization",
       "name": "Earbud restore"
@@ -128,10 +128,10 @@ const BlogAirpodsBatterijVervangen = () => {
     return (
       <>
         <Helmet>
-          <title>AirPods Battery Replacement: All Options and Costs Compared | Earbud restore</title>
-          <meta name="description" content="AirPods battery dead? Discover all options: Apple battery service, buying a single AirPod, or a new set. We compare prices and find the cheapest solution." />
-          <link rel="canonical" href="https://earbudrestore.nl/en/blog/airpods-battery-replacement" />
-          <meta name="keywords" content="airpods battery replacement, airpods battery dead, replace airpods battery, airpods battery life, airpods battery cost" />
+          <title>Earbud Battery Replacement: All Options and Costs Compared | Earbud restore</title>
+          <meta name="description" content="Earbud battery dead? Discover all options: manufacturer battery service, buying a single earbud, or a new set. We compare prices and find the cheapest solution." />
+          <link rel="canonical" href="https://earbudrestore.nl/en/blog/battery-replacement-options" />
+          <meta name="keywords" content="earbud battery replacement, earbud battery dead, replace earbud battery, wireless earbud battery life" />
           <html lang="en" />
           <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
           <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
@@ -160,7 +160,7 @@ const BlogAirpodsBatterijVervangen = () => {
               </div>
 
               <h1 className="text-xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-4 md:mb-8 leading-tight">
-                AirPods Battery Replacement: All Options and Costs Compared
+                Earbud Battery Replacement: All Options and Costs Compared
               </h1>
 
               <div className="prose prose-lg max-w-none text-foreground/90">

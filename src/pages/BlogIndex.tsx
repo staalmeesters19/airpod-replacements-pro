@@ -6,97 +6,97 @@ import { Calendar, Clock, ArrowRight } from 'lucide-react';
 
 const blogs = [
   {
-    slug: 'een-airpod-werkt-niet',
-    title: 'Eén AirPod Werkt Niet? Oorzaken & Oplossingen',
-    excerpt: 'Linker of rechter AirPod werkt niet meer? Ontdek de meest voorkomende oorzaken en oplossingen. Van reset tot vervanging.',
+    slug: 'een-oortje-werkt-niet',
+    title: 'Eén oortje werkt niet? Oorzaken & oplossingen',
+    excerpt: 'Linker of rechter oortje werkt niet meer? Ontdek de meest voorkomende oorzaken en oplossingen. Van reset tot vervanging.',
     date: '2025-02-05',
     readTime: '10 min',
     image: '/placeholder.svg'
   },
   {
-    slug: 'airpods-case-laadt-niet',
-    title: 'AirPods Case Laadt Niet Op? Dit Kun Je Doen',
-    excerpt: 'AirPods oplaadcase laadt niet meer op? Ontdek de oorzaken en oplossingen. Van schoonmaken tot vervanging.',
+    slug: 'oplaadcase-laadt-niet',
+    title: 'Oplaadcase laadt niet op? Dit kun je doen',
+    excerpt: 'Oplaadcase laadt niet meer op? Ontdek de oorzaken en oplossingen. Van schoonmaken tot vervanging.',
     date: '2025-02-04',
     readTime: '9 min',
     image: '/placeholder.svg'
   },
   {
-    slug: 'airpods-waterschade',
-    title: 'AirPods Waterschade: Wat Te Doen Als Ze Nat Zijn',
-    excerpt: 'AirPods in water gevallen of door de was gegaan? Ontdek wat je direct moet doen om ze te redden.',
+    slug: 'oortjes-waterschade',
+    title: 'Waterschade aan je oortjes: wat te doen als ze nat zijn',
+    excerpt: 'Oortjes in water gevallen of door de was gegaan? Ontdek wat je direct moet doen om ze te redden.',
     date: '2025-02-03',
     readTime: '8 min',
     image: '/placeholder.svg'
   },
   {
-    slug: 'airpods-pro-oortips',
-    title: 'AirPods Pro Oortips: Welke Maat Past Bij Jou?',
-    excerpt: 'De siliconen oortips van je AirPods Pro bepalen comfort en geluidskwaliteit. Leer hoe je de perfecte maat vindt.',
+    slug: 'siliconen-oortips-kiezen',
+    title: 'Siliconen oortips: welke maat past bij jou?',
+    excerpt: 'De siliconen oortips bepalen comfort en geluidskwaliteit. Leer hoe je de perfecte maat vindt.',
     date: '2025-02-02',
     readTime: '9 min',
     image: '/placeholder.svg'
   },
   {
-    slug: 'airpods-reparatie-kosten',
-    title: 'AirPods Reparatie Kosten: Apple vs Alternatieven',
-    excerpt: 'Wat kost AirPods reparatie bij Apple? Vergelijk prijzen en ontdek goedkopere alternatieven.',
+    slug: 'reparatie-kosten-vergelijken',
+    title: 'Reparatiekosten vergelijken: fabrikant vs alternatieven',
+    excerpt: 'Wat kost reparatie bij de fabrikant? Vergelijk prijzen en ontdek goedkopere alternatieven.',
     date: '2025-02-01',
     readTime: '10 min',
     image: '/placeholder.svg'
   },
   {
-    slug: 'airpods-schoonmaken',
-    title: 'AirPods Schoonmaken: Complete Gids voor Onderhoud (2024)',
-    excerpt: 'Leer hoe je je AirPods correct schoonmaakt. Stap-voor-stap instructies, do\'s en don\'ts, en tips voor hygiëne en geluidskwaliteit.',
+    slug: 'oortjes-schoonmaken',
+    title: 'Oortjes schoonmaken: complete gids voor onderhoud',
+    excerpt: 'Leer hoe je je oortjes correct schoonmaakt. Stap-voor-stap instructies, do\'s en don\'ts, en tips voor hygiëne en geluidskwaliteit.',
     date: '2025-01-31',
     readTime: '12 min',
     image: '/placeholder.svg'
   },
   {
-    slug: 'airpods-vs-airpods-pro',
-    title: 'AirPods vs AirPods Pro: Wat is het verschil en welke moet je kiezen?',
-    excerpt: 'Uitgebreide vergelijking tussen AirPods en AirPods Pro. Ontdek de verschillen in geluidskwaliteit, noise cancelling, pasvorm en prijs.',
+    slug: 'standaard-vs-pro-vergelijking',
+    title: 'Standaard vs Pro oortjes: wat is het verschil en welke kies je?',
+    excerpt: 'Uitgebreide vergelijking tussen standaard en Pro oortjes. Ontdek de verschillen in geluidskwaliteit, noise cancelling, pasvorm en prijs.',
     date: '2025-01-30',
     readTime: '11 min',
     image: '/placeholder.svg'
   },
   {
-    slug: 'airpods-batterij-vervangen',
-    title: 'AirPods batterij vervangen: alle opties en kosten vergeleken',
-    excerpt: 'AirPods batterij leeg? Ontdek alle opties: Apple batterijservice, losse AirPod kopen of nieuwe set. We vergelijken prijzen en vinden de goedkoopste oplossing.',
+    slug: 'batterij-vervangen-opties',
+    title: 'Batterij vervangen: alle opties en kosten vergeleken',
+    excerpt: 'Batterij leeg? Ontdek alle opties: fabrikant batterijservice, los onderdeel kopen of vervangende set. We vergelijken prijzen en vinden de goedkoopste oplossing.',
     date: '2025-01-28',
     readTime: '12 min',
     image: '/placeholder.svg'
   },
   {
-    slug: 'airpods-opnieuw-pairen',
-    title: 'AirPods opnieuw pairen: zo koppel je een vervangend oortje of oplaadcase',
-    excerpt: 'Leer hoe je AirPods opnieuw koppelt na het vervangen van een oortje of case. Stap-voor-stap uitleg voor resetten en pairen van alle AirPods generaties.',
+    slug: 'vervangend-oortje-koppelen',
+    title: 'Vervangend oortje koppelen: zo pair je een los onderdeel',
+    excerpt: 'Leer hoe je oortjes opnieuw koppelt na het vervangen van een oortje of case. Stap-voor-stap uitleg voor resetten en pairen.',
     date: '2025-01-25',
     readTime: '10 min',
     image: '/placeholder.svg'
   },
   {
-    slug: 'airpods-combineren-per-generatie',
-    title: 'Werkt een nieuwe losse AirPod met mijn oude oortje? Zo werkt combineren per generatie',
-    excerpt: 'Ontdek of een nieuwe losse AirPod werkt met je oude oortje. Alles over AirPods combineren per generatie, compatibiliteit en het koppelen van vervangende AirPods.',
+    slug: 'oortjes-combineren-per-generatie',
+    title: 'Werkt een vervangend oortje met mijn oude set? Zo werkt combineren per generatie',
+    excerpt: 'Ontdek of een vervangend oortje werkt met je oude set. Alles over combineren per generatie, compatibiliteit en het koppelen van vervangende onderdelen.',
     date: '2025-01-22',
     readTime: '9 min',
     image: '/placeholder.svg'
   },
   {
-    slug: 'losse-airpod-kwijt-vervangen',
-    title: 'Losse AirPod kwijt? Dit is de goedkoopste manier om hem te vervangen (Apple vs. Earbud restore)',
-    excerpt: 'Eén AirPod kwijt? Ontdek alle opties om je losse AirPod te vervangen: van een nieuwe set tot een originele losse AirPod. We vergelijken prijzen en kwaliteit.',
+    slug: 'oortje-kwijt-vervangen',
+    title: 'Eén oortje kwijt? Zo vervang je alleen wat je mist',
+    excerpt: 'Eén oortje kwijt? Ontdek alle opties om je losse oortje te vervangen: van vervanging tot origineel onderdeel. We vergelijken prijzen en kwaliteit.',
     date: '2025-01-20',
     readTime: '10 min',
     image: '/placeholder.svg'
   },
   {
-    slug: 'welke-airpods-heb-ik',
-    title: 'Welke AirPods heb ik? De complete gids voor modelnummers en generaties',
-    excerpt: 'Ontdek precies welk AirPods-model je hebt aan de hand van modelnummers. Handig als je een losse AirPod of oplaadcase wilt vervangen.',
+    slug: 'modelnummer-herkennen',
+    title: 'Welk model heb ik? De complete gids voor modelnummers en generaties',
+    excerpt: 'Ontdek precies welk model je hebt aan de hand van modelnummers. Handig als je een los oortje of oplaadcase wilt vervangen.',
     date: '2025-01-15',
     readTime: '8 min',
     image: '/placeholder.svg'
@@ -107,8 +107,8 @@ const BlogIndex = () => {
   return (
     <>
       <Helmet>
-        <title>Blog | Earbud restore - Tips & Gidsen voor AirPods</title>
-        <meta name="description" content="Lees onze blogs over AirPods: modelnummers herkennen, generaties vergelijken, en tips voor het vervangen van losse AirPods en oplaadcases." />
+        <title>Blog | Earbud restore - Tips & Handleidingen</title>
+        <meta name="description" content="Lees onze blogs over oortjes: modelnummers herkennen, generaties vergelijken, en tips voor het vervangen van losse onderdelen en oplaadcases." />
         <link rel="canonical" href="https://earbudrestore.nl/blog" />
       </Helmet>
 
@@ -121,7 +121,7 @@ const BlogIndex = () => {
               Blog
             </h1>
             <p className="text-xs md:text-lg text-muted-foreground mb-6 md:mb-12">
-              Tips, gidsen en nieuws over AirPods.
+              Tips, handleidingen en nieuws over draadloze oortjes.
             </p>
 
             <div className="space-y-4 md:space-y-8">

@@ -12,14 +12,14 @@ const BlogAirpodsSchoonmaken = () => {
 
   const content = {
     nl: {
-      title: "AirPods Schoonmaken: Complete Gids voor Onderhoud (2024)",
-      metaDescription: "Leer hoe je je AirPods en AirPods Pro correct schoonmaakt. Stap-voor-stap instructies, do's en don'ts, en tips om je oordopjes hygiënisch en goed werkend te houden.",
+      title: "Oortjes schoonmaken: complete gids voor onderhoud",
+      metaDescription: "Leer hoe je je draadloze oortjes correct schoonmaakt. Stap-voor-stap instructies, do's en don'ts, en tips om je oordopjes hygiënisch en goed werkend te houden.",
       breadcrumb: "Blog",
       backToBlogs: "Terug naar blogs",
       readTime: "12 min leestijd",
       date: "December 2024",
-      intro: `Je AirPods zijn waarschijnlijk een van de meest gebruikte accessoires die je bezit. Dagelijks stoppen we ze in onze oren - tijdens het sporten, werken, reizen of relaxen. Maar hoe vaak maak je ze eigenlijk schoon? Regelmatig onderhoud is niet alleen belangrijk voor de hygiëne, maar ook voor de geluidskwaliteit en levensduur van je oordopjes.`,
-      introSecond: `In deze uitgebreide gids leer je alles over het correct schoonmaken van je AirPods, AirPods Pro en oplaadcase. Van de juiste materialen tot stap-voor-stap instructies en veelgemaakte fouten die je moet vermijden.`,
+      intro: `Je draadloze oortjes zijn waarschijnlijk een van de meest gebruikte accessoires die je bezit. Dagelijks stoppen we ze in onze oren - tijdens het sporten, werken, reizen of relaxen. Maar hoe vaak maak je ze eigenlijk schoon? Regelmatig onderhoud is niet alleen belangrijk voor de hygiëne, maar ook voor de geluidskwaliteit en levensduur van je oordopjes.`,
+      introSecond: `In deze uitgebreide gids leer je alles over het correct schoonmaken van je oortjes en oplaadcase. Van de juiste materialen tot stap-voor-stap instructies en veelgemaakte fouten die je moet vermijden.`,
       
       whyCleanTitle: "Waarom Is Het Schoonmaken van AirPods Belangrijk?",
       whyCleanIntro: "Er zijn meerdere redenen waarom regelmatig onderhoud van je AirPods essentieel is:",
@@ -185,14 +185,14 @@ const BlogAirpodsSchoonmaken = () => {
       ]
     },
     en: {
-      title: "How to Clean AirPods: Complete Maintenance Guide (2024)",
-      metaDescription: "Learn how to properly clean your AirPods and AirPods Pro. Step-by-step instructions, do's and don'ts, and tips to keep your earbuds hygienic and working perfectly.",
+      title: "How to Clean Earbuds: Complete Maintenance Guide",
+      metaDescription: "Learn how to properly clean your wireless earbuds. Step-by-step instructions, do's and don'ts, and tips to keep your earbuds hygienic and working perfectly.",
       breadcrumb: "Blog",
       backToBlogs: "Back to blogs",
       readTime: "12 min read",
       date: "December 2024",
-      intro: `Your AirPods are probably one of the most used accessories you own. We put them in our ears daily - while working out, commuting, working, or relaxing. But how often do you actually clean them? Regular maintenance is not only important for hygiene but also for sound quality and the lifespan of your earbuds.`,
-      introSecond: `In this comprehensive guide, you'll learn everything about properly cleaning your AirPods, AirPods Pro, and charging case. From the right materials to step-by-step instructions and common mistakes to avoid.`,
+      intro: `Your wireless earbuds are probably one of the most used accessories you own. We put them in our ears daily - while working out, commuting, working, or relaxing. But how often do you actually clean them? Regular maintenance is not only important for hygiene but also for sound quality and the lifespan of your earbuds.`,
+      introSecond: `In this comprehensive guide, you'll learn everything about properly cleaning your earbuds and charging case. From the right materials to step-by-step instructions and common mistakes to avoid.`,
       
       whyCleanTitle: "Why Is Cleaning Your AirPods Important?",
       whyCleanIntro: "There are several reasons why regular maintenance of your AirPods is essential:",

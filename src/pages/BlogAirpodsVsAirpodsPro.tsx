@@ -32,9 +32,9 @@ const BlogAirpodsVsAirpodsPro = () => {
 
   const content = {
     nl: {
-      title: "AirPods vs AirPods Pro: Wat is het Verschil en Welke Moet Je Kiezen?",
-      metaDescription: "Uitgebreide vergelijking tussen AirPods en AirPods Pro. Ontdek de verschillen in geluidskwaliteit, noise cancelling, pasvorm en prijs. Maak de juiste keuze voor jouw situatie.",
-      intro: "Apple biedt verschillende AirPods-modellen aan, maar welke past het beste bij jou? In dit artikel vergelijken we de standaard AirPods met de AirPods Pro, zodat je een weloverwogen keuze kunt maken.",
+      title: "Standaard vs Pro oortjes: wat is het verschil en welke kies je?",
+      metaDescription: "Uitgebreide vergelijking tussen standaard en Pro oortjes. Ontdek de verschillen in geluidskwaliteit, noise cancelling, pasvorm en prijs. Maak de juiste keuze voor jouw situatie.",
+      intro: "Er zijn verschillende oortjes-modellen beschikbaar, maar welke past het beste bij jou? In dit artikel vergelijken we de standaard oortjes met de Pro-variant, zodat je een weloverwogen keuze kunt maken.",
       
       quickComparisonTitle: "Snelle Vergelijking",
       feature: "Kenmerk",
@@ -143,9 +143,9 @@ const BlogAirpodsVsAirpodsPro = () => {
       readMore: "Lees meer"
     },
     en: {
-      title: "AirPods vs AirPods Pro: What's the Difference and Which Should You Choose?",
-      metaDescription: "Complete comparison between AirPods and AirPods Pro. Discover differences in sound quality, noise cancelling, fit, and price. Make the right choice for your situation.",
-      intro: "Apple offers several AirPods models, but which one suits you best? In this article, we compare the standard AirPods with the AirPods Pro, so you can make an informed decision.",
+      title: "Standard vs Pro Earbuds: What's the Difference and Which Should You Choose?",
+      metaDescription: "Complete comparison between standard and Pro earbuds. Discover differences in sound quality, noise cancelling, fit, and price. Make the right choice for your situation.",
+      intro: "Several earbud models are available, but which one suits you best? In this article, we compare the standard earbuds with the Pro variant, so you can make an informed decision.",
       
       quickComparisonTitle: "Quick Comparison",
       feature: "Feature",
@@ -329,12 +329,12 @@ const BlogAirpodsVsAirpodsPro = () => {
         <title>{t.title} | Earbud restore</title>
         <meta name="description" content={t.metaDescription} />
         <meta name="keywords" content={isEnglish 
-          ? "airpods vs airpods pro, airpods comparison, airpods pro difference, noise cancelling airpods, which airpods to buy"
-          : "airpods vs airpods pro, airpods vergelijking, airpods pro verschil, noise cancelling airpods, welke airpods kopen"
+          ? "standard vs pro earbuds, earbuds comparison, pro earbuds difference, noise cancelling earbuds"
+          : "standaard vs pro oortjes, oortjes vergelijking, pro oortjes verschil, noise cancelling oortjes"
         } />
-        <link rel="canonical" href={`https://earbudrestore.nl${isEnglish ? '/en/blog/airpods-vs-airpods-pro' : '/blog/airpods-vs-airpods-pro'}`} />
-        <link rel="alternate" hrefLang="nl" href="https://earbudrestore.nl/blog/airpods-vs-airpods-pro" />
-        <link rel="alternate" hrefLang="en" href="https://earbudrestore.nl/en/blog/airpods-vs-airpods-pro" />
+        <link rel="canonical" href={`https://earbudrestore.nl${isEnglish ? '/en/blog/standard-vs-pro-comparison' : '/blog/standaard-vs-pro-vergelijking'}`} />
+        <link rel="alternate" hrefLang="nl" href="https://earbudrestore.nl/blog/standaard-vs-pro-vergelijking" />
+        <link rel="alternate" hrefLang="en" href="https://earbudrestore.nl/en/blog/standard-vs-pro-comparison" />
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
       </Helmet>

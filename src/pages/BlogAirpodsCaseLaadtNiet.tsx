@@ -10,10 +10,10 @@ const BlogAirpodsCaseLaadtNiet = () => {
 
   const content = {
     nl: {
-      title: "AirPods Case Laadt Niet Op? Dit Kun Je Doen",
-      metaTitle: "AirPods Case Laadt Niet Op? Oorzaken & Oplossingen",
-      metaDescription: "AirPods oplaadcase laadt niet meer op? Ontdek de oorzaken en oplossingen. Van schoonmaken tot vervanging - complete handleiding.",
-      intro: "Je AirPods case die niet meer oplaadt is frustrerend. Zonder werkende case kun je je AirPods niet gebruiken. Het goede nieuws: vaak is dit probleem eenvoudig op te lossen. Hier lees je hoe.",
+      title: "Oplaadcase laadt niet op? Dit kun je doen",
+      metaTitle: "Oplaadcase laadt niet op? Oorzaken & Oplossingen",
+      metaDescription: "Oplaadcase laadt niet meer op? Ontdek de oorzaken en oplossingen. Van schoonmaken tot vervanging - complete handleiding.",
+      intro: "Je oplaadcase die niet meer oplaadt is frustrerend. Zonder werkende case kun je je oortjes niet gebruiken. Het goede nieuws: vaak is dit probleem eenvoudig op te lossen. Hier lees je hoe.",
       
       whatIsTheProblem: "Wat is het probleem?",
       whatIsTheProblemText: "De oplaadcase is essentieel voor je AirPods. Wanneer het lampje niet meer brandt of de case niet reageert op de lader, kunnen je AirPods niet worden opgeladen. Dit kan komen door vuil, een softwareprobleem of een defecte batterij.",
@@ -117,10 +117,10 @@ const BlogAirpodsCaseLaadtNiet = () => {
       readAlso: "Lees ook:"
     },
     en: {
-      title: "AirPods Case Not Charging? Here's What to Do",
-      metaTitle: "AirPods Case Not Charging? Causes & Solutions",
-      metaDescription: "AirPods charging case not charging anymore? Discover the causes and solutions. From cleaning to replacement - complete guide.",
-      intro: "An AirPods case that won't charge is frustrating. Without a working case, you can't use your AirPods. The good news: this problem is often easy to fix. Here's how.",
+      title: "Charging Case Not Charging? Here's What to Do",
+      metaTitle: "Charging Case Not Charging? Causes & Solutions",
+      metaDescription: "Charging case not charging anymore? Discover the causes and solutions. From cleaning to replacement - complete guide.",
+      intro: "A charging case that won't charge is frustrating. Without a working case, you can't use your earbuds. The good news: this problem is often easy to fix. Here's how.",
       
       whatIsTheProblem: "What is the problem?",
       whatIsTheProblemText: "The charging case is essential for your AirPods. When the light doesn't come on or the case doesn't respond to the charger, your AirPods can't be charged. This can be due to dirt, a software issue, or a defective battery.",
@@ -246,7 +246,7 @@ const BlogAirpodsCaseLaadtNiet = () => {
         <title>{t.metaTitle}</title>
         <meta name="description" content={t.metaDescription} />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href={`https://earbudrestore.nl${isNL ? '/blog/airpods-case-laadt-niet' : '/en/blog/airpods-case-not-charging'}`} />
+        <link rel="canonical" href={`https://earbudrestore.nl${isNL ? '/blog/oplaadcase-laadt-niet' : '/en/blog/charging-case-not-charging'}`} />
         <meta property="og:title" content={t.metaTitle} />
         <meta property="og:description" content={t.metaDescription} />
         <meta property="og:type" content="article" />

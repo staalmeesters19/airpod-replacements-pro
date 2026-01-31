@@ -10,10 +10,10 @@ const BlogAirpodsProOortips = () => {
 
   const content = {
     nl: {
-      title: "AirPods Pro Oortips: Welke Maat Past Bij Jou?",
-      metaTitle: "AirPods Pro Oortips: Welke Maat & Hoe Vervangen [2024]",
-      metaDescription: "AirPods Pro oortips kiezen, vervangen en de juiste maat vinden. Complete handleiding met Ear Tip Fit Test uitleg en vervangende tips.",
-      intro: "De siliconen oortips van je AirPods Pro bepalen comfort, geluidskwaliteit en noise cancelling. De juiste maat maakt een wereld van verschil. In dit artikel leer je hoe je de perfecte pasvorm vindt.",
+      title: "Siliconen oortips: welke maat past bij jou?",
+      metaTitle: "Siliconen oortips: welke maat & hoe vervangen",
+      metaDescription: "Siliconen oortips kiezen, vervangen en de juiste maat vinden. Complete handleiding met Ear Tip Fit Test uitleg en vervangende tips.",
+      intro: "De siliconen oortips van je Pro oortjes bepalen comfort, geluidskwaliteit en noise cancelling. De juiste maat maakt een wereld van verschil. In dit artikel leer je hoe je de perfecte pasvorm vindt.",
       
       whatIsTheProblem: "Waarom zijn de juiste oortips zo belangrijk?",
       whatIsTheProblemText: "AirPods Pro gebruiken actieve ruisonderdrukking die alleen werkt met een goede afsluiting. Te kleine tips geven geluidslekken, te grote tips zijn oncomfortabel. De juiste maat zorgt voor optimale bass, effectieve noise cancelling en langdurig draagcomfort.",
@@ -120,10 +120,10 @@ const BlogAirpodsProOortips = () => {
       readAlso: "Lees ook:"
     },
     en: {
-      title: "AirPods Pro Ear Tips: Which Size Fits You?",
-      metaTitle: "AirPods Pro Ear Tips: Which Size & How To Replace [2024]",
-      metaDescription: "Choose, replace, and find the right size AirPods Pro ear tips. Complete guide with Ear Tip Fit Test explanation and replacement tips.",
-      intro: "The silicone ear tips of your AirPods Pro determine comfort, sound quality, and noise cancelling. The right size makes a world of difference. In this article, you'll learn how to find the perfect fit.",
+      title: "Silicone Ear Tips: Which Size Fits You?",
+      metaTitle: "Silicone Ear Tips: Which Size & How To Replace",
+      metaDescription: "Choose, replace, and find the right size silicone ear tips. Complete guide with Ear Tip Fit Test explanation and replacement tips.",
+      intro: "The silicone ear tips of your Pro earbuds determine comfort, sound quality, and noise cancelling. The right size makes a world of difference. In this article, you'll learn how to find the perfect fit.",
       
       whatIsTheProblem: "Why are the right ear tips so important?",
       whatIsTheProblemText: "AirPods Pro use active noise cancellation that only works with a good seal. Tips that are too small cause sound leakage, tips that are too large are uncomfortable. The right size ensures optimal bass, effective noise cancelling, and long-lasting comfort.",
@@ -263,7 +263,7 @@ const BlogAirpodsProOortips = () => {
         <title>{t.metaTitle}</title>
         <meta name="description" content={t.metaDescription} />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href={`https://earbudrestore.nl${isNL ? '/blog/airpods-pro-oortips' : '/en/blog/airpods-pro-ear-tips'}`} />
+        <link rel="canonical" href={`https://earbudrestore.nl${isNL ? '/blog/siliconen-oortips-kiezen' : '/en/blog/silicone-ear-tips-guide'}`} />
         <meta property="og:title" content={t.metaTitle} />
         <meta property="og:description" content={t.metaDescription} />
         <meta property="og:type" content="article" />

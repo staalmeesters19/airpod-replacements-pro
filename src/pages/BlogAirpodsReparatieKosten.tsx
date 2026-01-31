@@ -10,10 +10,10 @@ const BlogAirpodsReparatieKosten = () => {
 
   const content = {
     nl: {
-      title: "AirPods Reparatie Kosten: Apple vs Alternatieven",
-      metaTitle: "AirPods Reparatie Kosten: Apple vs Alternatieven [2024]",
-      metaDescription: "Wat kost AirPods reparatie bij Apple? Vergelijk prijzen en ontdek goedkopere alternatieven. EU garantierecht uitgelegd.",
-      intro: "Een kapotte AirPod of lege batterij? Reparatie bij Apple kan duur zijn. Gelukkig zijn er betaalbare alternatieven. In dit artikel vergelijken we alle opties en kosten voor AirPods reparatie.",
+      title: "Reparatiekosten vergelijken: fabrikant vs alternatieven",
+      metaTitle: "Reparatiekosten vergelijken: fabrikant vs alternatieven",
+      metaDescription: "Wat kost reparatie bij de fabrikant? Vergelijk prijzen en ontdek goedkopere alternatieven. EU garantierecht uitgelegd.",
+      intro: "Een kapot oortje of lege batterij? Reparatie bij de fabrikant kan duur zijn. Gelukkig zijn er betaalbare alternatieven. In dit artikel vergelijken we alle opties en kosten voor reparatie.",
       
       whatIsTheProblem: "Waarom is AirPods reparatie zo duur?",
       whatIsTheProblemText: "Apple biedt geen traditionele reparaties voor AirPods. In plaats daarvan vervangen ze het defecte onderdeel volledig. Dit betekent dat je bij Apple betaalt voor een volledig nieuwe AirPod of case, niet voor een reparatie.",
@@ -125,10 +125,10 @@ const BlogAirpodsReparatieKosten = () => {
       readAlso: "Lees ook:"
     },
     en: {
-      title: "AirPods Repair Costs: Apple vs Alternatives",
-      metaTitle: "AirPods Repair Costs: Apple vs Alternatives [2024]",
-      metaDescription: "What does AirPods repair cost at Apple? Compare prices and discover cheaper alternatives. EU warranty rights explained.",
-      intro: "A broken AirPod or dead battery? Repair at Apple can be expensive. Fortunately, there are affordable alternatives. In this article, we compare all options and costs for AirPods repair.",
+      title: "Repair Costs: Manufacturer vs Alternatives",
+      metaTitle: "Repair Costs: Manufacturer vs Alternatives",
+      metaDescription: "What does repair cost at the manufacturer? Compare prices and discover cheaper alternatives. EU warranty rights explained.",
+      intro: "A broken earbud or dead battery? Repair at the manufacturer can be expensive. Fortunately, there are affordable alternatives. In this article, we compare all options and costs for repair.",
       
       whatIsTheProblem: "Why is AirPods repair so expensive?",
       whatIsTheProblemText: "Apple doesn't offer traditional repairs for AirPods. Instead, they completely replace the defective component. This means that at Apple, you pay for a completely new AirPod or case, not for a repair.",
@@ -262,7 +262,7 @@ const BlogAirpodsReparatieKosten = () => {
         <title>{t.metaTitle}</title>
         <meta name="description" content={t.metaDescription} />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href={`https://earbudrestore.nl${isNL ? '/blog/airpods-reparatie-kosten' : '/en/blog/airpods-repair-costs'}`} />
+        <link rel="canonical" href={`https://earbudrestore.nl${isNL ? '/blog/reparatie-kosten-vergelijken' : '/en/blog/repair-costs-comparison'}`} />
         <meta property="og:title" content={t.metaTitle} />
         <meta property="og:description" content={t.metaDescription} />
         <meta property="og:type" content="article" />

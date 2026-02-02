@@ -127,7 +127,7 @@ const BlogEenAirpodWerktNiet = () => {
         { title: "Bekijk alle losse oortjes", url: "/losse-airpods" }
       ],
       readAlso: "Lees ook:",
-      disclaimer: "Earbud restore is een onafhankelijke aanbieder en niet gelieerd aan Apple Inc."
+      disclaimer: "Earbuds Restore is een onafhankelijke aanbieder en niet gelieerd aan Apple Inc."
     },
     en: {
       title: "One earbud not working? Causes and solutions",
@@ -239,7 +239,7 @@ const BlogEenAirpodWerktNiet = () => {
         { title: "View all single earbuds", url: "/en/single-airpods" }
       ],
       readAlso: "Read also:",
-      disclaimer: "Earbud restore is an independent provider and not affiliated with Apple Inc."
+      disclaimer: "Earbuds Restore is an independent provider and not affiliated with Apple Inc."
     }
   };
 

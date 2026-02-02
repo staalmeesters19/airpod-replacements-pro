@@ -26,7 +26,7 @@ const faqItemsNL = [
   },
   {
     question: "Is een los oortje kopen goedkoper dan batterijvervanging?",
-    answer: "Ja, bij Earbud restore koop je een los oortje vanaf €44,95, wat aanzienlijk goedkoper is dan de €89 die de fabrikant rekent voor batterijservice. Bovendien krijg je een oortje met verse batterij."
+    answer: "Ja, bij Earbuds Restore koop je een los oortje vanaf €44,95, wat aanzienlijk goedkoper is dan de €89 die de fabrikant rekent voor batterijservice. Bovendien krijg je een oortje met verse batterij."
   },
   {
     question: "Hoe weet ik of mijn oortjes-batterij slecht is?",
@@ -34,7 +34,7 @@ const faqItemsNL = [
   },
   {
     question: "Kan ik een nieuwe oplaadcase kopen als alleen de case-batterij slecht is?",
-    answer: "Ja, bij Earbud restore verkopen we losse oplaadcases voor alle generaties. Dit is vaak de beste oplossing als je oortjes nog goed werken maar de case niet meer oplaadt. Een losse case kost tussen de €49,95 en €79,95."
+    answer: "Ja, bij Earbuds Restore verkopen we losse oplaadcases voor alle generaties. Dit is vaak de beste oplossing als je oortjes nog goed werken maar de case niet meer oplaadt. Een losse case kost tussen de €49,95 en €79,95."
   }
 ];
 
@@ -53,7 +53,7 @@ const faqItemsEN = [
   },
   {
     question: "Is buying a single earbud cheaper than battery replacement?",
-    answer: "Yes, at Earbud restore you can buy a single earbud from €44.95, which is significantly cheaper than the €89 the manufacturer charges for battery service. Plus, you get an earbud with a fresh battery."
+    answer: "Yes, at Earbuds Restore you can buy a single earbud from €44.95, which is significantly cheaper than the €89 the manufacturer charges for battery service. Plus, you get an earbud with a fresh battery."
   },
   {
     question: "How do I know if my earbuds battery is bad?",
@@ -61,7 +61,7 @@ const faqItemsEN = [
   },
   {
     question: "Can I buy a new charging case if only the case battery is bad?",
-    answer: "Yes, at Earbud restore we sell loose charging cases for all generations. This is often the best solution if your earbuds still work well but the case no longer charges. A loose case costs between €49.95 and €79.95."
+    answer: "Yes, at Earbuds Restore we sell loose charging cases for all generations. This is often the best solution if your earbuds still work well but the case no longer charges. A loose case costs between €49.95 and €79.95."
   }
 ];
 
@@ -95,11 +95,11 @@ const BlogAirpodsBatterijVervangen = () => {
       : "Complete gids voor batterij vervangen van draadloze oortjes. Vergelijk prijzen en vind de goedkoopste oplossing.",
     "author": {
       "@type": "Organization",
-      "name": "Earbud restore"
+      "name": "Earbuds Restore"
     },
     "publisher": {
       "@type": "Organization",
-      "name": "Earbud restore"
+      "name": "Earbuds Restore"
     },
     "datePublished": "2025-01-28",
     "dateModified": "2025-01-28"
@@ -128,7 +128,7 @@ const BlogAirpodsBatterijVervangen = () => {
     return (
       <>
         <Helmet>
-          <title>Earbud Battery Replacement: All Options and Costs Compared | Earbud restore</title>
+          <title>Earbud Battery Replacement: All Options and Costs Compared | Earbuds Restore</title>
           <meta name="description" content="Earbud battery dead? Discover all options: manufacturer battery service, buying a single earbud, or a new set. We compare prices and find the cheapest solution." />
           <link rel="canonical" href="https://earbudrestore.nl/en/blog/battery-replacement-options" />
           <meta name="keywords" content="earbud battery replacement, earbud battery dead, replace earbud battery, wireless earbud battery life" />
@@ -277,12 +277,12 @@ const BlogAirpodsBatterijVervangen = () => {
                 </div>
 
                 <h2 className="text-2xl md:text-3xl font-semibold text-foreground mt-12 mb-6">
-                  Option 2: Buy a Single Earbud at Earbud restore
+                  Option 2: Buy a Single Earbud at Earbuds Restore
                 </h2>
 
                 <p className="mb-4">
                   The smarter alternative: buy a <Link to={links.losseAirpods} className="text-primary hover:underline">single original earbud</Link>{' '}
-                  with a fresh battery. At Earbud restore, we offer 100% original parts, thoroughly 
+                  with a fresh battery. At Earbuds Restore, we offer 100% original parts, thoroughly 
                   tested for sound, battery, and connectivity.
                 </p>
 
@@ -291,7 +291,7 @@ const BlogAirpodsBatterijVervangen = () => {
                     <thead>
                       <tr className="border-b border-border">
                         <th className="text-left py-3 px-4 font-semibold text-foreground">Model</th>
-                        <th className="text-left py-3 px-4 font-semibold text-foreground">Price at Earbud restore</th>
+                        <th className="text-left py-3 px-4 font-semibold text-foreground">Price at Earbuds Restore</th>
                         <th className="text-left py-3 px-4 font-semibold text-foreground">Savings vs Apple</th>
                       </tr>
                     </thead>
@@ -323,7 +323,7 @@ const BlogAirpodsBatterijVervangen = () => {
                 <Card className="p-6 my-8 bg-primary/5 border-primary/20">
                   <h3 className="text-lg font-semibold mb-4 flex items-center gap-2">
                     <Check className="h-5 w-5 text-primary" />
-                    Why Choose Earbud restore?
+                    Why Choose Earbuds Restore?
                   </h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                     <div className="flex items-start gap-2">
@@ -360,7 +360,7 @@ const BlogAirpodsBatterijVervangen = () => {
                 <p className="mb-4">
                   Is your case battery dead but your earbuds still working fine? Then you don't need 
                   new earbuds – just a new <Link to={links.losseOplaadcases} className="text-primary hover:underline">charging case</Link>. 
-                  At Earbud restore, we sell original cases for all generations:
+                  At Earbuds Restore, we sell original cases for all generations:
                 </p>
 
                 <ul className="list-disc pl-6 mb-8 space-y-2">
@@ -405,7 +405,7 @@ const BlogAirpodsBatterijVervangen = () => {
                       <tr className="border-b border-border">
                         <th className="text-left py-3 px-4 font-semibold text-foreground">Scenario</th>
                         <th className="text-left py-3 px-4 font-semibold text-foreground">Manufacturer</th>
-                        <th className="text-left py-3 px-4 font-semibold text-foreground">Earbud restore</th>
+                        <th className="text-left py-3 px-4 font-semibold text-foreground">Earbuds Restore</th>
                       </tr>
                     </thead>
                     <tbody className="text-sm">
@@ -494,7 +494,7 @@ const BlogAirpodsBatterijVervangen = () => {
                 </p>
 
                 <ul className="list-disc pl-6 mb-6 space-y-2">
-                  <li><strong>1 earbud with poor battery:</strong> Buy a <Link to={links.losseAirpods} className="text-primary hover:underline">single earbud</Link> at Earbud restore – saves up to €44</li>
+                  <li><strong>1 earbud with poor battery:</strong> Buy a <Link to={links.losseAirpods} className="text-primary hover:underline">single earbud</Link> at Earbuds Restore – saves up to €44</li>
                   <li><strong>Case battery dead:</strong> Buy a <Link to={links.losseOplaadcases} className="text-primary hover:underline">single charging case</Link> – saves up to €39</li>
                   <li><strong>Both earbuds worn:</strong> Buy 2 single earbuds – still cheaper than the manufacturer</li>
                   <li><strong>Everything worn + want to upgrade:</strong> Consider a new set of the latest generation</li>
@@ -564,7 +564,7 @@ const BlogAirpodsBatterijVervangen = () => {
   return (
     <>
       <Helmet>
-        <title>Oortje-batterij vervangen: alle opties en kosten vergeleken | Earbud restore</title>
+        <title>Oortje-batterij vervangen: alle opties en kosten vergeleken | Earbuds Restore</title>
         <meta name="description" content="Batterij van je draadloze oortjes leeg? Ontdek alle opties: fabrikant-service, los oortje kopen of nieuwe set. We vergelijken prijzen en vinden de goedkoopste oplossing." />
         <link rel="canonical" href="https://earbudrestore.nl/blog/batterij-vervangen-opties" />
         <meta name="keywords" content="oortje batterij vervangen, draadloze oortjes batterij leeg, accu vervangen, batterijduur, batterij kosten" />
@@ -717,7 +717,7 @@ const BlogAirpodsBatterijVervangen = () => {
 
               <p className="mb-4">
                 Het slimmere alternatief: koop een <Link to={links.losseAirpods} className="text-primary hover:underline">los origineel oortje</Link>{' '}
-                met verse batterij. Bij Earbud restore bieden we 100% originele onderdelen, grondig 
+                met verse batterij. Bij Earbuds Restore bieden we 100% originele onderdelen, grondig 
                 getest op geluid, batterij en connectiviteit.
               </p>
 
@@ -726,7 +726,7 @@ const BlogAirpodsBatterijVervangen = () => {
                   <thead>
                     <tr className="border-b border-border">
                       <th className="text-left py-3 px-4 font-semibold text-foreground">Model</th>
-                      <th className="text-left py-3 px-4 font-semibold text-foreground">Prijs bij Earbud restore</th>
+                      <th className="text-left py-3 px-4 font-semibold text-foreground">Prijs bij Earbuds Restore</th>
                       <th className="text-left py-3 px-4 font-semibold text-foreground">Besparing vs fabrikant</th>
                     </tr>
                   </thead>
@@ -758,7 +758,7 @@ const BlogAirpodsBatterijVervangen = () => {
               <Card className="p-6 my-8 bg-primary/5 border-primary/20">
                 <h3 className="text-lg font-semibold mb-4 flex items-center gap-2">
                   <Check className="h-5 w-5 text-primary" />
-                  Waarom kiezen voor Earbud restore?
+                  Waarom kiezen voor Earbuds Restore?
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                   <div className="flex items-start gap-2">
@@ -795,7 +795,7 @@ const BlogAirpodsBatterijVervangen = () => {
               <p className="mb-4">
                 Is je case-batterij leeg maar werken je oortjes nog prima? Dan heb je geen nieuwe 
                 oortjes nodig – alleen een nieuwe <Link to={links.losseOplaadcases} className="text-primary hover:underline">oplaadcase</Link>. 
-                Bij Earbud restore verkopen we originele cases voor alle generaties:
+                Bij Earbuds Restore verkopen we originele cases voor alle generaties:
               </p>
 
               <ul className="list-disc pl-6 mb-8 space-y-2">

@@ -57,11 +57,11 @@ const articleSchema = {
   "description": "Ontdek welk model je hebt aan de hand van modelnummers. Complete gids voor alle generaties draadloze oortjes.",
   "author": {
     "@type": "Organization",
-    "name": "Earbud restore"
+    "name": "Earbuds Restore"
   },
   "publisher": {
     "@type": "Organization",
-    "name": "Earbud restore"
+    "name": "Earbuds Restore"
   },
   "datePublished": "2024-01-15",
   "dateModified": "2024-01-15"
@@ -71,7 +71,7 @@ const BlogWelkeAirpods = () => {
   return (
     <>
       <Helmet>
-        <title>Welk model heb ik? De complete gids voor modelnummers en generaties | Earbud restore</title>
+        <title>Welk model heb ik? De complete gids voor modelnummers en generaties | Earbuds Restore</title>
         <meta name="description" content="Ontdek welk model je hebt aan de hand van modelnummers. Complete gids voor alle generaties draadloze oortjes. Vind je generatie en bestel het juiste onderdeel." />
         <link rel="canonical" href="https://earbudrestore.nl/blog/modelnummer-herkennen" />
         <meta name="keywords" content="welk model heb ik, model bepalen, welke generatie oortjes, modelnummer herkennen, generatie herkennen" />
@@ -119,7 +119,7 @@ const BlogWelkeAirpods = () => {
               </p>
 
               <p className="mb-8">
-                Bij Earbud restore zijn we gespecialiseerd in losse AirPods en oplaadcases. We leveren uitsluitend 100% originele 
+                Bij Earbuds Restore zijn we gespecialiseerd in losse AirPods en oplaadcases. We leveren uitsluitend 100% originele
                 Apple-onderdelen, zorgvuldig getest op geluid, batterij en connectie. In deze uitgebreide gids leggen we stap 
                 voor stap uit hoe je achterhaalt welke AirPods je hebt, wat de verschillen zijn tussen de generaties, en hoe 
                 je het juiste vervangende onderdeel kiest.

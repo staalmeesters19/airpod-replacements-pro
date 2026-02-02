@@ -107,7 +107,7 @@ const BlogIndex = () => {
   return (
     <>
       <Helmet>
-        <title>Blog | Earbud restore - Tips & Handleidingen</title>
+        <title>Blog | Earbuds Restore - Tips & Handleidingen</title>
         <meta name="description" content="Lees onze blogs over oortjes: modelnummers herkennen, generaties vergelijken, en tips voor het vervangen van losse onderdelen en oplaadcases." />
         <link rel="canonical" href="https://earbudrestore.nl/blog" />
       </Helmet>

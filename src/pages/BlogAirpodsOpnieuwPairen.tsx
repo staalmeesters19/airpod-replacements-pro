@@ -55,7 +55,7 @@ const BlogAirpodsOpnieuwPairen = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Helmet>
-        <title>Vervangend oortje koppelen: zo pair je een nieuw onderdeel | Earbud restore</title>
+        <title>Vervangend oortje koppelen: zo pair je een nieuw onderdeel | Earbuds Restore</title>
         <meta
           name="description"
           content="Leer hoe je een vervangend oortje of oplaadcase koppelt. Stap-voor-stap uitleg voor resetten en pairen na vervanging van een los onderdeel."
@@ -115,7 +115,7 @@ const BlogAirpodsOpnieuwPairen = () => {
             </p>
 
             <p>
-              Bij <strong>Earbud restore</strong> zijn we gespecialiseerd in{' '}
+              Bij <strong>Earbuds Restore</strong> zijn we gespecialiseerd in{' '}
               <Link to="/losse-airpods" className="text-primary hover:underline">losse oortjes</Link> en{' '}
               <Link to="/losse-oplaadcases" className="text-primary hover:underline">losse oplaadcases</Link>. 
               We weten dus precies welke stappen je moet volgen om alles weer soepel te laten werken.

@@ -79,7 +79,7 @@ const BlogAirpodsSchoonmaken = () => {
         "Laat volledig drogen voordat je ze terugplaatst (minimaal 30 minuten)",
         "Klik de oortips terug op de AirPods Pro"
       ],
-      airpodsProTip: "Zijn je oortips versleten of kwijt? Bij Earbud restore verkopen we losse siliconen oortips voor alle maten.",
+      airpodsProTip: "Zijn je oortips versleten of kwijt? Bij Earbuds Restore verkopen we losse siliconen oortips voor alle maten.",
       
       caseCleaningTitle: "De Oplaadcase Schoonmaken",
       caseCleaningIntro: "Vergeet de oplaadcase niet! Een vuile case kan oplaadproblemen veroorzaken.",
@@ -134,7 +134,7 @@ const BlogAirpodsSchoonmaken = () => {
         "Er kan interne schade zijn aan de drivers",
         "De batterij kan versleten zijn, wat ook geluidskwaliteit beïnvloedt"
       ],
-      soundProblemsCta: "In deze gevallen is het vaak voordeliger om een losse AirPod te vervangen dan een volledig nieuwe set te kopen. Bij Earbud restore bieden we losse AirPods aan voor alle generaties - van AirPods 2 tot de nieuwste AirPods 4.",
+      soundProblemsCta: "In deze gevallen is het vaak voordeliger om een losse AirPod te vervangen dan een volledig nieuwe set te kopen. Bij Earbuds Restore bieden we losse AirPods aan voor alle generaties - van AirPods 2 tot de nieuwste AirPods 4.",
       
       maintenanceTipsTitle: "Extra Onderhoudstips voor Langere Levensduur",
       maintenanceTips: [
@@ -149,7 +149,7 @@ const BlogAirpodsSchoonmaken = () => {
       conclusionText: "Regelmatig schoonmaken van je AirPods is essentieel voor hygiëne, geluidskwaliteit en levensduur. Met de juiste materialen en technieken kun je je oordopjes jarenlang in topconditie houden. Maak er een wekelijkse gewoonte van en je AirPods zullen je dankbaar zijn!",
       
       ctaTitle: "Hulp Nodig met Je AirPods?",
-      ctaText: "Bij Earbud restore helpen we je met alles rondom je AirPods. Van losse oordopjes tot oplaadcases en siliconen tips - allemaal tegen scherpe prijzen en met snelle levering.",
+      ctaText: "Bij Earbuds Restore helpen we je met alles rondom je AirPods. Van losse oordopjes tot oplaadcases en siliconen tips - allemaal tegen scherpe prijzen en met snelle levering.",
       ctaButton: "Bekijk Onze Producten",
       
       faqTitle: "Veelgestelde Vragen over AirPods Schoonmaken",
@@ -252,7 +252,7 @@ const BlogAirpodsSchoonmaken = () => {
         "Let them dry completely before reattaching (at least 30 minutes)",
         "Click the ear tips back onto the AirPods Pro"
       ],
-      airpodsProTip: "Are your ear tips worn or lost? At Earbud restore we sell individual silicone ear tips in all sizes.",
+      airpodsProTip: "Are your ear tips worn or lost? At Earbuds Restore we sell individual silicone ear tips in all sizes.",
       
       caseCleaningTitle: "Cleaning the Charging Case",
       caseCleaningIntro: "Don't forget the charging case! A dirty case can cause charging problems.",
@@ -307,7 +307,7 @@ const BlogAirpodsSchoonmaken = () => {
         "There may be internal damage to the drivers",
         "The battery may be worn, which also affects sound quality"
       ],
-      soundProblemsCta: "In these cases, it's often more affordable to replace an individual AirPod than to buy a completely new set. At Earbud restore, we offer individual AirPods for all generations - from AirPods 2 to the latest AirPods 4.",
+      soundProblemsCta: "In these cases, it's often more affordable to replace an individual AirPod than to buy a completely new set. At Earbuds Restore, we offer individual AirPods for all generations - from AirPods 2 to the latest AirPods 4.",
       
       maintenanceTipsTitle: "Extra Maintenance Tips for Longer Lifespan",
       maintenanceTips: [
@@ -322,7 +322,7 @@ const BlogAirpodsSchoonmaken = () => {
       conclusionText: "Regular cleaning of your AirPods is essential for hygiene, sound quality, and lifespan. With the right materials and techniques, you can keep your earbuds in top condition for years. Make it a weekly habit and your AirPods will thank you!",
       
       ctaTitle: "Need Help with Your AirPods?",
-      ctaText: "At Earbud restore, we help you with everything related to your AirPods. From individual earbuds to charging cases and silicone tips - all at competitive prices with fast delivery.",
+      ctaText: "At Earbuds Restore, we help you with everything related to your AirPods. From individual earbuds to charging cases and silicone tips - all at competitive prices with fast delivery.",
       ctaButton: "View Our Products",
       
       faqTitle: "Frequently Asked Questions About Cleaning AirPods",
@@ -381,11 +381,11 @@ const BlogAirpodsSchoonmaken = () => {
     "description": t.metaDescription,
     "author": {
       "@type": "Organization",
-      "name": "Earbud restore"
+      "name": "Earbuds Restore"
     },
     "publisher": {
       "@type": "Organization",
-      "name": "Earbud restore",
+      "name": "Earbuds Restore",
       "url": "https://earbudrestore.nl"
     },
     "datePublished": "2024-12-22",
@@ -424,7 +424,7 @@ const BlogAirpodsSchoonmaken = () => {
   return (
     <>
       <Helmet>
-        <title>{t.title} | Earbud restore</title>
+        <title>{t.title} | Earbuds Restore</title>
         <meta name="description" content={t.metaDescription} />
         <meta name="keywords" content={isEnglish 
           ? "clean airpods, airpods cleaning, how to clean airpods, airpods maintenance, clean airpods pro, airpods speaker mesh, cleaning airpods case"

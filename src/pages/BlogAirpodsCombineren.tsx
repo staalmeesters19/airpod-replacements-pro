@@ -55,7 +55,7 @@ const BlogAirpodsCombineren = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Helmet>
-        <title>Werkt een vervangend oortje met mijn oude set? | Earbud restore</title>
+        <title>Werkt een vervangend oortje met mijn oude set? | Earbuds Restore</title>
         <meta
           name="description"
           content="Ontdek of een vervangend oortje werkt met je bestaande set. Alles over compatibiliteit per generatie en het koppelen van vervangende onderdelen."
@@ -334,7 +334,7 @@ const BlogAirpodsCombineren = () => {
               <Lightbulb className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
               <div>
                 <p className="font-medium mb-1">Twijfel je?</p>
-                <p className="text-sm mb-0"><strong>Bij Earbud restore leveren we altijd de juiste generatie</strong> wanneer je correct kiest op onze website. Neem contact met ons op – we helpen je graag.</p>
+                <p className="text-sm mb-0"><strong>Bij Earbuds Restore leveren we altijd de juiste generatie</strong> wanneer je correct kiest op onze website. Neem contact met ons op – we helpen je graag.</p>
               </div>
             </div>
 
@@ -498,7 +498,7 @@ const BlogAirpodsCombineren = () => {
             {/* Disclaimer */}
             <div className="mt-12 pt-6 border-t border-border">
               <p className="text-xs text-muted-foreground">
-                Earbud restore is een onafhankelijke aanbieder en niet gelieerd aan Apple Inc. 
+                Earbuds Restore is een onafhankelijke aanbieder en niet gelieerd aan Apple Inc.
                 Alle genoemde merknamen zijn eigendom van hun respectievelijke eigenaren.
               </p>
             </div>

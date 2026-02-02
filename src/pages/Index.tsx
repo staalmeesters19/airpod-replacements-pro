@@ -24,16 +24,16 @@ const Index = () => {
 
   const seoData = {
     nl: {
-      title: 'Losse AirPods en Oplaadcases Kopen | Earbud restore',
+      title: 'Losse AirPods en Oplaadcases Kopen | Earbuds Restore',
       description: 'Koop losse AirPods links of rechts, en originele oplaadcases. Eén AirPod kwijt? Vervang alleen wat je mist. 100% originele Apple onderdelen, morgen in huis. Voorheen Airpods-handel.',
-      keywords: 'losse airpods, airpod links, airpod rechts, oplaadcase, airpods vervangen, losse airpod kopen, airpods case los, earbud restore',
+      keywords: 'losse airpods, airpod links, airpod rechts, oplaadcase, airpods vervangen, losse airpod kopen, airpods case los, earbuds restore',
       canonical: 'https://earbudrestore.nl',
       storeDescription: 'Specialist in losse AirPods en oplaadcases. Vervang alleen wat je kwijt bent.',
     },
     en: {
-      title: 'Buy Single AirPods & Charging Cases | Earbud restore',
+      title: 'Buy Single AirPods & Charging Cases | Earbuds Restore',
       description: 'Buy single AirPods left or right, and original charging cases. Lost an AirPod? Replace only what you need. 100% original Apple parts, fast delivery to Europe.',
-      keywords: 'single airpods, airpod left, airpod right, charging case, airpods replacement, buy single airpod, airpods case only, earbud restore',
+      keywords: 'single airpods, airpod left, airpod right, charging case, airpods replacement, buy single airpod, airpods case only, earbuds restore',
       canonical: 'https://earbudrestore.nl/en',
       storeDescription: 'Specialist in single AirPods and charging cases. Replace only what you lost.',
     },

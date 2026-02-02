@@ -149,7 +149,7 @@ const ProductDetail = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Helmet>
-        <title>{product.name} | Earbud restore</title>
+        <title>{product.name} | Earbuds Restore</title>
         <meta name="description" content={product.description} />
         <meta name="keywords" content={`${product.name}, losse airpods, ${product.model}`} />
         <link rel="canonical" href={`https://earbudrestore.nl/product/${product.slug}`} />

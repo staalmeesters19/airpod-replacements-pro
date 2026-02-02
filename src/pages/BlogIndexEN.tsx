@@ -107,7 +107,7 @@ const BlogIndexEN = () => {
   return (
     <>
       <Helmet>
-        <title>Blog | Earbud restore - Tips & Guides</title>
+        <title>Blog | Earbuds Restore - Tips & Guides</title>
         <meta name="description" content="Read our blogs about earbuds: identifying model numbers, comparing generations, and tips for replacing single units and charging cases." />
         <link rel="canonical" href="https://earbudrestore.nl/en/blog" />
         <html lang="en" />

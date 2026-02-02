@@ -14,10 +14,10 @@ import { Card } from '@/components/ui/card';
 const faqItems = [
   {
     question: 'Kan ik een los oortje kopen zonder nieuwe oplaadcase?',
-    answer: 'Ja, bij Earbud restore kun je een los linker of rechter oortje kopen zonder dat je een nieuwe oplaadcase nodig hebt. Je bestaande case werkt gewoon met het vervangende oortje, mits deze van dezelfde generatie is.',
+    answer: 'Ja, bij Earbuds Restore kun je een los linker of rechter oortje kopen zonder dat je een nieuwe oplaadcase nodig hebt. Je bestaande case werkt gewoon met het vervangende oortje, mits deze van dezelfde generatie is.',
   },
   {
-    question: 'Zijn de onderdelen bij Earbud restore origineel?',
+    question: 'Zijn de onderdelen bij Earbuds Restore origineel?',
     answer: 'Absoluut. Alle oortjes die wij verkopen zijn 100% originele onderdelen. We testen elk product op geluidskwaliteit, batterijcapaciteit en Bluetooth-connectiviteit voordat we het versturen.',
   },
   {
@@ -30,7 +30,7 @@ const faqItems = [
   },
   {
     question: 'Hoe snel ontvang ik mijn vervangende oortje?',
-    answer: 'Bij Earbud restore geldt: vandaag besteld, morgen in huis. Je kunt ook kiezen voor afhalen in onze winkel in Amsterdam, waar we je direct kunnen helpen met koppelen.',
+    answer: 'Bij Earbuds Restore geldt: vandaag besteld, morgen in huis. Je kunt ook kiezen voor afhalen in onze winkel in Amsterdam, waar we je direct kunnen helpen met koppelen.',
   },
   {
     question: 'Krijg ik garantie op een los oortje?',
@@ -59,11 +59,11 @@ const BlogLosseAirpodKwijt = () => {
     "description": "Je hebt één oortje verloren – de ander en je case werken nog prima. Ontdek de goedkoopste manier om alleen te vervangen wat je nodig hebt.",
     "author": {
       "@type": "Organization",
-      "name": "Earbud restore"
+      "name": "Earbuds Restore"
     },
     "publisher": {
       "@type": "Organization",
-      "name": "Earbud restore"
+      "name": "Earbuds Restore"
     },
     "datePublished": "2025-01-20",
     "dateModified": "2025-01-31"
@@ -72,7 +72,7 @@ const BlogLosseAirpodKwijt = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Helmet>
-        <title>Eén oortje kwijt? De goedkoopste manier om te vervangen | Earbud restore</title>
+        <title>Eén oortje kwijt? De goedkoopste manier om te vervangen | Earbuds Restore</title>
         <meta
           name="description"
           content="Je hebt één oortje verloren – de ander en je case werken nog prima. Ontdek hoe je alleen vervangt wat je mist en bespaar tot 60% ten opzichte van een nieuwe set."
@@ -131,7 +131,7 @@ const BlogLosseAirpodKwijt = () => {
               Dit komt veel voor bij draadloze oordopjes, waaronder de populaire modellen van bekende merken. 
               Veel mensen denken dat ze gedwongen zijn om een volledig nieuw setje te kopen. 
               Dat is begrijpelijk, maar niet noodzakelijk. In dit artikel vergelijken we alle mogelijkheden, 
-              van een nieuw setje tot een <strong>los vervangend oortje</strong> via Earbud restore, 
+              van een nieuw setje tot een <strong>los vervangend oortje</strong> via Earbuds Restore, 
               zodat jij de beste keuze kunt maken voor jouw situatie.
             </p>
 

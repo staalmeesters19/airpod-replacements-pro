@@ -36,6 +36,11 @@ import AboutUs from "./pages/AboutUs";
 import Checkout from "./pages/Checkout";
 import Cart from "./pages/Cart";
 import NotFound from "./pages/NotFound";
+import AlgemeneVoorwaarden from "./pages/AlgemeneVoorwaarden";
+import Privacybeleid from "./pages/Privacybeleid";
+import Cookiebeleid from "./pages/Cookiebeleid";
+import Retourbeleid from "./pages/Retourbeleid";
+import Contact from "./pages/Contact";
 import WhatsAppWidget from "./components/layout/WhatsAppWidget";
 import ScrollToTop from "./components/layout/ScrollToTop";
 
@@ -92,6 +97,11 @@ const App = () => (
               <Route path="/faq" element={<FAQ />} />
               <Route path="/hulp" element={<Hulp />} />
               <Route path="/over-ons" element={<OverOns />} />
+              <Route path="/algemene-voorwaarden" element={<AlgemeneVoorwaarden />} />
+              <Route path="/privacybeleid" element={<Privacybeleid />} />
+              <Route path="/cookiebeleid" element={<Cookiebeleid />} />
+              <Route path="/retourbeleid" element={<Retourbeleid />} />
+              <Route path="/contact" element={<Contact />} />
               <Route path="/checkout" element={<Checkout />} />
               <Route path="/winkelwagen" element={<Cart />} />
 
@@ -120,6 +130,11 @@ const App = () => (
               <Route path="/en/help" element={<HelpEN />} />
               <Route path="/en/about-us" element={<AboutUs />} />
               <Route path="/en/which-airpods-do-i-have" element={<WelkeAirPods />} />
+              <Route path="/en/terms" element={<AlgemeneVoorwaarden />} />
+              <Route path="/en/privacy-policy" element={<Privacybeleid />} />
+              <Route path="/en/cookie-policy" element={<Cookiebeleid />} />
+              <Route path="/en/return-policy" element={<Retourbeleid />} />
+              <Route path="/en/contact" element={<Contact />} />
               <Route path="/en/checkout" element={<Checkout />} />
               <Route path="/en/cart" element={<Cart />} />
               

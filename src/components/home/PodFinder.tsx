@@ -160,18 +160,22 @@ const PodFinder = () => {
   return (
     <section id="podfinder" className="py-10 md:py-16 bg-secondary/30 scroll-mt-20">
       <div className="container mx-auto px-4 md:px-6 lg:px-10">
+        {/* Section header above card */}
+        <div className="text-center mb-4 md:mb-8 max-w-2xl mx-auto">
+          <h2 className="text-xl md:text-3xl font-semibold text-foreground mb-1 md:mb-2">{t.title}</h2>
+          <p className="text-base font-medium md:font-normal text-muted-foreground">
+            {isEnglish
+              ? "Answer a few questions and we'll take you straight to the right replacement part."
+              : 'Beantwoord een paar vragen en wij brengen je direct naar het juiste onderdeel.'}
+          </p>
+        </div>
+
         <Card className="max-w-2xl mx-auto overflow-hidden border-border shadow-card bg-background">
           <Progress value={progressValue} className="h-1 rounded-none" />
           
           <div className="p-4 md:p-8">
             <div className="text-center mb-4 md:mb-8">
-              <h2 className="hidden md:block text-xl md:text-3xl font-semibold text-foreground mb-1 md:mb-2">{t.title}</h2>
-              <p className="text-base font-medium text-foreground md:hidden mb-1">
-                {isEnglish
-                  ? "Answer a few questions and we'll take you straight to the right replacement part."
-                  : 'Beantwoord een paar vragen en wij brengen je direct naar het juiste onderdeel.'}
-              </p>
-              <p className="hidden md:block text-sm text-muted-foreground">{t.step} {currentStep} {t.of} 4</p>
+              <p className="text-sm text-muted-foreground">{t.step} {currentStep} {t.of} 4</p>
             </div>
 
             {/* Step 1: Part Selection */}

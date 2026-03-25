@@ -64,10 +64,10 @@ const MissingSide = () => {
     <section className="py-12 md:py-24">
       <div className="container mx-auto px-4 md:px-6 lg:px-10">
         <div className="text-center mb-8 md:mb-12">
-          <h2 className="text-2xl md:text-3xl font-semibold mb-4 text-foreground">
+          <h2 className="hidden md:block text-2xl md:text-3xl font-semibold mb-4 text-foreground">
             {isEnglish ? 'Which side are you missing?' : 'Welke kant mis jij?'}
           </h2>
-          <p className="text-sm md:text-base text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-base md:text-base font-medium md:font-normal text-muted-foreground max-w-2xl mx-auto">
             {isEnglish 
               ? "Lost an AirPod or have a broken charging case? You don't need to buy a whole set. Choose what you need below."
               : 'Eén AirPod kwijt of een kapotte oplaadcase? Je hoeft geen hele set te kopen. Kies hieronder wat je nodig hebt.'

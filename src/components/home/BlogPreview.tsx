@@ -70,10 +70,10 @@ const BlogPreview = () => {
                 {t('blogPreview.label')}
               </span>
             </div>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground">
+            <h2 className="hidden md:block text-2xl md:text-3xl lg:text-4xl font-bold text-foreground">
               {t('blogPreview.title')}
             </h2>
-            <p className="text-sm md:text-base text-muted-foreground mt-2">
+            <p className="text-base md:text-base font-medium md:font-normal text-muted-foreground mt-2">
               {t('blogPreview.subtitle')}
             </p>
           </div>

@@ -108,10 +108,10 @@ const GenerationSelector = () => {
     <section className="py-10 md:py-24 bg-secondary/20">
       <div className="container mx-auto px-3 md:px-6 lg:px-10">
         <div className="text-center mb-4 md:mb-12">
-          <h2 className="text-lg md:text-3xl font-semibold mb-1 md:mb-4 text-foreground">
+          <h2 className="hidden md:block text-lg md:text-3xl font-semibold mb-1 md:mb-4 text-foreground">
             {isEnglish ? 'Find your single AirPod' : 'Vind direct jouw losse AirPod'}
           </h2>
-          <p className="text-xs md:text-base text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-base md:text-base font-medium md:font-normal text-muted-foreground max-w-2xl mx-auto">
             {isEnglish 
               ? 'Replace your left or right AirPod individually. Choose your generation below to find the right single AirPod.'
               : 'Vervang je linker of rechter AirPod per stuk. Kies hieronder jouw generatie om de juiste losse AirPod te vinden.'

@@ -119,10 +119,10 @@ const CaseSelector = () => {
     <section className="py-10 md:py-24">
       <div className="container mx-auto px-3 md:px-6 lg:px-10">
         <div className="text-center mb-3 md:mb-12">
-          <h2 className="text-lg md:text-3xl font-semibold mb-1 md:mb-4 text-foreground">
+          <h2 className="hidden md:block text-lg md:text-3xl font-semibold mb-1 md:mb-4 text-foreground">
             {isEnglish ? 'Replacement charging cases' : 'Losse oplaadcases'}
           </h2>
-          <p className="text-xs md:text-base text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-base md:text-base font-medium md:font-normal text-muted-foreground max-w-2xl mx-auto">
             {isEnglish 
               ? 'Charging case lost or broken? Order an original Apple charging case separately. All cases are 100% original and carefully tested.'
               : 'Oplaadcase kwijt of kapot? Bestel een originele Apple oplaadcase los. Alle cases zijn 100% origineel en zorgvuldig getest.'

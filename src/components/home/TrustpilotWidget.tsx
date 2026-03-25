@@ -154,8 +154,8 @@ const TrustpilotWidget = () => {
           <div className="flex items-center justify-center gap-2 mb-4">
             <span className="text-2xl font-bold text-[#00b67a]">★ Trustpilot</span>
           </div>
-          <h2 className="text-xl md:text-3xl font-semibold mb-4 text-foreground">Wat klanten zeggen</h2>
-          <p className="text-base text-muted-foreground max-w-2xl mx-auto">
+          <h2 className="hidden md:block text-xl md:text-3xl font-semibold mb-4 text-foreground">Wat klanten zeggen</h2>
+          <p className="text-base font-medium md:font-normal text-muted-foreground max-w-2xl mx-auto">
             Meer dan 300 tevreden klanten gingen je voor. Lees hun ervaringen.
           </p>
         </div>

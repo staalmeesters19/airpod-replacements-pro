@@ -165,8 +165,13 @@ const PodFinder = () => {
           
           <div className="p-4 md:p-8">
             <div className="text-center mb-4 md:mb-8">
-              <h2 className="text-xl md:text-3xl font-semibold text-foreground mb-1 md:mb-2">{t.title}</h2>
-              <p className="text-xs md:text-sm text-muted-foreground">{t.step} {currentStep} {t.of} 4</p>
+              <h2 className="hidden md:block text-xl md:text-3xl font-semibold text-foreground mb-1 md:mb-2">{t.title}</h2>
+              <p className="text-base font-medium text-foreground md:hidden mb-1">
+                {isEnglish
+                  ? "Answer a few questions and we'll take you straight to the right replacement part."
+                  : 'Beantwoord een paar vragen en wij brengen je direct naar het juiste onderdeel.'}
+              </p>
+              <p className="hidden md:block text-sm text-muted-foreground">{t.step} {currentStep} {t.of} 4</p>
             </div>
 
             {/* Step 1: Part Selection */}

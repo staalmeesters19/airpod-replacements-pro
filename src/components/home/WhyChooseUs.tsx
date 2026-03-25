@@ -52,10 +52,10 @@ const WhyChooseUs = () => {
       <div className="container max-w-6xl mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-8 md:mb-12">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-2 md:mb-3">
+          <h2 className="hidden md:block text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-2 md:mb-3">
             {t('whyChoose.title')}
           </h2>
-          <p className="text-sm md:text-base lg:text-lg text-muted-foreground max-w-2xl mx-auto px-2">
+          <p className="text-base md:text-base lg:text-lg font-medium md:font-normal text-muted-foreground max-w-2xl mx-auto px-2">
             {t('whyChoose.subtitle')}
           </p>
         </div>

@@ -28,10 +28,10 @@ const HowItWorks = () => {
       <div className="container max-w-6xl mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-10 md:mb-12">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-3">
+          <h2 className="hidden md:block text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-3">
             {t('howItWorks.title')}
           </h2>
-          <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-base md:text-lg font-medium md:font-normal text-muted-foreground max-w-2xl mx-auto">
             {t('howItWorks.subtitle')}
           </p>
         </div>

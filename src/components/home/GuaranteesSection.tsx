@@ -92,10 +92,10 @@ const GuaranteesSection = () => {
       <div className="container mx-auto px-4 md:px-6 lg:px-10">
         {/* Header */}
         <div className="text-center mb-4 md:mb-10">
-          <h2 className="text-lg md:text-3xl font-semibold text-foreground mb-2 md:mb-3">
+          <h2 className="hidden md:block text-lg md:text-3xl font-semibold text-foreground mb-2 md:mb-3">
             {isEnglish ? 'Our promises to you' : 'Onze beloftes aan jou'}
           </h2>
-          <p className="text-muted-foreground max-w-xl mx-auto text-xs md:text-base">
+          <p className="text-muted-foreground max-w-xl mx-auto text-base md:text-base font-medium md:font-normal">
             {isEnglish 
               ? 'At RepairPods you buy with confidence. Every AirPod is tested, cleaned and shipped with warranty.'
               : 'Bij RepairPods koop je met vertrouwen. Elke AirPod wordt getest, gereinigd en verzonden met garantie.'

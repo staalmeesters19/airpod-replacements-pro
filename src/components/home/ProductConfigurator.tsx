@@ -356,13 +356,29 @@ const ProductConfigurator = () => {
                   <label className="block text-sm md:text-sm font-semibold text-foreground mb-2 md:mb-3">
                     {needsVariantSelection ? '3' : '2'}. {isEnglish ? 'What are you missing?' : 'Wat mis je?'}
                   </label>
-                  <div className="flex flex-wrap gap-1.5 md:gap-2">
+                  {/* Mobile: Dropdown */}
+                  <div className="md:hidden">
+                    <Select value={selectedSide} onValueChange={(value) => setSelectedSide(value as Side)}>
+                      <SelectTrigger className="w-full h-11 text-sm">
+                        <SelectValue />
+                      </SelectTrigger>
+                      <SelectContent>
+                        {sides.map((side) => (
+                          <SelectItem key={side.value} value={side.value} className="text-sm py-2.5">
+                            {side.label}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                  </div>
+                  {/* Desktop: Buttons */}
+                  <div className="hidden md:flex flex-wrap gap-2">
                     {sides.map((side) => (
                       <button
                         key={side.value}
                         onClick={() => setSelectedSide(side.value)}
                         disabled={!variantSelected && needsVariantSelection}
-                        className={`px-3 py-2 md:px-4 md:py-2 rounded-lg text-xs md:text-sm font-medium transition-all ${
+                        className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
                           selectedSide === side.value
                             ? 'bg-primary text-primary-foreground'
                             : 'bg-secondary text-muted-foreground hover:bg-secondary/80'
@@ -379,7 +395,39 @@ const ProductConfigurator = () => {
                   <label className="block text-sm md:text-sm font-semibold text-foreground mb-2 md:mb-3">
                     {needsVariantSelection ? '4' : '3'}. {isEnglish ? 'Choose condition' : 'Kies de staat'}
                   </label>
-                  <div className="space-y-1.5 md:space-y-2">
+                  {/* Mobile: Dropdown */}
+                  <div className="md:hidden">
+                    <Select value={selectedCondition} onValueChange={(value) => setSelectedCondition(value as Condition)}>
+                      <SelectTrigger className="w-full h-11 text-sm">
+                        <SelectValue>
+                          {(() => {
+                            const cv = product?.variants.find((v) => v.condition === selectedCondition);
+                            const price = cv ? ` — €${cv.price.toFixed(2).replace(".", ",")}` : "";
+                            return condLabels[selectedCondition] + price;
+                          })()}
+                        </SelectValue>
+                      </SelectTrigger>
+                      <SelectContent>
+                        {conditions.map((condition) => {
+                          const conditionVariant = product?.variants.find((v) => v.condition === condition);
+                          const isAvailable = conditionVariant && conditionVariant.stock > 0;
+                          if (!isAvailable) return null;
+                          return (
+                            <SelectItem key={condition} value={condition} className="text-sm py-2.5">
+                              <span className="flex items-center justify-between w-full gap-4">
+                                <span>{condLabels[condition]}</span>
+                                <span className="font-semibold">
+                                  {conditionVariant ? `€${conditionVariant.price.toFixed(2).replace(".", ",")}` : "-"}
+                                </span>
+                              </span>
+                            </SelectItem>
+                          );
+                        })}
+                      </SelectContent>
+                    </Select>
+                  </div>
+                  {/* Desktop: Condition list */}
+                  <div className="hidden md:block space-y-2">
                     {conditions.map((condition) => {
                       const conditionVariant = product?.variants.find((v) => v.condition === condition);
                       const isAvailable = conditionVariant && conditionVariant.stock > 0;
@@ -389,7 +437,7 @@ const ProductConfigurator = () => {
                           key={condition}
                           onClick={() => isAvailable && setSelectedCondition(condition)}
                           disabled={!isAvailable || (!variantSelected && needsVariantSelection)}
-                          className={`w-full flex items-center justify-between px-3 py-2.5 md:px-4 md:py-3 rounded-lg text-sm md:text-sm transition-all ${
+                          className={`w-full flex items-center justify-between px-4 py-3 rounded-lg text-sm transition-all ${
                             selectedCondition === condition
                               ? 'bg-primary text-primary-foreground'
                               : isAvailable
@@ -399,17 +447,17 @@ const ProductConfigurator = () => {
                         >
                           <div className="flex items-center gap-2">
                             {selectedCondition === condition && (
-                              <Check className="w-3 h-3 md:w-4 md:h-4" />
+                              <Check className="w-4 h-4" />
                             )}
                             <div className="text-left">
                               <span className="font-medium">{condLabels[condition]}</span>
-                              <p className={`text-xs md:text-xs ${selectedCondition === condition ? 'text-primary-foreground/80' : 'text-muted-foreground'} hidden md:block`}>
+                              <p className={`text-xs ${selectedCondition === condition ? 'text-primary-foreground/80' : 'text-muted-foreground'}`}>
                                 {condDescriptions[condition]}
                               </p>
                             </div>
                           </div>
                           <span className="font-semibold">
-                            {conditionVariant ? `€${conditionVariant.price.toFixed(2).replace('.', ',')}` : '-'}
+                            {conditionVariant ? `€${conditionVariant.price.toFixed(2).replace(".", ",")}` : "-"}
                           </span>
                         </button>
                       );

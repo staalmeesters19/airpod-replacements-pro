@@ -88,10 +88,6 @@ const Index = () => {
         <main className="flex-1">
           {/* Hero met achtergrondafbeelding */}
           <Hero />
-          
-          {/* Onze beloftes / Garanties */}
-          <GuaranteesSection />
-          
           {/* Product Configurator - Stel je AirPod samen */}
           <ProductConfigurator />
           
@@ -118,6 +114,9 @@ const Index = () => {
           
           {/* Trustpilot Reviews */}
           <TrustpilotWidget />
+
+          {/* Onze beloftes / Garanties */}
+          <GuaranteesSection />
           
           {/* Blog Preview - Latest Articles */}
           <BlogPreview />

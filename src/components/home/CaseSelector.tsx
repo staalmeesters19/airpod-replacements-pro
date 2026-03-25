@@ -87,7 +87,7 @@ const CaseSelector = () => {
     <Link to={`${prefix}/product/${caseItem.slug}`}>
       <Card className="group p-4 md:p-5 hover:shadow-card hover:border-primary/30 transition-all duration-200 h-full">
         <div className="flex flex-col md:flex-row items-center md:gap-4">
-          <div className="w-16 h-16 md:w-20 md:h-20 flex-shrink-0 flex items-center justify-center mb-2 md:mb-0">
+          <div className="w-28 h-28 md:w-20 md:h-20 flex-shrink-0 flex items-center justify-center mb-2 md:mb-0">
             <img 
               src={caseItem.image} 
               alt={caseItem.name}

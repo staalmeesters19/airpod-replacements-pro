@@ -89,7 +89,7 @@ const GenerationSelector = () => {
       aria-label={isEnglish ? `View single ${gen.name} products` : `Bekijk losse ${gen.name} producten`}
     >
       <Card className="group p-4 md:p-4 text-center hover:shadow-card hover:border-primary/30 transition-all duration-200 h-full">
-        <div className="w-16 h-16 md:w-20 md:h-20 mx-auto mb-2 md:mb-4 flex items-center justify-center">
+        <div className="w-28 h-28 md:w-20 md:h-20 mx-auto mb-2 md:mb-4 flex items-center justify-center">
           <img 
             src={gen.image} 
             alt={`${gen.name} ${gen.subtitle}`}

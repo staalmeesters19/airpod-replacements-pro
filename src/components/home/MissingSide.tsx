@@ -82,7 +82,7 @@ const MissingSide = () => {
               to={option.href}
               className="group flex flex-col items-center p-4 md:p-8 bg-secondary/30 rounded-xl md:rounded-2xl border border-border hover:border-primary/30 hover:bg-secondary/50 transition-all duration-200"
             >
-              <div className="w-20 h-20 md:w-32 md:h-32 mb-2 md:mb-6 flex items-center justify-center">
+              <div className="w-28 h-28 md:w-32 md:h-32 mb-2 md:mb-6 flex items-center justify-center">
                 <img
                   src={option.image}
                   alt={option.alt}

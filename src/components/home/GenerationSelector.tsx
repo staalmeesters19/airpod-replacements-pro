@@ -88,15 +88,15 @@ const GenerationSelector = () => {
       to={`${prefix}/model/${gen.slug}`} 
       aria-label={isEnglish ? `View single ${gen.name} products` : `Bekijk losse ${gen.name} producten`}
     >
-      <Card className="group p-3 md:p-4 text-center hover:shadow-card hover:border-primary/30 transition-all duration-200 h-full">
-        <div className="w-14 h-14 md:w-20 md:h-20 mx-auto mb-2 md:mb-4 flex items-center justify-center">
+      <Card className="group p-4 md:p-4 text-center hover:shadow-card hover:border-primary/30 transition-all duration-200 h-full">
+        <div className="w-16 h-16 md:w-20 md:h-20 mx-auto mb-2 md:mb-4 flex items-center justify-center">
           <img 
             src={gen.image} 
             alt={`${gen.name} ${gen.subtitle}`}
             className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-200"
           />
         </div>
-        <h3 className="font-medium text-foreground text-xs md:text-base leading-tight group-hover:text-primary transition-colors">
+        <h3 className="font-medium text-foreground text-sm md:text-base leading-tight group-hover:text-primary transition-colors">
           {gen.name}
         </h3>
         <p className="text-[9px] md:text-xs text-muted-foreground hidden md:block">{gen.subtitle}</p>
@@ -105,13 +105,13 @@ const GenerationSelector = () => {
   );
 
   return (
-    <section className="py-6 md:py-24 bg-secondary/20">
+    <section className="py-10 md:py-24 bg-secondary/20">
       <div className="container mx-auto px-3 md:px-6 lg:px-10">
-        <div className="text-center mb-3 md:mb-12">
-          <h2 className="text-base md:text-3xl font-semibold mb-1 md:mb-4 text-foreground">
+        <div className="text-center mb-4 md:mb-12">
+          <h2 className="text-lg md:text-3xl font-semibold mb-1 md:mb-4 text-foreground">
             {isEnglish ? 'Find your single AirPod' : 'Vind direct jouw losse AirPod'}
           </h2>
-          <p className="text-xs md:text-base text-muted-foreground max-w-2xl mx-auto hidden md:block">
+          <p className="text-xs md:text-base text-muted-foreground max-w-2xl mx-auto">
             {isEnglish 
               ? 'Replace your left or right AirPod individually. Choose your generation below to find the right single AirPod.'
               : 'Vervang je linker of rechter AirPod per stuk. Kies hieronder jouw generatie om de juiste losse AirPod te vinden.'
@@ -131,7 +131,7 @@ const GenerationSelector = () => {
             >
               <CarouselContent className="-ml-2">
                 {generations.map((gen) => (
-                  <CarouselItem key={gen.id} className="pl-2 basis-[32%]">
+                  <CarouselItem key={gen.id} className="pl-2 basis-[38%]">
                     <GenerationCard gen={gen} />
                   </CarouselItem>
                 ))}
@@ -142,7 +142,7 @@ const GenerationSelector = () => {
                 <button
                   key={i}
                   onClick={() => api?.scrollTo(i)}
-                  className={`w-1.5 h-1.5 rounded-full transition-colors ${
+                  className={`w-2 h-2 rounded-full transition-colors ${
                     i === current ? 'bg-primary' : 'bg-muted-foreground/30'
                   }`}
                 />

@@ -105,7 +105,7 @@ const reviews: Review[] = [
 ];
 
 const ReviewCard = ({ review }: { review: Review }) => (
-  <div className="bg-background rounded-2xl p-6 border border-border shadow-sm h-full flex flex-col">
+  <div className="bg-background rounded-2xl p-5 md:p-6 border border-border shadow-sm h-full flex flex-col">
     <div className="flex items-start justify-between mb-4">
       <div className="flex items-center gap-3">
         <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-sm font-semibold text-primary">
@@ -154,7 +154,7 @@ const TrustpilotWidget = () => {
           <div className="flex items-center justify-center gap-2 mb-4">
             <span className="text-2xl font-bold text-[#00b67a]">★ Trustpilot</span>
           </div>
-          <h2 className="text-2xl md:text-3xl font-semibold mb-4 text-foreground">Wat klanten zeggen</h2>
+          <h2 className="text-xl md:text-3xl font-semibold mb-4 text-foreground">Wat klanten zeggen</h2>
           <p className="text-base text-muted-foreground max-w-2xl mx-auto">
             Meer dan 300 tevreden klanten gingen je voor. Lees hun ervaringen.
           </p>
@@ -198,7 +198,7 @@ const TrustpilotWidget = () => {
         <div className="md:hidden">
           <div className="flex overflow-x-auto gap-4 pb-4 snap-x snap-mandatory scrollbar-hide">
             {reviews.map((review, index) => (
-              <div key={index} className="w-[85%] flex-shrink-0 snap-center">
+              <div key={index} className="w-[82%] flex-shrink-0 snap-center">
                 <ReviewCard review={review} />
               </div>
             ))}

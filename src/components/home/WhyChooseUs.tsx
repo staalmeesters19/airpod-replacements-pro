@@ -67,15 +67,15 @@ const WhyChooseUs = () => {
             return (
               <div
                 key={index}
-                className="flex flex-col items-center text-center p-3 md:p-4 lg:p-6 bg-background rounded-lg md:rounded-xl border border-border/50 shadow-sm hover:shadow-md hover:border-primary/30 transition-all duration-300"
+                className="flex flex-col items-center text-center p-4 md:p-4 lg:p-6 bg-background rounded-lg md:rounded-xl border border-border/50 shadow-sm hover:shadow-md hover:border-primary/30 transition-all duration-300"
               >
                 <div className="w-10 h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 rounded-full bg-primary/10 flex items-center justify-center mb-2 md:mb-3 lg:mb-4">
                   <Icon className="w-5 h-5 md:w-6 md:h-6 lg:w-7 lg:h-7 text-primary" />
                 </div>
-                <h3 className="font-semibold text-foreground mb-1 md:mb-2 text-xs md:text-sm lg:text-base leading-tight">
+                <h3 className="font-semibold text-foreground mb-1 md:mb-2 text-sm md:text-sm lg:text-base leading-tight">
                   {t(reason.titleKey)}
                 </h3>
-                <p className="text-xs md:text-sm text-muted-foreground leading-relaxed hidden sm:block">
+                <p className="text-[11px] sm:text-xs md:text-sm text-muted-foreground leading-relaxed line-clamp-2">
                   {t(reason.descKey)}
                 </p>
               </div>

@@ -158,8 +158,8 @@ const PodFinder = () => {
   const progressValue = (currentStep / 4) * 100;
 
   return (
-    <section id="podfinder" className="py-8 md:py-16 bg-secondary/30 scroll-mt-20">
-      <div className="container mx-auto px-3 md:px-6 lg:px-10">
+    <section id="podfinder" className="py-10 md:py-16 bg-secondary/30 scroll-mt-20">
+      <div className="container mx-auto px-4 md:px-6 lg:px-10">
         <Card className="max-w-2xl mx-auto overflow-hidden border-border shadow-card bg-background">
           <Progress value={progressValue} className="h-1 rounded-none" />
           
@@ -172,30 +172,30 @@ const PodFinder = () => {
             {/* Step 1: Part Selection */}
             {currentStep === 1 && (
               <div>
-                <h3 className="text-sm md:text-xl font-medium text-center text-foreground mb-4 md:mb-8">
+                <h3 className="text-base md:text-xl font-medium text-center text-foreground mb-4 md:mb-8">
                   {t.step1Question}
                 </h3>
-                <div className="grid grid-cols-3 gap-2 md:gap-4">
+                <div className="grid grid-cols-3 gap-3 md:gap-4">
                   <button
                     onClick={() => handlePartSelect('left')}
                     className="flex flex-col items-center p-3 md:p-6 bg-background border border-border rounded-xl md:rounded-2xl hover:border-primary hover:bg-accent/30 transition-all duration-200 group"
                   >
-                    <img src={airpodLeft} alt={t.leftAlt} className="w-14 h-14 md:w-24 md:h-24 object-contain mb-2 md:mb-4 group-hover:scale-105 transition-transform" />
-                    <span className="font-medium text-foreground text-[10px] md:text-base text-center leading-tight">{t.leftAirPod}</span>
+                    <img src={airpodLeft} alt={t.leftAlt} className="w-16 h-16 md:w-24 md:h-24 object-contain mb-2 md:mb-4 group-hover:scale-105 transition-transform" />
+                    <span className="font-medium text-foreground text-xs md:text-base text-center leading-tight">{t.leftAirPod}</span>
                   </button>
                   <button
                     onClick={() => handlePartSelect('right')}
                     className="flex flex-col items-center p-3 md:p-6 bg-background border border-border rounded-xl md:rounded-2xl hover:border-primary hover:bg-accent/30 transition-all duration-200 group"
                   >
-                    <img src={airpodRight} alt={t.rightAlt} className="w-14 h-14 md:w-24 md:h-24 object-contain mb-2 md:mb-4 group-hover:scale-105 transition-transform" />
-                    <span className="font-medium text-foreground text-[10px] md:text-base text-center leading-tight">{t.rightAirPod}</span>
+                    <img src={airpodRight} alt={t.rightAlt} className="w-16 h-16 md:w-24 md:h-24 object-contain mb-2 md:mb-4 group-hover:scale-105 transition-transform" />
+                    <span className="font-medium text-foreground text-xs md:text-base text-center leading-tight">{t.rightAirPod}</span>
                   </button>
                   <button
                     onClick={() => handlePartSelect('case')}
                     className="flex flex-col items-center p-3 md:p-6 bg-background border border-border rounded-xl md:rounded-2xl hover:border-primary hover:bg-accent/30 transition-all duration-200 group"
                   >
-                    <img src={airpodCase} alt={t.caseAlt} className="w-14 h-14 md:w-24 md:h-24 object-contain mb-2 md:mb-4 group-hover:scale-105 transition-transform" />
-                    <span className="font-medium text-foreground text-[10px] md:text-base text-center leading-tight">{t.chargingCase}</span>
+                    <img src={airpodCase} alt={t.caseAlt} className="w-16 h-16 md:w-24 md:h-24 object-contain mb-2 md:mb-4 group-hover:scale-105 transition-transform" />
+                    <span className="font-medium text-foreground text-xs md:text-base text-center leading-tight">{t.chargingCase}</span>
                   </button>
                 </div>
               </div>
@@ -204,7 +204,7 @@ const PodFinder = () => {
             {/* Step 2: iOS Model */}
             {currentStep === 2 && (
               <div>
-                <h3 className="text-sm md:text-xl font-medium text-center text-foreground mb-1 md:mb-2">
+                <h3 className="text-base md:text-xl font-medium text-center text-foreground mb-1 md:mb-2">
                   {t.step2Question}
                 </h3>
                 <p className="text-xs md:text-sm text-muted-foreground text-center mb-3 md:mb-6">
@@ -215,14 +215,14 @@ const PodFinder = () => {
                   alt={t.step2ImageAlt}
                   className="max-w-full h-auto max-h-40 md:max-h-56 mx-auto rounded-xl shadow-soft mb-4 md:mb-6 object-contain"
                 />
-                <div className="grid grid-cols-4 gap-1.5 md:gap-2">
+                <div className="grid grid-cols-3 gap-2 md:grid-cols-4 md:gap-2">
                   {allIosModels.map(model => (
                     <Button
                       key={model}
                       variant="outline"
                       size="sm"
                       onClick={() => handleModelSelection(model, 'ios')}
-                      className="text-xs md:text-sm rounded-lg hover:bg-accent hover:text-accent-foreground hover:border-primary px-2 py-1.5 md:px-3 md:py-2"
+                      className="text-xs md:text-sm rounded-lg hover:bg-accent hover:text-accent-foreground hover:border-primary px-2.5 py-2 md:px-3 md:py-2"
                     >
                       {model}
                     </Button>
@@ -243,20 +243,20 @@ const PodFinder = () => {
             {/* Step 3: Case Model */}
             {currentStep === 3 && (
               <div>
-                <h3 className="text-sm md:text-xl font-medium text-center text-foreground mb-1 md:mb-2">
+                <h3 className="text-base md:text-xl font-medium text-center text-foreground mb-1 md:mb-2">
                   {t.step3Question}
                 </h3>
                 <p className="text-xs md:text-sm text-muted-foreground text-center mb-3 md:mb-6">
                   {t.step3Instructions}
                 </p>
-                <div className="grid grid-cols-4 gap-1.5 md:gap-2">
+                <div className="grid grid-cols-3 gap-2 md:grid-cols-4 md:gap-2">
                   {allCaseModels.map(model => (
                     <Button
                       key={model}
                       variant="outline"
                       size="sm"
                       onClick={() => handleModelSelection(model, 'case')}
-                      className="text-xs md:text-sm rounded-lg hover:bg-accent hover:text-accent-foreground hover:border-primary px-2 py-1.5 md:px-3 md:py-2"
+                      className="text-xs md:text-sm rounded-lg hover:bg-accent hover:text-accent-foreground hover:border-primary px-2.5 py-2 md:px-3 md:py-2"
                     >
                       {model}
                     </Button>
@@ -277,7 +277,7 @@ const PodFinder = () => {
             {/* Step 4: Earbud Model */}
             {currentStep === 4 && (
               <div>
-                <h3 className="text-sm md:text-xl font-medium text-center text-foreground mb-1 md:mb-2">
+                <h3 className="text-base md:text-xl font-medium text-center text-foreground mb-1 md:mb-2">
                   {t.step4Question}
                 </h3>
                 <p className="text-xs md:text-sm text-muted-foreground text-center mb-3 md:mb-6">
@@ -290,7 +290,7 @@ const PodFinder = () => {
                       variant="outline"
                       size="sm"
                       onClick={() => handleModelSelection(model, 'bud', side)}
-                      className="text-xs md:text-sm rounded-lg hover:bg-accent hover:text-accent-foreground hover:border-primary px-2 py-1.5 md:px-3 md:py-2"
+                      className="text-xs md:text-sm rounded-lg hover:bg-accent hover:text-accent-foreground hover:border-primary px-2.5 py-2 md:px-3 md:py-2"
                     >
                       {model} ({side})
                     </Button>

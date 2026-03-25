@@ -11,7 +11,7 @@ const CustomerQuoteHighlight = () => {
       <div className="container mx-auto px-4 md:px-6 lg:px-10">
         <div className="max-w-3xl mx-auto">
           {/* Quote card */}
-          <div className="relative bg-gradient-to-br from-primary/5 to-primary/10 rounded-3xl p-8 md:p-12">
+          <div className="relative bg-gradient-to-br from-primary/5 to-primary/10 rounded-3xl p-6 md:p-12">
             {/* Quote icon */}
             <div className="absolute -top-4 left-8 w-10 h-10 rounded-full bg-primary flex items-center justify-center">
               <Quote className="w-5 h-5 text-primary-foreground" />
@@ -25,7 +25,7 @@ const CustomerQuoteHighlight = () => {
             </div>
 
             {/* Quote text */}
-            <blockquote className="text-lg md:text-xl text-foreground leading-relaxed mb-6">
+            <blockquote className="text-base md:text-xl text-foreground leading-relaxed mb-6">
               {isEnglish 
                 ? '"I lost my left AirPod and thought I had to buy a whole new set. Through RepairPods I had a replacement AirPod within 2 days for a fraction of the price. Great service and quality!"'
                 : '"Mijn linker AirPod was kwijt en ik dacht dat ik een heel nieuw setje moest kopen. Via RepairPods had ik binnen 2 dagen een vervangende AirPod voor een fractie van de prijs. Top service en kwaliteit!"'

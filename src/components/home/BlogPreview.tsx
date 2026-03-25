@@ -113,12 +113,12 @@ const BlogPreview = () => {
                   </h3>
                   
                   {/* Excerpt - hidden on mobile */}
-                  <p className="text-xs md:text-sm text-muted-foreground mb-3 line-clamp-2 hidden sm:block">
+                  <p className="text-xs md:text-sm text-muted-foreground mb-3 line-clamp-2">
                     {blog.excerpt}
                   </p>
                   
                   {/* Read more link */}
-                  <span className="inline-flex items-center gap-1.5 text-xs md:text-sm text-primary font-medium group-hover:gap-2.5 transition-all mt-auto">
+                  <span className="inline-flex items-center gap-1.5 text-sm md:text-sm text-primary font-medium group-hover:gap-2.5 transition-all mt-auto">
                     {isEnglish ? 'Read more' : 'Lees verder'}
                     <ArrowRight className="w-3 h-3 md:w-4 md:h-4" />
                   </span>

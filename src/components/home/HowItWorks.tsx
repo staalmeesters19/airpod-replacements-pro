@@ -46,7 +46,7 @@ const HowItWorks = () => {
                 className="relative flex flex-col items-center text-center group"
               >
                 {/* Step number badge */}
-                <div className="absolute -top-2 -right-2 md:top-0 md:right-4 lg:right-8 w-6 h-6 md:w-7 md:h-7 rounded-full bg-primary text-primary-foreground text-xs md:text-sm font-bold flex items-center justify-center z-10">
+                <div className="absolute -top-2 -right-2 md:top-0 md:right-4 lg:right-8 w-7 h-7 md:w-7 md:h-7 rounded-full bg-primary text-primary-foreground text-xs md:text-sm font-bold flex items-center justify-center z-10">
                   {index + 1}
                 </div>
                 
@@ -59,7 +59,7 @@ const HowItWorks = () => {
                 <h3 className="font-semibold text-foreground mb-1 text-sm md:text-base">
                   {t(`${step.stepKey}.title`)}
                 </h3>
-                <p className="text-xs md:text-sm text-muted-foreground leading-relaxed px-1">
+                <p className="text-xs md:text-sm text-muted-foreground leading-relaxed px-2">
                   {t(`${step.stepKey}.description`)}
                 </p>
 

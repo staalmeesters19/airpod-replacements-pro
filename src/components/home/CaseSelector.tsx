@@ -85,9 +85,9 @@ const CaseSelector = () => {
 
   const CaseCard = ({ caseItem }: { caseItem: typeof cases[0] }) => (
     <Link to={`${prefix}/product/${caseItem.slug}`}>
-      <Card className="group p-3 md:p-5 hover:shadow-card hover:border-primary/30 transition-all duration-200 h-full">
+      <Card className="group p-4 md:p-5 hover:shadow-card hover:border-primary/30 transition-all duration-200 h-full">
         <div className="flex flex-col md:flex-row items-center md:gap-4">
-          <div className="w-14 h-14 md:w-20 md:h-20 flex-shrink-0 flex items-center justify-center mb-2 md:mb-0">
+          <div className="w-16 h-16 md:w-20 md:h-20 flex-shrink-0 flex items-center justify-center mb-2 md:mb-0">
             <img 
               src={caseItem.image} 
               alt={caseItem.name}
@@ -95,7 +95,7 @@ const CaseSelector = () => {
             />
           </div>
           <div className="flex-1 text-center md:text-left">
-            <h3 className="font-medium text-foreground text-xs md:text-base leading-tight group-hover:text-primary transition-colors">
+            <h3 className="font-medium text-foreground text-sm md:text-base leading-tight group-hover:text-primary transition-colors">
               {caseItem.name}
             </h3>
             <p className="text-sm text-muted-foreground mb-3 hidden md:block">{caseItem.description}</p>
@@ -116,13 +116,13 @@ const CaseSelector = () => {
   );
 
   return (
-    <section className="py-6 md:py-24">
+    <section className="py-10 md:py-24">
       <div className="container mx-auto px-3 md:px-6 lg:px-10">
         <div className="text-center mb-3 md:mb-12">
-          <h2 className="text-base md:text-3xl font-semibold mb-1 md:mb-4 text-foreground">
+          <h2 className="text-lg md:text-3xl font-semibold mb-1 md:mb-4 text-foreground">
             {isEnglish ? 'Replacement charging cases' : 'Losse oplaadcases'}
           </h2>
-          <p className="text-xs md:text-base text-muted-foreground max-w-2xl mx-auto hidden md:block">
+          <p className="text-xs md:text-base text-muted-foreground max-w-2xl mx-auto">
             {isEnglish 
               ? 'Charging case lost or broken? Order an original Apple charging case separately. All cases are 100% original and carefully tested.'
               : 'Oplaadcase kwijt of kapot? Bestel een originele Apple oplaadcase los. Alle cases zijn 100% origineel en zorgvuldig getest.'
@@ -142,7 +142,7 @@ const CaseSelector = () => {
             >
               <CarouselContent className="-ml-2">
                 {cases.map((caseItem) => (
-                  <CarouselItem key={caseItem.id} className="pl-2 basis-[32%]">
+                  <CarouselItem key={caseItem.id} className="pl-2 basis-[38%]">
                     <CaseCard caseItem={caseItem} />
                   </CarouselItem>
                 ))}
@@ -153,7 +153,7 @@ const CaseSelector = () => {
                 <button
                   key={i}
                   onClick={() => api?.scrollTo(i)}
-                  className={`w-1.5 h-1.5 rounded-full transition-colors ${
+                  className={`w-2 h-2 rounded-full transition-colors ${
                     i === current ? 'bg-primary' : 'bg-muted-foreground/30'
                   }`}
                 />

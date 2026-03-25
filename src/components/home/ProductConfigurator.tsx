@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { ShoppingCart, Check, AlertCircle, CheckCircle2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { mockProducts, conditionLabels, conditionLabelsEN, conditionDescriptions, conditionDescriptionsEN, type Condition } from '@/data/mockProducts';
 import { useCart } from '@/context/CartContext';
 import { toast } from 'sonner';
@@ -217,13 +218,13 @@ const ProductConfigurator = () => {
   };
 
   return (
-    <section className="py-8 md:py-24 bg-secondary/20">
-      <div className="container mx-auto px-3 md:px-6 lg:px-10">
+    <section className="py-10 md:py-24 bg-secondary/20">
+      <div className="container mx-auto px-4 md:px-6 lg:px-10">
         <div className="text-center mb-4 md:mb-12">
           <h2 className="text-lg md:text-3xl font-semibold mb-2 md:mb-4 text-foreground">
             {isEnglish ? 'Order your single AirPod' : 'Bestel jouw losse AirPod'}
           </h2>
-          <p className="text-xs md:text-base text-muted-foreground max-w-2xl mx-auto hidden md:block">
+          <p className="text-xs md:text-base text-muted-foreground max-w-2xl mx-auto">
             {isEnglish 
               ? 'Know which AirPods you have? Select below and see the price immediately.'
               : 'Weet je welke AirPods je hebt? Selecteer hieronder en zie direct de prijs.'
@@ -239,7 +240,7 @@ const ProductConfigurator = () => {
                 <img
                   src={productImage}
                   alt={productName}
-                  className="w-28 h-28 md:w-64 md:h-64 object-contain"
+                  className="w-40 h-40 md:w-64 md:h-64 object-contain"
                 />
               </div>
 
@@ -247,15 +248,31 @@ const ProductConfigurator = () => {
               <div className="space-y-4 md:space-y-6">
                 {/* Step 1: Generation */}
                 <div>
-                  <label className="block text-xs md:text-sm font-semibold text-foreground mb-2 md:mb-3">
+                  <label className="block text-sm md:text-sm font-semibold text-foreground mb-2 md:mb-3">
                     1. {isEnglish ? 'Choose your generation' : 'Kies je generatie'}
                   </label>
-                  <div className="flex flex-wrap gap-1.5 md:gap-2">
+                  {/* Mobile: Dropdown */}
+                  <div className="md:hidden">
+                    <Select value={selectedGeneration} onValueChange={(value) => handleGenerationChange(value as BaseGeneration)}>
+                      <SelectTrigger className="w-full h-11 text-sm">
+                        <SelectValue />
+                      </SelectTrigger>
+                      <SelectContent>
+                        {generations.map((gen) => (
+                          <SelectItem key={gen.value} value={gen.value} className="text-sm py-2.5">
+                            {gen.label}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                  </div>
+                  {/* Desktop: Buttons */}
+                  <div className="hidden md:flex flex-wrap gap-2">
                     {generations.map((gen) => (
                       <button
                         key={gen.value}
                         onClick={() => handleGenerationChange(gen.value)}
-                        className={`px-2.5 py-1.5 md:px-4 md:py-2 rounded-lg text-xs md:text-sm font-medium transition-all ${
+                        className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
                           selectedGeneration === gen.value
                             ? 'bg-primary text-primary-foreground'
                             : 'bg-secondary text-muted-foreground hover:bg-secondary/80'
@@ -283,7 +300,7 @@ const ProductConfigurator = () => {
                         <button
                           key={v.value}
                           onClick={() => setSelectedAirpods4Variant(v.value)}
-                          className={`w-full flex items-center justify-between px-3 py-2 md:px-4 md:py-3 rounded-lg text-xs md:text-sm transition-all ${
+                          className={`w-full flex items-center justify-between px-3 py-2.5 md:px-4 md:py-3 rounded-lg text-sm md:text-sm transition-all ${
                             selectedAirpods4Variant === v.value
                               ? 'bg-primary text-primary-foreground'
                               : 'bg-white dark:bg-secondary text-foreground hover:bg-gray-50 dark:hover:bg-secondary/80 border border-border'
@@ -293,7 +310,7 @@ const ProductConfigurator = () => {
                             {selectedAirpods4Variant === v.value && <Check className="w-3 h-3 md:w-4 md:h-4" />}
                             <span className="font-medium">{v.label}</span>
                           </div>
-                          <span className={`text-[10px] md:text-xs ${selectedAirpods4Variant === v.value ? 'text-primary-foreground/80' : 'text-muted-foreground'}`}>
+                          <span className={`text-xs md:text-xs ${selectedAirpods4Variant === v.value ? 'text-primary-foreground/80' : 'text-muted-foreground'}`}>
                             {v.modelNumbers}
                           </span>
                         </button>
@@ -315,7 +332,7 @@ const ProductConfigurator = () => {
                         <button
                           key={v.value}
                           onClick={() => setSelectedPro2Variant(v.value)}
-                          className={`w-full flex items-center justify-between px-3 py-2 md:px-4 md:py-3 rounded-lg text-xs md:text-sm transition-all ${
+                          className={`w-full flex items-center justify-between px-3 py-2.5 md:px-4 md:py-3 rounded-lg text-sm md:text-sm transition-all ${
                             selectedPro2Variant === v.value
                               ? 'bg-primary text-primary-foreground'
                               : 'bg-white dark:bg-secondary text-foreground hover:bg-gray-50 dark:hover:bg-secondary/80 border border-border'
@@ -325,7 +342,7 @@ const ProductConfigurator = () => {
                             {selectedPro2Variant === v.value && <Check className="w-3 h-3 md:w-4 md:h-4" />}
                             <span className="font-medium">{v.label}</span>
                           </div>
-                          <span className={`text-[10px] md:text-xs ${selectedPro2Variant === v.value ? 'text-primary-foreground/80' : 'text-muted-foreground'}`}>
+                          <span className={`text-xs md:text-xs ${selectedPro2Variant === v.value ? 'text-primary-foreground/80' : 'text-muted-foreground'}`}>
                             {v.modelNumbers}
                           </span>
                         </button>
@@ -336,7 +353,7 @@ const ProductConfigurator = () => {
 
                 {/* Step 2: Side */}
                 <div className={!variantSelected && needsVariantSelection ? 'opacity-50 pointer-events-none' : ''}>
-                  <label className="block text-xs md:text-sm font-semibold text-foreground mb-2 md:mb-3">
+                  <label className="block text-sm md:text-sm font-semibold text-foreground mb-2 md:mb-3">
                     {needsVariantSelection ? '3' : '2'}. {isEnglish ? 'What are you missing?' : 'Wat mis je?'}
                   </label>
                   <div className="flex flex-wrap gap-1.5 md:gap-2">
@@ -345,7 +362,7 @@ const ProductConfigurator = () => {
                         key={side.value}
                         onClick={() => setSelectedSide(side.value)}
                         disabled={!variantSelected && needsVariantSelection}
-                        className={`px-2.5 py-1.5 md:px-4 md:py-2 rounded-lg text-xs md:text-sm font-medium transition-all ${
+                        className={`px-3 py-2 md:px-4 md:py-2 rounded-lg text-xs md:text-sm font-medium transition-all ${
                           selectedSide === side.value
                             ? 'bg-primary text-primary-foreground'
                             : 'bg-secondary text-muted-foreground hover:bg-secondary/80'
@@ -359,7 +376,7 @@ const ProductConfigurator = () => {
 
                 {/* Step 3: Condition */}
                 <div className={!variantSelected && needsVariantSelection ? 'opacity-50 pointer-events-none' : ''}>
-                  <label className="block text-xs md:text-sm font-semibold text-foreground mb-2 md:mb-3">
+                  <label className="block text-sm md:text-sm font-semibold text-foreground mb-2 md:mb-3">
                     {needsVariantSelection ? '4' : '3'}. {isEnglish ? 'Choose condition' : 'Kies de staat'}
                   </label>
                   <div className="space-y-1.5 md:space-y-2">
@@ -372,7 +389,7 @@ const ProductConfigurator = () => {
                           key={condition}
                           onClick={() => isAvailable && setSelectedCondition(condition)}
                           disabled={!isAvailable || (!variantSelected && needsVariantSelection)}
-                          className={`w-full flex items-center justify-between px-3 py-2 md:px-4 md:py-3 rounded-lg text-xs md:text-sm transition-all ${
+                          className={`w-full flex items-center justify-between px-3 py-2.5 md:px-4 md:py-3 rounded-lg text-sm md:text-sm transition-all ${
                             selectedCondition === condition
                               ? 'bg-primary text-primary-foreground'
                               : isAvailable
@@ -386,7 +403,7 @@ const ProductConfigurator = () => {
                             )}
                             <div className="text-left">
                               <span className="font-medium">{condLabels[condition]}</span>
-                              <p className={`text-[10px] md:text-xs ${selectedCondition === condition ? 'text-primary-foreground/80' : 'text-muted-foreground'} hidden md:block`}>
+                              <p className={`text-xs md:text-xs ${selectedCondition === condition ? 'text-primary-foreground/80' : 'text-muted-foreground'} hidden md:block`}>
                                 {condDescriptions[condition]}
                               </p>
                             </div>
